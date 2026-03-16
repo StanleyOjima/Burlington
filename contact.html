@@ -390,6 +390,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
         <div class="form-group"><label class="form-label">Tell us about your situation</label><textarea class="form-input" name="message" placeholder="Briefly describe your professional background and what you're looking to accomplish..."></textarea></div>
         <button type="submit" class="form-submit">Send Message &rarr;</button>
       </form>
+      <div id="formSuccess" style="display:none;text-align:center;padding:48px 32px;">
+  <div style="width:48px;height:48px;border-radius:50%;background:rgba(13,148,136,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+    <svg width="24" height="24" fill="none" stroke="#0D9488" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+  </div>
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:8px;">Message sent.</h3>
+  <p style="font-size:.9rem;color:#78776F;font-weight:300;">We'll respond within one business day.</p>
+</div>
+
+<script>
+if(window.location.search.includes('submitted=true')){
+  document.querySelector('form').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+</script>
     </div>
 
   </div>
