@@ -221,6 +221,21 @@ footer{background:linear-gradient(180deg,#040A0F,#0A141A);border-top:1px solid r
           </div>
           <div class="form-group"><label class="form-label">Tell us briefly about your professional background</label><textarea class="form-input" name="background" placeholder="Your current role, field, key achievements, and what you're looking to accomplish..." required></textarea></div>
 
+          <div class="form-group" style="margin-top:4px;">
+            <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:.84rem;color:var(--gray-500);font-weight:400;">
+              <input type="checkbox" id="diffPayer" onchange="document.getElementById('payerFields').style.display=this.checked?'block':'none'" style="accent-color:var(--teal);width:16px;height:16px;cursor:pointer;">
+              Someone else will be making this payment on my behalf
+            </label>
+          </div>
+          <div id="payerFields" style="display:none;margin-top:16px;padding:24px;background:rgba(13,148,136,.03);border:1px solid rgba(13,148,136,.06);border-radius:14px;">
+            <p style="font-size:.78rem;color:var(--teal);font-weight:500;margin-bottom:16px;">Payer details</p>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">Payer's full name</label><input type="text" class="form-input" name="payer_name" placeholder="Mary Doe"></div>
+              <div class="form-group"><label class="form-label">Payer's email</label><input type="email" class="form-input" name="payer_email" placeholder="mary@example.com"></div>
+            </div>
+            <div class="form-group"><label class="form-label">Relationship to you</label><input type="text" class="form-input" name="payer_relationship" placeholder="Spouse, family member, employer..."></div>
+          </div>
+
           <div class="form-price">
             <span class="form-price-label">Consultation fee</span>
             <span class="form-price-value">$250</span>
@@ -269,7 +284,7 @@ footer{background:linear-gradient(180deg,#040A0F,#0A141A);border-top:1px solid r
     <div><div class="footer-brand"><a href="/" style="color:inherit;text-decoration:none;">Burlington<span class="footer-brand-dot"></span></a></div><p class="footer-desc">Immigration strategy and advisory for high-achieving professionals. EB-1A and EB-2 NIW petitions developed and filed to USCIS.</p></div>
     <div class="footer-col"><h4>Pathways</h4><a href="/eb1a">EB-1A Extraordinary Ability</a><a href="/niw">EB-2 National Interest Waiver</a><a href="/dual-petition">Dual Petition Strategy</a></div>
     <div class="footer-col"><h4>Firm</h4><a href="/about">About</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a></div>
-    <div class="footer-col"><h4>Contact</h4><a href="mailto:founder@burlingtonconsult.com">founder@burlingtonconsult.com</a><a href="tel:+18572429842">+1 (857) 242-9842</a><a href="https://linkedin.com/in/ccogbodo" target="_blank">LinkedIn</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="/cdn-cgi/l/email-protection#aaccc5dfc4cecfd8eac8dfd8c6c3c4cddec5c4c9c5c4d9dfc6de84c9c5c7"><span class="__cf_email__" data-cfemail="7e18110b101a1b0c3e1c0b0c121710190a11101d11100d0b120a501d1113">[email&#160;protected]</span></a><a href="tel:+18572429842">+1 (857) 242-9842</a><a href="https://linkedin.com/in/ccogbodo" target="_blank">LinkedIn</a></div>
   </div>
   <div style="max-width:1200px;margin:40px auto 0;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;">
@@ -283,7 +298,7 @@ footer{background:linear-gradient(180deg,#040A0F,#0A141A);border-top:1px solid r
 
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg></button>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var btt=document.getElementById('backToTop');
 if(btt){window.addEventListener('scroll',function(){btt.classList.toggle('visible',window.scrollY>400);});}
 
@@ -311,14 +326,4 @@ document.getElementById('bookingForm').addEventListener('submit',function(e){
     .then(function(r){return r.json();})
     .then(function(result){
       if(result.success){
-        // REPLACE THIS URL WITH YOUR STRIPE PAYMENT LINK
-        window.location.href='https://buy.stripe.com/YOUR_STRIPE_LINK';
-      }else{
-        alert('Something went wrong. Please try again.');
-      }
-    })
-    .catch(function(){alert('Network error. Please try again.');});
-});
-</script>
-</body>
-</html>
+        // REPLACE THIS URL WITH YOUR STRIPE PAYMEN
