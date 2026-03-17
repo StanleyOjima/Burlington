@@ -151,6 +151,23 @@ footer{background:linear-gradient(180deg,#040A0F,#0A141A);border-top:1px solid r
   </div>
 </section>
 
+<script>
+var selectedOption='';
+var optionNames={1:'Option 1: Flexible Flat Fee',2:'Option 2: Premium Money-Back Guarantee'};
+function selectOption(num){
+  selectedOption=num;
+  document.getElementById('card1').classList.toggle('selected',num===1);
+  document.getElementById('card2').classList.toggle('selected',num===2);
+  document.getElementById('btn1').textContent=num===1?'Selected ✓':'Select Option 1';
+  document.getElementById('btn2').textContent=num===2?'Selected ✓':'Select Option 2';
+  document.getElementById('optionTagText').textContent=optionNames[num];
+  document.getElementById('hiddenOption').value=optionNames[num];
+  var section=document.getElementById('bookingSection');
+  section.classList.add('visible');
+  setTimeout(function(){section.scrollIntoView({behavior:'smooth',block:'start'});},100);
+}
+</script>
+
 <!-- OPTIONS -->
 <section class="section section-light" style="padding-top:72px;">
   <div class="container">
@@ -167,7 +184,7 @@ footer{background:linear-gradient(180deg,#040A0F,#0A141A);border-top:1px solid r
           <div class="tf-item"><span class="tf-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>One-year return support where necessary</div>
           <div class="tf-item"><span class="tf-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Flexible instalment payment schedule</div>
         </div>
-        <button class="btn-select btn-select-outline" id="btn1">Select Option 1</button>
+        <button class="btn-select btn-select-outline" id="btn1" onclick="event.stopPropagation();selectOption(1)">Select Option 1</button>
       </div>
 
       <!-- OPTION 2 -->
@@ -182,7 +199,7 @@ footer{background:linear-gradient(180deg,#040A0F,#0A141A);border-top:1px solid r
           <div class="tf-item"><span class="tf-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>If second filing denied: 100% professional fee refund</div>
           <div class="tf-item"><span class="tf-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Qualification assessed during consultation</div>
         </div>
-        <button class="btn-select btn-select-primary" id="btn2">Select Option 2</button>
+        <button class="btn-select btn-select-primary" id="btn2" onclick="event.stopPropagation();selectOption(2)">Select Option 2</button>
       </div>
     </div>
   </div>
