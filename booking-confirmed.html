@@ -745,5 +745,31 @@
         </p>
       </div>
     </footer>
+    <button
+      class="back-to-top"
+      id="backToTop"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      aria-label="Back to top"
+    >
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      >
+        <polyline points="18 15 12 9 6 15" />
+      </svg>
+    </button>
+    <script>
+      var btt = document.getElementById("backToTop");
+      if (btt) {
+        window.addEventListener("scroll", function () {
+          btt.classList.toggle("visible", window.scrollY > 400);
+        });
+      }
+    </script>
   </body>
 </html>
