@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Confirmed — Burlington Consult</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root{--dark-base:#040A0F;--white:#FFF;--off-white:#F7F7F5;--light-gray:#F5F5F3;--gray-100:#E8E7E3;--gray-300:#A8A7A3;--gray-400:#78776F;--gray-500:#545349;--gray-700:#2D2C28;--teal:#0D9488;--teal-light:#14B8A6;--teal-bright:#2DD4BF;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--side-pad:clamp(24px,5vw,80px)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);color:var(--gray-700);background:var(--off-white);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+::selection{background:var(--teal);color:var(--white)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.012;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,10,15,.88);backdrop-filter:blur(28px) saturate(200%);-webkit-backdrop-filter:blur(28px) saturate(200%);border-bottom:1px solid rgba(13,148,136,.06);box-shadow:0 1px 40px rgba(0,0,0,.12)}
+.nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:3px}
+.nav-logo-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal-bright);box-shadow:0 0 12px rgba(45,212,191,.5)}
+.nav-tagline{font-family:var(--sans);font-size:.6rem;font-weight:400;color:rgba(255,255,255,.25);letter-spacing:.08em;text-transform:uppercase;margin-left:10px;padding-left:10px;border-left:1px solid rgba(255,255,255,.1)}
+.nav-links{display:flex;align-items:center;gap:0;list-style:none}
+.nav-links li{display:flex;align-items:center}
+.nav-links a{font-size:.84rem;font-weight:400;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s;padding:0 16px}
+.nav-links a:hover{color:var(--white)}
+.nav-divider{width:1px;height:14px;background:rgba(255,255,255,.1);flex-shrink:0}
+.nav-cta{font-size:.82rem!important;font-weight:500!important;color:var(--white)!important;background:linear-gradient(135deg,var(--teal),var(--teal-bright));padding:9px 22px!important;border-radius:20px!important;box-shadow:0 0 16px rgba(13,148,136,.25),inset 0 1px 0 rgba(255,255,255,.1);transition:all .3s!important;margin-left:8px}
+.nav-cta:hover{box-shadow:0 0 28px rgba(13,148,136,.4);transform:translateY(-1px)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--white)}
+.mobile-nav{display:none;position:fixed;inset:0;background:rgba(4,10,15,.97);backdrop-filter:blur(20px);z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-family:var(--serif);font-size:1.8rem;color:rgba(255,255,255,.7);text-decoration:none}
+.mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+
+.confirm-page{flex:1;display:flex;align-items:center;justify-content:center;padding:120px var(--side-pad) 80px}
+.confirm-card{max-width:560px;width:100%;text-align:center}
+.confirm-icon{width:72px;height:72px;border-radius:50%;background:rgba(13,148,136,.08);border:2px solid rgba(13,148,136,.15);display:flex;align-items:center;justify-content:center;margin:0 auto 32px;animation:confirmPop .6s cubic-bezier(.16,1,.3,1) .2s both}
+@keyframes confirmPop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+.confirm-icon svg{width:32px;height:32px;stroke:var(--teal);stroke-width:2;fill:none}
+.confirm-card h1{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:500;letter-spacing:-.025em;margin-bottom:12px;animation:confirmFade .8s cubic-bezier(.16,1,.3,1) .4s both}
+.confirm-card>p{font-size:.95rem;line-height:1.75;color:var(--gray-400);font-weight:300;margin-bottom:8px;animation:confirmFade .8s cubic-bezier(.16,1,.3,1) .5s both}
+@keyframes confirmFade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+.confirm-steps{text-align:left;margin:40px 0;padding:32px 36px;background:var(--white);border:1px solid rgba(0,0,0,.04);border-radius:20px;box-shadow:0 4px 24px rgba(0,0,0,.03);animation:confirmFade .8s cubic-bezier(.16,1,.3,1) .6s both}
+.confirm-step{display:flex;gap:16px;padding:16px 0}
+.confirm-step+.confirm-step{border-top:1px solid var(--gray-100)}
+.step-num{width:32px;height:32px;border-radius:50%;background:rgba(13,148,136,.06);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:.85rem;font-weight:600;color:var(--teal);flex-shrink:0}
+.step-content h4{font-size:.88rem;font-weight:500;color:var(--gray-700);margin-bottom:4px}
+.step-content p{font-size:.84rem;color:var(--gray-400);font-weight:300;line-height:1.6}
+
+.btn-schedule{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;background:linear-gradient(135deg,var(--teal),var(--teal-bright));color:var(--white);font-family:var(--sans);font-size:.92rem;font-weight:500;border:none;border-radius:12px;cursor:pointer;text-decoration:none;box-shadow:0 4px 20px rgba(13,148,136,.3),inset 0 1px 0 rgba(255,255,255,.1);transition:all .3s cubic-bezier(.16,1,.3,1);animation:confirmFade .8s cubic-bezier(.16,1,.3,1) .7s both}
+.btn-schedule:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(13,148,136,.35)}
+
+.confirm-note{font-size:.78rem;color:var(--gray-300);margin-top:24px;line-height:1.6;animation:confirmFade .8s cubic-bezier(.16,1,.3,1) .8s both}
+
+footer{background:linear-gradient(180deg,#040A0F,#0A141A);border-top:1px solid rgba(45,212,191,.08);padding:72px var(--side-pad) 40px;margin-top:auto}
+.footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.footer-brand{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--white);margin-bottom:16px;display:flex;align-items:center;gap:3px}
+.footer-brand-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--teal-bright)}
+.footer-desc{font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.7;font-weight:300;max-width:300px}
+.footer-col h4{font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:24px}
+.footer-col a{display:block;font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:14px;transition:color .3s}
+.footer-col a:hover{color:var(--white)}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-tagline{display:none}.confirm-steps{padding:24px 24px}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><a href="/" class="nav-logo">Burlington<span class="nav-logo-dot"></span><span class="nav-tagline">Immigration Advisory</span></a><ul class="nav-links"><li><a href="/about">About</a></li><li class="nav-divider"></li><li><a href="/faq">FAQs</a></li><li class="nav-divider"></li><li><a href="/contact">Contact</a></li><li><a href="/book" class="nav-cta">Book a Consultation</a></li></ul><button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.add('open')"><span></span><span></span><span></span></button></nav>
+<div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/">Home</a><a href="/about">About</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a></div>
+
+<main class="confirm-page">
+  <div class="confirm-card">
+    <div class="confirm-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <h1>Payment confirmed.</h1>
+    <p>Your $250 consultation fee has been received. A receipt has been sent to your email.</p>
+
+    <div class="confirm-steps">
+      <div class="confirm-step">
+        <div class="step-num">1</div>
+        <div class="step-content"><h4>Payment received</h4><p>Stripe has processed your payment. Check your email for the receipt.</p></div>
+      </div>
+      <div class="confirm-step">
+        <div class="step-num">2</div>
+        <div class="step-content"><h4>Schedule your consultation</h4><p>Click the button below to choose a 30-minute slot that works for you.</p></div>
+      </div>
+      <div class="confirm-step">
+        <div class="step-num">3</div>
+        <div class="step-content"><h4>Prepare for the call</h4><p>Have your CV and a brief summary of your key achievements ready. We'll assess your profile and recommend the strongest pathway.</p></div>
+      </div>
+    </div>
+
+    <!-- REPLACE THIS URL WITH YOUR CALENDLY OR CAL.COM LINK -->
+    <a href="https://calendly.com/YOUR_LINK" class="btn-schedule" id="scheduleBtn">Schedule Your Consultation &rarr;</a>
+
+    <p class="confirm-note">The $250 fee is credited in full toward your engagement fee if you proceed within 30 days. If you have any questions before the call, reach out at founder@burlingtonconsult.com.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-brand"><a href="/" style="color:inherit;text-decoration:none;">Burlington<span class="footer-brand-dot"></span></a></div><p class="footer-desc">Immigration strategy and advisory for high-achieving professionals. EB-1A and EB-2 NIW petitions developed and filed to USCIS.</p></div>
+    <div class="footer-col"><h4>Pathways</h4><a href="/eb1a">EB-1A Extraordinary Ability</a><a href="/niw">EB-2 National Interest Waiver</a><a href="/dual-petition">Dual Petition Strategy</a></div>
+    <div class="footer-col"><h4>Firm</h4><a href="/about">About</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="mailto:founder@burlingtonconsult.com">founder@burlingtonconsult.com</a><a href="tel:+18572429842">+1 (857) 242-9842</a><a href="https://linkedin.com/in/ccogbodo" target="_blank">LinkedIn</a></div>
+  </div>
+  <div style="max-width:1200px;margin:40px auto 0;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;">
+      <div style="font-size:.75rem;color:rgba(255,255,255,.45);line-height:1.8;">Burlington Consult, LLC &middot; Cambridge, MA 02138 &middot; Newark, DE 19713<br><span style="color:rgba(255,255,255,.35);">Delaware File #10543986 &middot; Auth: 203341551</span></div>
+      <div style="display:flex;gap:24px;"><a href="/privacy" style="font-size:.75rem;color:rgba(255,255,255,.5);text-decoration:none;">Privacy</a><a href="/terms" style="font-size:.75rem;color:rgba(255,255,255,.5);text-decoration:none;">Terms</a><a href="/disclaimer" style="font-size:.75rem;color:rgba(255,255,255,.5);text-decoration:none;">Disclaimer</a></div>
+    </div>
+    <p style="font-size:.72rem;color:rgba(255,255,255,.3);font-style:italic;margin-top:16px;max-width:520px;">This engagement does not constitute the practice of law and does not establish an attorney-client relationship.</p>
+    <p style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:12px;">&copy; 2026 Burlington Consult, LLC. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
