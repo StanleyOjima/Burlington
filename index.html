@@ -291,6 +291,7 @@ footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1p
   <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   <a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/career-advisory">Career Advisory</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a>
 </div>
+<script>document.addEventListener('DOMContentLoaded',function(){var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');var path=window.location.pathname;if(path.length>1&&path.charAt(path.length-1)==='/')path=path.slice(0,-1);for(var i=0;i<links.length;i++){var href=links[i].getAttribute('href');if(href==='/'&&(path===''||path==='/'))links[i].classList.add('active');else if(href!=='/'&&path.indexOf(href)===0)links[i].classList.add('active');}});</script>
 
 <section class="hero">
   <div class="hero-grid"></div>
@@ -562,18 +563,4 @@ var observer=new IntersectionObserver(function(entries){
 document.querySelectorAll('.animate-on-scroll').forEach(function(el){observer.observe(el);});
 
 document.querySelectorAll('a[href^="#"]').forEach(function(anc
-<script>
-(function(){
-  var links = document.querySelectorAll('.nav-links a:not(.nav-cta)');
-  var path = window.location.pathname;
-  if (path.length > 1 && path.charAt(path.length - 1) === '/') path = path.slice(0, -1);
-  for (var i = 0; i < links.length; i++) {
-    var href = links[i].getAttribute('href');
-    if (href === '/' && (path === '' || path === '/')) {
-      links[i].classList.add('active');
-    } else if (href !== '/' && path.indexOf(href) === 0) {
-      links[i].classList.add('active');
-    }
-  }
-})();
-</script>
+
