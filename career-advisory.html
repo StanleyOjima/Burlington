@@ -214,6 +214,10 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-tagline{display:none}.footer-grid{grid-template-columns:1fr;gap:32px}.whatsapp-btn{bottom:20px;left:20px;width:48px;height:48px}.back-to-top{bottom:20px;right:20px;width:40px;height:40px}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 
+
+.hero-pkg-btn{display:inline-flex;align-items:center;gap:10px;margin-top:48px;padding:12px 28px;font-size:.82rem;font-weight:500;color:var(--tb);text-decoration:none;border:1px solid rgba(45,212,191,.2);border-radius:100px;background:rgba(13,148,136,.06);backdrop-filter:blur(8px);transition:all .3s cubic-bezier(.16,1,.3,1);letter-spacing:.03em}
+.hero-pkg-btn:hover{border-color:rgba(45,212,191,.4);background:rgba(13,148,136,.12);transform:translateY(-2px);box-shadow:0 0 20px rgba(13,148,136,.15)}
+.hero-pkg-btn svg{animation:bobDown 2s ease-in-out infinite}
 @keyframes bobDown{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 </style>
 <meta property="og:title" content="Career Advisory — Burlington Consult">
@@ -233,6 +237,8 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 <body>
 <nav><a href="/" class="nav-logo">Burlington<span class="nav-logo-dot"></span><span class="nav-tagline">Immigration Advisory</span></a><ul class="nav-links"><li><a href="/about">About</a></li><li class="nav-divider"></li><li><a href="/services">Services</a></li><li class="nav-divider"></li><li><a href="/career-advisory">Career Advisory</a></li><li class="nav-divider"></li><li><a href="/faq">FAQs</a></li><li class="nav-divider"></li><li><a href="/contact">Contact</a></li><li><a href="/book" class="nav-cta">Book a Consultation</a></li></ul><button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.add('open')"><span></span><span></span><span></span></button></nav>
 <div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/career-advisory">Career Advisory</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a></div>
+    <a href="#packages" class="hero-pkg-btn">View packages <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
+
 <script>document.addEventListener('DOMContentLoaded',function(){var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');var path=window.location.pathname;if(path.length>1&&path.charAt(path.length-1)==='/')path=path.slice(0,-1);for(var i=0;i<links.length;i++){var href=links[i].getAttribute('href');if(href==='/'&&(path===''||path==='/'))links[i].classList.add('active');else if(href!=='/'&&path.indexOf(href)===0)links[i].classList.add('active');}});</script>
 
 
@@ -245,12 +251,10 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
     <p class="hero-sub">Strategic advisory for ambitious professionals competing for the most selective roles, fellowships, and programmes in the world.</p>
     <div class="hero-stats">
       <div class="h-stat"><div class="h-val">$<span class="ctr" data-t="500">0</span>k+</div><div class="h-label">Scholarships secured</div></div>
-    <a href="#packages" style="display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.25);font-size:.8rem;font-weight:400;text-decoration:none;margin-top:44px;transition:color .3s;letter-spacing:.03em;" onmouseover="this.style.color='rgba(45,212,191,.5)'" onmouseout="this.style.color='rgba(255,255,255,.25)'">View packages <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="animation:bobDown 2s ease-in-out infinite"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
 
       <div class="h-stat"><div class="h-val"><span class="ctr" data-t="8">0</span></div><div class="h-label">MBA final-round interviews</div></div>
       <div class="h-stat"><div class="h-val"><span class="ctr" data-t="3">0</span></div><div class="h-label">Continents</div></div>
     </div>
-    <a href="#packages" style="display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.3);font-size:.82rem;font-weight:400;text-decoration:none;margin-top:40px;transition:color .3s;letter-spacing:.03em;" onmouseover="this.style.color='rgba(45,212,191,.6)'" onmouseout="this.style.color='rgba(255,255,255,.3)'">View packages <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="animation:bobDown 2s ease-in-out infinite"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
   </div>
 </section>
 
@@ -277,14 +281,14 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 
 
 
-<section class="s s-w promise">
-  <div class="promise-bg">$500k</div>
+<section class="s s-d promise">
+  <div class="promise-bg" style="color:rgba(45,212,191,.04);">$500k</div>
   <div class="mx">
     <div class="tag">The Burlington Promise</div>
-    <h2 class="s-title">The difference is never substance.<br>It's strategy.</h2>
+    <h2 class="s-title" style="color:var(--white);">The difference is never substance.<br>It's strategy.</h2>
     <div class="promise-grid" style="margin-top:48px;">
       <div>
-        <p style="font-size:.95rem;line-height:1.9;color:var(--g400);font-weight:300;">Most people who enter competitive hiring processes are not underprepared on substance. They are underprepared on strategy. They do not know which opportunities to target, how to tell their story in a way that moves decision-makers, or what it actually takes to compete once they are in the room.</p>
+        <p style="font-size:.95rem;line-height:1.9;color:rgba(255,255,255,.4);font-weight:300;">Most people who enter competitive hiring processes are not underprepared on substance. They are underprepared on strategy. They do not know which opportunities to target, how to tell their story in a way that moves decision-makers, or what it actually takes to compete once they are in the room.</p>
         <p style="font-size:.95rem;line-height:1.9;color:var(--g400);font-weight:300;margin-top:20px;">Burlington Consult's Career Advancement Advisory is a direct, personalised service for ambitious professionals who want to compete for the most selective roles, fellowships, and programmes available to them.</p>
       </div>
       <div class="promise-stat">
