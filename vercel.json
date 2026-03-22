@@ -1,6 +1,14 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/stripe-webhook.js": {
+      "maxDuration": 10
+    },
+    "api/verify-payment.js": {
+      "maxDuration": 10
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",
@@ -24,6 +32,15 @@
         {
           "key": "Content-Security-Policy",
           "value": "frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com https://buy.stripe.com;"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
         }
       ]
     }
