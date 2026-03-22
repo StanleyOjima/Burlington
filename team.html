@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team — Burlington Consult</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark-base: #040A0F; --dark-800: #0A1018; --dark-700: #0F1A24;
+  --white: #FFFFFF; --off-white: #F7F7F5; --light-gray: #F5F5F3; --warm-gray: #F0F0EC;
+  --gray-100: #E8E7E3; --gray-200: #D4D3CF; --gray-300: #A8A7A3; --gray-400: #78776F; --gray-500: #545349; --gray-700: #2D2C28;
+  --teal: #0D9488; --teal-light: #14B8A6; --teal-bright: #2DD4BF;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --section-pad: clamp(80px, 10vw, 130px);
+  --side-pad: clamp(24px, 5vw, 80px);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--sans); color: var(--gray-700); background: var(--off-white);
+  -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; min-height: 100vh;
+}
+::selection { background: var(--teal); color: var(--white); }
+body::after {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: .012;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 var(--side-pad); height: 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(4,10,15,0.85);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.nav-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--white); text-decoration: none; letter-spacing: -0.01em; }
+.nav-logo span { color: var(--teal-bright); }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a { font-size: .84rem; font-weight: 400; color: rgba(255,255,255,0.5); text-decoration: none; transition: color .3s; }
+.nav-links a:hover { color: var(--white); }
+.nav-links a.active { color: var(--white); font-weight: 500; }
+.nav-cta {
+  font-size: .82rem; font-weight: 500; color: var(--white) !important;
+  background: linear-gradient(135deg, var(--teal), var(--teal-bright));
+  padding: 9px 22px; border-radius: 20px;
+  box-shadow: 0 0 16px rgba(13,148,136,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.nav-cta:hover { opacity: .9; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 20px; height: 1.5px; background: var(--white); margin: 5px 0; transition: .3s; }
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: fixed;
+    top: 72px; left: 0; right: 0; bottom: 0;
+    background: rgba(4,10,15,0.97); padding: 40px var(--side-pad); gap: 24px;
+    backdrop-filter: blur(30px);
+  }
+  .nav-links.open a { font-size: 1.1rem; }
+}
+
+/* SCROLL ANIMATIONS */
+.reveal {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* DOT GRID */
+.dot-grid {
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 70%);
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative; min-height: 70vh;
+  background: var(--dark-base);
+  display: flex; align-items: center; justify-content: center;
+  padding: calc(72px + var(--section-pad)) var(--side-pad) var(--section-pad);
+  text-align: center; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(13,148,136,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(13,148,136,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-ring {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 600px; height: 600px; border-radius: 50%;
+  border: 1px solid rgba(13,148,136,0.06);
+  animation: ring-pulse 8s ease-in-out infinite;
+}
+.hero-ring:nth-child(2) { width: 800px; height: 800px; animation-delay: -2s; border-color: rgba(13,148,136,0.04); }
+.hero-ring:nth-child(3) { width: 1000px; height: 1000px; animation-delay: -4s; border-color: rgba(13,148,136,0.025); }
+@keyframes ring-pulse {
+  0%,100% { opacity: .3; transform: translate(-50%,-50%) scale(1); }
+  50% { opacity: .7; transform: translate(-50%,-50%) scale(1.03); }
+}
+.hero-content { position: relative; z-index: 2; max-width: 780px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: .75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal-bright); margin-bottom: 28px;
+  background: rgba(13,148,136,0.08); padding: 8px 20px; border-radius: 100px;
+  border: 1px solid rgba(13,148,136,0.15);
+}
+.hero-badge::before {
+  content: ''; width: 6px; height: 6px; background: var(--teal-bright);
+  border-radius: 50%; animation: badge-pulse 2s ease-in-out infinite;
+}
+@keyframes badge-pulse { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+.hero h1 {
+  font-family: var(--serif); font-size: clamp(2.4rem,5vw,3.8rem);
+  font-weight: 500; color: var(--white); line-height: 1.15;
+  letter-spacing: -0.02em; margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--teal-light), var(--teal-bright));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(1rem,1.8vw,1.15rem); font-weight: 300;
+  color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 580px; margin: 0 auto;
+}
+
+/* ===== CREDENTIALS BAR ===== */
+.cred-bar {
+  background: var(--dark-800);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 40px var(--side-pad);
+}
+.cred-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+.cred-item { display: flex; align-items: center; gap: 14px; font-size: .85rem; color: rgba(255,255,255,0.4); white-space: nowrap; }
+.cred-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(13,148,136,0.08); border: 1px solid rgba(13,148,136,0.12);
+  display: flex; align-items: center; justify-content: center; font-size: .9rem;
+}
+.cred-item strong { color: rgba(255,255,255,0.7); font-weight: 500; }
+@media (max-width: 768px) { .cred-inner { gap: 24px; justify-content: flex-start; } .cred-item { white-space: normal; } }
+
+/* ===== LEAD PROFILE — CINEMATIC ===== */
+.profile-section {
+  position: relative; padding: var(--section-pad) var(--side-pad); overflow: hidden;
+}
+.profile-section.bg-white { background: var(--off-white); }
+.profile-section.bg-light { background: var(--light-gray); }
+.profile-section::before {
+  content: ''; position: absolute; top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(13,148,136,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+.profile-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 380px 1fr; gap: 72px; align-items: start;
+}
+/* Portrait */
+.portrait-wrap { position: relative; }
+.portrait {
+  position: relative; width: 100%; aspect-ratio: 3/4;
+  background: linear-gradient(160deg, #e8e7e3 0%, #d4d3cf 50%, #c8c7c3 100%);
+  border-radius: 16px; overflow: hidden;
+}
+.portrait::after { content: ''; position: absolute; inset: 0; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; }
+.portrait-initials {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 4.5rem; font-weight: 400;
+  color: rgba(168,167,163,0.5); letter-spacing: 0.05em; user-select: none;
+}
+.portrait-accent {
+  position: absolute; bottom: -14px; left: 32px; width: 64px; height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-bright)); border-radius: 2px;
+}
+.stat-float {
+  position: absolute; bottom: 28px; right: -32px; z-index: 3;
+  background: var(--white); border: 1px solid var(--gray-100);
+  border-radius: 12px; padding: 16px 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08); text-align: center; min-width: 120px;
+}
+.stat-float-value {
+  font-family: var(--serif); font-size: 1.5rem; font-weight: 600;
+  background: linear-gradient(135deg, var(--teal), var(--teal-bright));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.stat-float-label { font-size: .68rem; font-weight: 500; color: var(--gray-400); letter-spacing: 0.04em; margin-top: 2px; }
+
+/* Profile text */
+.profile-text { padding-top: 12px; }
+.profile-overline {
+  font-size: .72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 16px;
+}
+.profile-name {
+  font-family: var(--serif); font-size: clamp(2rem,3.5vw,2.8rem);
+  font-weight: 500; color: var(--gray-700); line-height: 1.15;
+  letter-spacing: -0.02em; margin-bottom: 8px;
+}
+.profile-title { font-size: 1.05rem; font-weight: 400; color: var(--gray-400); margin-bottom: 32px; }
+.profile-bio { font-size: .95rem; font-weight: 300; color: var(--gray-500); line-height: 1.85; margin-bottom: 20px; }
+.profile-bio strong { font-weight: 500; color: var(--gray-700); }
+.profile-bio:last-of-type { margin-bottom: 36px; }
+
+/* Credential tags */
+.profile-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+.ptag {
+  font-size: .75rem; font-weight: 500; letter-spacing: 0.03em;
+  color: var(--gray-500); background: var(--white);
+  padding: 8px 16px; border-radius: 100px; border: 1px solid var(--gray-100);
+  transition: all .3s;
+}
+.bg-light .ptag { background: var(--off-white); }
+.ptag:hover { border-color: rgba(13,148,136,0.3); color: var(--teal); box-shadow: 0 2px 12px rgba(13,148,136,0.08); }
+
+/* Profile links */
+.profile-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.plink {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .84rem; font-weight: 500; color: var(--teal);
+  text-decoration: none; padding: 10px 20px; border-radius: 10px;
+  border: 1px solid rgba(13,148,136,0.2); transition: all .3s;
+}
+.plink:hover { background: rgba(13,148,136,0.06); border-color: rgba(13,148,136,0.4); }
+
+/* Highlight list for achievements */
+.profile-highlights { margin-bottom: 36px; }
+.highlight-row {
+  display: flex; gap: 14px; align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: .88rem; color: var(--gray-500); line-height: 1.6;
+}
+.bg-light .highlight-row { border-color: var(--gray-200); }
+.highlight-row:first-child { border-top: 1px solid var(--gray-100); }
+.bg-light .highlight-row:first-child { border-top-color: var(--gray-200); }
+.highlight-label {
+  flex: 0 0 160px; font-weight: 500; color: var(--gray-700);
+  font-size: .8rem; letter-spacing: 0.02em;
+}
+.highlight-value { flex: 1; font-weight: 300; }
+.highlight-value strong { font-weight: 500; color: var(--gray-700); }
+
+@media (max-width: 900px) {
+  .profile-inner { grid-template-columns: 1fr; gap: 40px; }
+  .portrait-wrap { max-width: 340px; }
+  .stat-float { right: -16px; bottom: 20px; }
+  .highlight-row { flex-direction: column; gap: 4px; }
+  .highlight-label { flex: none; }
+}
+
+/* ===== DIVIDER QUOTE ===== */
+.divider-quote {
+  position: relative; background: var(--dark-base);
+  padding: var(--section-pad) var(--side-pad);
+  text-align: center; overflow: hidden;
+}
+.divider-quote-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; }
+.dq-dash {
+  width: 40px; height: 2px; margin: 0 auto 24px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-bright)); border-radius: 1px;
+}
+.dq-text {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.4rem,2.8vw,2.1rem); font-weight: 400;
+  color: var(--white); line-height: 1.55; letter-spacing: -0.01em; margin-bottom: 28px;
+}
+.dq-text em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--teal-light), var(--teal-bright));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.dq-attr { font-size: .85rem; font-weight: 400; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+
+/* ===== EXTENDED TEAM GRID ===== */
+.ext-team-section { padding: var(--section-pad) var(--side-pad); background: var(--off-white); }
+.ext-team-header { text-align: center; max-width: 640px; margin: 0 auto clamp(48px,6vw,72px); }
+.ext-team-header .overline {
+  font-size: .72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 14px;
+}
+.ext-team-header h2 {
+  font-family: var(--serif); font-size: clamp(1.8rem,3vw,2.4rem);
+  font-weight: 500; color: var(--gray-700); line-height: 1.2;
+  letter-spacing: -0.02em; margin-bottom: 14px;
+}
+.ext-team-header p { font-size: .95rem; font-weight: 300; color: var(--gray-400); line-height: 1.7; }
+
+.ext-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.ext-card {
+  background: var(--white); border-radius: 16px; border: 1px solid var(--gray-100);
+  overflow: hidden; transition: all .4s cubic-bezier(0.16,1,0.3,1); position: relative;
+}
+.ext-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.02);
+  border-color: rgba(13,148,136,0.12);
+}
+.ext-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-bright));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .4s cubic-bezier(0.16,1,0.3,1); z-index: 2;
+}
+.ext-card:hover::before { transform: scaleX(1); }
+
+/* Photo area */
+.ext-card-photo {
+  width: 100%; aspect-ratio: 1/1;
+  background: linear-gradient(160deg, #e8e7e3 0%, #d8d7d3 60%, #cecdca 100%);
+  position: relative; overflow: hidden;
+}
+.ext-card-photo::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(4,10,15,0.04) 100%);
+}
+.ext-card-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.ext-card-initials {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 2rem; font-weight: 400;
+  color: rgba(168,167,163,0.5); letter-spacing: 0.04em; user-select: none;
+}
+
+/* Card body */
+.ext-card-body { padding: 22px 24px 26px; }
+.ext-card-header { margin-bottom: 12px; }
+.ext-card-role {
+  font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
+  color: var(--gray-700); letter-spacing: -0.01em; margin-bottom: 2px;
+}
+.ext-card-loc { font-size: .78rem; font-weight: 500; color: var(--teal); letter-spacing: 0.04em; }
+.ext-card-desc { font-size: .85rem; font-weight: 300; color: var(--gray-400); line-height: 1.7; margin-bottom: 16px; }
+.ext-card-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: .78rem; font-weight: 500; color: var(--teal);
+  text-decoration: none; transition: color .3s;
+}
+.ext-card-link:hover { color: var(--teal-bright); }
+
+@media (max-width: 900px) { .ext-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .ext-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; } }
+
+/* ===== BY THE NUMBERS ===== */
+.numbers {
+  background: var(--dark-base); padding: 56px var(--side-pad);
+  position: relative; overflow: hidden;
+}
+.numbers-inner {
+  max-width: 1100px; margin: 0 auto; position: relative; z-index: 2;
+  display: flex; justify-content: center;
+}
+.num-item { flex: 1; text-align: center; padding: 24px 20px; position: relative; }
+.num-item:not(:last-child)::after {
+  content: ''; position: absolute; top: 20%; right: 0; width: 1px; height: 60%;
+  background: rgba(255,255,255,0.06);
+}
+.num-value {
+  font-family: var(--serif); font-size: clamp(2rem,4vw,3rem);
+  font-weight: 500; line-height: 1; margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--white) 30%, var(--teal-bright));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.num-label { font-size: .78rem; font-weight: 400; color: rgba(255,255,255,0.35); letter-spacing: 0.04em; }
+@media (max-width: 600px) {
+  .numbers-inner { flex-wrap: wrap; }
+  .num-item { flex: 0 0 50%; }
+  .num-item:nth-child(2)::after { display: none; }
+}
+
+/* ===== ADVISORY NETWORK ===== */
+.network { position: relative; padding: var(--section-pad) var(--side-pad); background: var(--light-gray); overflow: hidden; }
+.network-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+}
+.network-overline {
+  font-size: .72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 14px;
+}
+.network h2 {
+  font-family: var(--serif); font-size: clamp(1.6rem,2.8vw,2.2rem);
+  font-weight: 500; color: var(--gray-700); line-height: 1.2;
+  letter-spacing: -0.02em; margin-bottom: 18px;
+}
+.network p { font-size: .95rem; font-weight: 300; color: var(--gray-400); line-height: 1.85; margin-bottom: 16px; }
+.network-visual {
+  position: relative; width: 100%; aspect-ratio: 1/0.85;
+  display: flex; align-items: center; justify-content: center;
+}
+.network-lines { position: absolute; inset: 0; z-index: 1; }
+.network-lines line { stroke: var(--gray-200); stroke-width: 1; stroke-dasharray: 4 4; }
+.net-node {
+  position: absolute; width: 72px; height: 72px; border-radius: 50%;
+  background: var(--white); border: 1px solid var(--gray-100);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .72rem; font-weight: 500; color: var(--gray-500);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: all .4s; z-index: 2;
+}
+.net-node:hover { border-color: rgba(13,148,136,0.3); box-shadow: 0 8px 32px rgba(13,148,136,0.1); transform: scale(1.08); }
+.net-node.center {
+  width: 100px; height: 100px; font-size: .7rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal);
+  background: rgba(13,148,136,0.04); border-color: rgba(13,148,136,0.15);
+}
+.center::before {
+  content: ''; position: absolute; inset: -12px; border-radius: 50%;
+  border: 1px solid rgba(13,148,136,0.08); animation: node-pulse 3s ease-in-out infinite;
+}
+@keyframes node-pulse { 0%,100% { opacity: .3; transform: scale(1); } 50% { opacity: .7; transform: scale(1.06); } }
+.nn1 { top: 8%; left: 50%; transform: translateX(-50%); }
+.nn2 { top: 28%; right: 6%; }
+.nn3 { bottom: 16%; right: 12%; }
+.nn4 { bottom: 4%; left: 40%; }
+.nn5 { top: 34%; left: 4%; }
+.nnc { top: 50%; left: 50%; transform: translate(-50%,-50%); }
+@media (max-width: 900px) {
+  .network-inner { grid-template-columns: 1fr; gap: 48px; }
+  .network-visual { max-width: 400px; margin: 0 auto; }
+}
+
+/* ===== CTA ===== */
+.cta {
+  position: relative; background: var(--dark-base);
+  padding: var(--section-pad) var(--side-pad);
+  text-align: center; overflow: hidden;
+}
+.cta-inner { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
+.cta-overline {
+  font-size: .72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--teal-bright); margin-bottom: 18px;
+}
+.cta-inner h2 {
+  font-family: var(--serif); font-size: clamp(1.8rem,3.5vw,2.6rem);
+  font-weight: 500; color: var(--white); line-height: 1.2;
+  letter-spacing: -0.02em; margin-bottom: 16px;
+}
+.cta-inner p {
+  font-size: .95rem; font-weight: 300; color: rgba(255,255,255,0.45);
+  line-height: 1.7; margin-bottom: 36px;
+}
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--sans); font-size: .92rem; font-weight: 500;
+  color: var(--white); text-decoration: none;
+  background: linear-gradient(135deg, var(--teal), var(--teal-bright));
+  padding: 16px 36px; border-radius: 12px; border: none;
+  box-shadow: 0 4px 24px rgba(13,148,136,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+  transition: all .3s; cursor: pointer;
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(13,148,136,0.4), inset 0 1px 0 rgba(255,255,255,0.1); }
+.cta-sec {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .88rem; font-weight: 400; color: rgba(255,255,255,0.5);
+  text-decoration: none; margin-left: 24px; transition: color .3s;
+}
+.cta-sec:hover { color: var(--white); }
+
+/* FOOTER */
+footer {
+  background: var(--dark-base); border-top: 1px solid rgba(255,255,255,0.04);
+  padding: 48px var(--side-pad);
+}
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+}
+.footer-copy { font-size: .78rem; color: rgba(255,255,255,0.25); font-weight: 300; }
+.footer-legal { display: flex; gap: 24px; }
+.footer-legal a { font-size: .78rem; color: rgba(255,255,255,0.25); text-decoration: none; transition: color .3s; }
+.footer-legal a:hover { color: rgba(255,255,255,0.5); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Burlington<span>.</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="/about">About</a>
+    <a href="/team" class="active">Team</a>
+    <a href="/services">Services</a>
+    <a href="/faqs">FAQs</a>
+    <a href="/contact">Contact</a>
+    <a href="/book" class="nav-cta">Book a Consultation</a>
+  </div>
+  <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-ring"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-ring"></div>
+  <div class="dot-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge reveal">Our Team</div>
+    <h1 class="reveal reveal-delay-1">Five practitioners.<br><em>Three continents.</em></h1>
+    <p class="hero-sub reveal reveal-delay-2">
+      Burlington Consult is led by professionals who have personally navigated the U.S. immigration process — and built careers that demonstrate what it takes to qualify.
+    </p>
+  </div>
+</section>
+
+<!-- ===== CREDENTIALS BAR ===== -->
+<section class="cred-bar">
+  <div class="cred-inner reveal">
+    <div class="cred-item"><div class="cred-icon">🎓</div><span><strong>Harvard Law School</strong>&nbsp; LL.M.</span></div>
+    <div class="cred-item"><div class="cred-icon">✓</div><span><strong>100%</strong>&nbsp; Approval Rate</span></div>
+    <div class="cred-item"><div class="cred-icon">⚖</div><span><strong>U.S. Attorney</strong>&nbsp; Network</span></div>
+    <div class="cred-item"><div class="cred-icon">◎</div><span><strong>3 Continents</strong>&nbsp; US · NG · CA</span></div>
+  </div>
+</section>
+
+<!-- ===== EBUKA — LEAD ===== -->
+<section class="profile-section bg-white">
+  <div class="profile-inner">
+    <div class="portrait-wrap reveal">
+      <div class="portrait">
+        <img src="ebuka.png" alt="Chukwuebuka Ogbodo" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(100%) contrast(1.05);">
+      </div>
+      <div class="portrait-accent"></div>
+      <div class="stat-float">
+        <div class="stat-float-value">100%</div>
+        <div class="stat-float-label">Approval Rate</div>
+      </div>
+    </div>
+    <div class="profile-text">
+      <div class="profile-overline reveal">Founder · Lead Immigration Strategist</div>
+      <h2 class="profile-name reveal reveal-delay-1">Chukwuebuka 'Ebuka' Ogbodo</h2>
+      <p class="profile-title reveal reveal-delay-2">United States</p>
+
+      <p class="profile-bio reveal reveal-delay-3">
+        <strong>Harvard Law School LL.M.</strong>, Technology Law and AI Policy, Class of 2026. Self-petitioned EB-1A holder — approved on first submission — with extraordinary ability in Technology Policy and AI Strategy. Direct practitioner knowledge of the Kazarian two-step framework, Dhanasar precedent, and current USCIS adjudication standards.
+      </p>
+
+      <div class="profile-highlights reveal reveal-delay-3">
+        <div class="highlight-row">
+          <span class="highlight-label">Meta Platforms</span>
+          <span class="highlight-value">Public Policy Manager, Anglophone West Africa. <strong>Youngest EMEA policy manager</strong> across 100+ countries.</span>
+        </div>
+        <div class="highlight-row">
+          <span class="highlight-label">Gates Foundation</span>
+          <span class="highlight-value">Lead Policy Consultant. <strong>$1.8M</strong> digital governance project, Nigeria.</span>
+        </div>
+        <div class="highlight-row">
+          <span class="highlight-label">Luminate / Omidyar</span>
+          <span class="highlight-value">Associate, Africa. Responsible Technology and AI Lead.</span>
+        </div>
+        <div class="highlight-row">
+          <span class="highlight-label">Templars Law</span>
+          <span class="highlight-value"><strong>$3B</strong> Nigeria LNG Train 7 (CNN covered) · <strong>$1.3B</strong> Lekki Deep Sea Port.</span>
+        </div>
+        <div class="highlight-row">
+          <span class="highlight-label">Distinctions</span>
+          <span class="highlight-value">Africa's first Google Policy Fellow · Co-drafted Nigeria's Digital Rights and Freedom Bill · Co-developed Nigeria National AI Policy.</span>
+        </div>
+      </div>
+
+      <div class="profile-tags reveal reveal-delay-4">
+        <span class="ptag">Harvard Law School</span>
+        <span class="ptag">Self-Petitioned EB-1A</span>
+        <span class="ptag">First-Submission Approval</span>
+        <span class="ptag">Meta Platforms</span>
+        <span class="ptag">Gates Foundation</span>
+      </div>
+      <div class="profile-links reveal reveal-delay-5">
+        <a href="https://linkedin.com/in/ccogbodo" class="plink" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="/book" class="plink">Book a Call →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHILOSOPHY INTERLUDE ===== -->
+<section class="divider-quote">
+  <div class="dot-grid"></div>
+  <div class="divider-quote-inner">
+    <div class="dq-dash reveal"></div>
+    <blockquote class="dq-text reveal reveal-delay-1">
+      "The strength of the evidence matters. The <em>argument framework</em> that deploys it matters more."
+    </blockquote>
+    <p class="dq-attr reveal reveal-delay-2">— Burlington Consult</p>
+  </div>
+</section>
+
+<!-- ===== NKEM — CO-FOUNDER & CTO ===== -->
+<section class="profile-section bg-light">
+  <div class="profile-inner">
+    <div class="portrait-wrap reveal">
+      <div class="portrait">
+        <div class="portrait-initials">NN</div>
+      </div>
+      <div class="portrait-accent"></div>
+      <div class="stat-float">
+        <div class="stat-float-value">15+</div>
+        <div class="stat-float-label">Years in Tech</div>
+      </div>
+    </div>
+    <div class="profile-text">
+      <div class="profile-overline reveal">Co-Founder &amp; Chief Technology Officer</div>
+      <h2 class="profile-name reveal reveal-delay-1">Nkem Nweke</h2>
+      <p class="profile-title reveal reveal-delay-2">Burlington Consult</p>
+
+      <p class="profile-bio reveal reveal-delay-3">
+        <strong>Design, product management, and innovation leader</strong> with over 15 years of consulting expertise within leading global technology corporations. Currently Engineering Innovation Lead at the Microsoft Africa Development Centre (ADC), where he collaborates with industry leaders and engineering communities across 26 countries in Africa to identify and scale local use cases into global products.
+      </p>
+      <p class="profile-bio reveal reveal-delay-3">
+        Before Microsoft, Nkem held senior roles at <strong>Hewlett Packard</strong> and <strong>Dimension Data</strong> across pre-sales, program management, product strategy, and business consulting. He also founded <strong>Nesi</strong>, a product management and innovation consultancy, and is a TEDx speaker on the Fourth Industrial Revolution and Africa's innovation ecosystem.
+      </p>
+
+      <div class="profile-highlights reveal reveal-delay-3">
+        <div class="highlight-row">
+          <span class="highlight-label">Microsoft</span>
+          <span class="highlight-value">Engineering Innovation Lead, Africa Development Centre. Driving innovation across <strong>26 countries</strong> in Africa.</span>
+        </div>
+        <div class="highlight-row">
+          <span class="highlight-label">Education</span>
+          <span class="highlight-value"><strong>MBA</strong>, University of Manchester Business School. <strong>B.Sc. Computer Science</strong>, University of Nigeria, Nsukka. PMP Certified.</span>
+        </div>
+        <div class="highlight-row">
+          <span class="highlight-label">Previous</span>
+          <span class="highlight-value">Hewlett Packard · Dimension Data · Nesi (Founder) · Nzuko Labs</span>
+        </div>
+        <div class="highlight-row">
+          <span class="highlight-label">Speaking</span>
+          <span class="highlight-value">TEDx Enugu · Africa Speakers Group · UNFPA/Microsoft Family Planning Hackathon</span>
+        </div>
+      </div>
+
+      <div class="profile-tags reveal reveal-delay-4">
+        <span class="ptag">Co-Founder &amp; CTO</span>
+        <span class="ptag">Microsoft</span>
+        <span class="ptag">Manchester MBA</span>
+        <span class="ptag">PMP Certified</span>
+        <span class="ptag">TEDx Speaker</span>
+      </div>
+      <div class="profile-links reveal reveal-delay-5">
+        <a href="https://www.linkedin.com/in/nkemnweke/" class="plink" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://www.nkemnweke.com/" class="plink" target="_blank" rel="noopener">Website ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXTENDED TEAM ===== -->
+<section class="ext-team-section">
+  <div class="ext-team-header">
+    <div class="overline reveal">Extended Team</div>
+    <h2 class="reveal reveal-delay-1">The team behind every filing</h2>
+    <p class="reveal reveal-delay-2">Engineers, analysts, legal counsel, and case architects — each bringing focused expertise to the evidentiary structure, strategy, and presentation of every petition.</p>
+  </div>
+  <div class="ext-grid">
+
+    <div class="ext-card reveal reveal-delay-1">
+      <div class="ext-card-photo"><div class="ext-card-initials">AI</div></div>
+      <div class="ext-card-body">
+        <div class="ext-card-header">
+          <div class="ext-card-role">Afiong Ibio</div>
+          <div class="ext-card-loc">Head of Legal, Nigeria</div>
+        </div>
+        <div class="ext-card-desc">Associate at J.O. Ibe &amp; Co. Leads Burlington Consult's Nigerian legal operations — credential translation, regulatory compliance, and documentary authentication for all Nigeria-based engagements.</div>
+        <a href="https://www.linkedin.com/in/afiong-ibio-154073167" class="ext-card-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <div class="ext-card reveal reveal-delay-2">
+      <div class="ext-card-photo"><div class="ext-card-initials">CO</div></div>
+      <div class="ext-card-body">
+        <div class="ext-card-header">
+          <div class="ext-card-role">Chibuike Onyia, ACA</div>
+          <div class="ext-card-loc">Salary Criterion Lead · Senior Financial Analyst</div>
+        </div>
+        <div class="ext-card-desc">Formerly Assistant Manager at PwC Nigeria. MBA Candidate at Rotman School of Management, University of Toronto. Leads the proprietary salary benchmark framework — 100% success rate on every petition deployed.</div>
+        <a href="https://www.linkedin.com/in/onyia-chibuike" class="ext-card-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <div class="ext-card reveal reveal-delay-3">
+      <div class="ext-card-photo"><div class="ext-card-initials">CC</div></div>
+      <div class="ext-card-body">
+        <div class="ext-card-header">
+          <div class="ext-card-role">Chisom Chibuike</div>
+          <div class="ext-card-loc">AI &amp; Prompt Engineering Lead</div>
+        </div>
+        <div class="ext-card-desc">Incoming Machine Learning masters candidate at the University of Cambridge. Leads AI-assisted case research, evidence analysis, and automated criterion mapping across Burlington Consult's petition pipeline.</div>
+        <a href="https://www.linkedin.com/in/chisom-chibuike-" class="ext-card-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <div class="ext-card reveal reveal-delay-1">
+      <div class="ext-card-photo"><div class="ext-card-initials">IA</div></div>
+      <div class="ext-card-body">
+        <div class="ext-card-header">
+          <div class="ext-card-role">Ifeanyi Anthony Agah</div>
+          <div class="ext-card-loc">Senior Product Manager</div>
+        </div>
+        <div class="ext-card-desc">Product manager with experience at Konga Group. Oversees Burlington Consult's client experience, internal tooling, and process architecture — ensuring every engagement runs on time and to standard.</div>
+        <a href="https://www.linkedin.com/in/ifeanyi-anthony-agah-04453332" class="ext-card-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <div class="ext-card reveal reveal-delay-2">
+      <div class="ext-card-photo"><div class="ext-card-initials">EE</div></div>
+      <div class="ext-card-body">
+        <div class="ext-card-header">
+          <div class="ext-card-role">Ebuka Ezeh</div>
+          <div class="ext-card-loc">Senior Front-End Engineer</div>
+        </div>
+        <div class="ext-card-desc">Frontend engineer at Atlan, Lagos. Specialises in performance, architecture, and design systems. Builds and maintains Burlington Consult's digital infrastructure and client-facing platforms.</div>
+        <a href="https://www.linkedin.com/in/ebuka-ezeh" class="ext-card-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <div class="ext-card reveal reveal-delay-3">
+      <div class="ext-card-photo"><div class="ext-card-initials">CD</div></div>
+      <div class="ext-card-body">
+        <div class="ext-card-header">
+          <div class="ext-card-role">Chukwu-Dike</div>
+          <div class="ext-card-loc">Software Engineer</div>
+        </div>
+        <div class="ext-card-desc">Full-stack engineer supporting Burlington Consult's engineering operations. Builds backend systems, automation pipelines, and data infrastructure powering case management and evidence processing.</div>
+        <a href="https://www.linkedin.com/in/chukwu-dike" class="ext-card-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <div class="ext-card reveal reveal-delay-1">
+      <div class="ext-card-photo"><div class="ext-card-initials">SO</div></div>
+      <div class="ext-card-body">
+        <div class="ext-card-header">
+          <div class="ext-card-role">Stanley Ojima</div>
+          <div class="ext-card-loc">Head of Product Design</div>
+        </div>
+        <div class="ext-card-desc">Leads Burlington Consult's product design practice — shaping the visual identity, client-facing interfaces, and end-to-end user experience across the firm's digital platforms and internal tooling.</div>
+        <a href="#" class="ext-card-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== BY THE NUMBERS ===== -->
+<section class="numbers">
+  <div class="dot-grid"></div>
+  <div class="numbers-inner">
+    <div class="num-item reveal"><div class="num-value">100%</div><div class="num-label">Approval rate</div></div>
+    <div class="num-item reveal reveal-delay-1"><div class="num-value">5</div><div class="num-label">Practitioners</div></div>
+    <div class="num-item reveal reveal-delay-2"><div class="num-value">3</div><div class="num-label">Continents</div></div>
+    <div class="num-item reveal reveal-delay-3"><div class="num-value">12 mo</div><div class="num-label">RFE support included</div></div>
+  </div>
+</section>
+
+<!-- ===== ADVISORY NETWORK ===== -->
+<section class="network">
+  <div class="network-inner">
+    <div>
+      <div class="network-overline reveal">Advisory Network</div>
+      <h2 class="reveal reveal-delay-1">Supported by U.S.-based immigration attorneys</h2>
+      <p class="reveal reveal-delay-2">
+        Every petition undergoes independent legal review before submission. Burlington Consult maintains an active network of U.S.-licensed immigration attorneys providing ongoing legal alignment, compliance review, and strategic guidance on evolving USCIS adjudication standards.
+      </p>
+      <p class="reveal reveal-delay-3">
+        The firm also partners with credentialed media outlets for strategic press placement in nationally recognised publications — developed in close collaboration with each petitioner to meet the USCIS evidentiary standard for published material.
+      </p>
+    </div>
+    <div class="network-visual reveal reveal-delay-2">
+      <svg class="network-lines" viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="200" y1="170" x2="200" y2="42" />
+        <line x1="200" y1="170" x2="348" y2="102" />
+        <line x1="200" y1="170" x2="324" y2="268" />
+        <line x1="200" y1="170" x2="168" y2="312" />
+        <line x1="200" y1="170" x2="48" y2="122" />
+      </svg>
+      <div class="net-node center nnc">BC</div>
+      <div class="net-node nn1">Legal</div>
+      <div class="net-node nn2">Press</div>
+      <div class="net-node nn3">Policy</div>
+      <div class="net-node nn4">Research</div>
+      <div class="net-node nn5">Review</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <div class="dot-grid"></div>
+  <div class="cta-inner">
+    <div class="cta-overline reveal">Work With Us</div>
+    <h2 class="reveal reveal-delay-1">Your petition deserves a team that has done this before</h2>
+    <p class="reveal reveal-delay-2">Begin with a 30-minute consultation. We'll assess your profile, identify the strongest pathway, and tell you exactly where you stand.</p>
+    <div class="reveal reveal-delay-3">
+      <a href="/book" class="cta-btn">Book a Consultation →</a>
+      <a href="/services" class="cta-sec">View Services ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2026 Burlington Consult, LLC. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/disclaimer">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+})();
+</script>
+</body>
+</html>
