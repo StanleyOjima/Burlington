@@ -312,6 +312,7 @@ nav {
 .ext-card {
   background: var(--white); border-radius: 16px; border: 1px solid var(--gray-100);
   overflow: hidden; transition: all .4s cubic-bezier(0.16,1,0.3,1); position: relative;
+  display: flex; flex-direction: column;
 }
 .ext-card:hover {
   transform: translateY(-4px);
@@ -346,15 +347,15 @@ nav {
 }
 
 /* Card body */
-.ext-card-body { padding: 22px 24px 26px; }
+.ext-card-body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
 .ext-card-header { margin-bottom: 12px; }
 .ext-card-role {
   font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
   color: var(--gray-700); letter-spacing: -0.01em; margin-bottom: 2px;
 }
 .ext-card-loc { font-size: .78rem; font-weight: 500; color: var(--teal); letter-spacing: 0.04em; }
-.ext-card-desc { font-size: .85rem; font-weight: 300; color: var(--gray-400); line-height: 1.7; margin-bottom: 16px; }
-.ext-card-links { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--gray-100); }
+.ext-card-desc { font-size: .85rem; font-weight: 300; color: var(--gray-400); line-height: 1.7; margin-bottom: 16px; flex: 1; }
+.ext-card-links { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--gray-100); width: 100%; }
 .ext-card-link {
   font-size: .78rem; font-weight: 500; color: var(--teal);
   text-decoration: none; transition: color .3s;
