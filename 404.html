@@ -58,7 +58,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
     <li><a href="/faq">FAQs</a></li>
     <li class="nav-divider"></li>
     <li><a href="/contact">Contact</a></li><li><a href="/book" class="nav-cta">Book a Consultation</a></li></ul><button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.add('open')"><span></span><span></span><span></span></button></nav>
-<div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/career-advisory">Career Advisory</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a></div>
+<div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/career-advisory">Career Advisory</a><a href="/team">Team</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a></div>
 <script>document.addEventListener('DOMContentLoaded',function(){var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');var path=window.location.pathname;if(path.length>1&&path.charAt(path.length-1)==='/')path=path.slice(0,-1);for(var i=0;i<links.length;i++){var href=links[i].getAttribute('href');if(href==='/'&&(path===''||path==='/'))links[i].classList.add('active');else if(href!=='/'&&path.indexOf(href)===0)links[i].classList.add('active');}});</script>
 
 <main class="error-page">
@@ -76,6 +76,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
 <script>
 
 </script>
+<footer>
+  <div style="max-width:1200px;margin:0 auto;padding:40px 0;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;">
+      <div style="font-size:.75rem;color:rgba(255,255,255,.45);line-height:1.8;">Burlington Consult, LLC &middot; Cambridge, MA 02138 &middot; Newark, DE 19713<br><span style="color:rgba(255,255,255,.35);">Delaware File #10543986 &middot; Auth: 203341551</span></div>
+      <div style="display:flex;gap:24px;"><a href="/privacy" style="font-size:.75rem;color:rgba(255,255,255,.5);text-decoration:none;">Privacy</a><a href="/terms" style="font-size:.75rem;color:rgba(255,255,255,.5);text-decoration:none;">Terms</a><a href="/disclaimer" style="font-size:.75rem;color:rgba(255,255,255,.5);text-decoration:none;">Disclaimer</a><a href="/resources" style="font-size:.75rem;color:rgba(255,255,255,.5);text-decoration:none;">Resources</a></div>
+    </div>
+  </div>
+</footer>
 </body>
 
 </html>
