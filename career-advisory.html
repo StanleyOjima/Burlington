@@ -18,7 +18,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .hl{background:linear-gradient(135deg,var(--tb),var(--cy));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* ═══ HERO — full viewport, cinematic ═══ */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px var(--sp) 80px;overflow:hidden;background:radial-gradient(ellipse 65% 50% at 55% 55%,rgba(13,148,136,.12) 0%,transparent 50%),radial-gradient(ellipse 40% 35% at 25% 65%,rgba(6,78,100,.1) 0%,transparent 50%),linear-gradient(160deg,#020810 0%,#051218 20%,#081E2E 45%,#0A2838 55%,#071820 75%,#030A12 100%)}
+.hero{position:relative;min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px var(--sp) 80px;overflow:hidden;background:radial-gradient(ellipse 65% 50% at 55% 55%,rgba(13,148,136,.12) 0%,transparent 50%),radial-gradient(ellipse 40% 35% at 25% 65%,rgba(6,78,100,.1) 0%,transparent 50%),linear-gradient(160deg,#020810 0%,#051218 20%,#081E2E 45%,#0A2838 55%,#071820 75%,#030A12 100%)}
 .hero-grid{position:absolute;inset:0;background-image:radial-gradient(rgba(45,212,191,.12) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 50% 40% at 50% 45%,black,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 50% 40% at 50% 45%,black,transparent 70%);pointer-events:none;opacity:.7}
 .hero-line{position:absolute;inset:0;overflow:hidden;pointer-events:none}.hero-line::before{content:'';position:absolute;width:200%;height:1px;top:0;left:-50%;background:linear-gradient(90deg,transparent,rgba(45,212,191,.15) 40%,rgba(13,148,136,.35) 50%,rgba(45,212,191,.15) 60%,transparent);animation:scan 9s linear infinite}
 @keyframes scan{0%{top:-5%}100%{top:105%}}
@@ -214,6 +214,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-tagline{display:none}.footer-grid{grid-template-columns:1fr;gap:32px}.whatsapp-btn{bottom:20px;left:20px;width:48px;height:48px}.back-to-top{bottom:20px;right:20px;width:40px;height:40px}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 
+@keyframes bobDown{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 </style>
 <meta property="og:title" content="Career Advisory — Burlington Consult">
 <meta property="og:description" content="Strategic career advisory for ambitious professionals competing for the most selective roles, fellowships, and programmes.">
@@ -234,7 +235,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 <div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/career-advisory">Career Advisory</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a></div>
 <script>document.addEventListener('DOMContentLoaded',function(){var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');var path=window.location.pathname;if(path.length>1&&path.charAt(path.length-1)==='/')path=path.slice(0,-1);for(var i=0;i<links.length;i++){var href=links[i].getAttribute('href');if(href==='/'&&(path===''||path==='/'))links[i].classList.add('active');else if(href!=='/'&&path.indexOf(href)===0)links[i].classList.add('active');}});</script>
 
-<!-- HERO -->
+
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-line"></div>
@@ -244,13 +245,19 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
     <p class="hero-sub">Strategic advisory for ambitious professionals competing for the most selective roles, fellowships, and programmes in the world.</p>
     <div class="hero-stats">
       <div class="h-stat"><div class="h-val">$<span class="ctr" data-t="500">0</span>k+</div><div class="h-label">Scholarships secured</div></div>
+    <a href="#packages" style="display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.25);font-size:.8rem;font-weight:400;text-decoration:none;margin-top:44px;transition:color .3s;letter-spacing:.03em;" onmouseover="this.style.color='rgba(45,212,191,.5)'" onmouseout="this.style.color='rgba(255,255,255,.25)'">View packages <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="animation:bobDown 2s ease-in-out infinite"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
+
       <div class="h-stat"><div class="h-val"><span class="ctr" data-t="8">0</span></div><div class="h-label">MBA final-round interviews</div></div>
       <div class="h-stat"><div class="h-val"><span class="ctr" data-t="3">0</span></div><div class="h-label">Continents</div></div>
     </div>
+    <a href="#packages" style="display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.3);font-size:.82rem;font-weight:400;text-decoration:none;margin-top:40px;transition:color .3s;letter-spacing:.03em;" onmouseover="this.style.color='rgba(45,212,191,.6)'" onmouseout="this.style.color='rgba(255,255,255,.3)'">View packages <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="animation:bobDown 2s ease-in-out infinite"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
   </div>
 </section>
 
 <!-- TICKER -->
+
+
+
 <div class="ticker"><div class="ticker-track">
   <div class="ticker-item"><strong>$101,000</strong> Harvard Law School <span class="ticker-sep"></span></div>
   <div class="ticker-item"><strong>$130,000</strong> Georgetown MBA <span class="ticker-sep"></span></div>
@@ -267,6 +274,9 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 </div></div>
 
 <!-- PROMISE + $500K -->
+
+
+
 <section class="s s-w promise">
   <div class="promise-bg">$500k</div>
   <div class="mx">
@@ -286,84 +296,10 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 </section>
 
 <!-- WHAT WE DO — DARK -->
-<section class="s s-d2">
-  <div class="mx">
-    <div class="tag">What We Do</div>
-    <h2 class="s-title" style="color:var(--white);">The full campaign, end to end.</h2>
-    <p class="s-sub">Not generic career coaching. Built around the architecture of competitive hiring at elite organisations.</p>
-    <div class="wwd-grid">
-      <div class="wwd"><div class="wwd-i"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h4>Opportunity Mapping</h4><p>Identify the highest-value roles and programmes in your field, including opportunities most professionals never find.</p></div>
-      <div class="wwd"><div class="wwd-i"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><h4>Story Architecture</h4><p>Position your professional narrative to move decision-makers across resume, LinkedIn, and applications.</p></div>
-      <div class="wwd"><div class="wwd-i"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><h4>Outreach &amp; Networking</h4><p>Personalised outreach scripts, sequencing, and networking plans targeting the right people before you need them.</p></div>
-      <div class="wwd"><div class="wwd-i"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h4>Interview Preparation</h4><p>Behavioural, competency, case, and panel mock interviews with direct, detailed feedback.</p></div>
-      <div class="wwd"><div class="wwd-i"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><h4>Fellowship Strategy</h4><p>Competitive fellowship and selective programme identification and application strategy for your profile.</p></div>
-      <div class="wwd"><div class="wwd-i"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h4>Offer Negotiation</h4><p>Salary negotiation coaching, offer evaluation, and counter-offer strategy for maximum leverage.</p></div>
-    </div>
-  </div>
-</section>
 
-<!-- BIO -->
-<section class="s s-l">
-  <div class="mx">
-    <div class="bio-grid">
-      <div class="bio-aside">
-        <div class="tag">Your Adviser</div>
-        <h2 class="s-title">The person behind your campaign.</h2>
-        <p style="margin-top:8px;">Your engagement will be led directly by someone who has personally navigated and succeeded in some of the most selective hiring processes in the world — from the outside, as a Nigerian professional building a career across three continents in global institutions.</p>
-      </div>
-      <div class="bio-card">
-        <div class="bio-nm">Chukwuebuka "Ebuka" Ogbodo</div>
-        <div class="bio-ti">LL.M. Candidate, Harvard Law School &middot; EB-1A Holder</div>
-        <p>First class, Nigerian Law School — top three nationally. Africa's first Google Policy Fellow. Career spanning three continents at the intersection of technology, law, and public policy.</p>
-        <p><strong style="color:var(--g700);">Meta Platforms</strong> — Public Policy Manager, Anglophone West Africa. <strong style="color:var(--g700);">Luminate</strong> (Omidyar Group) — Responsible Technology &amp; AI Lead. <strong style="color:var(--g700);">Templars</strong> — transactional lawyer on the $3B Nigeria LNG Train 7 and $1.3B Lekki Deep Sea Port.</p>
-        <p>Final-round interviews: <strong style="color:var(--g700);">OpenAI, SpaceX Starlink, X, Bank of America, Tony Blair Institute</strong>. Advanced conversations with TikTok/ByteDance. Headhunted by the Gates Foundation.</p>
-        <div class="bio-creds">
-          <div class="bio-cr"><span class="bio-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Google Policy Fellowship — Africa's first awardee</div>
-          <div class="bio-cr"><span class="bio-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Paul &amp; Daisy Soros Fellowship, Finalist ($90,000 value)</div>
-          <div class="bio-cr"><span class="bio-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Queen Elizabeth Young Global Leaders, Global Finalist</div>
-          <div class="bio-cr"><span class="bio-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Royal Commonwealth Society, Associate Fellow</div>
-          <div class="bio-cr"><span class="bio-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><strong style="color:var(--teal);">$500,000+</strong> in graduate scholarships secured</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- MARKET CONTEXT -->
-<section class="s s-w">
-  <div class="mx" style="max-width:920px;">
-    <div class="tag">Market Context</div>
-    <h2 class="s-title">What this service is worth.</h2>
-    <p style="font-size:.92rem;line-height:1.8;color:var(--g400);font-weight:300;max-width:600px;margin-bottom:0;">Burlington's Signature package covers significantly more ground than a standard executive coaching engagement — and sits below the top end of the market.</p>
-    <div class="mt-wrap">
-      <table class="mt"><thead><tr><th>Provider</th><th>Service</th><th>Price</th></tr></thead><tbody>
-        <tr><td>Find My Profession</td><td>Single 90-min session</td><td>$299</td></tr>
-        <tr><td>A Path That Fits</td><td>Introductory program</td><td>$1,995+</td></tr>
-        <tr><td>Market rate (executive)</td><td>Per hour, senior coaches</td><td>$200–$500/hr</td></tr>
-        <tr><td>Mid-career transition</td><td>4–8 sessions, 2–3 months</td><td>$600–$3,000</td></tr>
-        <tr><td>Executive transition</td><td>3–6 month intensive</td><td>$3,000–$10,000</td></tr>
-        <tr class="hl-row"><td>Burlington Signature</td><td>Full campaign, 4 interviews, network access</td><td>$4,500</td></tr>
-      </tbody></table>
-    </div>
-  </div>
-</section>
 
-<!-- HOW IT WORKS -->
-<section class="s s-l">
-  <div class="mx">
-    <div style="text-align:center;"><div class="tag" style="justify-content:center;">How It Works</div><h2 class="s-title">Five steps. One outcome.</h2></div>
-    <div class="steps">
-      <div class="st"><div class="st-i"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h4>Book</h4><p>Start with a Strategy Session to discuss your profile and targets.</p></div>
-      <div class="st"><div class="st-i"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h4>Assess</h4><p>We identify your strongest angles and build a targeted opportunity list.</p></div>
-      <div class="st"><div class="st-i"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h4>Build</h4><p>Story architecture, resume, LinkedIn, outreach, and positioning.</p></div>
-      <div class="st"><div class="st-i"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h4>Prepare</h4><p>Targeted mock interviews with direct feedback from final-round experience.</p></div>
-      <div class="st"><div class="st-i"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h4>Win</h4><p>Offers, negotiations, and work authorisation strategy.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PACKAGES -->
-<section class="s s-w">
+<section class="s s-w" id="packages">
   <div class="mx">
     <div style="margin-bottom:56px;"><div class="tag">Service Packages</div><h2 class="s-title">Choose your engagement.</h2><p class="s-sub">From a focused session to a full competitive campaign with unlimited support and direct network access.</p></div>
 
@@ -404,6 +340,98 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 </section>
 
 <!-- INDIVIDUAL SERVICES -->
+
+
+
+<section class="s s-l">
+  <div class="mx">
+    <div style="text-align:center;"><div class="tag" style="justify-content:center;">How It Works</div><h2 class="s-title">Five steps. One outcome.</h2></div>
+    <div class="steps">
+      <div class="st"><div class="st-i"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h4>Book</h4><p>Start with a Strategy Session to discuss your profile and targets.</p></div>
+      <div class="st"><div class="st-i"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h4>Assess</h4><p>We identify your strongest angles and build a targeted opportunity list.</p></div>
+      <div class="st"><div class="st-i"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h4>Build</h4><p>Story architecture, resume, LinkedIn, outreach, and positioning.</p></div>
+      <div class="st"><div class="st-i"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h4>Prepare</h4><p>Targeted mock interviews with direct feedback from final-round experience.</p></div>
+      <div class="st"><div class="st-i"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h4>Win</h4><p>Offers, negotiations, and work authorisation strategy.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+
+
+
+<section class="s s-d2">
+  <div class="mx">
+    <div class="tag">What We Do</div>
+    <h2 class="s-title" style="color:var(--white);">The full campaign, end to end.</h2>
+    <p class="s-sub">Not generic career coaching. Built around the architecture of competitive hiring at elite organisations.</p>
+    <div class="wwd-grid">
+      <div class="wwd"><div class="wwd-i"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h4>Opportunity Mapping</h4><p>Identify the highest-value roles and programmes in your field, including opportunities most professionals never find.</p></div>
+      <div class="wwd"><div class="wwd-i"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><h4>Story Architecture</h4><p>Position your professional narrative to move decision-makers across resume, LinkedIn, and applications.</p></div>
+      <div class="wwd"><div class="wwd-i"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div><h4>Outreach &amp; Networking</h4><p>Personalised outreach scripts, sequencing, and networking plans targeting the right people before you need them.</p></div>
+      <div class="wwd"><div class="wwd-i"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h4>Interview Preparation</h4><p>Behavioural, competency, case, and panel mock interviews with direct, detailed feedback.</p></div>
+      <div class="wwd"><div class="wwd-i"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><h4>Fellowship Strategy</h4><p>Competitive fellowship and selective programme identification and application strategy for your profile.</p></div>
+      <div class="wwd"><div class="wwd-i"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h4>Offer Negotiation</h4><p>Salary negotiation coaching, offer evaluation, and counter-offer strategy for maximum leverage.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+
+
+
+<section class="s s-l">
+  <div class="mx">
+    <div class="bio-grid">
+      <div class="bio-aside">
+        <div class="tag">Your Adviser</div>
+        <h2 class="s-title">The person behind your campaign.</h2>
+        <p style="margin-top:8px;">Your engagement will be led directly by someone who has personally navigated and succeeded in some of the most selective hiring processes in the world — from the outside, as a Nigerian professional building a career across three continents in global institutions.</p>
+      </div>
+      <div class="bio-card">
+        <div class="bio-nm">Chukwuebuka "Ebuka" Ogbodo</div>
+        <div class="bio-ti">LL.M. Candidate, Harvard Law School &middot; EB-1A Holder</div>
+        <p>First class, Nigerian Law School — top three nationally. Africa's first Google Policy Fellow. Career spanning three continents at the intersection of technology, law, and public policy.</p>
+        <p><strong style="color:var(--g700);">Meta Platforms</strong> — Public Policy Manager, Anglophone West Africa. <strong style="color:var(--g700);">Luminate</strong> (Omidyar Group) — Responsible Technology &amp; AI Lead. <strong style="color:var(--g700);">Templars</strong> — transactional lawyer on the $3B Nigeria LNG Train 7 and $1.3B Lekki Deep Sea Port.</p>
+        <p>Final-round interviews: <strong style="color:var(--g700);">OpenAI, SpaceX Starlink, X, Bank of America, Tony Blair Institute</strong>. Advanced conversations with TikTok/ByteDance. Headhunted by the Gates Foundation.</p>
+        <div class="bio-creds">
+          <div class="bio-cr"><span class="bio-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Google Policy Fellowship — Africa's first awardee</div>
+          <div class="bio-cr"><span class="bio-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Paul &amp; Daisy Soros Fellowship, Finalist ($90,000 value)</div>
+          <div class="bio-cr"><span class="bio-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Queen Elizabeth Young Global Leaders, Global Finalist</div>
+          <div class="bio-cr"><span class="bio-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Royal Commonwealth Society, Associate Fellow</div>
+          <div class="bio-cr"><span class="bio-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><strong style="color:var(--teal);">$500,000+</strong> in graduate scholarships secured</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET CONTEXT -->
+
+
+
+<section class="s s-w">
+  <div class="mx" style="max-width:920px;">
+    <div class="tag">Market Context</div>
+    <h2 class="s-title">What this service is worth.</h2>
+    <p style="font-size:.92rem;line-height:1.8;color:var(--g400);font-weight:300;max-width:600px;margin-bottom:0;">Burlington's Signature package covers significantly more ground than a standard executive coaching engagement — and sits below the top end of the market.</p>
+    <div class="mt-wrap">
+      <table class="mt"><thead><tr><th>Provider</th><th>Service</th><th>Price</th></tr></thead><tbody>
+        <tr><td>Find My Profession</td><td>Single 90-min session</td><td>$299</td></tr>
+        <tr><td>A Path That Fits</td><td>Introductory program</td><td>$1,995+</td></tr>
+        <tr><td>Market rate (executive)</td><td>Per hour, senior coaches</td><td>$200–$500/hr</td></tr>
+        <tr><td>Mid-career transition</td><td>4–8 sessions, 2–3 months</td><td>$600–$3,000</td></tr>
+        <tr><td>Executive transition</td><td>3–6 month intensive</td><td>$3,000–$10,000</td></tr>
+        <tr class="hl-row"><td>Burlington Signature</td><td>Full campaign, 4 interviews, network access</td><td>$4,500</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+
+
+
 <section class="s s-l">
   <div class="mx" style="max-width:920px;">
     <div class="tag">À La Carte</div>
@@ -423,6 +451,9 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 </section>
 
 <!-- CTA -->
+
+
+
 <section class="s s-d cta" style="padding-top:110px;padding-bottom:140px;">
   <div class="cta-grid"></div>
   <div class="cta-c mx">
