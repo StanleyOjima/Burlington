@@ -32,10 +32,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 var(
 .nav-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 3px; }
 .nav-logo-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--teal-bright); box-shadow: 0 0 12px rgba(45,212,191,.5); }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-.nav-links a { font-size: .84rem; font-weight: 400; color: rgba(255,255,255,.5); text-decoration: none; transition: color .3s; position: relative; }
-.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--teal-bright); transition: width .3s; }
-.nav-links a:hover { color: var(--white); }
-.nav-links a:hover::after { width: 100%; }
 .nav-cta { font-size: .82rem; font-weight: 500; color: var(--white) !important; background: linear-gradient(135deg, var(--teal), var(--teal-light)); padding: 10px 24px; border-radius: 8px; text-decoration: none; box-shadow: 0 0 20px rgba(13,148,136,.25), inset 0 1px 0 rgba(255,255,255,.1); transition: all .3s; }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { box-shadow: 0 0 32px rgba(13,148,136,.4); transform: translateY(-1px); }
