@@ -186,6 +186,21 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-tagline{display:none}.footer-grid{grid-template-columns:1fr;gap:32px}.whatsapp-btn{bottom:20px;left:20px;width:48px;height:48px}.back-to-top{bottom:20px;right:20px;width:40px;height:40px}}
 
+
+/* TRUST SECTION */
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:56px}
+.adviser-mini{display:flex;gap:20px;align-items:flex-start;padding:28px 32px;background:var(--white);border:1px solid var(--g100);border-radius:18px;margin-bottom:32px}
+.adviser-avatar{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,rgba(13,148,136,.1),rgba(13,148,136,.05));border:1px solid rgba(13,148,136,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--sf);font-size:1.2rem;font-weight:600;color:var(--teal)}
+.adviser-mini-text h4{font-family:var(--sf);font-size:1.05rem;font-weight:500;color:var(--g700);margin-bottom:2px}
+.adviser-mini-text p{font-size:.82rem;color:var(--g400);font-weight:300;line-height:1.6;margin:0}
+.trust-points{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.trust-point{padding:28px 24px;background:var(--white);border:1px solid var(--g100);border-radius:16px;transition:all .35s cubic-bezier(.16,1,.3,1)}
+.trust-point:hover{border-color:rgba(13,148,136,.12);transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,.04)}
+.trust-icon{width:40px;height:40px;border-radius:12px;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--teal)}
+.trust-point h4{font-family:var(--sf);font-size:.95rem;font-weight:500;color:var(--g700);margin-bottom:6px}
+.trust-point p{font-size:.8rem;line-height:1.65;color:var(--g400);font-weight:300}
+@media(max-width:1024px){.trust-grid{grid-template-columns:1fr;gap:40px}}
+@media(max-width:700px){.trust-points{grid-template-columns:1fr}}
 </style>
 <meta property="og:title" content="Services — Burlington Consult">
 <meta property="og:description" content="Immigration strategy and elite graduate admissions advisory for high-achieving professionals.">
@@ -255,9 +270,20 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
           <h2>EB-1A &amp; EB-2 NIW Petition Development</h2>
           <p>Full-service strategic advisory for the two most distinguished self-petitioned U.S. green card pathways. Both petitions filed simultaneously, preserving a single priority date.</p>
           <p style="margin-top:16px;">Every engagement begins with the field of endeavour — the single most consequential decision in any petition.</p>
+          <p style="margin-top:16px;font-size:.84rem;line-height:1.7;color:rgba(255,255,255,.45);font-weight:300;padding:16px 20px;border-left:2px solid rgba(45,212,191,.2);background:rgba(45,212,191,.03);border-radius:0 8px 8px 0;">Led by a Harvard Law School-trained strategist who is a self-petitioned, first-submission EB-1A holder.</p>
           <a href="/eb1a" class="imm-link">Learn more about EB-1A &rarr;</a>
         </div>
         <div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+            <div style="padding:20px 24px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);">
+              <div style="font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--tb);margin-bottom:8px;">Regulatory change pending</div>
+              <p style="font-size:.8rem;line-height:1.65;color:rgba(255,255,255,.35);font-weight:300;">Proposed rules would raise evidentiary thresholds. Petitions filed now are assessed against current, more favourable standards.</p>
+            </div>
+            <div style="padding:20px 24px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);">
+              <div style="font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--tb);margin-bottom:8px;">Priority date set on filing</div>
+              <p style="font-size:.8rem;line-height:1.65;color:rgba(255,255,255,.35);font-weight:300;">Your queue position is established the day USCIS receives the I-140. Every month of delay is a month later in line.</p>
+            </div>
+          </div>
           <div class="eng-card">
             <div class="eng-head"><h3>Dual Petition Advisory Engagement</h3><p>EB-1A Extraordinary Ability + EB-2 National Interest Waiver</p></div>
             <div class="eng-body">
@@ -278,6 +304,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
                 <div class="ms"><span class="ms-label">Expenses retainer (press + legal)</span><span class="ms-val">$5,000</span></div>
               </div>
               <a href="/book" class="eng-cta" style="margin-top:32px;">Book a Consultation — $250 &rarr;</a>
+              <p style="font-size:.74rem;color:rgba(255,255,255,.25);text-align:center;margin-top:14px;font-weight:300;">The $250 consultation fee is credited in full toward the engagement fee if you proceed within 30 days.</p>
             </div>
           </div>
         </div>
@@ -323,6 +350,24 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
             <div class="pkg feat"><span class="p-badge p-b-p">Recommended</span><div class="p-nm">Signature</div><div class="p-pr"><span>$5,000</span><span>Up to 5 schools</span></div><p class="p-desc">Full story architecture, scholarship-optimised strategy, interview prep, and visa support.</p><div class="p-feats"><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>All Core deliverables, 5 schools</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Scholarship-optimised strategy</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>4 mock interviews + waitlist strategy</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Study permit + visa support</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Direct access to Ebuka</div></div><div class="p-div"></div><a href="/book" class="p-cta p-cta-p">Get Started &rarr;</a></div>
             <div class="pkg feat"><span class="p-badge p-b-p">Unlimited</span><div class="p-nm">Elite</div><div class="p-pr"><span>$8,500</span><span>Unlimited schools</span></div><p class="p-desc">No school cap, unlimited essay and interview support, 48-hour turnaround.</p><div class="p-feats"><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>All Signature, no caps</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Unlimited essays + mock interviews</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>48-hour priority turnaround</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Scholarship negotiation + appeal letters</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Post-admission career counselling</div></div><div class="p-div"></div><a href="/book" class="p-cta p-cta-p">Get Started &rarr;</a></div>
           </div>
+
+          <!-- INDIVIDUAL SERVICES -->
+          <div class="row-label" style="margin-top:48px;">À La Carte</div>
+          <div style="border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.02);">
+            <table style="width:100%;border-collapse:collapse;">
+              <tr style="border-bottom:1px solid rgba(255,255,255,.05);"><td style="padding:16px 24px;font-size:.86rem;color:rgba(255,255,255,.45);font-weight:400;">Personal Statement Draft &amp; Review</td><td style="padding:16px 24px;text-align:right;font-family:var(--sf);font-weight:600;font-size:.92rem;color:var(--white);">$750</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.05);"><td style="padding:16px 24px;font-size:.86rem;color:rgba(255,255,255,.45);font-weight:400;">Additional school added to any package</td><td style="padding:16px 24px;text-align:right;font-family:var(--sf);font-weight:600;font-size:.92rem;color:var(--white);">$500</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.05);"><td style="padding:16px 24px;font-size:.86rem;color:rgba(255,255,255,.45);font-weight:400;">Interview Preparation Session (60 min)</td><td style="padding:16px 24px;text-align:right;font-family:var(--sf);font-weight:600;font-size:.92rem;color:var(--white);">$350</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.05);"><td style="padding:16px 24px;font-size:.86rem;color:rgba(255,255,255,.45);font-weight:400;">Scholarship Negotiation &amp; Appeal Letter</td><td style="padding:16px 24px;text-align:right;font-family:var(--sf);font-weight:600;font-size:.92rem;color:var(--white);">$400</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.05);"><td style="padding:16px 24px;font-size:.86rem;color:rgba(255,255,255,.45);font-weight:400;">Recommendation Letter Strategy &amp; Briefing</td><td style="padding:16px 24px;text-align:right;font-family:var(--sf);font-weight:600;font-size:.92rem;color:var(--white);">$300</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.05);"><td style="padding:16px 24px;font-size:.86rem;color:rgba(255,255,255,.45);font-weight:400;">Resume Rewrite for Graduate Applications</td><td style="padding:16px 24px;text-align:right;font-family:var(--sf);font-weight:600;font-size:.92rem;color:var(--white);">$400</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.05);"><td style="padding:16px 24px;font-size:.86rem;color:rgba(255,255,255,.45);font-weight:400;">School List Audit &amp; Strategic Repositioning</td><td style="padding:16px 24px;text-align:right;font-family:var(--sf);font-weight:600;font-size:.92rem;color:var(--white);">$350</td></tr>
+              <tr><td style="padding:16px 24px;font-size:.86rem;color:rgba(255,255,255,.45);font-weight:400;">Study Permit / Visa Application Support</td><td style="padding:16px 24px;text-align:right;font-family:var(--sf);font-weight:600;font-size:.92rem;color:var(--white);">$500</td></tr>
+            </table>
+          </div>
+
+          <!-- Consultation credit -->
+          <p style="font-size:.74rem;color:rgba(255,255,255,.25);text-align:center;margin-top:24px;font-weight:300;">The $250 consultation fee is credited in full toward any package if you proceed within 30 days.</p>
         </div>
       </div>
     </div>
@@ -331,6 +376,50 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 </section>
 
 <!-- CTA -->
+
+<!-- WHY BURLINGTON — trust section -->
+<section class="s s-l">
+  <div class="mx">
+    <div class="tag">Why Burlington</div>
+    <h2 class="s-title">Built around the people<br>who've done it themselves.</h2>
+    <div class="trust-grid">
+      <div class="trust-left">
+        <div class="adviser-mini">
+          <div class="adviser-avatar">EO</div>
+          <div class="adviser-mini-text">
+            <h4>Chukwuebuka "Ebuka" Ogbodo</h4>
+            <p>LL.M. Candidate, Harvard Law School. Self-petitioned EB-1A holder, approved on first submission. Africa's first Google Policy Fellow. Over $500,000 in graduate scholarships secured.</p>
+          </div>
+        </div>
+        <p style="font-size:.95rem;line-height:1.9;color:var(--g400);font-weight:300;margin-bottom:20px;">Burlington Consult is led by a practitioner, not a consultant. Every engagement is informed by direct experience navigating the systems we advise on &mdash; from USCIS adjudication standards to final-round MBA interviews at Harvard, Stanford, and Wharton.</p>
+        <p style="font-size:.95rem;line-height:1.9;color:var(--g400);font-weight:300;">We specialise in high-achieving professionals from Africa and the Global South who are entering or advancing within the U.S. system. We understand the specific challenges of that journey because we've lived it.</p>
+      </div>
+      <div class="trust-points">
+        <div class="trust-point">
+          <div class="trust-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <h4>First-Submission Approval</h4>
+          <p>Our lead adviser's own EB-1A was approved on the first submission. No RFE. No resubmission.</p>
+        </div>
+        <div class="trust-point">
+          <div class="trust-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <h4>$500k+ Secured</h4>
+          <p>In scholarships and fellowships from Harvard, Georgetown, Michigan Ross, USC, and Columbia.</p>
+        </div>
+        <div class="trust-point">
+          <div class="trust-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h4>Global Network</h4>
+          <p>Professional network spanning Meta, Google, Harvard, and the global policy sector. Introductions where applicable.</p>
+        </div>
+        <div class="trust-point">
+          <div class="trust-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+          <h4>12-Month RFE Cover</h4>
+          <p>Every immigration engagement includes a full year of RFE and NOID response support at no additional cost.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="s cta" style="padding:110px var(--sp) 140px;">
   <div class="cta-grid"></div>
   <div class="mx">
