@@ -191,13 +191,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--sp);height:
 .nav-hamburger:hover{box-shadow:0 0 16px rgba(45,212,191,.15);border-color:rgba(45,212,191,.3)}
 .nav-hamburger span{display:block;width:18px;height:1.5px;background:var(--tb,#2DD4BF);transition:all .3s}
 .nav-hamburger span:nth-child(2){width:14px}
-
-
-
-
-
-
-
 /* FOOTER */
 footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px solid rgba(45,212,191,.08);padding:72px var(--sp) 40px}
 .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
@@ -215,9 +208,6 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex;width:36px;height:36px}.nav-tagline{display:none}.footer-grid{grid-template-columns:1fr;gap:32px}.whatsapp-btn{bottom:20px;left:20px;width:48px;height:48px}.back-to-top{bottom:20px;right:20px;width:40px;height:40px}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
-
-
-
 .hero-pkg-btn{display:inline-flex;align-items:center;gap:10px;margin-top:48px;padding:12px 28px;font-size:.82rem;font-weight:500;color:var(--tb);text-decoration:none;border:1px solid rgba(45,212,191,.2);border-radius:100px;background:rgba(13,148,136,.06);backdrop-filter:blur(8px);transition:all .3s cubic-bezier(.16,1,.3,1);letter-spacing:.03em}
 .hero-pkg-btn:hover{border-color:rgba(45,212,191,.4);background:rgba(13,148,136,.12);transform:translateY(-2px);box-shadow:0 0 20px rgba(13,148,136,.15)}
 .hero-pkg-btn svg{animation:bobDown 2s ease-in-out infinite}
@@ -250,7 +240,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 .mobile-nav{display:none;position:fixed;inset:0;background:rgba(4,10,15,.98);backdrop-filter:blur(24px);z-index:9999;flex-direction:column;justify-content:center;padding:48px 40px}
 .mobile-nav.open{display:flex}
 .mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.5);cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .3s}
-.mobile-nav-close:hover{color:var(--white,#fff);border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.05)}
+
 .mobile-nav-link{display:flex;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none;transition:color .3s}
 .mobile-nav-link:last-of-type{border-bottom:none}
 .mobile-nav-link:hover .mn-text{color:var(--tb,#2DD4BF)}
@@ -280,8 +270,6 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 <div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">01</span><span class="mn-text">Home</span></a><a href="/about" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">02</span><span class="mn-text">About</span></a><a href="/services" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">03</span><span class="mn-text">Services</span></a><a href="/career-advisory" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">04</span><span class="mn-text">Career Advisory</span></a><a href="/team" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">05</span><span class="mn-text">Team</span></a><a href="/faq" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">06</span><span class="mn-text">FAQs</span></a><a href="/contact" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">07</span><span class="mn-text">Contact</span></a><a href="/book" class="mobile-nav-cta">Book a Consultation</a></div>
 
 <script>document.addEventListener('DOMContentLoaded',function(){var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');var path=window.location.pathname;if(path.length>1&&path.charAt(path.length-1)==='/')path=path.slice(0,-1);for(var i=0;i<links.length;i++){var href=links[i].getAttribute('href');if(href==='/'&&(path===''||path==='/'))links[i].classList.add('active');else if(href!=='/'&&path.indexOf(href)===0)links[i].classList.add('active');}});</script>
-
-
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-line"></div>
@@ -300,9 +288,6 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 </section>
 
 <!-- TICKER -->
-
-
-
 <div class="ticker"><div class="ticker-track">
   <div class="ticker-item"><strong>$101,000</strong> Harvard Law School <span class="ticker-sep"></span></div>
   <div class="ticker-item"><strong>$130,000</strong> Georgetown MBA <span class="ticker-sep"></span></div>
@@ -319,9 +304,6 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 </div></div>
 
 <!-- PROMISE + $500K -->
-
-
-
 <section class="s s-d promise">
   <div class="promise-bg" style="color:rgba(45,212,191,.04);">$500k</div>
   <div class="mx">
@@ -341,9 +323,6 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 </section>
 
 <!-- WHAT WE DO — DARK -->
-
-
-
 <section class="s s-l" id="packages">
   <div class="pkg-layout">
     <div class="pkg-header">
@@ -446,9 +425,6 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 </section>
 
 <!-- INDIVIDUAL SERVICES -->
-
-
-
 <section class="s s-l">
   <div class="mx">
     <div style="text-align:center;"><div class="tag" style="justify-content:center;">How It Works</div><h2 class="s-title">Five steps. One outcome.</h2></div>
@@ -463,9 +439,6 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 </section>
 
 <!-- PACKAGES -->
-
-
-
 <section class="s s-d2">
   <div class="mx">
     <div class="tag">What We Do</div>
@@ -483,9 +456,6 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 </section>
 
 <!-- BIO -->
-
-
-
 <section class="s s-l">
   <div class="mx">
     <div class="bio-grid">
@@ -513,9 +483,6 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 </section>
 
 <!-- MARKET CONTEXT -->
-
-
-
 <section class="s s-w">
   <div class="mx" style="max-width:920px;">
     <div class="tag">Market Context</div>
@@ -535,9 +502,6 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 </section>
 
 <!-- HOW IT WORKS -->
-
-
-
 <section class="s s-l">
   <div class="mx" style="max-width:920px;">
     <div class="tag">À La Carte</div>
@@ -557,9 +521,6 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 </section>
 
 <!-- CTA -->
-
-
-
 <section class="s s-d cta" style="padding-top:110px;padding-bottom:140px;">
   <div class="cta-grid"></div>
   <div class="cta-c mx">
@@ -569,9 +530,6 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
     <a href="/book" class="btn">Book a Strategy Session — $250 <span class="btn-arr">&rarr;</span></a>
   </div>
 </section>
-
-
-
 <script>
 // Counter animation
 function animCtrs(){document.querySelectorAll('.ctr').forEach(function(el){var t=+el.getAttribute('data-t'),d=1400,s=null;function step(ts){if(!s)s=ts;var p=Math.min((ts-s)/d,1);el.textContent=Math.floor((1-Math.pow(1-p,3))*t);if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);});}
