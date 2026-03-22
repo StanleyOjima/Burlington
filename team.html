@@ -162,7 +162,7 @@ nav {
 
 /* ===== LEAD PROFILE — CINEMATIC ===== */
 .profile-section {
-  position: relative; padding: var(--section-pad) var(--side-pad); overflow: hidden;
+  position: relative; padding: clamp(48px,6vw,80px) var(--side-pad); overflow: hidden; min-height: 0;
 }
 .profile-section.bg-white { background: var(--off-white); }
 .profile-section.bg-light { background: var(--light-gray); }
@@ -174,7 +174,7 @@ nav {
 }
 .profile-inner {
   max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: 380px 1fr; gap: 72px; align-items: start;
+  display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: start;
 }
 /* Portrait */
 .portrait-wrap { position: relative; }
@@ -209,7 +209,7 @@ nav {
 /* Profile text */
 .profile-text { padding-top: 12px; }
 .profile-overline {
-  font-size: .72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: .68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--teal); margin-bottom: 16px;
 }
 .profile-name {
@@ -263,7 +263,7 @@ nav {
 
 @media (max-width: 900px) {
   .profile-inner { grid-template-columns: 1fr; gap: 40px; }
-  .portrait-wrap { max-width: 340px; }
+  .portrait-wrap { max-width: 280px; }
   .stat-float { right: -16px; bottom: 20px; }
   .highlight-row { flex-direction: column; gap: 4px; }
   .highlight-label { flex: none; }
