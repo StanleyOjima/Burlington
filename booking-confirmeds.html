@@ -22,7 +22,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
 .nav-tagline{font-family:var(--sans);font-size:.6rem;font-weight:400;color:rgba(255,255,255,.25);letter-spacing:.08em;text-transform:uppercase;margin-left:10px;padding-left:10px;border-left:1px solid rgba(255,255,255,.1)}
 .nav-links{display:flex;align-items:center;gap:0;list-style:none}
 .nav-links li{display:flex;align-items:center}
-.nav-links a{font-size:.84rem;font-weight:400;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s;padding:0 16px}
+.nav-links a{position:relative;font-size:.84rem;font-weight:400;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s;padding:0 16px}
 .nav-links a:hover{color:var(--white)}
 .nav-links a.active,.nav-links a.active:hover{color:var(--teal-bright);font-weight:500}
 .nav-links a.active:hover::after{content:'';position:absolute;bottom:-4px;left:16px;right:16px;height:1.5px;border-radius:1px;background:var(--teal-bright);opacity:.6}
