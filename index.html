@@ -227,7 +227,7 @@ footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1p
   .nav-hamburger{display:flex;width:38px;height:38px}
   .nav-tagline{display:none}
   .hero{min-height:auto;padding:140px 24px 80px}
-  .hero-stats{flex-direction:column;gap:28px}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center}
   .hero-stat{padding:0}
   .hero-stat+.hero-stat::before{display:none}
   .section{padding:80px 24px}
@@ -282,8 +282,12 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 .mobile-nav-link:hover .mn-text{color:var(--tb,#2DD4BF)}
 .mn-num{font-size:.7rem;color:rgba(45,212,191,.35);font-weight:400;min-width:20px;font-family:var(--sn,var(--sans,'Inter',sans-serif))}
 .mn-text{font-family:var(--sf,var(--serif,'Playfair Display',Georgia,serif));font-size:1.4rem;color:rgba(255,255,255,.6);transition:color .3s}
-.mobile-nav-cta{display:inline-flex;padding:12px 32px;background:linear-gradient(135deg,var(--teal,#0D9488),var(--tb,#2DD4BF));color:var(--white,#fff);font-family:var(--sn,var(--sans,'Inter',sans-serif));font-size:.86rem;font-weight:500;border-radius:10px;text-decoration:none;margin-top:32px;transition:all .3s;box-shadow:0 4px 20px rgba(13,148,136,.25)}
+.mobile-nav-cta{display:inline-flex;padding:12px 32px;max-width:280px;background:linear-gradient(135deg,var(--teal,#0D9488),var(--tb,#2DD4BF));color:var(--white,#fff);font-family:var(--sn,var(--sans,'Inter',sans-serif));font-size:.86rem;font-weight:500;border-radius:10px;text-decoration:none;margin-top:32px;transition:all .3s;box-shadow:0 4px 20px rgba(13,148,136,.25)}
 .mobile-nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(13,148,136,.35)}
+.career-promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:56px}
+@media(max-width:768px){.career-promo-grid{grid-template-columns:1fr;gap:40px}}
+@media(max-width:768px){.about-stat-card{padding:20px 16px}.about-stat-card .cred-stat-value{font-size:1.4rem}.about-stats-grid{grid-template-columns:repeat(3,1fr);gap:12px}}
+@media(max-width:480px){.glance-grid{grid-template-columns:1fr;gap:16px}}
 </style>
 <meta property="og:title" content="Burlington Consult — Immigration Strategy & Advisory">
 <meta property="og:description" content="Einstein Visa (EB-1A) and NIW (EB-2) petitions for high-achieving professionals. The fastest path to a U.S. green card without an employer sponsor.">
@@ -320,7 +324,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
     <li><a href="/contact">Contact</a></li>
     <li><a href="/book" class="nav-cta">Book a Consultation</a></li>
   </ul>
-  <button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.add('open')"><span></span><span></span><span></span></button>
+  <button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">01</span><span class="mn-text">Home</span></a><a href="/about" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">02</span><span class="mn-text">About</span></a><a href="/services" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">03</span><span class="mn-text">Services</span></a><a href="/career-advisory" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">04</span><span class="mn-text">Career Advisory</span></a><a href="/team" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">05</span><span class="mn-text">Team</span></a><a href="/faq" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">06</span><span class="mn-text">FAQs</span></a><a href="/contact" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">07</span><span class="mn-text">Contact</span></a><a href="/book" class="mobile-nav-cta">Book a Consultation</a></div>
 <script>document.addEventListener('DOMContentLoaded',function(){var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');var path=window.location.pathname;if(path.length>1&&path.charAt(path.length-1)==='/')path=path.slice(0,-1);for(var i=0;i<links.length;i++){var href=links[i].getAttribute('href');if(href==='/'&&(path===''||path==='/'))links[i].classList.add('active');else if(href!=='/'&&path.indexOf(href)===0)links[i].classList.add('active');}});</script>
@@ -484,7 +488,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
       <div class="section-label">New Service</div>
       <h2 class="section-title">Your career is a campaign. Run it like one.</h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:56px;">
+    <div class="career-promo-grid">
       <div class="animate-on-scroll stagger-1">
         <p style="font-size:.92rem;line-height:1.8;color:var(--gray-400);font-weight:300;margin-bottom:20px;max-width:480px;">Burlington Consult's Career Advancement Advisory works with ambitious professionals competing for the most selective roles, fellowships, and programmes in law, tech, finance, government, and global development.</p>
         <p style="font-size:.92rem;line-height:1.8;color:var(--gray-400);font-weight:300;margin-bottom:20px;max-width:480px;">Led by someone who has interviewed at final rounds at Harvard, Stanford, Wharton, OpenAI, and the Tony Blair Institute — and built a career across Meta, Google, and Harvard Law from outside the U.S. system entirely.</p>
