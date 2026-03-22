@@ -215,6 +215,9 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 
 
+
+.pkg-layout{display:grid;grid-template-columns:0.8fr 1.4fr;gap:64px;align-items:start}
+@media(max-width:1024px){.pkg-layout{grid-template-columns:1fr!important;gap:48px!important}.pkg-layout>div:first-child{position:static!important}}
 .hero-pkg-btn{display:inline-flex;align-items:center;gap:10px;margin-top:48px;padding:12px 28px;font-size:.82rem;font-weight:500;color:var(--tb);text-decoration:none;border:1px solid rgba(45,212,191,.2);border-radius:100px;background:rgba(13,148,136,.06);backdrop-filter:blur(8px);transition:all .3s cubic-bezier(.16,1,.3,1);letter-spacing:.03em}
 .hero-pkg-btn:hover{border-color:rgba(45,212,191,.4);background:rgba(13,148,136,.12);transform:translateY(-2px);box-shadow:0 0 20px rgba(13,148,136,.15)}
 .hero-pkg-btn svg{animation:bobDown 2s ease-in-out infinite}
@@ -237,7 +240,6 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 <body>
 <nav><a href="/" class="nav-logo">Burlington<span class="nav-logo-dot"></span><span class="nav-tagline">Immigration Advisory</span></a><ul class="nav-links"><li><a href="/about">About</a></li><li class="nav-divider"></li><li><a href="/services">Services</a></li><li class="nav-divider"></li><li><a href="/career-advisory">Career Advisory</a></li><li class="nav-divider"></li><li><a href="/faq">FAQs</a></li><li class="nav-divider"></li><li><a href="/contact">Contact</a></li><li><a href="/book" class="nav-cta">Book a Consultation</a></li></ul><button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.add('open')"><span></span><span></span><span></span></button></nav>
 <div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/career-advisory">Career Advisory</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a></div>
-    <a href="#packages" class="hero-pkg-btn">View packages <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
 
 <script>document.addEventListener('DOMContentLoaded',function(){var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');var path=window.location.pathname;if(path.length>1&&path.charAt(path.length-1)==='/')path=path.slice(0,-1);for(var i=0;i<links.length;i++){var href=links[i].getAttribute('href');if(href==='/'&&(path===''||path==='/'))links[i].classList.add('active');else if(href!=='/'&&path.indexOf(href)===0)links[i].classList.add('active');}});</script>
 
@@ -255,6 +257,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
       <div class="h-stat"><div class="h-val"><span class="ctr" data-t="8">0</span></div><div class="h-label">MBA final-round interviews</div></div>
       <div class="h-stat"><div class="h-val"><span class="ctr" data-t="3">0</span></div><div class="h-label">Continents</div></div>
     </div>
+      <a href="#packages" class="hero-pkg-btn">View packages <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
   </div>
 </section>
 
@@ -303,42 +306,47 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 
 
 
-<section class="s s-w" id="packages">
-  <div class="mx">
-    <div style="margin-bottom:56px;"><div class="tag">Service Packages</div><h2 class="s-title">Choose your engagement.</h2><p class="s-sub">From a focused session to a full competitive campaign with unlimited support and direct network access.</p></div>
-
-    <!-- ENTRY — centered single card -->
-    <div class="row-label" style="font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--g300);margin-bottom:20px;">Entry Point</div>
-    <div class="entry-wrap">
-      <div class="entry-card">
-        <span class="p-badge p-b-d" style="margin:0 auto 22px;">Strategy Session</span>
-        <div class="p-nm">Strategy Session</div>
-        <div class="p-pr" style="justify-content:center;"><span>$250</span><span>60 minutes</span></div>
-        <p class="p-desc" style="min-height:auto;max-width:400px;margin:0 auto 24px;">Full consultation with execution plan, resume and LinkedIn review, and written recommendations delivered after the session.</p>
-        <div class="p-feats" style="max-width:380px;margin:0 auto 28px;text-align:left;">
-          <div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Background + target opportunity review</div>
-          <div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Resume + LinkedIn review with feedback</div>
-          <div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>AI tools + job search strategy</div>
-          <div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Fellowship + programme identification</div>
-          <div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Written summary delivered after session</div>
+<section class="s s-l" id="packages">
+  <div class="mx" class="pkg-layout">
+    <div style="position:sticky;top:100px;">
+      <div class="tag">Service Packages</div>
+      <h2 class="s-title">Choose your<br>engagement.</h2>
+      <p class="s-sub">From a focused session to a full competitive campaign with unlimited support and direct network access.</p>
+    </div>
+    <div>
+      <!-- ENTRY — centered single card -->
+      <div style="font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--g300);margin-bottom:20px;">Entry Point</div>
+      <div style="display:flex;justify-content:center;margin-bottom:36px;">
+        <div class="pkg" style="max-width:100%;width:100%;text-align:center;">
+          <span class="p-badge p-b-d" style="margin:0 auto 22px;">Strategy Session</span>
+          <div class="p-nm">Strategy Session</div>
+          <div class="p-pr" style="justify-content:center;"><span>$250</span><span>60 minutes</span></div>
+          <p class="p-desc" style="min-height:auto;">Full consultation with execution plan, resume and LinkedIn review, and written recommendations.</p>
+          <div class="p-feats" style="text-align:left;">
+            <div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Background + target opportunity review</div>
+            <div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Resume + LinkedIn review with feedback</div>
+            <div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>AI tools + job search strategy</div>
+            <div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Fellowship + programme identification</div>
+            <div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Written summary delivered after session</div>
+          </div>
+          <div class="p-div"></div>
+          <a href="/book" class="p-cta p-cta-o">Book Now &rarr;</a>
         </div>
-        <div class="p-div"></div>
-        <a href="/book" class="p-cta p-cta-o" style="max-width:320px;margin:0 auto;">Book Now &rarr;</a>
       </div>
-    </div>
 
-    <!-- FULL-SERVICE -->
-    <div class="row-label" style="font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--g300);margin-bottom:20px;">Full-Service Packages</div>
-    <div class="pkg-grid" style="margin-bottom:32px;">
-      <div class="pkg mid"><span class="p-badge p-b-m">Focused</span><div class="p-nm">Essentials</div><div class="p-pr"><span>$1,200</span><span>1 focused engagement</span></div><p class="p-desc">Resume rewrite, LinkedIn optimisation, cold outreach framework, and one mock interview.</p><div class="p-feats"><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Resume rewrite for U.S. market</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>LinkedIn audit + full optimisation</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Cold outreach framework + templates</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>1 mock interview with direct feedback</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Job search strategy</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Email support throughout</div></div><div class="p-div"></div><a href="/book" class="p-cta p-cta-m">Get Started &rarr;</a></div>
-      <div class="pkg mid"><span class="p-badge p-b-m">Full Campaign</span><div class="p-nm">Core</div><div class="p-pr"><span>$2,500</span><span>full campaign</span></div><p class="p-desc">Sector-specific strategy, networking plan, cold outreach, fellowship identification, and interview prep.</p><div class="p-feats"><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>All Essentials deliverables</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Sector-specific strategy (tech, law, finance, policy)</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Networking plan + personalised outreach scripts</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Fellowship + selective programme identification</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>2 mock interviews + detailed debrief</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>2 flexible 60-min advisory sessions</div></div><div class="p-div"></div><a href="/book" class="p-cta p-cta-m">Get Started &rarr;</a></div>
-    </div>
+      <!-- FULL-SERVICE -->
+      <div style="font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--g300);margin-bottom:20px;">Full-Service Packages</div>
+      <div class="pkg-grid" style="margin-bottom:36px;">
+        <div class="pkg mid"><span class="p-badge p-b-m">Focused</span><div class="p-nm">Essentials</div><div class="p-pr"><span>$1,200</span><span>1 engagement</span></div><p class="p-desc" style="min-height:auto;">Resume, LinkedIn, cold outreach, and one mock interview.</p><div class="p-feats"><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Resume rewrite for U.S. market</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>LinkedIn audit + optimisation</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Cold outreach framework</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>1 mock interview</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Email support throughout</div></div><div class="p-div"></div><a href="/book" class="p-cta p-cta-m">Get Started &rarr;</a></div>
+        <div class="pkg mid"><span class="p-badge p-b-m">Full Campaign</span><div class="p-nm">Core</div><div class="p-pr"><span>$2,500</span><span>full campaign</span></div><p class="p-desc" style="min-height:auto;">Sector strategy, networking, outreach, fellowship ID, and interview prep.</p><div class="p-feats"><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>All Essentials deliverables</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Sector-specific strategy</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Networking + outreach scripts</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Fellowship identification</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>2 mock interviews + debrief</div></div><div class="p-div"></div><a href="/book" class="p-cta p-cta-m">Get Started &rarr;</a></div>
+      </div>
 
-    <!-- PREMIUM -->
-    <div class="row-label" style="font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--g300);margin-bottom:20px;">Premium Packages</div>
-    <div class="pkg-grid">
-      <div class="pkg feat"><span class="p-badge p-b-p">8 Clients Max</span><div class="p-nm">Signature</div><div class="p-pr"><span>$4,500</span><span>limited availability</span></div><p class="p-desc">Strategic opportunity mapping, fellowship strategy, network introductions, salary negotiation, and direct access.</p><div class="p-feats"><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>All Core deliverables</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Strategic opportunity mapping</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>4 mock interviews (behavioural, case, panel)</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Network introductions (Meta, Google, Harvard)</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Salary negotiation + offer strategy</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Application strategy across roles + fellowships</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Direct access to Ebuka throughout</div></div><div class="p-div"></div><a href="/book" class="p-cta p-cta-p">Get Started &rarr;</a></div>
-      <div class="pkg feat"><span class="p-badge p-b-p">3 Spots</span><div class="p-nm">Elite</div><div class="p-pr"><span>$7,000</span><span>unlimited engagement</span></div><p class="p-desc">No fixed end date. Continuous guidance through signed offer. Unlimited interviews, 48-hour turnaround.</p><div class="p-feats"><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>All Signature deliverables, no caps</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Unlimited mock interviews + final-round prep</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Priority access + 48-hour turnaround</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Long-term career architecture (5-year plan)</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Work authorisation + immigration strategy</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Flexible engagement — adapts to your search</div></div><div class="p-div"></div><a href="/book" class="p-cta p-cta-p">Get Started &rarr;</a></div>
+      <!-- PREMIUM -->
+      <div style="font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--g300);margin-bottom:20px;">Premium Packages</div>
+      <div class="pkg-grid">
+        <div class="pkg feat"><span class="p-badge p-b-p">8 Clients Max</span><div class="p-nm">Signature</div><div class="p-pr"><span>$4,500</span><span>limited</span></div><p class="p-desc" style="min-height:auto;">Opportunity mapping, network introductions, salary negotiation, direct access.</p><div class="p-feats"><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>All Core deliverables</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Strategic opportunity mapping</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>4 mock interviews (all formats)</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Network introductions</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Salary negotiation + offer strategy</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Direct access to Ebuka</div></div><div class="p-div"></div><a href="/book" class="p-cta p-cta-p">Get Started &rarr;</a></div>
+        <div class="pkg feat"><span class="p-badge p-b-p">3 Spots</span><div class="p-nm">Elite</div><div class="p-pr"><span>$7,000</span><span>unlimited</span></div><p class="p-desc" style="min-height:auto;">No end date. Through signed offer. Unlimited everything. 48-hour turnaround.</p><div class="p-feats"><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>All Signature, no caps</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Unlimited interviews + final-round</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>48-hour priority turnaround</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>5-year career architecture</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Immigration strategy</div><div class="p-f"><span class="p-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Flexible — adapts to your search</div></div><div class="p-div"></div><a href="/book" class="p-cta p-cta-p">Get Started &rarr;</a></div>
+      </div>
     </div>
   </div>
 </section>
