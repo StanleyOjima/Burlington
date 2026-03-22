@@ -16,8 +16,6 @@
 body{font-family:var(--sans);color:var(--gray-700);background:var(--off-white);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
 ::selection{background:var(--teal);color:var(--white)}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.012;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,10,15,.88);backdrop-filter:blur(28px) saturate(200%);-webkit-backdrop-filter:blur(28px) saturate(200%);border-bottom:1px solid rgba(13,148,136,.06);box-shadow:0 1px 40px rgba(0,0,0,.12)}
 .nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:3px}
 .nav-logo-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal-bright);box-shadow:0 0 12px rgba(45,212,191,.5)}
@@ -37,61 +35,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
 .mobile-nav a:hover{color:var(--white)}
 .mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .3s}
 .mobile-nav-close:hover{color:var(--white);background:rgba(255,255,255,.05)}
-
-/* HERO */
 .page-hero{position:relative;padding:160px var(--side-pad) 100px;text-align:center;overflow:hidden;background:radial-gradient(ellipse 80% 60% at 50% 80%,rgba(13,148,136,.1) 0%,transparent 50%),var(--dark-base)}
 .page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(45,212,191,.12) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 50% 40% at 50% 50%,black 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 50% 40% at 50% 50%,black 0%,transparent 70%);pointer-events:none}
 .page-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:500;color:var(--white);letter-spacing:-.025em;line-height:1.12;margin-bottom:24px;max-width:740px;margin-left:auto;margin-right:auto;position:relative}
 .page-hero p{font-size:1.02rem;color:rgba(255,255,255,.4);font-weight:300;max-width:580px;margin:0 auto;line-height:1.8;position:relative}
 .hl{background:linear-gradient(135deg,var(--teal-bright) 0%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-
-/* SECTIONS */
 .section{padding:var(--section-pad) var(--side-pad);position:relative}
-.section-white{background:var(--white)}
-.section-light{background:var(--light-gray)}
-.section-dark{background:var(--dark-base);color:var(--white)}
+.section-white{background:var(--white)}.section-light{background:var(--light-gray)}.section-dark{background:var(--dark-base);color:var(--white)}
 .section-label{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:20px;position:relative}
 .section-label::before{content:'';width:20px;height:1px;background:var(--teal)}
 .container{max-width:1200px;margin:0 auto}
-
-/* SERVICE DETAIL */
-.service-detail .container{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:start}
+.service-detail .container{display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:start}
 .service-detail-header{position:sticky;top:100px}
 .service-detail-number{font-family:var(--serif);font-size:4rem;font-weight:400;line-height:1;margin-bottom:20px;background:linear-gradient(135deg,var(--gray-200) 30%,var(--gray-100));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .service-detail-header h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:500;color:var(--gray-700);line-height:1.2;margin-bottom:12px}
 .service-detail-header .sub-label{font-size:.72rem;color:var(--teal);font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;display:block}
 .service-detail-header p{font-size:.95rem;line-height:1.8;color:var(--gray-400);font-weight:300;max-width:420px}
-
-/* ENGAGEMENT CARD (immigration) */
-.engagement-card{background:var(--white);border:1px solid var(--gray-100);border-radius:16px;overflow:hidden}
-.engagement-header{padding:36px 32px 28px;border-bottom:1px solid var(--gray-100)}
-.engagement-header h3{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--gray-700);margin-bottom:4px}
-.engagement-header p{font-size:.82rem;color:var(--gray-300);font-weight:300}
-.engagement-body{padding:28px 32px 36px}
-.engagement-price{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
-.engagement-price-value{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--gray-700);letter-spacing:-.02em}
-.engagement-price-note{font-size:.78rem;color:var(--gray-300);font-weight:300}
-.engagement-compare{font-size:.76rem;color:var(--gray-300);font-style:italic;margin-bottom:24px}
-.engagement-includes{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
-.engagement-include{display:flex;align-items:flex-start;gap:12px;font-size:.85rem;color:var(--gray-500);font-weight:400;line-height:1.6}
-.engagement-include svg{width:16px;height:16px;stroke:var(--teal);stroke-width:2.5;fill:none;flex-shrink:0;margin-top:2px}
-.engagement-cta{display:block;text-align:center;padding:15px;font-size:.86rem;font-weight:500;color:var(--white);background:var(--teal);border-radius:10px;text-decoration:none;transition:all .3s;box-shadow:0 0 20px rgba(13,148,136,.2)}
-.engagement-cta:hover{background:var(--teal-light);box-shadow:0 0 32px rgba(13,148,136,.35);transform:translateY(-2px)}
-.milestones{margin-top:24px;padding-top:24px;border-top:1px solid var(--gray-100)}
-.milestone{display:flex;justify-content:space-between;align-items:center;padding:10px 0;font-size:.8rem}
-.milestone-label{color:var(--gray-400);font-weight:300}
-.milestone-value{color:var(--gray-700);font-weight:500}
-
-/* CREDENTIALS BAR */
-.credentials-bar{background:var(--dark-base);border-top:1px solid rgba(45,212,191,.08);border-bottom:1px solid rgba(45,212,191,.08)}
-.credentials-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-.credential-item{padding:44px 32px;border-right:1px solid rgba(45,212,191,.08);text-align:center;transition:background .3s}
-.credential-item:last-child{border-right:none}
-.credential-item:hover{background:rgba(45,212,191,.03)}
-.credential-value{font-family:var(--serif);font-size:1.8rem;font-weight:600;color:var(--white);margin-bottom:8px}
-.credential-label{font-size:.72rem;color:rgba(255,255,255,.35);letter-spacing:.04em;text-transform:uppercase;line-height:1.5}
-
-/* PACKAGE CARDS */
 .packages-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .pkg-card{background:var(--white);border:2px solid rgba(0,0,0,.04);border-radius:28px;padding:52px 40px;box-shadow:0 4px 24px rgba(0,0,0,.03);position:relative;overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column}
 .pkg-card:hover{transform:translateY(-6px);box-shadow:0 20px 56px rgba(0,0,0,.07),0 0 40px rgba(13,148,136,.06);border-color:rgba(13,148,136,.15)}
@@ -120,19 +79,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
 .pkg-cta-primary{background:linear-gradient(135deg,var(--teal),var(--teal-bright));color:var(--white);border:none;box-shadow:0 4px 20px rgba(13,148,136,.25),inset 0 1px 0 rgba(255,255,255,.1)}
 .pkg-cta-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(13,148,136,.35)}
 .row-label{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-300);margin-bottom:20px}
-
-/* ADD-ONS TABLE */
-.addons-wrap{margin-top:48px;padding:36px 32px;background:var(--light-gray);border:1px solid var(--gray-100);border-radius:16px}
+.addons-wrap{margin-top:48px;padding:36px 32px;background:var(--white);border:1px solid var(--gray-100);border-radius:16px}
 .addons-wrap h4{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--gray-700);margin-bottom:4px}
-.addons-wrap .addons-sub{font-size:.78rem;color:var(--gray-300);margin-bottom:16px}
+.addons-sub{font-size:.78rem;color:var(--gray-300);margin-bottom:16px}
 .addons-table{width:100%;border-collapse:collapse}
 .addons-table tr{border-bottom:1px solid var(--gray-100)}
 .addons-table tr:last-child{border-bottom:none}
 .addons-table td{padding:14px 0;font-size:.85rem;vertical-align:middle}
 .addons-table td:first-child{color:var(--gray-500);font-weight:400}
 .addons-table td:last-child{text-align:right;font-family:var(--serif);font-weight:500;color:var(--gray-700);white-space:nowrap}
-
-/* CTA */
 .cta-section{position:relative;text-align:center;overflow:hidden;background:radial-gradient(ellipse 60% 50% at 50% 60%,rgba(13,148,136,.08) 0%,transparent 55%),var(--dark-base)}
 .cta-bg-grid{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(45,212,191,.06) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 40% 35% at 50% 50%,black 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 40% 35% at 50% 50%,black 0%,transparent 70%)}
 .cta-content{position:relative;z-index:2}
@@ -142,8 +97,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
 .btn-primary:hover{background:var(--teal-light);box-shadow:0 0 40px rgba(13,148,136,.45),0 4px 16px rgba(13,148,136,.2);transform:translateY(-2px)}
 .btn-arrow{font-size:1.1rem;transition:transform .25s}
 .btn-primary:hover .btn-arrow{transform:translateX(3px)}
-
-/* FOOTER */
 footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1px solid rgba(45,212,191,.08);padding:72px var(--side-pad) 40px}
 .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
 .footer-brand{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--white);margin-bottom:16px;display:flex;align-items:center;gap:3px}
@@ -155,39 +108,14 @@ footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1p
 .back-to-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:rgba(4,10,15,.8);backdrop-filter:blur(12px);border:1px solid rgba(45,212,191,.12);color:var(--teal-bright);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(10px);transition:all .3s;z-index:900;box-shadow:0 4px 20px rgba(0,0,0,.15)}
 .back-to-top.visible{opacity:1;transform:translateY(0)}
 .back-to-top:hover{background:rgba(13,148,136,.15);border-color:rgba(45,212,191,.25);transform:translateY(-2px)}
-
-/* ANIMATIONS */
 .animate-on-scroll{opacity:1;transform:translateY(0)}
 .js-ready .animate-on-scroll{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
 .js-ready .animate-on-scroll.visible{opacity:1;transform:translateY(0)}
-
-/* WhatsApp */
 .whatsapp-btn{position:fixed;bottom:32px;left:32px;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;z-index:900;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s cubic-bezier(.16,1,.3,1);text-decoration:none}
 .whatsapp-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 8px 30px rgba(37,211,102,.5)}
-
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .service-detail .container{grid-template-columns:1fr;gap:48px}
-  .service-detail-header{position:static}
-  .packages-grid{grid-template-columns:1fr 1fr}
-  .credentials-inner{grid-template-columns:repeat(2,1fr)}
-  .credential-item:nth-child(2){border-right:none}
-  .credential-item:nth-child(-n+2){border-bottom:1px solid rgba(45,212,191,.08)}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
-}
-@media(max-width:768px){
-  .nav-links{display:none}.nav-hamburger{display:flex}.nav-tagline{display:none}
-  .page-hero{padding:140px 24px 70px}
-  .section{padding:80px 24px}
-  .packages-grid{grid-template-columns:1fr}
-  .pkg-card{padding:40px 28px}
-  .credentials-inner{grid-template-columns:1fr}
-  .credential-item{border-right:none;border-bottom:1px solid rgba(45,212,191,.08);padding:28px 24px}
-  .credential-item:last-child{border-bottom:none}
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-  .whatsapp-btn{bottom:20px;left:20px;width:48px;height:48px}
-  .back-to-top{bottom:20px;right:20px;width:40px;height:40px}
-}
+@media(max-width:1024px){.service-detail .container{grid-template-columns:1fr;gap:48px}.service-detail-header{position:static}.footer-grid{grid-template-columns:1fr 1fr;gap:40px}}
+@media(max-width:900px){.packages-grid{grid-template-columns:1fr}.pkg-card{padding:44px 36px}}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-tagline{display:none}.page-hero{padding:140px 24px 70px}.section{padding:80px 24px}.footer-grid{grid-template-columns:1fr;gap:32px}.whatsapp-btn{bottom:20px;left:20px;width:48px;height:48px}.back-to-top{bottom:20px;right:20px;width:40px;height:40px}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 </style>
 <meta property="og:title" content="Career Advisory — Burlington Consult">
@@ -205,49 +133,28 @@ footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1p
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=288348047220909&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
+<nav><a href="/" class="nav-logo">Burlington<span class="nav-logo-dot"></span><span class="nav-tagline">Immigration Advisory</span></a><ul class="nav-links"><li><a href="/about">About</a></li><li class="nav-divider"></li><li><a href="/services">Services</a></li><li class="nav-divider"></li><li><a href="/career-advisory">Career Advisory</a></li><li class="nav-divider"></li><li><a href="/faq">FAQs</a></li><li class="nav-divider"></li><li><a href="/contact">Contact</a></li><li><a href="/book" class="nav-cta">Book a Consultation</a></li></ul><button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.add('open')"><span></span><span></span><span></span></button></nav>
+<div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/career-advisory">Career Advisory</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a></div>
 
-<nav>
-  <a href="/" class="nav-logo">Burlington<span class="nav-logo-dot"></span><span class="nav-tagline">Immigration Advisory</span></a>
-  <ul class="nav-links">
-    <li><a href="/about">About</a></li>
-    <li class="nav-divider"></li>
-    <li><a href="/services">Services</a></li>
-    <li class="nav-divider"></li>
-    <li><a href="/career-advisory">Career Advisory</a></li>
-    <li class="nav-divider"></li>
-    <li><a href="/faq">FAQs</a></li>
-    <li class="nav-divider"></li>
-    <li><a href="/contact">Contact</a></li>
-    <li><a href="/book" class="nav-cta">Book a Consultation</a></li>
-  </ul>
-  <button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.add('open')"><span></span><span></span><span></span></button>
-</nav>
-<div class="mobile-nav" id="mobileNav">
-  <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-  <a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/career-advisory">Career Advisory</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a>
-</div>
-
-<!-- HERO -->
 <section class="page-hero">
   <div class="section-label" style="justify-content:center;color:var(--teal-bright)">Career Advisory</div>
   <h1>Your career is a <span class="hl">campaign</span>. Run it like one.</h1>
   <p>Strategic advisory for ambitious professionals competing for the most selective roles, fellowships, and programmes in law, tech, finance, government, and global development.</p>
 </section>
 
-<!-- SERVICE DETAIL -->
 <section class="section section-light service-detail animate-on-scroll">
   <div class="container">
     <div class="service-detail-header">
       <div class="service-detail-number">01</div>
       <div class="sub-label">Career Advancement Advisory</div>
       <h2>Compete for the roles most people never find</h2>
-      <p>We work directly with clients across the full campaign — from identifying which opportunities are worth pursuing, to positioning your story, building your digital presence, developing cold outreach that generates responses, and preparing you for the most demanding interview formats.</p>
-      <p style="margin-top:16px;">This is not generic career coaching. It is built around the architecture of competitive hiring at elite organisations — Meta, OpenAI, Google, the Gates Foundation, and the fellowship programmes that shape careers.</p>
+      <p>We work directly with clients across the full campaign &mdash; from identifying which opportunities are worth pursuing, to positioning your story, building your digital presence, developing cold outreach that generates responses, and preparing you for the most demanding interview formats.</p>
+      <p style="margin-top:16px;">This is not generic career coaching. It is built around the architecture of competitive hiring at elite organisations &mdash; Meta, OpenAI, Google, the Gates Foundation, and the fellowship programmes that shape careers.</p>
     </div>
     <div>
       <div class="row-label">Entry Points</div>
       <div class="packages-grid" style="margin-bottom:36px;">
-        <div class="pkg-card"><span class="pkg-badge pkg-badge-default">Discovery</span><div class="pkg-name">Discovery Consultation</div><div class="pkg-price-row"><span class="pkg-price">$150</span><span class="pkg-scope">30 minutes</span></div><p class="pkg-desc">A direct conversation with Ebuka to assess your profile, goals, and immediate priorities. Honest read of where you're strong and where the gaps are.</p><div class="pkg-features"><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Profile and positioning assessment</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Initial opportunity guidance</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Recommended next steps</div></div><div class="pkg-divider"></div><a href="/book" class="pkg-cta pkg-cta-outline">Book Now &rarr;</a></div>
+        <div class="pkg-card"><span class="pkg-badge pkg-badge-default">Discovery</span><div class="pkg-name">Discovery Consultation</div><div class="pkg-price-row"><span class="pkg-price">$150</span><span class="pkg-scope">30 minutes</span></div><p class="pkg-desc">A direct conversation with Ebuka to assess your profile, goals, and immediate priorities. Honest read of where you are strong and where the gaps are.</p><div class="pkg-features"><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Profile and positioning assessment</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Initial opportunity guidance</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Recommended next steps</div></div><div class="pkg-divider"></div><a href="/book" class="pkg-cta pkg-cta-outline">Book Now &rarr;</a></div>
         <div class="pkg-card"><span class="pkg-badge pkg-badge-default">Strategy</span><div class="pkg-name">Strategy Session</div><div class="pkg-price-row"><span class="pkg-price">$250</span><span class="pkg-scope">60 minutes</span></div><p class="pkg-desc">Full consultation covering your background, target opportunities, execution plan, resume and LinkedIn review with direct feedback.</p><div class="pkg-features"><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Resume + LinkedIn review</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>AI tools + job search strategy</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Written summary of recommendations</div></div><div class="pkg-divider"></div><a href="/book" class="pkg-cta pkg-cta-outline">Book Now &rarr;</a></div>
       </div>
       <div class="row-label">Full-Service Packages</div>
@@ -260,38 +167,23 @@ footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1p
         <div class="pkg-card featured"><span class="pkg-badge pkg-badge-premium">8 Clients Max</span><div class="pkg-name">Signature</div><div class="pkg-price-row"><span class="pkg-price">$4,500</span><span class="pkg-scope">limited availability</span></div><p class="pkg-desc">Strategic opportunity mapping, fellowship strategy, network introductions through Ebuka's direct professional network, and salary negotiation support.</p><div class="pkg-features"><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Everything in Core</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Strategic opportunity mapping</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>4 mock interviews (behavioural, case, panel)</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Network introductions where applicable</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Salary negotiation + offer strategy</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Direct access to Ebuka</div></div><div class="pkg-divider"></div><a href="/book" class="pkg-cta pkg-cta-primary">Get Started &rarr;</a></div>
         <div class="pkg-card"><span class="pkg-badge pkg-badge-default">3 Spots</span><div class="pkg-name">Elite</div><div class="pkg-price-row"><span class="pkg-price">$7,000</span><span class="pkg-scope">unlimited engagement</span></div><p class="pkg-desc">No fixed end date. Continuous guidance from first conversation through signed offer and onboarding. Unlimited interviews, 48-hour turnaround, immigration strategy.</p><div class="pkg-features"><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Everything in Signature, no caps</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Unlimited mock interviews + final-round prep</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>48-hour priority turnaround</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Long-term career architecture (5-year plan)</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Work authorisation + immigration strategy</div></div><div class="pkg-divider"></div><a href="/book" class="pkg-cta pkg-cta-outline">Get Started &rarr;</a></div>
       </div>
-      <div class="addons-wrap" style="background:var(--white);">
-        <h4>Individual Services</h4>
-        <div class="addons-sub">Available standalone or added to any package</div>
-        <table class="addons-table">
-          <tr><td>Resume Rewrite for U.S. Market</td><td>$400</td></tr>
-          <tr><td>LinkedIn Profile Optimisation</td><td>$300</td></tr>
-          <tr><td>Interview Preparation Session (60 min)</td><td>$300</td></tr>
-          <tr><td>Cold Outreach Strategy &amp; Script Development</td><td>$350</td></tr>
-          <tr><td>Fellowship &amp; Opportunity Mapping</td><td>$400</td></tr>
-          <tr><td>Networking Strategy &amp; Introduction Planning</td><td>$350</td></tr>
-          <tr><td>Salary Negotiation Coaching</td><td>$300</td></tr>
-          <tr><td>Career Transition Strategy Session (60 min)</td><td>$400</td></tr>
-        </table>
+      <div class="addons-wrap"><h4>Individual Services</h4><div class="addons-sub">Available standalone or added to any package</div>
+        <table class="addons-table"><tr><td>Resume Rewrite for U.S. Market</td><td>$400</td></tr><tr><td>LinkedIn Profile Optimisation</td><td>$300</td></tr><tr><td>Interview Preparation Session (60 min)</td><td>$300</td></tr><tr><td>Cold Outreach Strategy &amp; Script Development</td><td>$350</td></tr><tr><td>Fellowship &amp; Opportunity Mapping</td><td>$400</td></tr><tr><td>Networking Strategy &amp; Introduction Planning</td><td>$350</td></tr><tr><td>Salary Negotiation Coaching</td><td>$300</td></tr><tr><td>Career Transition Strategy Session (60 min)</td><td>$400</td></tr></table>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="section section-dark cta-section" style="padding-top:100px;padding-bottom:130px;">
   <div class="cta-bg-grid"></div>
   <div class="cta-content container animate-on-scroll">
     <div class="section-label" style="justify-content:center;color:var(--teal-bright)">Get Started</div>
     <h2>Ready to compete at<br>the <span class="hl">highest level</span>?</h2>
     <p>Book a Discovery Consultation. We'll assess your positioning, identify your strongest angles, and build a plan that puts you in the room.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="/book" class="btn-primary" style="font-size:.92rem;padding:17px 44px;">Book a Consultation — $150 <span class="btn-arrow">&rarr;</span></a>
-    </div>
+    <a href="/book" class="btn-primary" style="font-size:.92rem;padding:17px 44px;">Book a Consultation &mdash; $150 <span class="btn-arrow">&rarr;</span></a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div><div class="footer-brand"><a href="/" style="color:inherit;text-decoration:none;">Burlington<span class="footer-brand-dot"></span></a></div><p class="footer-desc">Immigration strategy and advisory for high-achieving professionals. EB-1A and EB-2 NIW petitions developed and filed to USCIS.</p></div>
@@ -308,19 +200,11 @@ footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1p
     <p style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:12px;">&copy; 2026 Burlington Consult, LLC. All rights reserved.</p>
   </div>
 </footer>
-
-<!-- WhatsApp -->
-<a href="https://wa.me/18572429842?text=Hello%20Burlington%20Consult%2C%20I%27d%20like%20to%20inquire%20about%20your%20services." class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+<a href="https://wa.me/18572429842?text=Hello%20Burlington%20Consult%2C%20I%27d%20like%20to%20inquire%20about%20your%20career%20advisory%20services." class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg></button>
-
 <script>
-var btt=document.getElementById('backToTop');
-if(btt){window.addEventListener('scroll',function(){btt.classList.toggle('visible',window.scrollY>400);});}
-document.body.classList.add('js-ready');
-var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.08,rootMargin:'0px 0px -60px 0px'});
-document.querySelectorAll('.animate-on-scroll').forEach(function(el){observer.observe(el);});
+var btt=document.getElementById('backToTop');if(btt){window.addEventListener('scroll',function(){btt.classList.toggle('visible',window.scrollY>400);});}
+document.body.classList.add('js-ready');var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.08,rootMargin:'0px 0px -60px 0px'});document.querySelectorAll('.animate-on-scroll').forEach(function(el){observer.observe(el);});
 </script>
 </body>
 </html>

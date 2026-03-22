@@ -11,9 +11,9 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
-:root{--dark-base:#040A0F;--dark-700:#0F1A24;--white:#FFF;--off-white:#F7F7F5;--light-gray:#F5F5F3;--gray-100:#E8E7E3;--gray-200:#D4D3CF;--gray-300:#A8A7A3;--gray-400:#78776F;--gray-500:#545349;--gray-700:#2D2C28;--teal:#0D9488;--teal-light:#14B8A6;--teal-bright:#2DD4BF;--cyan:#22D3EE;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--section-pad:clamp(80px,10vw,140px);--side-pad:clamp(24px,5vw,80px)}
+:root{--dark-base:#040A0F;--dark-700:#0F1A24;--white:#FFF;--off-white:#F7F7F5;--light-gray:#F5F5F3;--gray-100:#E8E7E3;--gray-200:#D4D3CF;--gray-300:#A8A7A3;--gray-400:#78776F;--gray-500:#545349;--gray-700:#2D2C28;--teal:#0D9488;--teal-light:#14B8A6;--teal-bright:#2DD4BF;--cyan:#22D3EE;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--side-pad:clamp(24px,5vw,80px);--section-pad:clamp(80px,10vw,130px)}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--sans);color:var(--gray-700);background:var(--off-white);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+body{font-family:var(--sans);color:var(--gray-700);background:var(--off-white);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
 ::selection{background:var(--teal);color:var(--white)}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.012;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,10,15,.88);backdrop-filter:blur(28px) saturate(200%);-webkit-backdrop-filter:blur(28px) saturate(200%);border-bottom:1px solid rgba(13,148,136,.06);box-shadow:0 1px 40px rgba(0,0,0,.12)}
@@ -35,21 +35,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
 .mobile-nav a:hover{color:var(--white)}
 .mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .3s}
 .mobile-nav-close:hover{color:var(--white);background:rgba(255,255,255,.05)}
-.page-hero{background:radial-gradient(ellipse 80% 60% at 50% 80%,rgba(13,148,136,.1) 0%,transparent 50%),var(--dark-base);padding:160px var(--side-pad) 100px;text-align:center;position:relative;overflow:hidden}
+.page-hero{position:relative;padding:160px var(--side-pad) 100px;text-align:center;overflow:hidden;background:radial-gradient(ellipse 80% 60% at 50% 80%,rgba(13,148,136,.1) 0%,transparent 50%),var(--dark-base)}
 .page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(45,212,191,.12) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 50% 40% at 50% 50%,black 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 50% 40% at 50% 50%,black 0%,transparent 70%);pointer-events:none}
 .page-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:500;color:var(--white);letter-spacing:-.025em;line-height:1.12;margin-bottom:24px;max-width:740px;margin-left:auto;margin-right:auto;position:relative}
 .page-hero p{font-size:1.02rem;color:rgba(255,255,255,.4);font-weight:300;max-width:580px;margin:0 auto;line-height:1.8;position:relative}
 .hl{background:linear-gradient(135deg,var(--teal-bright) 0%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .section{padding:var(--section-pad) var(--side-pad);position:relative}
 .section-white{background:var(--white)}.section-light{background:var(--light-gray)}.section-dark{background:var(--dark-base);color:var(--white)}
-.section-label{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-bright);margin-bottom:20px;position:relative}
-.section-label::before{content:'';width:20px;height:1px;background:var(--teal-bright)}
+.section-label{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:20px;position:relative}
+.section-label::before{content:'';width:20px;height:1px;background:var(--teal)}
 .container{max-width:1200px;margin:0 auto}
-.service-detail .container{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:start}
+.service-detail .container{display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:start}
 .service-detail-header{position:sticky;top:100px}
 .service-detail-number{font-family:var(--serif);font-size:4rem;font-weight:400;line-height:1;margin-bottom:20px;background:linear-gradient(135deg,var(--gray-200) 30%,var(--gray-100));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .service-detail-header h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:500;color:var(--gray-700);line-height:1.2;margin-bottom:12px}
-.sub-label{font-size:.72rem;color:var(--teal);font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;display:block}
+.service-detail-header .sub-label{font-size:.72rem;color:var(--teal);font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;display:block}
 .service-detail-header p{font-size:.95rem;line-height:1.8;color:var(--gray-400);font-weight:300;max-width:420px}
 .engagement-card{background:var(--white);border:1px solid var(--gray-100);border-radius:16px;overflow:hidden}
 .engagement-header{padding:36px 32px 28px;border-bottom:1px solid var(--gray-100)}
@@ -67,7 +67,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
 .engagement-cta:hover{background:var(--teal-light);box-shadow:0 0 32px rgba(13,148,136,.35);transform:translateY(-2px)}
 .milestones{margin-top:24px;padding-top:24px;border-top:1px solid var(--gray-100)}
 .milestone{display:flex;justify-content:space-between;align-items:center;padding:10px 0;font-size:.8rem}
-.milestone-label{color:var(--gray-400);font-weight:300}.milestone-value{color:var(--gray-700);font-weight:500}
+.milestone-label{color:var(--gray-400);font-weight:300}
+.milestone-value{color:var(--gray-700);font-weight:500}
 .credentials-bar{background:var(--dark-base);border-top:1px solid rgba(45,212,191,.08);border-bottom:1px solid rgba(45,212,191,.08)}
 .credentials-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
 .credential-item{padding:44px 32px;border-right:1px solid rgba(45,212,191,.08);text-align:center;transition:background .3s}
@@ -107,7 +108,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
 .addons-wrap h4{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--gray-700);margin-bottom:4px}
 .addons-sub{font-size:.78rem;color:var(--gray-300);margin-bottom:16px}
 .addons-table{width:100%;border-collapse:collapse}
-.addons-table tr{border-bottom:1px solid var(--gray-100)}.addons-table tr:last-child{border-bottom:none}
+.addons-table tr{border-bottom:1px solid var(--gray-100)}
+.addons-table tr:last-child{border-bottom:none}
 .addons-table td{padding:14px 0;font-size:.85rem;vertical-align:middle}
 .addons-table td:first-child{color:var(--gray-500);font-weight:400}
 .addons-table td:last-child{text-align:right;font-family:var(--serif);font-weight:500;color:var(--gray-700);white-space:nowrap}
@@ -118,8 +120,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
 .cta-section p{font-size:1rem;color:rgba(255,255,255,.38);font-weight:300;max-width:480px;margin:0 auto 44px;line-height:1.8}
 .btn-primary{display:inline-flex;align-items:center;gap:10px;padding:15px 34px;background:var(--teal);color:var(--white);font-family:var(--sans);font-size:.88rem;font-weight:500;border:none;border-radius:10px;cursor:pointer;text-decoration:none;transition:all .3s cubic-bezier(.16,1,.3,1);box-shadow:0 0 24px rgba(13,148,136,.3),0 1px 2px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.1)}
 .btn-primary:hover{background:var(--teal-light);box-shadow:0 0 40px rgba(13,148,136,.45),0 4px 16px rgba(13,148,136,.2);transform:translateY(-2px)}
-.btn-arrow{font-size:1.1rem;transition:transform .25s}.btn-primary:hover .btn-arrow{transform:translateX(3px)}
-footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1px solid rgba(45,212,191,.08);padding:72px var(--side-pad) 40px;margin-top:auto}
+.btn-arrow{font-size:1.1rem;transition:transform .25s}
+.btn-primary:hover .btn-arrow{transform:translateX(3px)}
+footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1px solid rgba(45,212,191,.08);padding:72px var(--side-pad) 40px}
 .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
 .footer-brand{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--white);margin-bottom:16px;display:flex;align-items:center;gap:3px}
 .footer-brand-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--teal-bright)}
@@ -127,23 +130,28 @@ footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1p
 .footer-col h4{font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:24px}
 .footer-col a{display:block;font-size:.85rem;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:14px;transition:color .3s}
 .footer-col a:hover{color:var(--white)}
+.back-to-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:rgba(4,10,15,.8);backdrop-filter:blur(12px);border:1px solid rgba(45,212,191,.12);color:var(--teal-bright);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(10px);transition:all .3s;z-index:900;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.back-to-top.visible{opacity:1;transform:translateY(0)}
+.back-to-top:hover{background:rgba(13,148,136,.15);border-color:rgba(45,212,191,.25);transform:translateY(-2px)}
 .animate-on-scroll{opacity:1;transform:translateY(0)}
 .js-ready .animate-on-scroll{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
 .js-ready .animate-on-scroll.visible{opacity:1;transform:translateY(0)}
-.back-to-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:rgba(4,10,15,.8);backdrop-filter:blur(12px);border:1px solid rgba(45,212,191,.12);color:var(--teal-bright);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(10px);transition:all .3s;z-index:900;box-shadow:0 4px 20px rgba(0,0,0,.15)}
-.back-to-top.visible{opacity:1;transform:translateY(0)}.back-to-top:hover{background:rgba(13,148,136,.15);border-color:rgba(45,212,191,.25);transform:translateY(-2px)}
 .whatsapp-btn{position:fixed;bottom:32px;left:32px;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;z-index:900;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s cubic-bezier(.16,1,.3,1);text-decoration:none}
 .whatsapp-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 8px 30px rgba(37,211,102,.5)}
 @media(max-width:1024px){.service-detail .container{grid-template-columns:1fr;gap:48px}.service-detail-header{position:static}.credentials-inner{grid-template-columns:repeat(2,1fr)}.credential-item:nth-child(2){border-right:none}.credential-item:nth-child(-n+2){border-bottom:1px solid rgba(45,212,191,.08)}.footer-grid{grid-template-columns:1fr 1fr;gap:40px}}
-@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-tagline{display:none}.page-hero{padding:140px 24px 80px}.section{padding:80px 24px}.packages-grid{grid-template-columns:1fr}.pkg-card{padding:40px 28px}.credentials-inner{grid-template-columns:1fr}.credential-item{border-right:none;border-bottom:1px solid rgba(45,212,191,.08);padding:28px 24px}.credential-item:last-child{border-bottom:none}.footer-grid{grid-template-columns:1fr;gap:32px}.whatsapp-btn{bottom:20px;left:20px;width:48px;height:48px}.back-to-top{bottom:20px;right:20px;width:40px;height:40px}}
+@media(max-width:900px){.packages-grid{grid-template-columns:1fr}.pkg-card{padding:44px 36px}}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-tagline{display:none}.page-hero{padding:140px 24px 70px}.section{padding:80px 24px}.credentials-inner{grid-template-columns:1fr}.credential-item{border-right:none;border-bottom:1px solid rgba(45,212,191,.08);padding:28px 24px}.credential-item:last-child{border-bottom:none}.footer-grid{grid-template-columns:1fr;gap:32px}.whatsapp-btn{bottom:20px;left:20px;width:48px;height:48px}.back-to-top{bottom:20px;right:20px;width:40px;height:40px}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 </style>
 <meta property="og:title" content="Services — Burlington Consult">
-<meta property="og:description" content="Immigration strategy and elite graduate admissions advisory. EB-1A, EB-2 NIW petitions, and scholarship-optimised admissions for high-achieving professionals.">
+<meta property="og:description" content="Immigration strategy and elite graduate admissions advisory. EB-1A, EB-2 NIW petitions and scholarship-optimised graduate admissions for high-achieving professionals.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://burlingtonconsult.com/services">
 <meta property="og:image" content="https://burlingtonconsult.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Services — Burlington Consult">
+<meta name="twitter:description" content="Immigration strategy and elite graduate admissions advisory for high-achieving professionals.">
+<meta name="twitter:image" content="https://burlingtonconsult.com/og-image.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGX2C54Y62"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WGX2C54Y62');</script>
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','288348047220909');fbq('track','PageView');</script>
@@ -151,16 +159,105 @@ footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1p
 </head>
 <body>
 <nav><a href="/" class="nav-logo">Burlington<span class="nav-logo-dot"></span><span class="nav-tagline">Immigration Advisory</span></a><ul class="nav-links"><li><a href="/about">About</a></li><li class="nav-divider"></li><li><a href="/services">Services</a></li><li class="nav-divider"></li><li><a href="/career-advisory">Career Advisory</a></li><li class="nav-divider"></li><li><a href="/faq">FAQs</a></li><li class="nav-divider"></li><li><a href="/contact">Contact</a></li><li><a href="/book" class="nav-cta">Book a Consultation</a></li></ul><button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.add('open')"><span></span><span></span><span></span></button></nav>
-<div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/career-advisory">Career Advisory</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a></div>
+<div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/career-advisory">Career Advisory</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a></div>
 
+<section class="page-hero">
+  <div class="section-label" style="justify-content:center;color:var(--teal-bright)">Our Services</div>
+  <h1>Strategy that gets you <span class="hl">in</span>.</h1>
+  <p>U.S. immigration petitions for exceptional professionals. Scholarship-optimised graduate admissions for high-achieving students. Two practices, one advisory standard.</p>
+</section>
 
+<section class="section section-light service-detail animate-on-scroll" id="immigration">
+  <div class="container">
+    <div class="service-detail-header">
+      <div class="service-detail-number">01</div>
+      <div class="sub-label">Immigration Strategy &amp; Advisory</div>
+      <h2>EB-1A &amp; EB-2 NIW Petition Development</h2>
+      <p>Full-service strategic advisory for the two most distinguished self-petitioned U.S. green card pathways. Burlington Consult develops and files both petitions simultaneously, preserving a single priority date and creating strategic redundancy.</p>
+      <p style="margin-top:16px;">Led by a Harvard Law School-trained strategist who is a self-petitioned, first-submission EB-1A holder. Every engagement begins with the field of endeavour.</p>
+    </div>
+    <div>
+      <div class="engagement-card">
+        <div class="engagement-header"><h3>Dual Petition Advisory Engagement</h3><p>EB-1A Extraordinary Ability + EB-2 National Interest Waiver</p></div>
+        <div class="engagement-body">
+          <div class="engagement-price"><span class="engagement-price-value">$20,000</span><span class="engagement-price-note">total engagement</span></div>
+          <div class="engagement-compare">Comparable advisory at leading U.S. firms: $35,000 &ndash; $55,000</div>
+          <div class="engagement-includes">
+            <div class="engagement-include"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Proposed endeavour development &amp; Dhanasar mapping</div>
+            <div class="engagement-include"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Full EB-1A + NIW petition drafting (dual I-140)</div>
+            <div class="engagement-include"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Up to 12 recommendation letters, researched and drafted</div>
+            <div class="engagement-include"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Evidence architecture &amp; independent corroboration</div>
+            <div class="engagement-include"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Legal review &amp; strategic press placement</div>
+            <div class="engagement-include"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>12-month RFE &amp; NOID support included</div>
+          </div>
+          <div class="milestones">
+            <div class="milestone"><span class="milestone-label">Engagement confirmation</span><span class="milestone-value">$5,000</span></div>
+            <div class="milestone"><span class="milestone-label">Letters + first drafts at 90%</span><span class="milestone-value">$5,000</span></div>
+            <div class="milestone"><span class="milestone-label">Confirmed USCIS submission</span><span class="milestone-value">$5,000</span></div>
+            <div class="milestone"><span class="milestone-label">Expenses retainer (press + legal)</span><span class="milestone-value">$5,000</span></div>
+          </div>
+          <a href="/book" class="engagement-cta" style="margin-top:28px;">Book a Consultation &mdash; $250 &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="credentials-bar"><div class="credentials-inner">
+  <div class="credential-item"><div class="credential-value">15</div><div class="credential-label">Business days<br>premium processing</div></div>
+  <div class="credential-item"><div class="credential-value">$500k+</div><div class="credential-label">Scholarships secured<br>by lead adviser</div></div>
+  <div class="credential-item"><div class="credential-value">2</div><div class="credential-label">Petitions filed<br>simultaneously</div></div>
+  <div class="credential-item"><div class="credential-value">12 Mo.</div><div class="credential-label">RFE &amp; NOID support<br>included</div></div>
+</div></div>
+
+<section class="section section-white service-detail animate-on-scroll" id="admissions">
+  <div class="container">
+    <div class="service-detail-header">
+      <div class="service-detail-number">02</div>
+      <div class="sub-label">Graduate Admissions Concierge</div>
+      <h2>MBA, Law School &amp; Graduate Admissions</h2>
+      <p>Scholarship-optimised application strategy for high-achieving students. We work to ensure the school you get into costs you as little as possible.</p>
+      <p style="margin-top:16px;">Guided by someone who secured over $500,000 in scholarships from Harvard Law, Michigan Ross, Georgetown, USC, and Columbia.</p>
+    </div>
+    <div>
+      <div class="row-label">Entry Points</div>
+      <div class="packages-grid" style="margin-bottom:36px;">
+        <div class="pkg-card"><span class="pkg-badge pkg-badge-default">Discovery</span><div class="pkg-name">Discovery Consultation</div><div class="pkg-price-row"><span class="pkg-price">$150</span><span class="pkg-scope">30 minutes</span></div><p class="pkg-desc">A direct conversation with Ebuka to assess your profile, target schools, and realistic scholarship positioning.</p><div class="pkg-features"><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Honest candidacy assessment</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Initial scholarship positioning</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Recommended next steps</div></div><div class="pkg-divider"></div><a href="/book" class="pkg-cta pkg-cta-outline">Book Now &rarr;</a></div>
+        <div class="pkg-card"><span class="pkg-badge pkg-badge-default">Strategy</span><div class="pkg-name">Strategy Session</div><div class="pkg-price-row"><span class="pkg-price">$250</span><span class="pkg-scope">60 minutes</span></div><p class="pkg-desc">Full consultation covering profile review, school list, essay strategy, and the scholarship landscape for your target programmes.</p><div class="pkg-features"><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Core narrative and story review</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>School-specific admissions insight</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Written summary of recommendations</div></div><div class="pkg-divider"></div><a href="/book" class="pkg-cta pkg-cta-outline">Book Now &rarr;</a></div>
+      </div>
+      <div class="row-label">Full-Service Packages</div>
+      <div class="packages-grid" style="margin-bottom:36px;">
+        <div class="pkg-card"><span class="pkg-badge pkg-badge-default">1 School</span><div class="pkg-name">Essentials</div><div class="pkg-price-row"><span class="pkg-price">$1,500</span><span class="pkg-scope">1 target school</span></div><p class="pkg-desc">Personal statement, resume rewrite, and application essay support for one programme with scholarship positioning.</p><div class="pkg-features"><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Personal statement development</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Resume rewrite for graduate school</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Scholarship essay guidance</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Email support throughout</div></div><div class="pkg-divider"></div><a href="/book" class="pkg-cta pkg-cta-outline">Get Started &rarr;</a></div>
+        <div class="pkg-card featured"><span class="pkg-badge pkg-badge-premium">Most Popular</span><div class="pkg-name">Core</div><div class="pkg-price-row"><span class="pkg-price">$3,000</span><span class="pkg-scope">Up to 3 schools</span></div><p class="pkg-desc">Full essay development across three programmes with strategic positioning, interview prep, and scholarship negotiation.</p><div class="pkg-features"><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Everything in Essentials</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Full essay development, 3 schools</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Recommendation letter strategy</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>2 mock interviews with feedback</div></div><div class="pkg-divider"></div><a href="/book" class="pkg-cta pkg-cta-primary">Get Started &rarr;</a></div>
+      </div>
+      <div class="row-label">Premium Packages</div>
+      <div class="packages-grid">
+        <div class="pkg-card featured"><span class="pkg-badge pkg-badge-premium">Recommended</span><div class="pkg-name">Signature</div><div class="pkg-price-row"><span class="pkg-price">$5,000</span><span class="pkg-scope">Up to 5 schools</span></div><p class="pkg-desc">Comprehensive story architecture across all applications with scholarship-optimised strategy, interview prep, and visa support.</p><div class="pkg-features"><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Everything in Core, 5 schools</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Full story architecture, all schools</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>4 mock interviews + waitlist strategy</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Study permit &amp; visa support</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Direct access to Ebuka</div></div><div class="pkg-divider"></div><a href="/book" class="pkg-cta pkg-cta-primary">Get Started &rarr;</a></div>
+        <div class="pkg-card"><span class="pkg-badge pkg-badge-default">Unlimited</span><div class="pkg-name">Elite</div><div class="pkg-price-row"><span class="pkg-price">$8,500</span><span class="pkg-scope">Unlimited schools</span></div><p class="pkg-desc">No school cap, unlimited essay and interview support, 48-hour priority turnaround, and post-admission career advisory.</p><div class="pkg-features"><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Everything in Signature, no caps</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Unlimited essays + mock interviews</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>48-hour priority turnaround</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Scholarship negotiation + appeal letters</div><div class="pkg-feature"><span class="pkg-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Post-admission career counselling</div></div><div class="pkg-divider"></div><a href="/book" class="pkg-cta pkg-cta-outline">Get Started &rarr;</a></div>
+      </div>
+      <div class="addons-wrap"><h4>Individual Services &amp; Add-Ons</h4><div class="addons-sub">Available standalone or added to any package</div>
+        <table class="addons-table"><tr><td>Personal Statement Draft &amp; Review</td><td>$750</td></tr><tr><td>Additional school added to any package</td><td>$500</td></tr><tr><td>Interview Preparation Session (60 min)</td><td>$350</td></tr><tr><td>Scholarship Negotiation &amp; Appeal Letter</td><td>$400</td></tr><tr><td>Recommendation Letter Strategy &amp; Briefing</td><td>$300</td></tr><tr><td>Resume Rewrite for Graduate Applications</td><td>$400</td></tr><tr><td>Study Permit / Visa Application Support</td><td>$500</td></tr></table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark cta-section" style="padding-top:100px;padding-bottom:130px;">
+  <div class="cta-bg-grid"></div>
+  <div class="cta-content container animate-on-scroll">
+    <div class="section-label" style="justify-content:center;color:var(--teal-bright)">Get Started</div>
+    <h2>Not sure which service<br>is right for you?</h2>
+    <p>Start with a consultation. We'll assess your profile, identify the strongest pathway, and give you a direct, honest recommendation.</p>
+    <a href="/book" class="btn-primary" style="font-size:.92rem;padding:17px 44px;">Book a Consultation <span class="btn-arrow">&rarr;</span></a>
+  </div>
+</section>
 
 <footer>
   <div class="footer-grid">
     <div><div class="footer-brand"><a href="/" style="color:inherit;text-decoration:none;">Burlington<span class="footer-brand-dot"></span></a></div><p class="footer-desc">Immigration strategy and advisory for high-achieving professionals. EB-1A and EB-2 NIW petitions developed and filed to USCIS.</p></div>
     <div class="footer-col"><h4>Pathways</h4><a href="/eb1a">EB-1A Extraordinary Ability</a><a href="/niw">EB-2 National Interest Waiver</a><a href="/dual-petition">Dual Petition Strategy</a></div>
     <div class="footer-col"><h4>Firm</h4><a href="/about">About</a><a href="/services">Services</a><a href="/career-advisory">Career Advisory</a><a href="/faq">FAQs</a><a href="/contact">Contact</a><a href="/book">Book a Consultation</a></div>
-    <div class="footer-col"><h4>Contact</h4><a href="mailto:textogbodo@gmail.com">textogbodo@gmail.com</a><a href="tel:+18572429842">+1 (857) 242-9842</a><a href="https://linkedin.com/in/ccogbodo" target="_blank">LinkedIn</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="mailto:founder@burlingtonconsult.com">founder@burlingtonconsult.com</a><a href="tel:+18572429842">+1 (857) 242-9842</a><a href="https://linkedin.com/in/ccogbodo" target="_blank">LinkedIn</a></div>
   </div>
   <div style="max-width:1200px;margin:40px auto 0;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;">
@@ -174,11 +271,8 @@ footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1p
 <a href="https://wa.me/18572429842?text=Hello%20Burlington%20Consult%2C%20I%27d%20like%20to%20inquire%20about%20your%20services." class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg></button>
 <script>
-var btt=document.getElementById('backToTop');
-if(btt){window.addEventListener('scroll',function(){btt.classList.toggle('visible',window.scrollY>400);});}
-document.body.classList.add('js-ready');
-var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.08,rootMargin:'0px 0px -60px 0px'});
-document.querySelectorAll('.animate-on-scroll').forEach(function(el){observer.observe(el);});
+var btt=document.getElementById('backToTop');if(btt){window.addEventListener('scroll',function(){btt.classList.toggle('visible',window.scrollY>400);});}
+document.body.classList.add('js-ready');var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.08,rootMargin:'0px 0px -60px 0px'});document.querySelectorAll('.animate-on-scroll').forEach(function(el){observer.observe(el);});
 </script>
 </body>
 </html>
