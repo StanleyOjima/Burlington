@@ -502,7 +502,8 @@ ul.nav-links{display:flex;align-items:center;gap:0;list-style:none}
 ul.nav-links li{display:flex;align-items:center}
 ul.nav-links a{position:relative;font-size:.84rem;font-weight:400;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s;padding:0 16px}
 ul.nav-links a:hover{color:#fff}
-ul.nav-links a.active{color:#2DD4BF;font-weight:500}
+ul.nav-links a.active,ul.nav-links a.active:hover{color:#2DD4BF;font-weight:500}
+ul.nav-links a.active:hover::after{content:'';position:absolute;bottom:-4px;left:16px;right:16px;height:1.5px;border-radius:1px;background:#2DD4BF;opacity:.6}
 .nav-divider{width:1px;height:14px;background:rgba(255,255,255,.1);flex-shrink:0}
 a.nav-cta{font-size:.82rem!important;font-weight:500!important;color:#fff!important;background:linear-gradient(135deg,#0D9488,#2DD4BF);padding:9px 22px!important;border-radius:20px!important;box-shadow:0 0 16px rgba(13,148,136,.25);transition:all .3s!important;margin-left:8px}
 a.nav-cta:hover{box-shadow:0 0 28px rgba(13,148,136,.4);transform:translateY(-1px)}
