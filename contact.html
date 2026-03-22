@@ -428,7 +428,6 @@ if(window.location.search.includes('submitted=true')){
   document.getElementById('formSuccess').style.display='block';
 }
 
-document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(function(a){var href=a.getAttribute('href');var path=window.location.pathname;if(path.length>1&&path.charAt(path.length-1)==='/'){path=path.slice(0,-1);}if(href==='/'&&(path===''||path==='/')){a.classList.add('active');}else if(href!=='/'&&path.indexOf(href)===0){a.classList.add('active');}});
 </script>
     </div>
 
@@ -467,3 +466,18 @@ document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(function(a){var 
       <a href="/privacy">Privacy</a>
       <a href="/terms">Terms</a>
       <a href="/disclaimer
+<script>
+(function(){
+  var links = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+  var path = window.location.pathname;
+  if (path.length > 1 && path.charAt(path.length - 1) === '/') path = path.slice(0, -1);
+  for (var i = 0; i < links.length; i++) {
+    var href = links[i].getAttribute('href');
+    if (href === '/' && (path === '' || path === '/')) {
+      links[i].classList.add('active');
+    } else if (href !== '/' && path.indexOf(href) === 0) {
+      links[i].classList.add('active');
+    }
+  }
+})();
+</script>
