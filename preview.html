@@ -220,7 +220,7 @@ footer{background:linear-gradient(180deg,var(--dark-base),#0A141A);border-top:1p
   .nav-links{display:none}
   .nav-hamburger{display:flex;width:36px;height:36px}
   .nav-tagline{display:none}
-  .hero{min-height:auto;padding:140px 24px 80px}
+  .hero{min-height:auto;padding:170px 24px 80px}
   .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center}
   .hero-stat{padding:0}
   .hero-stat+.hero-stat::before{display:none}
@@ -325,6 +325,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 .preview-banner{position:fixed;top:0;left:0;right:0;z-index:1100;background:linear-gradient(90deg,#0D9488,#2DD4BF);padding:8px 24px;text-align:center;font-size:.74rem;font-weight:500;color:#fff;letter-spacing:.04em;display:flex;align-items:center;justify-content:center;gap:8px}
 .preview-banner svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
 .preview-banner ~ nav{top:32px}
+.preview-banner ~ nav ~ .hero, .preview-banner ~ nav ~ * ~ .hero{padding-top:160px}
 .preview-banner ~ .mobile-nav{top:0}
 
 /* ═══ CREDENTIAL TICKER ═══ */
@@ -372,6 +373,55 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 /* ═══ SECTION TRANSITIONS ═══ */
 .section{position:relative}
 .section + .section::before{content:'';position:absolute;top:-1px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(13,148,136,.08),transparent)}
+
+
+/* ═══ HERO GLOW ORBS ═══ */
+.hero::after{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,.12) 0%,transparent 70%);top:20%;right:-10%;pointer-events:none;animation:orbFloat 8s ease-in-out infinite}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,20px) scale(1.05)}}
+
+/* ═══ SECTION HEADERS — LARGER, MORE WEIGHT ═══ */
+.section-title{font-size:clamp(2.2rem,4vw,3.2rem) !important;letter-spacing:-.03em !important}
+
+/* ═══ WHY-NOW CARDS — ICON CONTAINERS ═══ */
+.why-card-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(45,212,191,.04));display:flex;align-items:center;justify-content:center;margin-bottom:20px;border:1px solid rgba(13,148,136,.1)}
+
+/* ═══ ABOUT STAT CARDS — TEAL NUMBER GRADIENT ═══ */
+.about-stat-card .cred-stat-value{background:linear-gradient(135deg,var(--gray-700) 40%,var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ═══ PATHWAY CARDS — STRONGER PRESENCE ═══ */
+.pathway-card{border:1px solid rgba(0,0,0,.08) !important;box-shadow:0 2px 12px rgba(0,0,0,.04) !important}
+.pathway-card:hover{box-shadow:0 16px 56px rgba(13,148,136,.1),0 2px 8px rgba(0,0,0,.04) !important;border-color:rgba(13,148,136,.15) !important}
+
+/* ═══ APPROACH SECTION — HIGHLIGHT BOX ═══ */
+#approach .section-sub{border-left:3px solid var(--teal);padding-left:20px;margin-top:24px}
+
+/* ═══ TESTIMONIALS — QUOTE MARK GLOW ═══ */
+.testimonial-quote-mark{background:linear-gradient(135deg,var(--teal-bright),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:3rem !important}
+
+/* ═══ GLANCE GRID — COUNTER ANIMATION ═══ */
+.glance-value{background:linear-gradient(135deg,var(--gray-700) 30%,var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ═══ CTA — RADIAL GLOW ═══ */
+.cta-section::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.08) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+
+/* ═══ VISA STRIP — GLOW ENHANCEMENT ═══ */
+.visa-strip{background:linear-gradient(135deg,#040A0F,#0A1820,#040A0F) !important}
+
+/* ═══ CAREER ADVISORY PROMO — ELEVATED GRID ═══ */
+.career-promo-grid .about-stat-card{border:1px solid rgba(13,148,136,.08) !important;background:linear-gradient(145deg,#fff,rgba(13,148,136,.02)) !important}
+
+/* ═══ NEWS SECTION HEADER — ACCENT LINE ═══ */
+#news .section-title::after{content:'';display:block;width:60px;height:3px;background:linear-gradient(90deg,var(--teal),var(--teal-bright));border-radius:2px;margin-top:16px}
+
+/* ═══ TICKER ON DARK FOR HERO TRANSITION ═══ */
+.ticker-strip{background:linear-gradient(180deg,rgba(4,10,15,.95),rgba(4,10,15,.85)) !important;border-top:1px solid rgba(45,212,191,.06) !important;border-bottom:1px solid rgba(45,212,191,.08) !important}
+.ticker-item{color:rgba(255,255,255,.45) !important}
+.ticker-dot{background:var(--teal-bright) !important;opacity:.5 !important}
+.ticker-strip::before{background:linear-gradient(90deg,var(--dark-base),transparent) !important}
+.ticker-strip::after{background:linear-gradient(270deg,var(--dark-base),transparent) !important}
+
+/* ═══ SMOOTH SCROLL BEHAVIOR ═══ */
+html{scroll-behavior:smooth}
 
 /* ═══ HERO STAT COUNTERS ═══ */
 .hero-stat-value{transition:all .3s}
