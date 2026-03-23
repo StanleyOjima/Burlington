@@ -104,6 +104,13 @@ footer{background:linear-gradient(180deg,var(--dark),#060E14);border-top:1px sol
 .back-to-top:hover{background:rgba(13,148,136,.15);border-color:rgba(45,212,191,.25);transform:translateY(-2px)}
 
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex;width:36px;height:36px}.nav-tagline{display:none}.list-item{grid-template-columns:1fr;gap:8px}.li-date-col{flex-direction:row;gap:12px}.li-arrow{display:none}.ft-top{grid-template-columns:1fr;gap:32px}.ft-top>div:first-child{margin-bottom:16px}.ft-bottom{flex-direction:column;gap:16px}.whatsapp-btn{bottom:20px;left:20px;width:48px;height:48px}.back-to-top{bottom:20px;right:20px;width:40px;height:40px}.nav-hamburger span{width:16px}.nav-hamburger span:nth-child(2){width:12px}}
+
+/* LOAD MORE */
+.list-item.hidden{display:none}
+.load-more-wrap{text-align:center;padding:48px 0 0}
+.load-more{display:inline-flex;align-items:center;gap:10px;padding:14px 36px;font-family:var(--sn);font-size:.86rem;font-weight:500;color:var(--teal);background:transparent;border:1px solid rgba(13,148,136,.2);border-radius:12px;cursor:pointer;transition:all .3s}
+.load-more:hover{background:rgba(13,148,136,.04);border-color:rgba(13,148,136,.3);transform:translateY(-2px)}
+.load-more.exhausted{display:none}
 </style>
 </head>
 <body>
@@ -143,6 +150,7 @@ footer{background:linear-gradient(180deg,var(--dark),#060E14);border-top:1px sol
       <div class="li-arrow">&rarr;</div>
     </a>
 
+    <div class="load-more-wrap"><button class="load-more" id="loadMore">Load more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button></div>
   </div>
 </section>
 
@@ -180,6 +188,24 @@ footer{background:linear-gradient(180deg,var(--dark),#060E14);border-top:1px sol
 <script>
 window.addEventListener('scroll',function(){var b=document.getElementById('backToTop');if(window.scrollY>400){b.classList.add('visible')}else{b.classList.remove('visible')}});
 document.addEventListener('DOMContentLoaded',function(){var path=window.location.pathname;document.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('href')===path){a.classList.add('active')}});});
+</script>
+<script>
+(function(){
+  var items = document.querySelectorAll('.list-item');
+  var btn = document.getElementById('loadMore');
+  var show = 10;
+  var loaded = show;
+  // Hide items beyond initial show count
+  for(var i = show; i < items.length; i++) items[i].classList.add('hidden');
+  // Hide button if not enough items
+  if(items.length <= show && btn) btn.classList.add('exhausted');
+  if(btn) btn.addEventListener('click', function(){
+    var next = Math.min(loaded + show, items.length);
+    for(var i = loaded; i < next; i++) items[i].classList.remove('hidden');
+    loaded = next;
+    if(loaded >= items.length) btn.classList.add('exhausted');
+  });
+})();
 </script>
 </body>
 </html>
