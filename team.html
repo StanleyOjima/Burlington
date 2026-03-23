@@ -89,7 +89,7 @@ nav {
 
 /* ===== HERO ===== */
 .hero {
-  position: relative; min-height: 70vh;
+  position: relative; display: flex; flex-direction: column; min-height: 70vh;
   background: var(--dark-base);
   display: flex; align-items: center; justify-content: center;
   padding: calc(72px + var(--section-pad)) var(--side-pad) var(--section-pad);
@@ -144,10 +144,13 @@ nav {
 
 /* ===== CREDENTIALS BAR ===== */
 .cred-bar {
-  background: linear-gradient(180deg, rgba(4,10,15,.95), rgba(8,16,24,.95));
-  border-top: 1px solid rgba(45,212,191,.06);
-  border-bottom: 1px solid rgba(45,212,191,.06);
-  padding: 20px 0;
+  background: rgba(0,0,0,.2);
+  border-top: 1px solid rgba(45,212,191,.08);
+  padding: 18px 0;
+  margin-top: auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
   overflow: hidden;
   position: relative;
 }
@@ -602,10 +605,9 @@ footer{background:linear-gradient(180deg,#040A0F,#060E14);border-top:1px solid r
       Burlington Consult is led by professionals who have personally navigated the U.S. immigration process — and built careers that demonstrate what it takes to qualify.
     </p>
   </div>
-</section>
 
-<!-- ===== CREDENTIALS BAR ===== -->
-<section class="cred-bar">
+  <!-- CREDENTIALS TICKER -->
+  <div class="cred-bar">
   <div class="cred-inner reveal">
 <div class="cred-item"><span><strong>100%</strong>&nbsp; Approval Rate</span></div>
     <div class="cred-sep">·</div>
@@ -654,7 +656,10 @@ footer{background:linear-gradient(180deg,#040A0F,#060E14);border-top:1px solid r
     <div class="cred-sep">·</div>
     <div class="cred-item"><span><strong>3 Continents</strong></span></div>
 </div>
+  </div>
 </section>
+
+
 
 <!-- ===== EBUKA — LEAD ===== -->
 <section class="profile-section bg-white snap-s">
