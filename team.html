@@ -562,6 +562,13 @@ footer{background:linear-gradient(180deg,#040A0F,#060E14);border-top:1px solid r
 .bg-light .cc-item:nth-child(odd){border-right-color:rgba(0,0,0,.03)}
 .bg-light .distinctions-bar{background:rgba(255,255,255,.5);border-color:rgba(0,0,0,.04)}
 @media(max-width:600px){.cc-grid{grid-template-columns:1fr}.cc-item:nth-child(odd){padding-right:0;border-right:none}.cc-item:nth-child(even){padding-left:0}}
+
+/* SCROLL SNAP — desktop only */
+@media(min-width:769px){
+  html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+  .snap-s{scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+  footer{scroll-snap-align:end}
+}
 </style>
 </head>
 <body>
@@ -571,7 +578,7 @@ footer{background:linear-gradient(180deg,#040A0F,#060E14);border-top:1px solid r
 <div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">01</span><span class="mn-text">Home</span></a><a href="/about" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">02</span><span class="mn-text">About</span></a><a href="/services" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">03</span><span class="mn-text">Services</span></a><a href="/career-advisory" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">04</span><span class="mn-text">Career Advisory</span></a><a href="/team" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">05</span><span class="mn-text">Team</span></a><a href="/faq" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">06</span><span class="mn-text">FAQs</span></a><a href="/contact" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">07</span><span class="mn-text">Contact</span></a><a href="/book" class="mobile-nav-cta">Book a Consultation</a></div>
 
 <!-- ===== HERO ===== -->
-<section class="hero">
+<section class="hero snap-s">
   <div class="hero-ring"></div>
   <div class="hero-ring"></div>
   <div class="hero-ring"></div>
@@ -586,7 +593,7 @@ footer{background:linear-gradient(180deg,#040A0F,#060E14);border-top:1px solid r
 </section>
 
 <!-- ===== CREDENTIALS BAR ===== -->
-<section class="cred-bar">
+<section class="snap-s cred-bar">
   <div class="cred-inner reveal">
     <div class="cred-item"><div class="cred-icon">🎓</div><span><strong>Harvard Law School</strong>&nbsp; LL.M.</span></div>
     <div class="cred-item"><div class="cred-icon">✓</div><span><strong>100%</strong>&nbsp; Approval Rate</span></div>
@@ -596,7 +603,7 @@ footer{background:linear-gradient(180deg,#040A0F,#060E14);border-top:1px solid r
 </section>
 
 <!-- ===== EBUKA — LEAD ===== -->
-<section class="profile-section bg-white">
+<section class="profile-section bg-white snap-s">
   <div class="profile-inner">
     <div class="portrait-wrap reveal">
       <div class="portrait">
@@ -655,7 +662,7 @@ footer{background:linear-gradient(180deg,#040A0F,#060E14);border-top:1px solid r
 </section>
 
 <!-- ===== PHILOSOPHY INTERLUDE ===== -->
-<section class="divider-quote">
+<section class="snap-s divider-quote">
   <div class="dot-grid"></div>
   <div class="divider-quote-inner">
     <div class="dq-dash reveal"></div>
@@ -667,7 +674,7 @@ footer{background:linear-gradient(180deg,#040A0F,#060E14);border-top:1px solid r
 </section>
 
 <!-- ===== NKEM — CO-FOUNDER & CTO ===== -->
-<section class="profile-section bg-light">
+<section class="profile-section bg-light snap-s">
   <div class="profile-inner">
     <div class="portrait-wrap reveal">
       <div class="portrait">
@@ -715,7 +722,7 @@ footer{background:linear-gradient(180deg,#040A0F,#060E14);border-top:1px solid r
 </section>
 
 <!-- ===== EXTENDED TEAM ===== -->
-<section class="ext-team-section">
+<section class="ext-team-section snap-s">
   <div class="ext-team-header">
     <div class="overline reveal">Extended Team</div>
     <h2 class="reveal reveal-delay-1">The team behind every filing</h2>
@@ -811,7 +818,7 @@ footer{background:linear-gradient(180deg,#040A0F,#060E14);border-top:1px solid r
 </section>
 
 <!-- ===== BY THE NUMBERS ===== -->
-<section class="numbers">
+<section class="snap-s numbers">
   <div class="dot-grid"></div>
   <div class="numbers-inner">
     <div class="num-item reveal"><div class="num-value">100%</div><div class="num-label">Approval rate</div></div>
@@ -822,7 +829,7 @@ footer{background:linear-gradient(180deg,#040A0F,#060E14);border-top:1px solid r
 </section>
 
 <!-- ===== ADVISORY NETWORK ===== -->
-<section class="network">
+<section class="snap-s network">
   <div class="network-inner">
     <div>
       <div class="network-overline reveal">Advisory Network</div>
@@ -853,7 +860,7 @@ footer{background:linear-gradient(180deg,#040A0F,#060E14);border-top:1px solid r
 </section>
 
 <!-- ===== CTA ===== -->
-<section class="cta">
+<section class="cta snap-s">
   <div class="dot-grid"></div>
   <div class="cta-inner">
     <div class="cta-overline reveal">Work With Us</div>
