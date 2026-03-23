@@ -66,7 +66,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--sp);height:
 
 /* LIST */
 .list-section{padding:var(--vp) var(--sp);background:var(--white)}
-.list-item{display:grid;grid-template-columns:160px 1fr auto;gap:32px;align-items:center;padding:28px 0;border-bottom:1px solid var(--g100);text-decoration:none;color:inherit;transition:all .3s}
+/* PUBLICATION LOGOS */
+.li-logo{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;border:1px solid var(--g100);background:var(--off-white,#F7F7F5)}
+.li-logo img{width:28px;height:28px;object-fit:contain}
+.list-item{display:grid;grid-template-columns:160px 48px 1fr auto;gap:24px;align-items:center;padding:28px 0;border-bottom:1px solid var(--g100);text-decoration:none;color:inherit;transition:all .3s}
 .list-item:first-child{border-top:1px solid var(--g100)}
 .list-item:hover{padding-left:12px}
 .list-item:hover .li-title{color:var(--teal)}
@@ -103,7 +106,7 @@ footer{background:linear-gradient(180deg,var(--dark),#060E14);border-top:1px sol
 .back-to-top.visible{opacity:1;transform:translateY(0)}
 .back-to-top:hover{background:rgba(13,148,136,.15);border-color:rgba(45,212,191,.25);transform:translateY(-2px)}
 
-@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex;width:36px;height:36px}.nav-tagline{display:none}.list-item{grid-template-columns:1fr;gap:8px}.li-date-col{flex-direction:row;gap:12px}.li-arrow{display:none}.ft-top{grid-template-columns:1fr;gap:32px}.ft-top>div:first-child{margin-bottom:16px}.ft-bottom{flex-direction:column;gap:16px}.whatsapp-btn{bottom:20px;left:20px;width:48px;height:48px}.back-to-top{bottom:20px;right:20px;width:40px;height:40px}.nav-hamburger span{width:16px}.nav-hamburger span:nth-child(2){width:12px}}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex;width:36px;height:36px}.nav-tagline{display:none}.list-item{grid-template-columns:1fr;gap:8px}.li-logo{display:none}.li-date-col{flex-direction:row;gap:12px}.li-arrow{display:none}.ft-top{grid-template-columns:1fr;gap:32px}.ft-top>div:first-child{margin-bottom:16px}.ft-bottom{flex-direction:column;gap:16px}.whatsapp-btn{bottom:20px;left:20px;width:48px;height:48px}.back-to-top{bottom:20px;right:20px;width:40px;height:40px}.nav-hamburger span{width:16px}.nav-hamburger span:nth-child(2){width:12px}}
 
 /* LOAD MORE */
 .list-item.hidden{display:none}
@@ -134,24 +137,28 @@ footer{background:linear-gradient(180deg,var(--dark),#060E14);border-top:1px sol
 
         <a href="/blog/eb1a-petitions-fail" class="list-item">
       <div class="li-date-col"><span class="li-date">March 2026</span><span class="li-pub">Burlington Consult</span></div>
+      <div class="li-logo" style="background:var(--dark,#040A0F);border-color:rgba(45,212,191,.15);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal-bright,#2DD4BF)" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
       <div><span class="li-cat">Strategy</span><div class="li-title">Why Most EB-1A Petitions Fail: What Strong Applicants Do Differently</div><p class="li-excerpt">Most petitions fail not because of a lack of achievement, but because of structural misalignment. The volume trap, the context gap, and how strategy separates approval from an RFE.</p></div>
       <div class="li-arrow">&rarr;</div>
     </a>
 
 <a href="https://guardian.ng/technology/tech/how-nigerias-first-google-fellow-is-negotiating-nigerias-tech-future/" target="_blank" rel="noopener" class="list-item">
       <div class="li-date-col"><span class="li-date">September 2024</span><span class="li-pub">The Guardian Nigeria</span></div>
+      <div class="li-logo"><img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://guardian.ng&size=128" alt="The Guardian"></div>
       <div><span class="li-cat">Featured Profile</span><div class="li-title">How Nigeria's First Google Fellow Is Negotiating Nigeria's Tech Future</div><p class="li-excerpt">A profile of Burlington Consult's founder on his journey from Africa's first Google Policy Fellow to Harvard Law School — and why he believes Nigeria must decide its own digital future before someone else does.</p></div>
       <div class="li-arrow">&rarr;</div>
     </a>
 
     <a href="https://punchng.com/experts-raise-concerns-over-ai-and-data-privacy-breaches/" target="_blank" rel="noopener" class="list-item">
       <div class="li-date-col"><span class="li-date">November 2024</span><span class="li-pub">Punch Nigeria</span></div>
+      <div class="li-logo"><img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://punchng.com&size=128" alt="Punch"></div>
       <div><span class="li-cat">Industry</span><div class="li-title">Experts Raise Concerns Over AI and Data Privacy Breaches</div><p class="li-excerpt">As Nigeria's digital economy accelerates, the intersection of AI and data protection has become critical. Experts weigh in on privacy risks, regulatory gaps, and the path forward for data governance.</p></div>
       <div class="li-arrow">&rarr;</div>
     </a>
 
     <a href="https://www.icann.org/en/announcements/details/icann-announces-nextgenicann82-participants-10-12-2024-en" target="_blank" rel="noopener" class="list-item">
       <div class="li-date-col"><span class="li-date">December 2024</span><span class="li-pub">ICANN</span></div>
+      <div class="li-logo"><img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://icann.org&size=128" alt="ICANN"></div>
       <div><span class="li-cat">Internet Governance</span><div class="li-title">ICANN Announces NextGen@ICANN82 Participants for Seattle Forum</div><p class="li-excerpt">Twelve university students from across North America selected to participate in the NextGen@ICANN Programme at the ICANN82 Community Forum in Seattle, March 2025.</p></div>
       <div class="li-arrow">&rarr;</div>
     </a>
