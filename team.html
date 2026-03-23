@@ -321,8 +321,8 @@ nav {
 .ext-team-header p { font-size: .95rem; font-weight: 300; color: var(--gray-400); line-height: 1.7; }
 
 .ext-grid {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
 }
 .ext-card {
   background: var(--white); border-radius: 16px; border: 1px solid var(--gray-100);
@@ -344,7 +344,7 @@ nav {
 
 /* Photo area */
 .ext-card-photo {
-  width: 100%; aspect-ratio: 1/1;
+  width: 100%; aspect-ratio: 4/3;
   background: linear-gradient(160deg, #e8e7e3 0%, #d8d7d3 60%, #cecdca 100%);
   position: relative; overflow: hidden;
 }
@@ -369,7 +369,7 @@ nav {
   color: var(--gray-700); letter-spacing: -0.01em; margin-bottom: 2px;
 }
 .ext-card-loc { font-size: .78rem; font-weight: 500; color: var(--teal); letter-spacing: 0.04em; }
-.ext-card-desc { font-size: .85rem; font-weight: 300; color: var(--gray-400); line-height: 1.7; margin-bottom: 16px; flex: 1; }
+.ext-card-desc { font-size: .8rem; font-weight: 300; color: var(--gray-400); line-height: 1.65; margin-bottom: 16px; flex: 1; }
 .ext-card-links { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--gray-100); width: 100%; }
 .ext-card-link {
   font-size: .78rem; font-weight: 500; color: var(--teal);
@@ -377,8 +377,9 @@ nav {
 }
 .ext-card-link:hover { color: var(--teal-bright); }
 
-@media (max-width: 900px) { .ext-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 540px) { .ext-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; } }
+@media (max-width: 1100px) { .ext-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px) { .ext-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .ext-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; } }
 
 /* ===== BY THE NUMBERS ===== */
 .numbers {
