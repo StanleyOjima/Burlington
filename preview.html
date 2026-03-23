@@ -426,6 +426,57 @@ html{scroll-behavior:smooth}
 /* ═══ HERO STAT COUNTERS ═══ */
 .hero-stat-value{transition:all .3s}
 
+
+/* ═══════════ LUXURY DESIGN SYSTEM ═══════════ */
+.s{padding:clamp(100px,12vw,160px) clamp(24px,5vw,80px);position:relative}
+.s-w{background:var(--white)}.s-l{background:var(--light-gray)}.s-d{background:var(--dark-base);color:var(--white)}
+.s-d2{background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(13,148,136,.06),transparent 60%),var(--dark-base);color:var(--white)}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);margin-bottom:24px}.tag::before{content:'';width:20px;height:1px;background:currentColor}
+.s-d .tag,.s-d2 .tag{color:var(--teal-bright)}
+.s-t{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:500;letter-spacing:-.03em;line-height:1.1;margin-bottom:20px}
+.s-sub{font-size:1rem;line-height:1.8;color:var(--gray-400);max-width:560px;font-weight:300}
+.s-d .s-sub,.s-d2 .s-sub{color:rgba(255,255,255,.35)}
+.mx{max-width:1280px;margin:0 auto}
+.hl{background:linear-gradient(135deg,var(--teal-bright),#22D3EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* glass cards */
+.gc{background:rgba(255,255,255,.03);border:1px solid rgba(45,212,191,.1);border-radius:20px;padding:40px 32px;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.gc:hover{border-color:rgba(45,212,191,.2);background:rgba(255,255,255,.05);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.25),0 0 40px rgba(13,148,136,.06)}
+.gc::before{content:'';position:absolute;top:0;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,var(--teal-bright),transparent);opacity:0;transition:opacity .4s}
+.gc:hover::before{opacity:1}
+
+/* icon box */
+.ib{width:52px;height:52px;border-radius:14px;background:rgba(13,148,136,.08);border:1px solid rgba(45,212,191,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--teal-bright);transition:all .3s;margin-bottom:24px}
+.gc:hover .ib{background:rgba(13,148,136,.14);box-shadow:0 0 28px rgba(13,148,136,.12)}
+.ib-light{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(45,212,191,.04));border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--teal);transition:all .3s;margin-bottom:24px}
+
+/* white elevated card */
+.wc{background:var(--white);border:1px solid rgba(0,0,0,.06);border-radius:24px;padding:48px 40px;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.03);transition:all .4s cubic-bezier(.16,1,.3,1)}
+.wc:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.07);border-color:rgba(13,148,136,.12)}
+.wc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal-bright),#22D3EE);opacity:0;transition:opacity .4s}
+.wc:hover::before{opacity:1}
+
+/* dot grid bg */
+.dot-bg{position:absolute;inset:0;background-image:radial-gradient(rgba(45,212,191,.06) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,black 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,black 0%,transparent 70%);pointer-events:none}
+
+/* credential pill */
+.cpill{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;font-size:.74rem;font-weight:500;letter-spacing:.02em;white-space:nowrap}
+.cpill-teal{color:var(--teal);background:rgba(13,148,136,.05);border:1px solid rgba(13,148,136,.1)}
+.cpill-dark{color:var(--teal-bright);background:rgba(13,148,136,.06);border:1px solid rgba(45,212,191,.12)}
+
+/* stat card luxury */
+.lstat{text-align:left;padding:36px 28px;display:flex;align-items:flex-start;gap:20px;background:var(--white);border:1px solid rgba(0,0,0,.04);border-radius:18px;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 1px 3px rgba(0,0,0,.03)}
+.lstat:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06);border-color:rgba(13,148,136,.1)}
+.lstat-v{font-family:var(--serif);font-size:1.8rem;font-weight:600;background:linear-gradient(135deg,var(--gray-700) 40%,var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em;line-height:1}
+.lstat-l{font-size:.68rem;color:var(--gray-300);margin-top:10px;letter-spacing:.04em;text-transform:uppercase;line-height:1.5}
+
+@media(max-width:768px){
+  .lx-3{grid-template-columns:1fr !important}
+  .lx-2{grid-template-columns:1fr !important;gap:24px !important}
+  .lx-pills{gap:8px !important}
+  .lx-pills .cpill{font-size:.68rem;padding:6px 14px}
+}
+
 </style>
 <meta property="og:title" content="Burlington Consult — Immigration Strategy & Advisory">
 <meta property="og:description" content="Einstein Visa (EB-1A) and NIW (EB-2) petitions for high-achieving professionals. The fastest path to a U.S. green card without an employer sponsor.">
@@ -491,228 +542,177 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
+<!-- ═══════════ LUXURY SECTIONS START ═══════════ -->
+
 <!-- CREDENTIAL TICKER -->
-<div class="ticker-strip">
-  <div class="ticker-track">
-    <span class="ticker-item"><span class="ticker-dot"></span>100% Approval Rate</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>2 Einstein Visa Holders</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Harvard Law School</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Cambridge University</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Microsoft</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>PwC</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Biglaw</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Gates Foundation</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Meta Platforms</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>ICANN</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Rotman MBA</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>3 Continents</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>100% Approval Rate</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>2 Einstein Visa Holders</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Harvard Law School</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Cambridge University</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Microsoft</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>PwC</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Biglaw</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Gates Foundation</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Meta Platforms</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>ICANN</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Rotman MBA</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>3 Continents</span>
+<div style="background:var(--dark-base);border-top:1px solid rgba(45,212,191,.06);border-bottom:1px solid rgba(45,212,191,.08);overflow:hidden;">
+  <div style="display:flex;animation:tickerScroll 30s linear infinite;white-space:nowrap;">
+    <div style="display:flex;flex-shrink:0;"><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">100%</strong> Approval Rate</span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">2</strong> Einstein Visa Holders</span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">Harvard</strong> Law School</span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">Cambridge</strong> University</span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">Microsoft</strong></span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">Meta</strong> Platforms</span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">PwC</strong></span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">Gates</strong> Foundation</span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">3</strong> Continents</span></div>
+    <div style="display:flex;flex-shrink:0;"><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">100%</strong> Approval Rate</span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">2</strong> Einstein Visa Holders</span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">Harvard</strong> Law School</span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">Cambridge</strong> University</span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">Microsoft</strong></span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">Meta</strong> Platforms</span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">PwC</strong></span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">Gates</strong> Foundation</span><span style="width:4px;height:4px;border-radius:50%;background:rgba(45,212,191,.2);flex-shrink:0;align-self:center;"></span><span class="ticker-item" style="padding:22px 52px;font-size:.88rem;color:rgba(255,255,255,.12);display:flex;align-items:center;gap:14px;"><strong style="font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--teal-bright);">3</strong> Continents</span></div>
   </div>
 </div>
 
-<section class="section section-dark snap-section" id="why-now" style="position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(45,212,191,.06) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,black 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,black 0%,transparent 70%);pointer-events:none;"></div>
-  <div class="container" style="position:relative;z-index:2;">
-    <div class="animate-on-scroll" style="text-align:center;margin-bottom:64px;">
-      <div class="section-label" style="justify-content:center;color:var(--teal-bright);">Time-Sensitive</div>
-      <h2 class="section-title" style="color:var(--white);">The window is narrowing.</h2>
-      <p class="section-sub" style="margin:0 auto;color:rgba(255,255,255,.4);">Every month of delay in filing is a month later in the queue, assessed against a bar that is likely to become stricter.</p>
+<!-- §2 WHY NOW — dark with dot grid -->
+<section class="s s-d2 snap-section" id="why-now">
+  <div class="dot-bg"></div>
+  <div class="mx" style="position:relative;z-index:2;">
+    <div style="text-align:center;margin-bottom:72px;">
+      <div class="tag" style="justify-content:center;">Time-Sensitive</div>
+      <h2 class="s-t" style="color:var(--white);">The window is <span class="hl">narrowing</span>.</h2>
+      <p class="s-sub" style="margin:0 auto;">Every month of delay in filing is a month later in the queue, assessed against a bar that is likely to become stricter.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      <div class="animate-on-scroll stagger-1" style="background:rgba(255,255,255,.03);border:1px solid rgba(45,212,191,.1);border-radius:20px;padding:40px 32px;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1);" onmouseover="this.style.borderColor='rgba(45,212,191,.25)';this.style.background='rgba(255,255,255,.05)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(45,212,191,.1)';this.style.background='rgba(255,255,255,.03)';this.style.transform='translateY(0)'">
-        <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(13,148,136,.15),rgba(45,212,191,.08));display:flex;align-items:center;justify-content:center;margin-bottom:24px;border:1px solid rgba(45,212,191,.12);">
-          <svg width="22" height="22" fill="none" stroke="var(--teal-bright)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 6v6l4 2M22 12A10 10 0 1 1 2 12a10 10 0 0 1 20 0Z"/></svg>
-        </div>
-        <div style="font-family:var(--serif);font-size:2.5rem;font-weight:400;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.04));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:absolute;top:32px;right:32px;line-height:1;">01</div>
+    <div class="lx-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div class="gc">
+        <div class="ib"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 6v6l4 2M22 12A10 10 0 1 1 2 12a10 10 0 0 1 20 0Z"/></svg></div>
         <h3 style="font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:14px;">Regulatory Change Pending</h3>
-        <p style="font-size:.88rem;line-height:1.8;color:rgba(255,255,255,.4);font-weight:300;">DHS has proposed raising evidentiary thresholds for Einstein Visa (EB-1A) and NIW. Petitions filed now are assessed against current, more favourable standards.</p>
-        <a href="https://www.reginfo.gov/public/do/eAgendaViewRule?pubId=202504&RIN=1615-AC85" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:var(--teal-bright);text-decoration:none;margin-top:14px;transition:gap .3s" onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='6px'">Read more &rarr;</a>
+        <p style="font-size:.86rem;line-height:1.8;color:rgba(255,255,255,.35);font-weight:300;">DHS has proposed raising evidentiary thresholds for Einstein Visa (EB-1A) and NIW. Petitions filed now are assessed against current, more favourable standards.</p>
+        <a href="https://www.reginfo.gov/public/do/eAgendaViewRule?pubId=202504&RIN=1615-AC85" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:500;color:var(--teal-bright);text-decoration:none;margin-top:16px;transition:gap .3s" onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='6px'">Read more &rarr;</a>
       </div>
-      <div class="animate-on-scroll stagger-2" style="background:rgba(255,255,255,.03);border:1px solid rgba(45,212,191,.1);border-radius:20px;padding:40px 32px;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1);" onmouseover="this.style.borderColor='rgba(45,212,191,.25)';this.style.background='rgba(255,255,255,.05)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(45,212,191,.1)';this.style.background='rgba(255,255,255,.03)';this.style.transform='translateY(0)'">
-        <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(13,148,136,.15),rgba(45,212,191,.08));display:flex;align-items:center;justify-content:center;margin-bottom:24px;border:1px solid rgba(45,212,191,.12);">
-          <svg width="22" height="22" fill="none" stroke="var(--teal-bright)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a10 10 0 11-20 0 10 10 0 0120 0z"/></svg>
-        </div>
-        <div style="font-family:var(--serif);font-size:2.5rem;font-weight:400;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.04));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:absolute;top:32px;right:32px;line-height:1;">02</div>
+      <div class="gc">
+        <div class="ib"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a10 10 0 11-20 0 10 10 0 0120 0z"/></svg></div>
         <h3 style="font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:14px;">Priority Date Is Set on Filing</h3>
-        <p style="font-size:.88rem;line-height:1.8;color:rgba(255,255,255,.4);font-weight:300;">Your queue position is established the day USCIS receives your petition. Every month of delay is a month later in line.</p>
+        <p style="font-size:.86rem;line-height:1.8;color:rgba(255,255,255,.35);font-weight:300;">Your queue position is established the day USCIS receives your petition. Every month of delay is a month later in line.</p>
       </div>
-      <div class="animate-on-scroll stagger-3" style="background:rgba(255,255,255,.03);border:1px solid rgba(45,212,191,.1);border-radius:20px;padding:40px 32px;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1);" onmouseover="this.style.borderColor='rgba(45,212,191,.25)';this.style.background='rgba(255,255,255,.05)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(45,212,191,.1)';this.style.background='rgba(255,255,255,.03)';this.style.transform='translateY(0)'">
-        <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(13,148,136,.15),rgba(45,212,191,.08));display:flex;align-items:center;justify-content:center;margin-bottom:24px;border:1px solid rgba(45,212,191,.12);">
-          <svg width="22" height="22" fill="none" stroke="var(--teal-bright)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        </div>
-        <div style="font-family:var(--serif);font-size:2.5rem;font-weight:400;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.04));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:absolute;top:32px;right:32px;line-height:1;">03</div>
+      <div class="gc">
+        <div class="ib"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
         <h3 style="font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:14px;">Processing Is Active</h3>
-        <p style="font-size:.88rem;line-height:1.8;color:rgba(255,255,255,.4);font-weight:300;">USCIS continues to accept and substantively process I-140 filings. RFEs are being issued, confirming active case engagement.</p>
+        <p style="font-size:.86rem;line-height:1.8;color:rgba(255,255,255,.35);font-weight:300;">USCIS continues to accept and substantively process I-140 filings. RFEs are being issued, confirming active case engagement.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-light snap-section" id="pathways">
-  <div class="container">
-    <div class="animate-on-scroll">
-      <div class="section-label">Immigration Pathways</div>
-      <h2 class="section-title">Two pathways. One strategy.</h2>
-      <p class="section-sub">Burlington Consult files both petitions simultaneously — preserving a single priority date and creating strategic redundancy.</p>
+<!-- §3 PATHWAYS — light, premium cards -->
+<section class="s s-l snap-section" id="pathways">
+  <div class="mx">
+    <div style="text-align:center;margin-bottom:24px;">
+      <div class="tag" style="justify-content:center;">Immigration Pathways</div>
+      <h2 class="s-t">Two pathways. One strategy.</h2>
+      <p class="s-sub" style="margin:0 auto;">Burlington Consult files both petitions simultaneously — preserving a single priority date and creating strategic redundancy.</p>
     </div>
-    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:48px 0 12px;"><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(13,148,136,.15));"></div><span style="font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);padding:8px 20px;border:1px solid rgba(13,148,136,.1);border-radius:100px;background:rgba(13,148,136,.03);white-space:nowrap;">Filed Simultaneously · Same Priority Date</span><div style="flex:1;height:1px;background:linear-gradient(270deg,transparent,rgba(13,148,136,.15));"></div></div>
-    <div class="pathways-grid">
-      <div class="pathway-card animate-on-scroll stagger-1">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;"><div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(13,148,136,.1),rgba(45,212,191,.05));border:1px solid rgba(13,148,136,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="pathway-sub" style="margin-bottom:0;">Extraordinary Ability</div></div>
-        <h3>Einstein Visa (EB-1A)</h3>
-        <p>The most distinguished employment-based visa the U.S. issues. Same statutory classification as Nobel laureates, Pulitzer recipients, Grammy winners, and Olympic champions. Fewer than 5% of employment-based green cards carry this classification annually.</p>
-        <div class="pathway-features">
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>No employer sponsor or job offer required</div>
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>No U.S. labour market test</div>
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Self-petitioned from anywhere in the world</div>
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Full portability from the moment of approval</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:40px 0 20px;"><div style="flex:1;max-width:200px;height:1px;background:linear-gradient(90deg,transparent,rgba(13,148,136,.2));"></div><span style="font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);padding:8px 22px;border:1px solid rgba(13,148,136,.1);border-radius:100px;background:rgba(13,148,136,.03);white-space:nowrap;">Filed Simultaneously &middot; Same Priority Date</span><div style="flex:1;max-width:200px;height:1px;background:linear-gradient(270deg,transparent,rgba(13,148,136,.2));"></div></div>
+    <div class="lx-2" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px;">
+      <div class="wc">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
+          <div class="ib-light"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <span style="font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);">Extraordinary Ability</span>
         </div>
-        <a href="/eb1a" class="pathway-link">Learn more &rarr;</a>
+        <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--gray-700);margin-bottom:12px;">Einstein Visa (EB-1A)</h3>
+        <p style="font-size:.9rem;line-height:1.8;color:var(--gray-400);font-weight:300;margin-bottom:32px;">The most distinguished employment-based visa the U.S. issues. Same statutory classification as Nobel laureates, Pulitzer recipients, and Olympic champions. Fewer than 5% of employment-based green cards carry this classification annually.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:36px;">
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>No employer sponsor or job offer required</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>No U.S. labour market test</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Self-petitioned from anywhere in the world</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Full portability from the moment of approval</div>
+        </div>
+        <a href="/eb1a" style="display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:500;color:var(--teal);text-decoration:none;transition:gap .3s" onmouseover="this.style.gap='14px'" onmouseout="this.style.gap='8px'">Learn more &rarr;</a>
       </div>
-      <div class="pathway-card animate-on-scroll stagger-2">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;"><div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(13,148,136,.1),rgba(45,212,191,.05));border:1px solid rgba(13,148,136,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="pathway-sub" style="margin-bottom:0;">National Interest Waiver</div></div>
-        <h3>NIW Petition Development (EB-2)</h3>
-        <p>The parallel self-petitioned pathway for professionals whose proposed work serves a demonstrable U.S. national interest. Requires satisfaction of the Dhanasar three-prong test — substantial merit, strong positioning, and net benefit to the U.S.</p>
-        <div class="pathway-features">
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Self-petitioned — no PERM or employer required</div>
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Filed simultaneously with EB-1A</div>
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Single evidence record across both petitions</div>
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Shared priority date — strategic redundancy</div>
+      <div class="wc">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
+          <div class="ib-light"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <span style="font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);">National Interest Waiver</span>
         </div>
-        <a href="/niw" class="pathway-link">Learn more &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-white snap-section" id="about">
-  <div class="container">
-    <div class="animate-on-scroll">
-      <div class="section-label">About Burlington Consult</div>
-      <h2 class="section-title">Built by someone who filed it themselves.</h2>
-      <p class="section-sub" style="max-width:720px;">Led by a Harvard Law School-trained strategist (LL.M., Technology Law and AI Policy) who is a self-petitioned, first-submission Einstein Visa (EB-1A) holder. Not theory — direct practitioner knowledge of the Kazarian two-step framework, Dhanasar precedent, and current USCIS adjudication standards.</p>
-      <p style="font-size:.95rem;line-height:1.8;color:var(--gray-400);font-weight:300;max-width:720px;margin-top:16px;">Supported by an experienced team of case architects, AI prompt engineers, researchers, and senior advisers spanning the United States, Nigeria, and Canada. Incorporated in the State of Delaware, March 2026, with active client engagements across West Africa, the United Kingdom, and Canada.</p>
-    </div>
-    <!-- Credential pills -->
-    <div class="animate-on-scroll" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;margin-bottom:48px;">
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;font-size:.76rem;font-weight:500;color:var(--teal);background:rgba(13,148,136,.05);border:1px solid rgba(13,148,136,.1);letter-spacing:.02em;">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
-        Harvard Law School
-      </span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;font-size:.76rem;font-weight:500;color:var(--teal);background:rgba(13,148,136,.05);border:1px solid rgba(13,148,136,.1);letter-spacing:.02em;">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        Einstein Visa Holder
-      </span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;font-size:.76rem;font-weight:500;color:var(--teal);background:rgba(13,148,136,.05);border:1px solid rgba(13,148,136,.1);letter-spacing:.02em;">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a10 10 0 11-20 0 10 10 0 0120 0z"/></svg>
-        First-Submission Approved
-      </span>
-      <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;font-size:.76rem;font-weight:500;color:var(--teal);background:rgba(13,148,136,.05);border:1px solid rgba(13,148,136,.1);letter-spacing:.02em;">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        3 Continents
-      </span>
-    </div>
-    <!-- Stats with icons -->
-    <div class="about-stats-grid animate-on-scroll">
-      <div class="about-stat-card" style="text-align:left;padding:36px 28px;display:flex;align-items:flex-start;gap:20px;">
-        <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(45,212,191,.04));display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(13,148,136,.08);">
-          <svg width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--gray-700);margin-bottom:12px;">NIW Petition Development (EB-2)</h3>
+        <p style="font-size:.9rem;line-height:1.8;color:var(--gray-400);font-weight:300;margin-bottom:32px;">The parallel self-petitioned pathway for professionals whose proposed work serves a demonstrable U.S. national interest. Requires satisfaction of the Dhanasar three-prong test — substantial merit, strong positioning, and net benefit to the U.S.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:36px;">
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Self-petitioned — no PERM or employer required</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Filed simultaneously with EB-1A</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Single evidence record across both petitions</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Shared priority date — strategic redundancy</div>
         </div>
-        <div><div class="cred-stat-value" style="font-size:1.6rem;">$250</div><div class="cred-stat-label" style="text-align:left;">Consultation<br><span style="opacity:.6;">Credited if you proceed</span></div></div>
-      </div>
-      <div class="about-stat-card" style="text-align:left;padding:36px 28px;display:flex;align-items:flex-start;gap:20px;">
-        <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(45,212,191,.04));display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(13,148,136,.08);">
-          <svg width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </div>
-        <div><div class="cred-stat-value" style="font-size:1.6rem;">12</div><div class="cred-stat-label" style="text-align:left;">Letters of Support<br><span style="opacity:.6;">Researched &amp; drafted from scratch</span></div></div>
-      </div>
-      <div class="about-stat-card" style="text-align:left;padding:36px 28px;display:flex;align-items:flex-start;gap:20px;">
-        <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(45,212,191,.04));display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(13,148,136,.08);">
-          <svg width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div><div class="cred-stat-value" style="font-size:1.6rem;">12 Mo.</div><div class="cred-stat-label" style="text-align:left;">RFE &amp; NOID Support<br><span style="opacity:.6;">Included at no additional cost</span></div></div>
+        <a href="/niw" style="display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:500;color:var(--teal);text-decoration:none;transition:gap .3s" onmouseover="this.style.gap='14px'" onmouseout="this.style.gap='8px'">Learn more &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-light snap-section" id="approach" style="overflow:hidden;position:relative;">
-  <div class="container" style="position:relative;z-index:2;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;" class="approach-grid">
-      <div class="animate-on-scroll">
-        <div class="section-label">Our Approach</div>
-        <h2 class="section-title">The field of endeavour is everything.</h2>
-        <p style="font-size:.95rem;line-height:1.85;color:var(--gray-400);font-weight:300;margin-top:20px;">The most consequential decision in any Einstein Visa (EB-1A) or NIW petition is the field of endeavour — the specific articulation of what you propose to pursue in the United States and why that work constitutes a national interest.</p>
-        <p style="font-size:.95rem;line-height:1.85;color:var(--gray-400);font-weight:300;margin-top:16px;">Errors at this stage are not correctable by adding stronger evidence later.</p>
+<!-- §4 ABOUT — white, credential pills + luxury stat cards -->
+<section class="s s-w snap-section" id="about">
+  <div class="mx">
+    <div class="tag">About Burlington Consult</div>
+    <h2 class="s-t">Built by someone who <span class="hl">filed it themselves</span>.</h2>
+    <p style="font-size:.98rem;line-height:1.85;color:var(--gray-400);font-weight:300;max-width:720px;margin-top:8px;">Led by a Harvard Law School-trained strategist (LL.M., Technology Law and AI Policy) who is a self-petitioned, first-submission Einstein Visa (EB-1A) holder. Not theory — direct practitioner knowledge of the Kazarian two-step framework, Dhanasar precedent, and current USCIS adjudication standards.</p>
+    <p style="font-size:.95rem;line-height:1.85;color:var(--gray-400);font-weight:300;max-width:720px;margin-top:16px;">Supported by an experienced team of case architects, AI prompt engineers, researchers, and senior advisers spanning the United States, Nigeria, and Canada.</p>
+    <div class="lx-pills" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;margin-bottom:52px;">
+      <span class="cpill cpill-teal"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>Harvard Law School</span>
+      <span class="cpill cpill-teal"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Einstein Visa Holder</span>
+      <span class="cpill cpill-teal"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a10 10 0 11-20 0 10 10 0 0120 0z"/></svg>First-Submission Approved</span>
+      <span class="cpill cpill-teal"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>3 Continents</span>
+    </div>
+    <div class="lx-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div class="lstat"><div class="ib-light" style="margin-bottom:0;"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div><div><div class="lstat-v">$250</div><div class="lstat-l">Consultation<br>Credited if you proceed</div></div></div>
+      <div class="lstat"><div class="ib-light" style="margin-bottom:0;"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div><div class="lstat-v">12</div><div class="lstat-l">Letters of Support<br>Researched &amp; drafted from scratch</div></div></div>
+      <div class="lstat"><div class="ib-light" style="margin-bottom:0;"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="lstat-v">12 Mo.</div><div class="lstat-l">RFE &amp; NOID Support<br>Included at no additional cost</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- §5 APPROACH — dark, editorial two-column -->
+<section class="s s-d snap-section" id="approach" style="overflow:hidden;">
+  <div class="dot-bg" style="opacity:.5;"></div>
+  <div class="mx" style="position:relative;z-index:2;">
+    <div class="lx-2" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div>
+        <div class="tag">Our Approach</div>
+        <h2 class="s-t" style="color:var(--white);">The field of endeavour is <span class="hl">everything</span>.</h2>
+        <p style="font-size:.95rem;line-height:1.85;color:rgba(255,255,255,.38);font-weight:300;margin-top:20px;">The most consequential decision in any Einstein Visa (EB-1A) or NIW petition is the field of endeavour — the specific articulation of what you propose to pursue in the United States and why that work constitutes a national interest.</p>
+        <p style="font-size:.92rem;line-height:1.85;color:rgba(255,255,255,.3);font-weight:300;margin-top:16px;">Errors at this stage are not correctable by adding stronger evidence later.</p>
       </div>
-      <div class="animate-on-scroll stagger-1">
-        <div style="background:var(--white);border:1px solid rgba(0,0,0,.06);border-radius:20px;padding:44px 36px;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.03);">
+      <div>
+        <div class="gc" style="padding:44px 36px;">
           <div style="position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--teal-bright),var(--teal));border-radius:3px 0 0 3px;"></div>
-          <p style="font-size:.92rem;line-height:1.85;color:var(--gray-500);font-weight:400;">Burlington Consult begins each engagement by analysing your full professional record, identifying the strongest available field of endeavour, testing it against all three Dhanasar prongs, and confirming alignment with the documented evidence base.</p>
-          <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(0,0,0,.06);">
-            <p style="font-size:.82rem;color:var(--teal);font-weight:500;letter-spacing:.02em;">No drafting begins until that framework is established and stress-tested.</p>
+          <p style="font-size:.9rem;line-height:1.85;color:rgba(255,255,255,.5);font-weight:300;">Burlington Consult begins each engagement by analysing your full professional record, identifying the strongest available field of endeavour, testing it against all three Dhanasar prongs, and confirming alignment with the documented evidence base.</p>
+          <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(45,212,191,.1);">
+            <p style="font-size:.84rem;color:var(--teal-bright);font-weight:500;letter-spacing:.02em;margin:0;">No drafting begins until that framework is established and stress-tested.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<style>@media(max-width:768px){.approach-grid{grid-template-columns:1fr !important;gap:40px !important;}}</style>
 
-<section class="section section-white animate-on-scroll snap-section" id="what-we-do">
-  <div class="container">
-    <div class="animate-on-scroll">
-      <div class="section-label">What We Do</div>
-      <h2 class="section-title">Two practices. One standard.</h2>
-      <p class="section-sub">Burlington Consult advises high-achieving professionals on U.S. immigration and elite graduate admissions — with the same rigour, precision, and strategic depth across both.</p>
+<!-- §6 WHAT WE DO — light, premium service cards -->
+<section class="s s-l snap-section" id="what-we-do">
+  <div class="mx">
+    <div style="text-align:center;margin-bottom:64px;">
+      <div class="tag" style="justify-content:center;">What We Do</div>
+      <h2 class="s-t">Two practices. One standard.</h2>
+      <p class="s-sub" style="margin:0 auto;">Burlington Consult advises high-achieving professionals on U.S. immigration and elite graduate admissions — with the same rigour, precision, and strategic depth across both.</p>
     </div>
-    <div class="pathways-grid" style="margin-top:64px;">
-      <div class="pathway-card animate-on-scroll stagger-1">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-          <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(13,148,136,.1),rgba(45,212,191,.05));border:1px solid rgba(13,148,136,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <svg width="22" height="22" fill="none" stroke="var(--teal)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 21V5a2 2 0 0 1 2-2h6l2 2h6a2 2 0 0 1 2 2v14"/><path d="M3 21h18"/><path d="M12 11v4"/><path d="M10 13h4"/></svg>
-          </div>
-          <div class="pathway-sub" style="margin-bottom:0;">Immigration Advisory</div>
+    <div class="lx-2" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
+      <div class="wc" style="padding:52px 44px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px;">
+          <div class="ib-light"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 21V5a2 2 0 0 1 2-2h6l2 2h6a2 2 0 0 1 2 2v14"/><path d="M3 21h18"/><path d="M12 11v4"/><path d="M10 13h4"/></svg></div>
+          <span style="font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);">Immigration Advisory</span>
         </div>
-        <h3>Einstein Visa (EB-1A) &amp; NIW (EB-2) Petition Strategy</h3>
-        <p>Full-service petition development for the two most distinguished self-petitioned U.S. green card pathways. From field of endeavour construction to USCIS submission — built around your specific record.</p>
-        <div class="pathway-features">
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Dual petition filed simultaneously</div>
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Up to 12 letters of support</div>
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>12-month RFE &amp; NOID retainer included</div>
+        <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--gray-700);margin-bottom:12px;">Einstein Visa (EB-1A) &amp; NIW (EB-2) Petition Strategy</h3>
+        <p style="font-size:.9rem;line-height:1.8;color:var(--gray-400);font-weight:300;margin-bottom:32px;">Full-service petition development for the two most distinguished self-petitioned U.S. green card pathways. From field of endeavour construction to USCIS submission — built around your specific record.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:36px;">
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Dual petition filed simultaneously</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Up to 12 letters of support</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>12-month RFE &amp; NOID retainer included</div>
         </div>
-        <a href="/services#immigration" class="pathway-link">Read more &rarr;</a>
+        <a href="/services#immigration" style="display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:500;color:var(--teal);text-decoration:none;transition:gap .3s" onmouseover="this.style.gap='14px'" onmouseout="this.style.gap='8px'">Read more &rarr;</a>
       </div>
-      <div class="pathway-card animate-on-scroll stagger-2">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-          <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(13,148,136,.1),rgba(45,212,191,.05));border:1px solid rgba(13,148,136,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <svg width="22" height="22" fill="none" stroke="var(--teal)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
-          </div>
-          <div class="pathway-sub" style="margin-bottom:0;">Graduate Admissions</div>
+      <div class="wc" style="padding:52px 44px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px;">
+          <div class="ib-light"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg></div>
+          <span style="font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);">Graduate Admissions</span>
         </div>
-        <h3>Elite Graduate Admissions Concierge</h3>
-        <p>Scholarship-optimised application strategy for MBA, law school, and graduate programmes at the world's most selective institutions. Guided by someone who secured over $500,000 in scholarships.</p>
-        <div class="pathway-features">
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Full-service packages covering up to 5+ schools</div>
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Scholarship negotiation &amp; interview prep</div>
-          <div class="pathway-feature"><div class="pathway-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Study permit &amp; visa support included</div>
+        <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--gray-700);margin-bottom:12px;">Elite Graduate Admissions Concierge</h3>
+        <p style="font-size:.9rem;line-height:1.8;color:var(--gray-400);font-weight:300;margin-bottom:32px;">Scholarship-optimised application strategy for MBA, law school, and graduate programmes at the world's most selective institutions. Guided by someone who secured over $500,000 in scholarships.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:36px;">
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Full-service packages covering up to 5+ schools</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Scholarship negotiation &amp; interview prep</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--gray-500);"><div style="width:22px;height:22px;border-radius:50%;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="11" fill="none" stroke="var(--teal)" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Study permit &amp; visa support included</div>
         </div>
-        <a href="/services#admissions" class="pathway-link">Read more &rarr;</a>
+        <a href="/services#admissions" style="display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:500;color:var(--teal);text-decoration:none;transition:gap .3s" onmouseover="this.style.gap='14px'" onmouseout="this.style.gap='8px'">Read more &rarr;</a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ═══════════ LUXURY SECTIONS END ═══════════ -->
 
 <section class="section section-light animate-on-scroll snap-section" id="career-advisory">
   <div class="container">
