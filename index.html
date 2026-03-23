@@ -310,6 +310,15 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 .nc-pub{font-size:.68rem;color:var(--gray-300);font-weight:300}
 @media(max-width:1024px){.news-card-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.news-card-grid{grid-template-columns:1fr}}
+
+/* SCROLL SNAP — desktop only */
+@media(min-width:769px){
+  html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+  .hero,.snap-section{scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+  .hero{min-height:100vh;display:flex;align-items:center}
+  .cta-section{scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+  footer{scroll-snap-align:end}
+}
 </style>
 <meta property="og:title" content="Burlington Consult — Immigration Strategy & Advisory">
 <meta property="og:description" content="Einstein Visa (EB-1A) and NIW (EB-2) petitions for high-achieving professionals. The fastest path to a U.S. green card without an employer sponsor.">
@@ -371,7 +380,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-white" id="why-now">
+<section class="section section-white snap-section" id="why-now">
   <div class="container">
     <div class="animate-on-scroll">
       <div class="section-label">Time-Sensitive</div>
@@ -399,7 +408,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-light" id="pathways">
+<section class="section section-light snap-section" id="pathways">
   <div class="container">
     <div class="animate-on-scroll">
       <div class="section-label">Immigration Pathways</div>
@@ -437,7 +446,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-white" id="about">
+<section class="section section-white snap-section" id="about">
   <div class="container">
     <div class="animate-on-scroll">
       <div class="section-label">About Burlington Consult</div>
@@ -453,7 +462,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-light" id="approach">
+<section class="section section-light snap-section" id="approach">
   <div class="container">
     <div class="animate-on-scroll">
       <div class="section-label">Our Approach</div>
@@ -464,7 +473,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-white animate-on-scroll" id="what-we-do">
+<section class="section section-white animate-on-scroll snap-section" id="what-we-do">
   <div class="container">
     <div class="animate-on-scroll">
       <div class="section-label">What We Do</div>
@@ -504,7 +513,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-light animate-on-scroll" id="career-advisory">
+<section class="section section-light animate-on-scroll snap-section" id="career-advisory">
   <div class="container">
     <div class="animate-on-scroll">
       <div class="section-label">New Service</div>
@@ -527,7 +536,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-light" id="testimonials">
+<section class="section section-light snap-section" id="testimonials">
   <div class="container">
     <div class="testimonials-header animate-on-scroll">
       <div class="section-label">Testimonials</div>
@@ -545,7 +554,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-white" id="glance">
+<section class="section section-white snap-section" id="glance">
   <div class="container">
     <div class="animate-on-scroll" style="text-align:center;margin-bottom:16px;">
       <div class="section-label" style="justify-content:center;">At a Glance</div>
@@ -570,7 +579,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 
 
 <!-- NEWS & INSIGHTS PREVIEW -->
-<section class="section section-white" id="news">
+<section class="section section-white snap-section" id="news">
   <div class="container">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:20px;">
       <div>
@@ -612,7 +621,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-dark cta-section" id="contact" style="padding-top:100px;padding-bottom:130px;">
+<section class="section section-dark cta-section snap-section" id="contact" style="padding-top:100px;padding-bottom:130px;">
   <div class="cta-bg-grid"></div>
   <div class="cta-content container">
     <div class="animate-on-scroll">
