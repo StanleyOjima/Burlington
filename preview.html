@@ -832,7 +832,7 @@ html{scroll-behavior:smooth}
     </div>
 
     <!-- Slider container -->
-    <div style="position:relative;">
+    <div style="position:relative;overflow:hidden;">
       <div id="tSlider" style="display:flex;gap:20px;transition:transform .5s cubic-bezier(.16,1,.3,1);will-change:transform;">
 
         <div class="gc" style="flex:0 0 calc(33.333% - 14px);padding:40px 32px;display:flex;flex-direction:column;justify-content:space-between;min-height:320px;">
@@ -882,10 +882,9 @@ html{scroll-behavior:smooth}
       </div>
     </div>
 
-    <!-- Dot indicators + counter -->
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-top:36px;">
+    <!-- Dot indicators -->
+    <div style="display:flex;justify-content:center;margin-top:36px;">
       <div id="tDots" style="display:flex;gap:8px;"></div>
-      <div id="tCounter" style="font-size:.78rem;color:rgba(255,255,255,.25);font-weight:400;letter-spacing:.04em;"></div>
     </div>
 
   </div>
@@ -900,7 +899,7 @@ html{scroll-behavior:smooth}
   var perView = window.innerWidth >= 768 ? 3 : 1;
   var maxPos = Math.max(0, total - perView);
   var dotsEl = document.getElementById('tDots');
-  var counterEl = document.getElementById('tCounter');
+  
   var autoTimer;
 
   // Create dots
@@ -919,7 +918,7 @@ html{scroll-behavior:smooth}
       dots[i].style.width = i === pos ? '24px' : '8px';
       dots[i].style.borderRadius = i === pos ? '4px' : '50%';
     }
-    counterEl.textContent = (pos + 1) + ' / ' + (maxPos + 1);
+    
   }
 
   function goTo(i) {
