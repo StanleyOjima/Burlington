@@ -588,10 +588,7 @@ html{scroll-behavior:smooth}
 
 
 /* HERO → FOUNDERS transition bridge */
-.founders-section::before{content:'';position:absolute;top:0;left:0;right:0;height:120px;background:linear-gradient(180deg,rgba(4,10,15,.15),transparent);pointer-events:none;z-index:1}
-/* CENTER cards when row isn't full */
-.team-section .g-founders{justify-items:center;justify-content:center}
-.team-section .g-team{justify-content:center}
+.founders-section::before{content:'';position:absolute;top:0;left:0;right:0;height:120px;background:linear-gradient(180deg,rgba(4,10,15,.15),transparent);pointer-events:none;z-index:0}
 /* ══════ GALLERY OVERRIDES ══════ */
 
 :root{--dark:#040A0F;--white:#FFF;--off-white:#F7F7F5;--light:#F5F5F3;--g100:#E8E7E3;--g300:#A8A7A3;--g400:#78776F;--g700:#2D2C28;--teal:#0D9488;--tb:#2DD4BF;--sf:'Playfair Display',Georgia,serif;--sn:'Inter',-apple-system,sans-serif;--sp:clamp(24px,5vw,80px)}
@@ -771,7 +768,7 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 <section class="team-section snap-s team-row founders-section" id="r0" id="gallery">
   <div class="team-section-inner">
     <div class="section-label"><span class="label-num">01</span>Leadership</div>
-    <div class="g-founders">
+    <div class="g-founders" style="max-width:800px;margin:0 auto;">
       <a href="/team/chris" class="g-card g-founder">
         <div class="g-photo"><img src="/ebuka.png" alt="Chris Ogbodo" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
         <div class="g-overlay">
@@ -935,7 +932,7 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 <section class="team-section snap-s team-row team-row-section" id="r4">
   <div class="team-section-inner">
     <div class="section-label"><span class="label-num">05</span>The Team</div>
-    <div class="g-team" style="grid-template-columns:repeat(3,1fr);">
+    <div class="g-team" style="grid-template-columns:repeat(3,1fr);max-width:800px;margin:0 auto;">
       <a href="/team/ifeanyi" class="g-card">
         <div class="g-photo"><img src="/team-ifeanyi.png" alt="Ifeanyi Anthony Agah" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
         <div class="g-overlay">
