@@ -134,12 +134,12 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 @media(max-width:900px){
   .profile-hero{padding:120px var(--sp) 60px}
   .profile-hero-inner{grid-template-columns:220px 1fr;gap:40px}
-  .profile-bio-inner{grid-template-columns:1fr;gap:48px}
+  .pb-grid{grid-template-columns:1fr;gap:36px}
 }
 @media(max-width:700px){
   .profile-hero{padding:110px 24px 48px}
   .profile-hero-inner{grid-template-columns:1fr;gap:28px}
-  .profile-photo-wrap{max-width:260px;margin:0 auto}
+  .profile-photo-wrap{max-width:240px;margin:0 auto}
   .profile-hero-text{text-align:center}
   .profile-tags{justify-content:center}
   .profile-back{justify-content:center}
@@ -147,29 +147,22 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
   .profile-name{font-size:2rem}
   .profile-title{text-align:center}
   .profile-teal-line{left:-12px}
-  .profile-bio-section{padding:48px 24px}
-  .profile-bio-inner{grid-template-columns:1fr;gap:36px}
-  .bio-text h3,.career-grid h3,.distinctions-inner h3{font-size:1.2rem}
-  .career-row{flex-direction:column;gap:4px}
-  .career-label{flex:none;font-size:.76rem}
-  .distinctions-section{padding:48px 24px}
-  .profile-links-section{padding:36px 24px 48px}
-  .profile-links-inner{flex-direction:column}
-  .plink{justify-content:center}
+  .profile-body{padding:48px 24px}
+  .pb-grid{grid-template-columns:1fr;gap:32px}
+  .pb-bio h3,.pb-career h3{font-size:1.1rem}
+  .pb-row{flex-direction:column;gap:3px}
+  .pb-label{flex:none}
+  .pb-distinctions{justify-content:center}
+  .pb-pill{font-size:.7rem;padding:7px 14px}
   .profile-cta{padding:60px 24px}
   .profile-cta h2{font-size:1.6rem}
-  .profile-quote-section{padding:48px 24px}
-  .pq-mark{font-size:3.5rem}
-  .pq-text{font-size:1rem}
-  .profile-stat-float{right:-12px;bottom:-16px;padding:14px 18px;min-width:110px}
-  .psf-val{font-size:1.3rem}
 }
 @media(max-width:380px){
   .profile-name{font-size:1.7rem}
   .profile-tag{font-size:.65rem;padding:6px 12px}
-  .distinction-card{padding:22px 20px}
-  .distinction-card.featured{padding:28px 24px}
-  .career-value{font-size:.82rem}
+  .pb-bio p{font-size:.84rem}
+  .pb-value{font-size:.78rem}
+  .profile-cta h2{font-size:1.4rem}
 }
 
 /* HERO LINKS */
@@ -196,12 +189,6 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 .pb-pill{font-size:.74rem;font-weight:500;color:var(--g400);background:var(--white);border:1px solid var(--g100);padding:8px 18px;border-radius:100px;transition:all .3s}
 .pb-pill:hover{border-color:rgba(13,148,136,.2);color:var(--teal)}
 
-@media(max-width:700px){
-  .pb-grid{grid-template-columns:1fr;gap:36px}
-  .pb-row{flex-direction:column;gap:3px}
-  .pb-label{flex:none}
-  .profile-body{padding:48px 24px}
-}
 </style>
 </head>
 <body>
