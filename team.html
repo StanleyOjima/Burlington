@@ -557,6 +557,29 @@ html{scroll-behavior:smooth}
   .hsc-val{font-size:1.8rem}
 }
 
+
+/* TEAM SECTIONS */
+.team-section{display:flex;align-items:center;justify-content:center;padding:48px var(--sp);background:var(--off-white)}
+.team-section:nth-child(odd){background:var(--off-white)}
+.team-section:nth-child(even){background:var(--white)}
+.team-section-inner{max-width:1200px;width:100%;margin:0 auto}
+.section-label{font-size:.68rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);margin-bottom:28px;display:flex;align-items:center;gap:12px}
+.section-label::before{content:'';width:20px;height:1px;background:var(--teal)}
+
+/* Override gallery for sections */
+.team-section .g-founders{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.team-section .g-team{display:grid;gap:20px}
+.team-section .g-card{aspect-ratio:3/4}
+.team-section .g-founder{aspect-ratio:4/5}
+
+@media(max-width:700px){
+  .team-section{padding:32px 20px}
+  .team-section .g-founders{grid-template-columns:1fr;gap:16px}
+  .team-section .g-team{grid-template-columns:1fr 1fr!important;gap:14px}
+  .team-section .g-card{aspect-ratio:2/3}
+  .team-section .g-founder{aspect-ratio:3/4}
+}
+
 /* ══════ GALLERY OVERRIDES ══════ */
 
 :root{--dark:#040A0F;--white:#FFF;--off-white:#F7F7F5;--light:#F5F5F3;--g100:#E8E7E3;--g300:#A8A7A3;--g400:#78776F;--g700:#2D2C28;--teal:#0D9488;--tb:#2DD4BF;--sf:'Playfair Display',Georgia,serif;--sn:'Inter',-apple-system,sans-serif;--sp:clamp(24px,5vw,80px)}
@@ -577,11 +600,7 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 .hero h1 span{background:linear-gradient(135deg,var(--teal),var(--tb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:1.05rem;line-height:1.8;color:rgba(255,255,255,.38);max-width:520px;font-weight:300}
 
-/* GALLERY */
-.gallery{padding:0 var(--sp) 80px;background:var(--off-white)}
-.gallery-inner{max-width:1200px;margin:0 auto}
-.gallery-label{font-size:.68rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);margin-bottom:28px;display:flex;align-items:center;gap:12px}
-.gallery-label::before{content:'';width:20px;height:1px;background:var(--teal)}
+
 
 /* FOUNDERS ROW */
 .g-founders{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
@@ -702,159 +721,185 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
   </div>
 </section>
 
-<div class="gallery snap-s" id="gallery">
-  <div class="gallery-inner">
-    <div class="gallery-label">Leadership</div>
+<section class="team-section snap-s" id="gallery">
+  <div class="team-section-inner">
+    <div class="section-label">Leadership</div>
     <div class="g-founders">
-    <a href="/team/chris" class="g-card g-founder">
-      <div class="g-photo"><img src="/ebuka.png" alt="Chris Ogbodo" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Chris Ogbodo</div>
-          <div class="g-role">Founder</div>
-          <div class="g-tagline">Harvard Law School · Einstein Visa Holder</div>
+      <a href="/team/chris" class="g-card g-founder">
+        <div class="g-photo"><img src="/ebuka.png" alt="Chris Ogbodo" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Chris Ogbodo</div>
+            <div class="g-role">Founder</div>
+            <div class="g-tagline">Harvard Law School · Einstein Visa Holder</div>
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
         </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
-    <a href="/team/nkem" class="g-card g-founder">
-      <div class="g-photo"><img src="/nkem.png" alt="Nkem Nweke" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Nkem Nweke</div>
-          <div class="g-role">Co-founder</div>
-          <div class="g-tagline">Manchester MBA · Einstein Visa Holder · Microsoft</div>
+      </a>
+      <a href="/team/nkem" class="g-card g-founder">
+        <div class="g-photo"><img src="/nkem.png" alt="Nkem Nweke" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Nkem Nweke</div>
+            <div class="g-role">Co-founder</div>
+            <div class="g-tagline">Manchester MBA · Einstein Visa Holder · Microsoft</div>
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
         </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
-    </div>
-
-    <div class="gallery-label" style="margin-top:48px;">The Team</div>
-    <div class="g-team">
-    <a href="/team/andrew" class="g-card">
-      <div class="g-photo"><img src="/team-andrew.png" alt="Andrew Libby" style="width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Andrew Libby</div>
-          <div class="g-role">STEM Specialist</div>
-          <div class="g-tagline">Harvard University · U.S. State Department</div>
-        </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
-    <a href="/team/afiong" class="g-card">
-      <div class="g-photo"><img src="/team-afiong.png" alt="Afiong Ibio, Esq." style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Afiong Ibio, Esq.</div>
-          <div class="g-role">Head of Legal, Nigeria</div>
-          <div class="g-tagline">University of Nigeria · Nigerian Law School</div>
-        </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
-    <a href="/team/chibuike" class="g-card">
-      <div class="g-photo"><img src="/team-onyia.png" alt="Chibuike Onyia, ACA" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Chibuike Onyia, ACA</div>
-          <div class="g-role">Salary Criterion Lead</div>
-          <div class="g-tagline">PwC · Rotman MBA Candidate</div>
-        </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
-    <a href="/team/efezino" class="g-card">
-      <div class="g-photo"><img src="/team-efezino.png" alt="Efezino Onyeke, AICA" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Efezino Onyeke, AICA</div>
-          <div class="g-role">Due Diligence & Research Lead</div>
-          <div class="g-tagline">Valedictorian · UPenn · HKUST</div>
-        </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
-    <a href="/team/chisom" class="g-card">
-      <div class="g-photo"><img src="/team-chisom.png" alt="Chisom Chibuike" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Chisom Chibuike</div>
-          <div class="g-role">AI & Prompt Engineering Lead</div>
-          <div class="g-tagline">Cambridge ML Scholar · Best Graduating Student</div>
-        </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
-    <a href="/team/michael" class="g-card">
-      <div class="g-photo"><div class="g-initials">MA</div></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Michael Aromolaran</div>
-          <div class="g-role">Chief Writing Officer</div>
-          <div class="g-tagline">NYU · Culture Journalist</div>
-        </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
-    <a href="/team/pascal" class="g-card">
-      <div class="g-photo"><div class="g-initials">PD</div></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Pascal Dabibi</div>
-          <div class="g-role">Head of Creative Partnerships</div>
-          
-        </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
-    <a href="/team/ebuka-ezeh" class="g-card">
-      <div class="g-photo"><img src="/team-ebuka.png" alt="Ebuka Ezeh" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Ebuka Ezeh</div>
-          <div class="g-role">Senior Front-End Engineer</div>
-          <div class="g-tagline">Atlan · HoaQ Angel Investor</div>
-        </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
-    <a href="/team/stanley" class="g-card">
-      <div class="g-photo"><img src="/team-ojima.png" alt="Stanley Ojima" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Stanley Ojima</div>
-          <div class="g-role">Head of Product Design</div>
-          <div class="g-tagline">8+ Years · Nnamdi Azikiwe University</div>
-        </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
-    <a href="/team/ifeanyi" class="g-card">
-      <div class="g-photo"><img src="/team-ifeanyi.png" alt="Ifeanyi Anthony Agah" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Ifeanyi Anthony Agah</div>
-          <div class="g-role">Senior Product Manager</div>
-          <div class="g-tagline">LazerPay · Fintech</div>
-        </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
-    <a href="/team/chukwu-dike" class="g-card">
-      <div class="g-photo"><div class="g-initials">CD</div></div>
-      <div class="g-overlay">
-        <div class="g-info">
-          <div class="g-name">Chukwu-Dike</div>
-          <div class="g-role">Software Engineer</div>
-          <div class="g-tagline">Medical Doctor · Full-Stack Developer</div>
-        </div>
-        <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
-      </div>
-    </a>
+      </a>
     </div>
   </div>
+</section>
+<section class="team-section snap-s">
+  <div class="team-section-inner">
+    <div class="section-label">The Team</div>
+    <div class="g-team" style="grid-template-columns:repeat(3,1fr);">
+      <a href="/team/andrew" class="g-card">
+        <div class="g-photo"><img src="/team-andrew.png" alt="Andrew Libby" style="width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Andrew Libby</div>
+            <div class="g-role">STEM Specialist</div>
+            <div class="g-tagline">Harvard University · U.S. State Department</div>
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
+        </div>
+      </a>
+      <a href="/team/afiong" class="g-card">
+        <div class="g-photo"><img src="/team-afiong.png" alt="Afiong Ibio, Esq." style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Afiong Ibio, Esq.</div>
+            <div class="g-role">Head of Legal, Nigeria</div>
+            <div class="g-tagline">University of Nigeria · Nigerian Law School</div>
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
+        </div>
+      </a>
+      <a href="/team/chibuike" class="g-card">
+        <div class="g-photo"><img src="/team-onyia.png" alt="Chibuike Onyia, ACA" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Chibuike Onyia, ACA</div>
+            <div class="g-role">Salary Criterion Lead</div>
+            <div class="g-tagline">PwC · Rotman MBA Candidate</div>
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="team-section snap-s">
+  <div class="team-section-inner">
+    
+    <div class="g-team" style="grid-template-columns:repeat(3,1fr);">
+      <a href="/team/efezino" class="g-card">
+        <div class="g-photo"><img src="/team-efezino.png" alt="Efezino Onyeke, AICA" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Efezino Onyeke, AICA</div>
+            <div class="g-role">Due Diligence & Research Lead</div>
+            <div class="g-tagline">Valedictorian · UPenn · HKUST</div>
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
+        </div>
+      </a>
+      <a href="/team/chisom" class="g-card">
+        <div class="g-photo"><img src="/team-chisom.png" alt="Chisom Chibuike" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Chisom Chibuike</div>
+            <div class="g-role">AI & Prompt Engineering Lead</div>
+            <div class="g-tagline">Cambridge ML Scholar · Best Graduating Student</div>
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
+        </div>
+      </a>
+      <a href="/team/michael" class="g-card">
+        <div class="g-photo"><div class="g-initials">MA</div></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Michael Aromolaran</div>
+            <div class="g-role">Chief Writing Officer</div>
+            <div class="g-tagline">NYU · Culture Journalist</div>
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="team-section snap-s">
+  <div class="team-section-inner">
+    
+    <div class="g-team" style="grid-template-columns:repeat(3,1fr);">
+      <a href="/team/pascal" class="g-card">
+        <div class="g-photo"><div class="g-initials">PD</div></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Pascal Dabibi</div>
+            <div class="g-role">Head of Creative Partnerships</div>
+            
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
+        </div>
+      </a>
+      <a href="/team/ebuka-ezeh" class="g-card">
+        <div class="g-photo"><img src="/team-ebuka.png" alt="Ebuka Ezeh" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Ebuka Ezeh</div>
+            <div class="g-role">Senior Front-End Engineer</div>
+            <div class="g-tagline">Atlan · HoaQ Angel Investor</div>
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
+        </div>
+      </a>
+      <a href="/team/stanley" class="g-card">
+        <div class="g-photo"><img src="/team-ojima.png" alt="Stanley Ojima" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Stanley Ojima</div>
+            <div class="g-role">Head of Product Design</div>
+            <div class="g-tagline">8+ Years · Nnamdi Azikiwe University</div>
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="team-section snap-s">
+  <div class="team-section-inner">
+    
+    <div class="g-team" style="grid-template-columns:repeat(2,1fr);">
+      <a href="/team/ifeanyi" class="g-card">
+        <div class="g-photo"><img src="/team-ifeanyi.png" alt="Ifeanyi Anthony Agah" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Ifeanyi Anthony Agah</div>
+            <div class="g-role">Senior Product Manager</div>
+            <div class="g-tagline">LazerPay · Fintech</div>
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
+        </div>
+      </a>
+      <a href="/team/chukwu-dike" class="g-card">
+        <div class="g-photo"><div class="g-initials">CD</div></div>
+        <div class="g-overlay">
+          <div class="g-info">
+            <div class="g-name">Chukwu-Dike</div>
+            <div class="g-role">Software Engineer</div>
+            <div class="g-tagline">Medical Doctor · Full-Stack Developer</div>
+          </div>
+          <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 </div>
 
 <section class="cta snap-s">
