@@ -710,6 +710,26 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 .section-quote::before{content:'';display:block;width:28px;height:2px;background:linear-gradient(90deg,var(--teal),var(--tb));margin:0 auto 18px;border-radius:2px}
 .sq-text{font-family:var(--sf);font-size:clamp(1rem,1.8vw,1.2rem);font-weight:400;font-style:italic;color:var(--g400);line-height:1.65;max-width:540px;margin:0 auto;letter-spacing:-.01em}
 .sq-attr{font-size:.68rem;color:var(--g300);margin-top:14px;letter-spacing:.06em;font-weight:500}
+
+/* SECTION SUBTITLES */
+.section-subtitle{font-size:.92rem;line-height:1.7;color:var(--g400);font-weight:300;max-width:560px;margin-bottom:36px}
+
+/* CREDIBILITY STRIP */
+
+
+.cred-strip-inner{display:flex;align-items:center;justify-content:center;gap:0;max-width:1100px;width:100%;position:relative;z-index:2}
+.cs-item{text-align:center;flex:1;padding:0 32px}
+.cs-val{font-family:var(--sn);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:600;background:linear-gradient(135deg,var(--white) 30%,var(--tb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.03em;margin-bottom:10px}
+.cs-label{font-size:.72rem;color:rgba(255,255,255,.3);letter-spacing:.04em;text-transform:uppercase;line-height:1.6}
+.cs-divider{width:1px;height:56px;background:linear-gradient(180deg,transparent,rgba(45,212,191,.15),transparent);flex-shrink:0}
+@media(max-width:768px){.cred-strip-inner{flex-wrap:wrap;gap:32px}.cs-item{flex:1 1 40%;padding:0 16px}.cs-divider{display:none}.cs-val{font-size:1.8rem}}
+@media(max-width:480px){.cs-item{flex:1 1 100%}}
+
+/* GHOST SCROLL BUTTON */
+.scroll-ghost-btn{display:inline-flex;align-items:center;gap:8px;margin-top:28px;padding:10px 24px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.25);border:1px solid rgba(255,255,255,.06);border-radius:100px;text-decoration:none;transition:all .3s;letter-spacing:.04em}
+.scroll-ghost-btn:hover{color:rgba(255,255,255,.5);border-color:rgba(45,212,191,.2)}
+.scroll-ghost-btn svg{animation:chevronBounce 2s ease-in-out infinite;width:14px;height:14px}
+@keyframes chevronBounce{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(6px);opacity:.8}}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGX2C54Y62"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WGX2C54Y62');</script>
@@ -744,7 +764,7 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
       <div class="hero-text">
         <h1>The people behind<br><span>every petition</span>.</h1>
         <p class="hero-sub">Harvard Law. Cambridge. Microsoft. Meta. Two Einstein Visa holders and a team of strategists, case architects, and researchers spanning three continents.</p>
-        <a href="#r0" class="hero-team-btn" style="display:inline-flex;align-items:center;gap:10px;margin-top:36px;padding:14px 32px;font-size:.86rem;font-weight:500;color:var(--white);background:linear-gradient(135deg,#0D9488,#2DD4BF);border-radius:12px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(13,148,136,.3),inset 0 1px 0 rgba(255,255,255,.1);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(13,148,136,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(13,148,136,.3)'">Meet the Team <span>&darr;</span></a>
+        <a href="#r0" class="scroll-ghost-btn">Meet the team <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
       </div>
       <div class="hero-stats-row">
         <div class="hero-stat-card">
@@ -767,7 +787,7 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 <section class="team-section snap-s team-row founders-section" id="r0" id="gallery">
   <div class="team-section-inner">
     <div class="section-label"><span class="label-num">01</span>Leadership</div>
-    <div class="g-founders" style="max-width:1000px;margin:0 auto;justify-content:center;">
+    <div class="g-founders" style="max-width:800px;margin:0 auto;justify-content:center;">
       <a href="/team/chris" class="g-card g-founder">
         <div class="g-photo"><img src="/ebuka.png" alt="Chris Ogbodo" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
         <div class="g-overlay">
@@ -791,11 +811,16 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
         </div>
       </a>
     </div>
+    <div class="section-quote" style="margin-top:36px;">
+      <p class="sq-text">Two Einstein Visa holders who filed their own petitions — then built a firm around doing it for others.</p>
+      <p class="sq-attr">— Burlington Consult</p>
+    </div>
   </div>
 </section>
 <section class="team-section snap-s team-row team-row-section" id="r1">
   <div class="team-section-inner">
-    <div class="section-label"><span class="label-num">02</span>The Team</div>
+    <div class="section-label"><span class="label-num">02</span>Strategy & Legal</div>
+    <p class="section-subtitle">The people who build the argument, map the criteria, and stress-test every claim before it reaches USCIS.</p>
     <div class="g-team" style="grid-template-columns:repeat(4,1fr);max-width:1000px;margin:0 auto;">
       <a href="/team/andrew" class="g-card">
         <div class="g-photo"><img src="/team-andrew.png" alt="Andrew Libby" style="width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
@@ -850,7 +875,8 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 </section>
 <section class="team-section snap-s team-row team-row-section" id="r2">
   <div class="team-section-inner">
-    <div class="section-label"><span class="label-num">03</span>The Team</div>
+    <div class="section-label"><span class="label-num">03</span>Research & Creative</div>
+    <p class="section-subtitle">AI-driven research, original content, and the creative architecture that makes each petition stand apart.</p>
     <div class="g-team" style="grid-template-columns:repeat(4,1fr);max-width:1000px;margin:0 auto;">
       <a href="/team/chisom" class="g-card">
         <div class="g-photo"><img src="/team-chisom.png" alt="Chisom Chibuike" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
@@ -905,7 +931,8 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 </section>
 <section class="team-section snap-s team-row team-row-section" id="r3">
   <div class="team-section-inner">
-    <div class="section-label"><span class="label-num">04</span>The Team</div>
+    <div class="section-label"><span class="label-num">04</span>Engineering & Product</div>
+    <p class="section-subtitle">The infrastructure behind every filing — systems, automation, and the platforms that power case management at scale.</p>
     <div class="g-team" style="grid-template-columns:repeat(4,1fr);max-width:1000px;margin:0 auto;">
       <a href="/team/ebuka-ezeh" class="g-card">
         <div class="g-photo"><img src="/team-ebuka.png" alt="Ebuka Ezeh" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
@@ -950,12 +977,23 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 
 </div>
 
+
 <div class="snap-s" style="display:flex;flex-direction:column;justify-content:flex-end;">
 <section class="cta">
   <div class="cta-grid"></div>
-  <h2>Work with us.</h2>
-  <p>Start with a consultation. We'll assess your profile and map the strongest pathway.</p>
-  <a href="/book" class="cta-btn">Book a Consultation — $150 &rarr;</a>
+  <div class="cred-strip-inner" style="margin-bottom:56px;">
+    <div class="cs-item"><div class="cs-val">100%</div><div class="cs-label">Approval rate across<br>every petition filed</div></div>
+    <div class="cs-divider"></div>
+    <div class="cs-item"><div class="cs-val">2</div><div class="cs-label">Einstein Visa holders<br>leading the firm</div></div>
+    <div class="cs-divider"></div>
+    <div class="cs-item"><div class="cs-val">13</div><div class="cs-label">Specialists across<br>three continents</div></div>
+    <div class="cs-divider"></div>
+    <div class="cs-item"><div class="cs-val">12 Mo.</div><div class="cs-label">RFE & NOID retainer<br>included in every engagement</div></div>
+  </div>
+  <h2>Your case won't build itself.</h2>
+  <p>Every month you wait is a month added to the back of the queue. Start with a 30-minute consultation — we'll tell you exactly where you stand.</p>
+  <a href="/book" class="cta-btn">Book Your Consultation — $150 &rarr;</a>
+  <p style="font-size:.76rem;color:rgba(255,255,255,.2);margin-top:16px;position:relative;">Credited in full if you proceed within 30 days.</p>
 </section>
 
 <a href="https://wa.me/18572429842?text=Hello%20Burlington%20Consult%2C%20I%27d%20like%20to%20inquire%20about%20your%20services." class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
