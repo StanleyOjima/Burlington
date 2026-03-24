@@ -265,6 +265,40 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 .best-at-card h3{font-family:var(--serif,'Playfair Display',serif);font-size:1.05rem;font-weight:500;color:var(--charcoal,#2D2C28);margin-bottom:10px;letter-spacing:-.01em}
 .best-at-card p{font-size:.86rem;color:var(--gray-400,#78776F);line-height:1.75;font-weight:300}
 @media(max-width:700px){.best-at-grid{grid-template-columns:1fr}.best-at-card:last-child{max-width:100%}.best-at-card{padding:28px 24px}}
+
+.hero-scanline{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero-scanline::before{content:'';position:absolute;width:200%;height:1px;top:0;left:-50%;background:linear-gradient(90deg,transparent,rgba(45,212,191,.1) 40%,rgba(13,148,136,.2) 50%,rgba(45,212,191,.1) 60%,transparent);animation:heroScan 12s linear infinite}
+@keyframes heroScan{0%{top:-5%}100%{top:105%}}
+
+/* Challenge section accent */
+.challenge-accent{position:relative;padding-left:24px}
+.challenge-accent::before{content:'';position:absolute;left:0;top:4px;bottom:4px;width:3px;background:linear-gradient(180deg,var(--teal),var(--teal-bright));border-radius:2px}
+
+/* Dark stat cards */
+.section-dark .stat-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);backdrop-filter:blur(12px)}
+.section-dark .stat-card:hover{border-color:rgba(45,212,191,.12);box-shadow:0 12px 40px rgba(0,0,0,.15)}
+.section-dark .stat-card .stat-value{color:var(--white);background:linear-gradient(135deg,var(--white) 30%,var(--teal-bright));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-dark .stat-card .stat-label{color:rgba(255,255,255,.25)}
+
+/* About quote break */
+.about-quote{padding:72px var(--side-pad);background:var(--dark-base);text-align:center;position:relative;overflow:hidden}
+.about-quote::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(45,212,191,.03) 1px,transparent 1px);background-size:36px 36px;mask-image:radial-gradient(ellipse 40% 40% at 50% 50%,black,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 40% 40% at 50% 50%,black,transparent 70%);pointer-events:none}
+.aq-inner{position:relative;z-index:2;max-width:650px;margin:0 auto}
+.aq-mark{font-family:var(--serif);font-size:4.5rem;line-height:.8;background:linear-gradient(135deg,var(--teal),var(--teal-bright));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px}
+.aq-text{font-family:var(--serif);font-size:clamp(1.1rem,2.2vw,1.5rem);font-weight:400;font-style:italic;color:rgba(255,255,255,.5);line-height:1.65;letter-spacing:-.01em}
+.aq-attr{font-size:.72rem;color:rgba(45,212,191,.4);margin-top:24px;letter-spacing:.06em;font-weight:500}
+
+/* Best at card upgrade */
+.best-at-card{position:relative;overflow:hidden}
+.best-at-card::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(13,148,136,.12),transparent);opacity:0;transition:opacity .4s}
+.best-at-card:hover::before{opacity:1}
+
+/* Numbered list upgrade */
+.numbered-item{transition:all .3s;padding:16px;border-radius:12px;margin:-16px}
+.numbered-item:hover{background:rgba(13,148,136,.02)}
+.numbered-item-num{background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(13,148,136,.04));border-color:rgba(13,148,136,.12);font-weight:600}
+
+.gc-grid-bg{position:absolute;inset:0;background-image:radial-gradient(rgba(45,212,191,.05) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 50% 40% at 50% 50%,black,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 50% 40% at 50% 50%,black,transparent 70%);pointer-events:none}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -295,6 +329,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 <section class="about-hero snap-s">
   <div class="hero-grid"></div>
   <div class="hero-rings"><div class="ring"></div><div class="ring"></div></div>
+  <div class="hero-scanline"></div>
   <div class="container">
     <div class="about-hero-content">
       <div class="section-label" style="color: var(--teal-bright);">About Burlington Consult</div>
@@ -334,18 +369,29 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
       <div class="section-label">The Challenge</div>
       <h2>World-class credentials, lost in translation.</h2>
       <p>Professionals from Nigeria, Ghana, Kenya, South Africa, and across the African continent frequently have credentials that are world-class by any objective measure — but are not automatically legible in the format USCIS expects.</p>
-      <p>A Partner-level position at a Tier 1  law firm, a senior role at an NSE-listed institution, a central bank appointment, or a decade at a Big Four firm in Lagos carries the same weight as the equivalent in London or New York. <strong>Burlington Consult's role is to make that equivalence unmistakably clear to a USCIS adjudicator.</strong></p>
+      <p></p>
+      <div class="challenge-accent"><p>A Partner-level position at a Tier 1  law firm, a senior role at an NSE-listed institution, a central bank appointment, or a decade at a Big Four firm in Lagos carries the same weight as the equivalent in London or New York. <strong>Burlington Consult's role is to make that equivalence unmistakably clear to a USCIS adjudicator.</strong></p></div>
     </div>
   </div>
 </section>
 
+
+<!-- QUOTE BREAK -->
+<section class="about-quote snap-s">
+  <div class="aq-inner">
+    <div class="aq-mark">&ldquo;</div>
+    <blockquote class="aq-text">USCIS doesn&rsquo;t deny weak candidates. It denies weak arguments.</blockquote>
+    <p class="aq-attr">&mdash; Burlington Consult</p>
+  </div>
+</section>
+
 <!-- SALARY CONTEXT — LIGHT GRAY with stat cards -->
-<section class="section section-light snap-s">
+<section class="section section-dark snap-s">
   <div class="container">
     <div class="content-block">
-      <div class="section-label">Proprietary Framework</div>
-      <h2>The  salary context.</h2>
-      <p>Burlington Consult's salary analytics framework was built to address a recurring challenge: demonstrating that a Nigerian professional's compensation is significantly above the market median when the market itself earns a fraction of the U.S. benchmark. The framework cross-references five independent databases and identifies the optimal comparator-group argument for each client's role, sector, and seniority.</p>
+      <div class="section-label" style="color:var(--teal-bright);">Proprietary Framework</div>
+      <h2 style="color:var(--white);">The  salary context.</h2>
+      <p><span style="color:rgba(255,255,255,.42);">Burlington Consult's salary analytics framework was built to address a recurring challenge: demonstrating that a Nigerian professional's compensation is significantly above the market median when the market itself earns a fraction of the U.S. benchmark. The framework cross-references five independent databases and identifies the optimal comparator-group argument for each client's role, sector, and seniority.</span></p>
       <div style="margin-top:20px;"><a href="/team/chibuike" style="font-size:.78rem;color:var(--teal);text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:500;transition:opacity .3s;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">Led by Chibuike Onyia, ACA — Salary Criterion Lead <span>&rarr;</span></a></div>
     </div>
     <div class="stat-grid">
@@ -376,6 +422,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 <section class="section section-dark snap-s">
   <div class="container">
     <div class="content-block" style="max-width: 680px;">
+      <div class="gc-grid-bg"></div>
       <div class="section-label" style="color: var(--teal-bright);">Why a Green Card</div>
       <h2 class="section-title" style="color: var(--white);">Access to U.S. market rates — without relocation.</h2>
       <p style="color: rgba(255,255,255,.42);">A U.S. green card is permanent work authorisation, not a travel document. For professionals in financial services, law, technology, and consulting, the economic value is primarily about <strong style="color: var(--white);">access to U.S. market rates</strong> — not about living in the United States.</p>
@@ -473,8 +520,9 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   <div class="cta-bg-grid"></div>
   <div class="cta-content container">
     <div class="section-label" style="justify-content: center; color: var(--teal-bright);">Get Started</div>
-    <h2>Ready to begin?<br>Start with a <span class="hero-highlight" style="font-style: italic;">consultation</span>.</h2>
-    <p>A focused 30-minute session covering your profile, the strongest available pathway, and a direct assessment of eligibility.</p>
+    <h2>Your petition starts here.</h2>
+    <p>Every month you wait is a month closer to stricter evidentiary standards that will disqualify many currently qualified applicants — and a month added to the back of the queue.</p>
+    <p style="margin-top:0;">Start with a 30-minute consultation. We'll tell you exactly where you stand.</p>
     <a href="/book" class="btn-primary">Book a Consultation — $150 &rarr;</a>
   </div>
 </section>
