@@ -559,9 +559,7 @@ html{scroll-behavior:smooth}
 
 
 /* TEAM SECTIONS */
-.team-section{display:flex;align-items:center;justify-content:center;padding:48px var(--sp);background:var(--off-white)}
-.team-section:nth-child(odd){background:var(--off-white)}
-.team-section:nth-child(even){background:var(--white)}
+.team-section{padding:72px var(--sp);position:relative;overflow:hidden;background:var(--off-white)}
 .team-section-inner{max-width:1200px;width:100%;margin:0 auto}
 .section-label{font-size:.68rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);margin-bottom:28px;display:flex;align-items:center;gap:12px}
 .section-label::before{content:'';width:20px;height:1px;background:var(--teal)}
@@ -579,6 +577,13 @@ html{scroll-behavior:smooth}
   .team-section .g-card{aspect-ratio:2/3}
 
 }
+
+
+/* SECTION QUOTES — inside team rows */
+.section-quote{margin-top:40px;padding-top:32px;border-top:1px solid rgba(13,148,136,.06);text-align:center;position:relative}
+.section-quote::before{content:'';display:block;width:28px;height:2px;background:linear-gradient(90deg,var(--teal),var(--tb));margin:0 auto 18px;border-radius:2px}
+.sq-text{font-family:var(--sf);font-size:clamp(1rem,1.8vw,1.2rem);font-weight:400;font-style:italic;color:var(--g400);line-height:1.65;max-width:540px;margin:0 auto;letter-spacing:-.01em}
+.sq-attr{font-size:.68rem;color:var(--g300);margin-top:14px;letter-spacing:.06em;font-weight:500}
 
 /* ══════ GALLERY OVERRIDES ══════ */
 
@@ -680,6 +685,26 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 .row-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--sf);font-size:.8rem;font-weight:600;color:rgba(0,0,0,.12);background:transparent;border:1px solid rgba(0,0,0,.06);transition:all .4s cubic-bezier(.16,1,.3,1);cursor:pointer}
 .row-dot.active{color:var(--teal);border-color:rgba(13,148,136,.25);background:rgba(13,148,136,.06);transform:scale(1.15);box-shadow:0 0 20px rgba(13,148,136,.1)}
 @media(max-width:768px){.row-indicator{right:16px;gap:4px}.row-dot{width:26px;height:26px;font-size:.7rem}}
+
+/* FOUNDERS — light gray with teal tint (Option A) */
+.founders-section{background:linear-gradient(135deg,#EFF7F6,#F2F5F4)!important;border-bottom:1px solid rgba(13,148,136,.06)}
+
+/* TEAM ROWS — subtle noise texture, alternating */
+.team-row-section{background:var(--off-white)!important;border-bottom:1px solid rgba(13,148,136,.04)}
+.team-row-section::before{content:'';position:absolute;inset:0;opacity:.012;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.team-row-section:nth-child(even){background:var(--white)!important}
+
+/* SECTION LABELS — with numbers and extending line */
+.section-label{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:36px;display:flex;align-items:center;gap:16px}
+.section-label::before{content:'';width:28px;height:1px;background:currentColor}
+.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(13,148,136,.1),transparent 60%)}
+.label-num{font-family:var(--sf);font-size:1.1rem;font-weight:600;color:rgba(13,148,136,.2);margin-right:4px}
+
+/* SECTION QUOTES */
+.section-quote{margin-top:40px;padding-top:32px;border-top:1px solid rgba(13,148,136,.06);text-align:center}
+.section-quote::before{content:'';display:block;width:28px;height:2px;background:linear-gradient(90deg,var(--teal),var(--tb));margin:0 auto 18px;border-radius:2px}
+.sq-text{font-family:var(--sf);font-size:clamp(1rem,1.8vw,1.2rem);font-weight:400;font-style:italic;color:var(--g400);line-height:1.65;max-width:540px;margin:0 auto;letter-spacing:-.01em}
+.sq-attr{font-size:.68rem;color:var(--g300);margin-top:14px;letter-spacing:.06em;font-weight:500}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGX2C54Y62"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WGX2C54Y62');</script>
@@ -735,9 +760,9 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
   </div>
 </section>
 
-<section class="team-section snap-s team-row" id="r0" id="gallery">
+<section class="team-section snap-s team-row founders-section" id="r0" id="gallery">
   <div class="team-section-inner">
-    <div class="section-label">Leadership</div>
+    <div class="section-label"><span class="label-num">01</span>Leadership</div>
     <div class="g-founders">
       <a href="/team/chris" class="g-card g-founder">
         <div class="g-photo"><img src="/ebuka.png" alt="Chris Ogbodo" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
@@ -764,9 +789,9 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
     </div>
   </div>
 </section>
-<section class="team-section snap-s team-row" id="r1">
+<section class="team-section snap-s team-row team-row-section" id="r1">
   <div class="team-section-inner">
-    <div class="section-label">The Team</div>
+    <div class="section-label"><span class="label-num">02</span>The Team</div>
     <div class="g-team" style="grid-template-columns:repeat(3,1fr);">
       <a href="/team/andrew" class="g-card">
         <div class="g-photo"><img src="/team-andrew.png" alt="Andrew Libby" style="width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
@@ -802,11 +827,16 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
         </div>
       </a>
     </div>
+  
+    <div class="section-quote">
+      <p class="sq-text">"The strength of the evidence matters. The argument framework that deploys it matters more."</p>
+      <p class="sq-attr">— Burlington Consult</p>
+    </div>
   </div>
 </section>
-<section class="team-section snap-s team-row" id="r2">
+<section class="team-section snap-s team-row team-row-section" id="r2">
   <div class="team-section-inner">
-    <div class="section-label">The Team</div>
+    <div class="section-label"><span class="label-num">03</span>The Team</div>
     <div class="g-team" style="grid-template-columns:repeat(3,1fr);">
       <a href="/team/efezino" class="g-card">
         <div class="g-photo"><img src="/team-efezino.png" alt="Efezino Onyeke, AICA" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
@@ -842,11 +872,16 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
         </div>
       </a>
     </div>
+  
+    <div class="section-quote">
+      <p class="sq-text">"Every petition is a case. Every case is an argument. Every argument is built from evidence."</p>
+      <p class="sq-attr">— Burlington Consult</p>
+    </div>
   </div>
 </section>
-<section class="team-section snap-s team-row" id="r3">
+<section class="team-section snap-s team-row team-row-section" id="r3">
   <div class="team-section-inner">
-    <div class="section-label">The Team</div>
+    <div class="section-label"><span class="label-num">04</span>The Team</div>
     <div class="g-team" style="grid-template-columns:repeat(3,1fr);">
       <a href="/team/pascal" class="g-card">
         <div class="g-photo"><div class="g-initials">PD</div></div>
@@ -882,11 +917,16 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
         </div>
       </a>
     </div>
+  
+    <div class="section-quote">
+      <p class="sq-text">"We don't apply templates. We build cases."</p>
+      <p class="sq-attr">— Burlington Consult</p>
+    </div>
   </div>
 </section>
-<section class="team-section snap-s team-row" id="r4">
+<section class="team-section snap-s team-row team-row-section" id="r4">
   <div class="team-section-inner">
-    <div class="section-label">The Team</div>
+    <div class="section-label"><span class="label-num">05</span>The Team</div>
     <div class="g-team" style="grid-template-columns:repeat(3,1fr);">
       <a href="/team/ifeanyi" class="g-card">
         <div class="g-photo"><img src="/team-ifeanyi.png" alt="Ifeanyi Anthony Agah" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .5s;"></div>
@@ -910,6 +950,11 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
           <div class="g-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></div>
         </div>
       </a>
+    </div>
+  
+    <div class="section-quote">
+      <p class="sq-text">"Filed by people who have been through the process themselves."</p>
+      <p class="sq-attr">— Burlington Consult</p>
     </div>
   </div>
 </section>
