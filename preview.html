@@ -136,18 +136,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--sp);height:
 .p-cta-p:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(13,148,136,.35)}
 .pkg.feat{border-color:rgba(45,212,191,.1);background:rgba(45,212,191,.03)}
 
-/* À LA CARTE */
-.alc-section{padding:72px var(--sp);background:var(--off-white)}
-.alc-inner{max-width:900px;margin:0 auto}
-.alc-inner h2{font-family:var(--sf);font-size:clamp(1.6rem,2.5vw,2rem);font-weight:500;color:var(--g700);margin-bottom:8px}
-.alc-sub{font-size:.92rem;color:var(--g400);font-weight:300;margin-bottom:36px}
-.alc-table{width:100%;border-collapse:collapse}
-.alc-table th{text-align:left;font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--g300);padding:12px 0;border-bottom:1px solid var(--g100)}
-.alc-table th:last-child{text-align:right}
-.alc-table td{padding:16px 0;border-bottom:1px solid var(--g100);font-size:.88rem;font-weight:300;color:var(--g500)}
-.alc-table td:last-child{text-align:right;font-weight:500;color:var(--g700);white-space:nowrap}
-.alc-table td .alc-credit{font-size:.72rem;color:var(--teal);display:block;margin-top:2px}
-.alc-table tr:hover td{color:var(--g700)}
+/* À LA CARTE — premium */
+.alc-section{padding:80px var(--sp);background:var(--dark);position:relative;overflow:hidden}
+.alc-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(45,212,191,.03) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 50% 40% at 50% 50%,black,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 50% 40% at 50% 50%,black,transparent 70%);pointer-events:none}
+.alc-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2}
+.alc-header{margin-bottom:48px}
+.alc-label{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tb);margin-bottom:14px}
+.alc-header h2{font-family:var(--sf);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:500;color:var(--white);margin-bottom:12px;letter-spacing:-.02em}
+.alc-header p{font-size:.92rem;color:rgba(255,255,255,.35);font-weight:300;line-height:1.75;max-width:520px}
+.alc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.alc-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:28px 24px;transition:all .4s;position:relative;overflow:hidden}
+.alc-card:hover{border-color:rgba(45,212,191,.12);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.15)}
+.alc-card::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,.1),transparent);opacity:0;transition:opacity .4s}
+.alc-card:hover::before{opacity:1}
+.alc-card-tag{position:absolute;top:16px;right:16px;font-size:.58rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tb);background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.1);padding:3px 10px;border-radius:100px}
+.alc-card-icon{width:44px;height:44px;border-radius:12px;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.1);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--tb)}
+.alc-featured{grid-column:span 2;background:rgba(45,212,191,.03);border-color:rgba(45,212,191,.08)}
+.alc-card h3{font-family:var(--sf);font-size:1rem;font-weight:500;color:var(--white);margin-bottom:8px;letter-spacing:-.01em}
+.alc-card p{font-size:.78rem;color:rgba(255,255,255,.32);line-height:1.65;font-weight:300;margin-bottom:16px}
+.alc-price-row{display:flex;align-items:baseline;gap:10px}
+.alc-price{font-family:var(--sf);font-size:1.5rem;font-weight:600;color:var(--white)}
+.alc-original{font-size:.82rem;color:rgba(255,255,255,.2);text-decoration:line-through}
+.alc-per{font-size:.74rem;color:rgba(255,255,255,.25)}
+.alc-credit-note{font-size:.68rem;color:var(--tb);margin-top:6px;opacity:.6}
+.alc-featured .alc-price{font-size:1.8rem}
+.alc-featured h3{font-size:1.1rem}
+.alc-featured p{font-size:.84rem}
+@media(max-width:900px){.alc-grid{grid-template-columns:1fr 1fr}.alc-featured{grid-column:span 1}}
+@media(max-width:600px){.alc-grid{grid-template-columns:1fr}.alc-section{padding:60px 24px}}
 
 /* CTA */
 .svc-cta{padding:80px var(--sp);text-align:center;background:radial-gradient(ellipse 55% 45% at 50% 55%,rgba(13,148,136,.08),transparent 55%),var(--dark)}
@@ -348,21 +364,80 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 <!-- À LA CARTE -->
 <section class="alc-section">
   <div class="alc-inner">
-    <h2>Individual services.</h2>
-    <p class="alc-sub">Available as standalone engagements. Consultation fee credited toward any service.</p>
-    <table class="alc-table">
-      <thead><tr><th>Service</th><th>Price</th></tr></thead>
-      <tbody>
-        <tr><td>Proposed Endeavour Development</td><td>$3,500<span class="alc-credit">$150 consultation credited</span></td></tr>
-        <tr><td>Single Petition Drafting (EB-1A or NIW)</td><td>$8,000<span class="alc-credit">$150 consultation credited</span></td></tr>
-        <tr><td>Recommendation Letters (per letter)</td><td>$800<span class="alc-credit">$150 consultation credited</span></td></tr>
-        <tr><td>Evidence Architecture &amp; Curation</td><td>$2,500<span class="alc-credit">$150 consultation credited</span></td></tr>
-        <tr><td>RFE Response Drafting</td><td>$3,000<span class="alc-credit">$150 consultation credited</span></td></tr>
-        <tr><td>Resume Rewrite (U.S. market)</td><td>$500<span class="alc-credit">$150 consultation credited</span></td></tr>
-        <tr><td>LinkedIn Optimisation</td><td>$350<span class="alc-credit">$150 consultation credited</span></td></tr>
-        <tr><td>Mock Interview (per session)</td><td>$200<span class="alc-credit">$150 consultation credited</span></td></tr>
-      </tbody>
-    </table>
+    <div class="alc-header">
+      <div class="alc-label">À La Carte</div>
+      <h2>Individual services.</h2>
+      <p>Don't need a full engagement? Each service is available standalone. Your $150 consultation fee is credited toward any service you book.</p>
+    </div>
+    <div class="alc-grid">
+
+      <div class="alc-card alc-featured">
+        <div class="alc-card-tag">Most requested</div>
+        <div class="alc-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <h3>Proposed Endeavour Development</h3>
+        <p>The single most consequential decision in any petition. Field of endeavour construction and Dhanasar mapping.</p>
+        <div class="alc-price-row"><span class="alc-price">$3,500</span><span class="alc-original">$3,650</span></div>
+        <div class="alc-credit-note">$150 consultation credited</div>
+      </div>
+
+      <div class="alc-card alc-featured">
+        <div class="alc-card-tag">Core filing</div>
+        <div class="alc-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>Single Petition Drafting</h3>
+        <p>Full EB-1A or NIW petition drafting with criterion-by-criterion argument construction.</p>
+        <div class="alc-price-row"><span class="alc-price">$8,000</span><span class="alc-original">$8,150</span></div>
+        <div class="alc-credit-note">$150 consultation credited</div>
+      </div>
+
+      <div class="alc-card">
+        <div class="alc-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Recommendation Letters</h3>
+        <p>Researched and drafted from scratch. Each letter addresses specific USCIS criteria.</p>
+        <div class="alc-price-row"><span class="alc-price">$800</span><span class="alc-per">per letter</span></div>
+        <div class="alc-credit-note">$150 consultation credited</div>
+      </div>
+
+      <div class="alc-card">
+        <div class="alc-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+        <h3>Evidence Architecture</h3>
+        <p>Curating, formatting, and presenting the full documentary record to USCIS standards.</p>
+        <div class="alc-price-row"><span class="alc-price">$2,500</span><span class="alc-original">$2,650</span></div>
+        <div class="alc-credit-note">$150 consultation credited</div>
+      </div>
+
+      <div class="alc-card">
+        <div class="alc-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>RFE Response Drafting</h3>
+        <p>Strategic response to Requests for Evidence. The difference between approval and denial.</p>
+        <div class="alc-price-row"><span class="alc-price">$3,000</span><span class="alc-original">$3,150</span></div>
+        <div class="alc-credit-note">$150 consultation credited</div>
+      </div>
+
+      <div class="alc-card">
+        <div class="alc-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h3>Resume Rewrite</h3>
+        <p>U.S. market optimised. Repositioned for the role, sector, and audience that matters.</p>
+        <div class="alc-price-row"><span class="alc-price">$500</span><span class="alc-original">$650</span></div>
+        <div class="alc-credit-note">$150 consultation credited</div>
+      </div>
+
+      <div class="alc-card">
+        <div class="alc-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <h3>LinkedIn Optimisation</h3>
+        <p>Profile audit and rewrite. Headline, summary, experience — all repositioned.</p>
+        <div class="alc-price-row"><span class="alc-price">$350</span><span class="alc-original">$500</span></div>
+        <div class="alc-credit-note">$150 consultation credited</div>
+      </div>
+
+      <div class="alc-card">
+        <div class="alc-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+        <h3>Mock Interview</h3>
+        <p>Realistic simulation with detailed feedback. Behavioural, case, and technical formats.</p>
+        <div class="alc-price-row"><span class="alc-price">$200</span><span class="alc-per">per session</span></div>
+        <div class="alc-credit-note">$150 consultation credited</div>
+      </div>
+
+    </div>
   </div>
 </section>
 
