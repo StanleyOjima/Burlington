@@ -724,6 +724,12 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 .cs-divider{width:1px;height:56px;background:linear-gradient(180deg,transparent,rgba(45,212,191,.15),transparent);flex-shrink:0}
 @media(max-width:768px){.cred-strip-inner{flex-wrap:wrap;gap:32px}.cs-item{flex:1 1 40%;padding:0 16px}.cs-divider{display:none}.cs-val{font-size:1.8rem}}
 @media(max-width:480px){.cs-item{flex:1 1 100%}}
+
+/* GHOST SCROLL BUTTON */
+.scroll-ghost-btn{display:inline-flex;align-items:center;gap:8px;margin-top:28px;padding:10px 24px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.25);border:1px solid rgba(255,255,255,.06);border-radius:100px;text-decoration:none;transition:all .3s;letter-spacing:.04em}
+.scroll-ghost-btn:hover{color:rgba(255,255,255,.5);border-color:rgba(45,212,191,.2)}
+.scroll-ghost-btn svg{animation:chevronBounce 2s ease-in-out infinite;width:14px;height:14px}
+@keyframes chevronBounce{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(6px);opacity:.8}}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGX2C54Y62"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WGX2C54Y62');</script>
@@ -758,7 +764,7 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
       <div class="hero-text">
         <h1>The people behind<br><span>every petition</span>.</h1>
         <p class="hero-sub">Harvard Law. Cambridge. Microsoft. Meta. Two Einstein Visa holders and a team of strategists, case architects, and researchers spanning three continents.</p>
-        <a href="#r0" class="hero-team-btn" style="display:inline-flex;align-items:center;gap:10px;margin-top:36px;padding:14px 32px;font-size:.86rem;font-weight:500;color:var(--white);background:linear-gradient(135deg,#0D9488,#2DD4BF);border-radius:12px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(13,148,136,.3),inset 0 1px 0 rgba(255,255,255,.1);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(13,148,136,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(13,148,136,.3)'">Meet the Team <span>&darr;</span></a>
+        <a href="#r0" class="scroll-ghost-btn">Meet the team <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
       </div>
       <div class="hero-stats-row">
         <div class="hero-stat-card">
