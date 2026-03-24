@@ -585,6 +585,13 @@ html{scroll-behavior:smooth}
 .sq-text{font-family:var(--sf);font-size:clamp(1rem,1.8vw,1.2rem);font-weight:400;font-style:italic;color:var(--g400);line-height:1.65;max-width:540px;margin:0 auto;letter-spacing:-.01em}
 .sq-attr{font-size:.68rem;color:var(--g300);margin-top:14px;letter-spacing:.06em;font-weight:500}
 
+
+
+/* HERO → FOUNDERS transition bridge */
+.founders-section::before{content:'';position:absolute;top:0;left:0;right:0;height:120px;background:linear-gradient(180deg,rgba(4,10,15,.15),transparent);pointer-events:none;z-index:1}
+/* CENTER cards when row isn't full */
+.team-section .g-founders{justify-items:center;justify-content:center}
+.team-section .g-team{justify-content:center}
 /* ══════ GALLERY OVERRIDES ══════ */
 
 :root{--dark:#040A0F;--white:#FFF;--off-white:#F7F7F5;--light:#F5F5F3;--g100:#E8E7E3;--g300:#A8A7A3;--g400:#78776F;--g700:#2D2C28;--teal:#0D9488;--tb:#2DD4BF;--sf:'Playfair Display',Georgia,serif;--sn:'Inter',-apple-system,sans-serif;--sp:clamp(24px,5vw,80px)}
@@ -687,7 +694,8 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 @media(max-width:768px){.row-indicator{right:16px;gap:4px}.row-dot{width:26px;height:26px;font-size:.7rem}}
 
 /* FOUNDERS — light gray with teal tint (Option A) */
-.founders-section{background:linear-gradient(135deg,#EFF7F6,#F2F5F4)!important;border-bottom:1px solid rgba(13,148,136,.06)}
+.founders-section{background:linear-gradient(135deg,#E8F4F2,#EDF5F3,#F0F6F5)!important;border-bottom:1px solid rgba(13,148,136,.08);position:relative}
+.founders-section::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(13,148,136,.04) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 60% 60% at 50% 50%,black 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 50%,black 10%,transparent 70%);pointer-events:none}
 
 /* TEAM ROWS — subtle noise texture, alternating */
 .team-row-section{background:var(--off-white)!important;border-bottom:1px solid rgba(13,148,136,.04)}
@@ -829,7 +837,7 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
     </div>
   
     <div class="section-quote">
-      <p class="sq-text">"The strength of the evidence matters. The argument framework that deploys it matters more."</p>
+      <p class="sq-text">"USCIS doesn't deny weak candidates. It denies weak arguments."</p>
       <p class="sq-attr">— Burlington Consult</p>
     </div>
   </div>
@@ -874,7 +882,7 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
     </div>
   
     <div class="section-quote">
-      <p class="sq-text">"Every petition is a case. Every case is an argument. Every argument is built from evidence."</p>
+      <p class="sq-text">"The field of endeavour is not a description. It's a weapon."</p>
       <p class="sq-attr">— Burlington Consult</p>
     </div>
   </div>
@@ -919,7 +927,7 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
     </div>
   
     <div class="section-quote">
-      <p class="sq-text">"We don't apply templates. We build cases."</p>
+      <p class="sq-text">"Other firms file paperwork. We build the case that makes the paperwork irrelevant."</p>
       <p class="sq-attr">— Burlington Consult</p>
     </div>
   </div>
@@ -953,7 +961,7 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
     </div>
   
     <div class="section-quote">
-      <p class="sq-text">"Filed by people who have been through the process themselves."</p>
+      <p class="sq-text">"Two Einstein Visa holders. Zero templates. Every case from scratch."</p>
       <p class="sq-attr">— Burlington Consult</p>
     </div>
   </div>
