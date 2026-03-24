@@ -95,12 +95,12 @@ nav {
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 70%);
 }
 
-/* HERO RINGS */
-.hero-ring{position:absolute;border-radius:50%;border:1px solid rgba(45,212,191,.06);pointer-events:none}
-.hero-ring:nth-child(1){width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);animation:ringPulse 8s ease-in-out infinite}
-.hero-ring:nth-child(2){width:900px;height:900px;top:50%;left:50%;transform:translate(-50%,-50%);animation:ringPulse 8s ease-in-out 2s infinite}
-.hero-ring:nth-child(3){width:1200px;height:1200px;top:50%;left:50%;transform:translate(-50%,-50%);animation:ringPulse 8s ease-in-out 4s infinite}
-@keyframes ringPulse{0%,100%{opacity:.3;border-color:rgba(45,212,191,.06)}50%{opacity:.8;border-color:rgba(45,212,191,.12)}}
+/* HERO RINGS — offset right */
+.hero-ring{position:absolute;border-radius:50%;border:1px solid rgba(45,212,191,.05);pointer-events:none}
+.hero-ring:nth-child(1){width:500px;height:500px;top:40%;right:-5%;transform:translateY(-50%);animation:ringPulse 8s ease-in-out infinite}
+.hero-ring:nth-child(2){width:750px;height:750px;top:40%;right:-10%;transform:translateY(-50%);animation:ringPulse 8s ease-in-out 2s infinite}
+.hero-ring:nth-child(3){width:1000px;height:1000px;top:40%;right:-15%;transform:translateY(-50%);animation:ringPulse 8s ease-in-out 4s infinite}
+@keyframes ringPulse{0%,100%{opacity:.25;border-color:rgba(45,212,191,.05)}50%{opacity:.7;border-color:rgba(45,212,191,.1)}}
 
 /* HERO SCANLINE */
 .hero-scanline{position:absolute;inset:0;overflow:hidden;pointer-events:none}
@@ -116,7 +116,7 @@ nav {
 @keyframes heroRise{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
 
 /* HEADSHOT ROW */
-.headshot-row{display:flex;align-items:center;justify-content:center;gap:0;margin-top:48px}
+.headshot-row{display:flex;align-items:center;gap:0;margin-top:44px}
 .headshot{width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid rgba(4,10,15,.9);margin-left:-10px;position:relative;transition:all .4s cubic-bezier(.16,1,.3,1)}
 .headshot:first-child{margin-left:0}
 .headshot:hover{transform:translateY(-4px) scale(1.12);z-index:2;border-color:rgba(45,212,191,.4);box-shadow:0 4px 20px rgba(13,148,136,.3)}
@@ -141,15 +141,17 @@ html{font-size:16px;scroll-behavior:smooth}
 body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
 ::selection{background:var(--teal);color:var(--white)}
 
-/* HERO */
-.hero{position:relative;padding:160px var(--sp) 80px;text-align:center;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(13,148,136,.1),transparent 60%),linear-gradient(160deg,#020810,#051218 20%,#081E2E 45%,#0A2838 55%,#071820 75%,#030A12);overflow:hidden}
-.hero-grid{position:absolute;inset:0;background-image:radial-gradient(rgba(45,212,191,.1) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 50% 40% at 50% 45%,black,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 50% 40% at 50% 45%,black,transparent 70%);pointer-events:none;opacity:.6}
-.hero-inner{position:relative;z-index:2;max-width:700px;margin:0 auto}
-.hero-pill{display:inline-flex;align-items:center;gap:10px;padding:8px 22px;border:1px solid rgba(45,212,191,.18);border-radius:100px;font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--tb);margin-bottom:36px;background:rgba(13,148,136,.04)}
-.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--tb);box-shadow:0 0 10px rgba(45,212,191,.6)}
-.hero h1{font-family:var(--sf);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:500;color:var(--white);line-height:1.08;letter-spacing:-.03em;margin-bottom:20px}
+/* HERO — editorial left-aligned */
+.hero{position:relative;min-height:85vh;display:flex;align-items:flex-end;padding:0 var(--sp) 72px;overflow:hidden;background:radial-gradient(ellipse 70% 60% at 75% 45%,rgba(13,148,136,.14),transparent 55%),radial-gradient(ellipse 50% 50% at 85% 70%,rgba(45,212,191,.08),transparent 45%),radial-gradient(ellipse 40% 40% at 20% 60%,rgba(6,78,100,.1),transparent 50%),linear-gradient(155deg,#020810 0%,#051520 20%,#0A2535 45%,#0D3040 55%,#082028 75%,#030A12 100%)}
+.hero-grid{position:absolute;inset:0;background-image:radial-gradient(rgba(45,212,191,.08) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 60% 50% at 70% 50%,black 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 60% 50% at 70% 50%,black 10%,transparent 70%);pointer-events:none;opacity:.5}
+.hero-breadcrumb{position:absolute;top:96px;left:var(--sp);font-size:.7rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2);z-index:3}
+.hero-breadcrumb a{color:rgba(255,255,255,.2);text-decoration:none;transition:color .3s}
+.hero-breadcrumb a:hover{color:var(--tb)}
+.hero-breadcrumb span{margin:0 10px;opacity:.4}
+.hero-inner{position:relative;z-index:2;max-width:680px}
+.hero h1{font-family:var(--sf);font-size:clamp(3.2rem,7vw,5.5rem);font-weight:500;color:var(--white);line-height:1.0;letter-spacing:-.04em;margin-bottom:24px}
 .hero h1 span{background:linear-gradient(135deg,var(--teal),var(--tb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:1rem;line-height:1.75;color:rgba(255,255,255,.35);max-width:520px;margin:0 auto;font-weight:300}
+.hero-sub{font-size:1.05rem;line-height:1.8;color:rgba(255,255,255,.38);max-width:520px;font-weight:300}
 
 /* GALLERY */
 .gallery{padding:0 var(--sp) 80px;background:var(--off-white)}
@@ -200,8 +202,15 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
   .g-card{border-radius:16px}
   .g-name{font-size:1rem}
   .g-overlay{padding:20px 18px}
-  .hero{padding:130px 24px 60px}
-  .hero h1{font-size:2.2rem}
+  .hero{min-height:75vh;padding:0 24px 48px}
+  .hero h1{font-size:clamp(2.4rem,10vw,3.2rem)}
+  .hero-sub{font-size:.92rem}
+  .hero-breadcrumb{top:84px;left:24px}
+  .hero-ring:nth-child(1){width:300px;height:300px;right:-20%}
+  .hero-ring:nth-child(2){width:450px;height:450px;right:-25%}
+  .hero-ring:nth-child(3){width:600px;height:600px;right:-30%}
+  .headshot{width:40px;height:40px;margin-left:-8px}
+  .headshot-row{margin-top:32px}
 }
 @media(max-width:480px){
   .g-team{grid-template-columns:1fr 1fr;gap:12px}
@@ -236,11 +245,25 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
   <div class="hero-ring"></div>
   <div class="hero-ring"></div>
   <div class="hero-scanline"></div>
+  <div class="hero-breadcrumb"><a href="/">Home</a><span>/</span>Team</div>
   <div class="hero-inner">
-    <div class="hero-pill"><span class="hero-dot"></span> Our Team</div>
-    <h1>The people behind <span>every petition</span>.</h1>
+    <h1>The people behind<br><span>every petition</span>.</h1>
     <p class="hero-sub">Harvard Law. Cambridge. Microsoft. Meta. Two Einstein Visa holders and a team of strategists, case architects, and researchers spanning three continents.</p>
     <div class="headshot-row">
+      <div class="headshot"><img src="/ebuka.png" alt="Chris Ogbodo" style="object-position:center top;"></div>
+      <div class="headshot"><img src="/nkem.png" alt="Nkem Nweke" style="object-position:center top;"></div>
+      <div class="headshot"><img src="/team-andrew.png" alt="Andrew Libby" style="object-position:center 10%;"></div>
+      <div class="headshot"><img src="/team-afiong.png" alt="Afiong Ibio" style="object-position:center 20%;"></div>
+      <div class="headshot"><img src="/team-onyia.png" alt="Chibuike Onyia" style="object-position:center 20%;"></div>
+      <div class="headshot"><img src="/team-efezino.png" alt="Efezino Onyeke" style="object-position:center 20%;"></div>
+      <div class="headshot"><img src="/team-chisom.png" alt="Chisom Chibuike" style="object-position:center 20%;"></div>
+      <div class="headshot"><img src="/team-ebuka.png" alt="Ebuka Ezeh" style="object-position:center 20%;"></div>
+      <div class="headshot"><img src="/team-ojima.png" alt="Stanley Ojima" style="object-position:center 20%;"></div>
+      <div class="headshot"><img src="/team-ifeanyi.png" alt="Ifeanyi Agah" style="object-position:center 20%;"></div>
+      <div class="headshot"><div class="headshot-placeholder">MA</div></div>
+      <div class="headshot"><div class="headshot-placeholder">PD</div></div>
+      <div class="headshot"><div class="headshot-placeholder">CD</div></div>
+      <span class="headshot-count">13 people</span>
       <div class="headshot"><img src="/ebuka.png" alt="Chris Ogbodo" style="object-position:center top;"></div>
       <div class="headshot"><img src="/nkem.png" alt="Nkem Nweke" style="object-position:center top;"></div>
       <div class="headshot"><img src="/team-andrew.png" alt="Andrew Libby" style="object-position:center 10%;"></div>
