@@ -684,11 +684,11 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 
 
 /* ROW INDICATOR — fixed right side, team sections only */
-.row-indicator{position:fixed;right:36px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;transition:opacity .4s;pointer-events:none;width:auto}
-.row-indicator.visible{opacity:1;pointer-events:auto}
-.row-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--sf);font-size:.8rem;font-weight:600;color:rgba(0,0,0,.12);background:transparent;border:1px solid rgba(0,0,0,.06);transition:all .4s cubic-bezier(.16,1,.3,1);cursor:pointer}
-.row-dot.active{color:var(--teal);border-color:rgba(13,148,136,.25);background:rgba(13,148,136,.06);transform:scale(1.15);box-shadow:0 0 20px rgba(13,148,136,.1)}
-@media(max-width:768px){.row-indicator{right:16px;gap:4px}.row-dot{width:26px;height:26px;font-size:.7rem}}
+
+
+
+
+@media(max-width:768px){}
 
 /* FOUNDERS — light gray with teal tint (Option A) */
 .founders-section{background:linear-gradient(135deg,#E8F4F2,#EDF5F3,#F0F6F5)!important;border-bottom:1px solid rgba(13,148,136,.08);position:relative}
@@ -730,6 +730,13 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 .scroll-ghost-btn:hover{color:rgba(255,255,255,.5);border-color:rgba(45,212,191,.2)}
 .scroll-ghost-btn svg{animation:chevronBounce 2s ease-in-out infinite;width:14px;height:14px}
 @keyframes chevronBounce{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(6px);opacity:.8}}
+
+/* SECTION DOTS */
+.section-nav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:800;display:flex;flex-direction:column;gap:6px;padding:10px 6px}
+.sn-dot{width:16px;height:16px;border-radius:50%;cursor:pointer;position:relative;display:flex;align-items:center;justify-content:center}
+.sn-dot i{display:block;width:6px;height:6px;border-radius:50%;background:rgba(120,119,111,.2);border:1.5px solid rgba(120,119,111,.15);transition:all .3s}
+.sn-dot.active i{background:#0D9488;border-color:rgba(45,212,191,.4);box-shadow:0 0 8px rgba(45,212,191,.3);width:7px;height:7px}
+@media(max-width:768px){.section-nav{display:none}}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGX2C54Y62"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WGX2C54Y62');</script>
@@ -744,12 +751,7 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 <script>document.addEventListener('DOMContentLoaded',function(){var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');var path=window.location.pathname;if(path.length>1&&path.charAt(path.length-1)==='/')path=path.slice(0,-1);for(var i=0;i<links.length;i++){var href=links[i].getAttribute('href');if(href==='/'&&(path===''||path==='/'))links[i].classList.add('active');else if(href!=='/'&&path.indexOf(href)===0)links[i].classList.add('active');}});</script>
 
 <!-- ROW INDICATOR -->
-<div class="row-indicator" id="rowNav">
-  <div class="row-dot active" data-row="0">1</div>
-  <div class="row-dot" data-row="1">2</div>
-  <div class="row-dot" data-row="2">3</div>
-  <div class="row-dot" data-row="3">4</div>
-</div>
+
 
 
 
@@ -997,6 +999,14 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 <a href="https://wa.me/18572429842?text=Hello%20Burlington%20Consult%2C%20I%27d%20like%20to%20inquire%20about%20your%20services." class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg></button>
 
+<div class="section-nav" id="sectionNav">
+  <div class="sn-dot active"><i></i></div>
+  <div class="sn-dot"><i></i></div>
+  <div class="sn-dot"><i></i></div>
+  <div class="sn-dot"><i></i></div>
+  <div class="sn-dot"><i></i></div>
+  <div class="sn-dot"><i></i></div>
+</div>
 <footer>
   <div class="ft-inner">
     <div class="ft-top">
@@ -1036,39 +1046,30 @@ body{font-family:var(--sn);color:var(--g700);background:var(--off-white);-webkit
 window.addEventListener('scroll',function(){var b=document.querySelector('.back-to-top');if(b){b.classList.toggle('visible',window.scrollY>400)}});
 </script>
 
+
 <script>
-// Row indicator — track active team row
-const teamRows = document.querySelectorAll('.team-row');
-const rowDots = document.querySelectorAll('.row-dot');
-const rowNav = document.getElementById('rowNav');
-
-const rowObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const idx = Array.from(teamRows).indexOf(entry.target);
-      rowDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+(function(){
+  var secs = document.querySelectorAll('.snap-s');
+  var dots = document.querySelectorAll('.sn-dot');
+  if(!secs.length || !dots.length) return;
+  setInterval(function(){
+    var active = 0;
+    for(var i = 0; i < secs.length; i++){
+      var r = secs[i].getBoundingClientRect();
+      if(r.top < window.innerHeight * 0.5 && r.bottom > 0) active = i;
     }
-  });
-}, { threshold: 0.5 });
-teamRows.forEach(s => rowObserver.observe(s));
-
-// Show/hide — only visible on team rows
-const allSnaps = document.querySelectorAll('.snap-s');
-const visObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      rowNav.classList.toggle('visible', entry.target.classList.contains('team-row'));
+    for(var j = 0; j < dots.length; j++){
+      dots[j].className = j === active ? 'sn-dot active' : 'sn-dot';
     }
-  });
-}, { threshold: 0.5 });
-allSnaps.forEach(s => visObserver.observe(s));
-
-// Click to scroll
-rowDots.forEach(d => {
-  d.addEventListener('click', () => {
-    document.getElementById('r' + d.getAttribute('data-row')).scrollIntoView({ behavior: 'smooth' });
-  });
-});
+  }, 150);
+  for(var k = 0; k < dots.length; k++){
+    (function(idx){
+      dots[idx].addEventListener('click', function(){
+        if(secs[idx]) secs[idx].scrollIntoView({behavior:'smooth'});
+      });
+    })(k);
+  }
+})();
 </script>
 </body>
 </html>
