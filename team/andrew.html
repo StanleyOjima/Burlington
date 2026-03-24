@@ -84,26 +84,18 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 .profile-tags{display:flex;flex-wrap:wrap;gap:8px}
 .profile-tag{font-size:.72rem;font-weight:500;color:rgba(255,255,255,.35);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:7px 16px;border-radius:100px;transition:all .3s}
 .profile-tag:hover{border-color:rgba(45,212,191,.2);color:var(--tb)}
-.profile-bio-section{padding:72px var(--sp);background:var(--off-white)}
-.profile-bio-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px}
-.bio-text h3,.career-grid h3,.distinctions-inner h3{font-family:var(--sf);font-size:1.4rem;font-weight:500;color:var(--g700);margin-bottom:24px;letter-spacing:-.01em}
-.bio-text p{font-size:.92rem;font-weight:300;color:var(--g400);line-height:1.85;margin-bottom:16px}
-.bio-text p strong{font-weight:500;color:var(--g700)}
-.career-grid{display:flex;flex-direction:column;gap:0}
-.career-row{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--g100);font-size:.88rem}
-.career-row:first-of-type{border-top:1px solid var(--g100)}
-.career-label{flex:0 0 160px;font-weight:500;color:var(--g700);font-size:.8rem;letter-spacing:.02em}
-.career-value{flex:1;font-weight:300;color:var(--g400);line-height:1.6}
-.career-value strong{font-weight:500;color:var(--g700)}
-.distinctions-section{padding:72px var(--sp);background:var(--white);position:relative}
-.distinctions-inner{max-width:1100px;margin:0 auto}
-.distinction-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.distinction-card{display:flex;gap:16px;align-items:flex-start;padding:24px;background:var(--off-white);border-radius:14px;border:1px solid var(--g100);transition:all .3s}
-.distinction-card:hover{border-color:rgba(13,148,136,.12);box-shadow:0 8px 24px rgba(0,0,0,.04)}
-.distinction-icon{width:44px;height:44px;border-radius:12px;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--teal)}
-.distinction-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.5;fill:none}
-.distinction-card h4{font-family:var(--sf);font-size:.95rem;font-weight:500;color:var(--g700);margin-bottom:4px}
-.distinction-card p{font-size:.78rem;color:var(--g400);line-height:1.55;font-weight:300}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .profile-cta{padding:80px var(--sp);text-align:center;background:radial-gradient(ellipse 55% 45% at 50% 55%,rgba(13,148,136,.08),transparent 55%),var(--dark)}
 .profile-cta h2{font-family:var(--sf);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:500;color:var(--white);margin-bottom:16px;letter-spacing:-.02em}
@@ -143,7 +135,6 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
   .profile-hero{padding:120px var(--sp) 60px}
   .profile-hero-inner{grid-template-columns:220px 1fr;gap:40px}
   .profile-bio-inner{grid-template-columns:1fr;gap:48px}
-  .distinction-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:700px){
   .profile-hero{padding:110px 24px 48px}
@@ -161,7 +152,6 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
   .bio-text h3,.career-grid h3,.distinctions-inner h3{font-size:1.2rem}
   .career-row{flex-direction:column;gap:4px}
   .career-label{flex:none;font-size:.76rem}
-  .distinction-grid{grid-template-columns:1fr}
   .distinctions-section{padding:48px 24px}
   .profile-links-section{padding:36px 24px 48px}
   .profile-links-inner{flex-direction:column}
@@ -189,6 +179,29 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 .ph-link svg{stroke:var(--tb)}
 @media(max-width:700px){.profile-hero-links{justify-content:center}}
 
+
+/* TIER 2 — compact body */
+.profile-body{padding:64px var(--sp);background:var(--off-white)}
+.profile-body-inner{max-width:1000px;margin:0 auto}
+.pb-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:48px;margin-bottom:48px}
+.pb-bio h3{font-family:var(--sf);font-size:1.3rem;font-weight:500;color:var(--g700);margin-bottom:18px;letter-spacing:-.01em}
+.pb-bio p{font-size:.9rem;color:var(--g400);line-height:1.8;font-weight:300;margin-bottom:14px}
+.pb-bio p strong{font-weight:500;color:var(--g700)}
+.pb-career h3{font-family:var(--sf);font-size:1.3rem;font-weight:500;color:var(--g700);margin-bottom:18px;letter-spacing:-.01em}
+.pb-row{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--g100);font-size:.84rem}
+.pb-row:first-of-type{border-top:1px solid var(--g100)}
+.pb-label{flex:0 0 130px;font-weight:500;color:var(--g700);font-size:.78rem;letter-spacing:.02em}
+.pb-value{flex:1;color:var(--g400);font-weight:300}
+.pb-distinctions{display:flex;flex-wrap:wrap;gap:10px;padding-top:32px;border-top:1px solid var(--g100)}
+.pb-pill{font-size:.74rem;font-weight:500;color:var(--g400);background:var(--white);border:1px solid var(--g100);padding:8px 18px;border-radius:100px;transition:all .3s}
+.pb-pill:hover{border-color:rgba(13,148,136,.2);color:var(--teal)}
+
+@media(max-width:700px){
+  .pb-grid{grid-template-columns:1fr;gap:36px}
+  .pb-row{flex-direction:column;gap:3px}
+  .pb-label{flex:none}
+  .profile-body{padding:48px 24px}
+}
 </style>
 </head>
 <body>
@@ -228,34 +241,30 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
   </div>
 </section>
 
-<section class="profile-bio-section">
-  <div class="profile-bio-inner">
-    <div class="bio-text">
-      <h3>The STEM Architect</h3>
-      <p>Andrew leads Burlington Consult's STEM specialist practice, advising petitioners in science, technology, engineering, and mathematics on evidentiary strategy and criterion mapping. He brings a rare combination: deep technical fluency and direct experience inside the institutions that matter most.</p>
-      <p>Before joining Burlington Consult, Andrew worked in <strong>IT Engineering at Harvard University</strong> and held a position at the <strong>U.S. Department of State</strong>, where he carried a secret-level security clearance. That background gives him an uncommon understanding of how federal institutions evaluate evidence and credentialsand what makes a case stand up to scrutiny.</p>
-      <p>Andrew grew up across U.S. diplomatic postings in <strong>Brussels, Paris, and Washington</strong>, the son of <strong>U.S. Ambassador Mark W. Libby</strong>. He speaks fluent Polish and French alongside English. That international perspective shapes how he approaches every STEM petition: with precision, context, and an awareness of how credentials translate across borders.</p>
+<section class="profile-body">
+  <div class="profile-body-inner">
+    <div class="pb-grid">
+      <div class="pb-bio">
+        <h3>The STEM Architect</h3>
+        <p>Andrew leads Burlington Consult's STEM specialist practice, advising petitioners in science, technology, engineering, and mathematics on evidentiary strategy and criterion mapping.</p>
+        <p>Before joining Burlington Consult, Andrew worked in <strong>IT Engineering at Harvard University</strong> and held a position at the <strong>U.S. Department of State</strong> with a secret-level security clearance. He grew up across diplomatic postings in <strong>Brussels, Paris, and Washington</strong> as the son of <strong>U.S. Ambassador Mark W. Libby</strong>.</p>
+      </div>
+      <div class="pb-career">
+        <h3>Background</h3>
+        <div class="pb-row"><div class="pb-label">Harvard University</div><div class="pb-value">IT Engineering</div></div>
+        <div class="pb-row"><div class="pb-label">U.S. State Dept.</div><div class="pb-value">Secret-level clearance</div></div>
+        <div class="pb-row"><div class="pb-label">Wentworth Institute</div><div class="pb-value">M.S. Computer Science</div></div>
+        <div class="pb-row"><div class="pb-label">Univ. of Vermont</div><div class="pb-value">B.S. CS &amp; Japanese</div></div>
+        <div class="pb-row"><div class="pb-label">Languages</div><div class="pb-value">English, Polish, French</div></div>
+      </div>
     </div>
-    <div class="career-grid">
-      <h3>Background</h3>
-      <div class="career-row"><div class="career-label">Harvard University</div><div class="career-value">IT Engineering</div></div>
-      <div class="career-row"><div class="career-label">U.S. State Department</div><div class="career-value">Secret-level security clearance</div></div>
-      <div class="career-row"><div class="career-label">Wentworth Institute</div><div class="career-value">M.S. Computer Science</div></div>
-      <div class="career-row"><div class="career-label">University of Vermont</div><div class="career-value">B.S. Computer Science &amp; Japanese</div></div>
-      <div class="career-row"><div class="career-label">Languages</div><div class="career-value">English, Polish, French (fluent)</div></div>
-      <div class="career-row"><div class="career-label">Diplomatic Postings</div><div class="career-value">Brussels, Paris, Washington</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="distinctions-section">
-  <div class="distinctions-inner">
-    <h3>Distinctions</h3>
-    <div class="distinction-grid">
-      <div class="distinction-card"><div class="distinction-icon"><svg viewBox="0 0 24 24"><path d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/></svg></div><div><h4>Harvard University</h4><p>IT Engineering. One of the world's foremost research institutions.</p></div></div>
-      <div class="distinction-card"><div class="distinction-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>U.S. State Department</h4><p>Secret-level security clearance. Federal government experience.</p></div></div>
-      <div class="distinction-card"><div class="distinction-icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M3.6 9h16.8M3.6 15h16.8"/><path d="M12 3a15.3 15.3 0 014 9 15.3 15.3 0 01-4 9 15.3 15.3 0 01-4-9 15.3 15.3 0 014-9z"/></svg></div><div><h4>Son of U.S. Ambassador</h4><p>Mark W. Libby. Raised across diplomatic postings in Europe and Washington.</p></div></div>
-      <div class="distinction-card"><div class="distinction-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div><h4>Trilingual</h4><p>Fluent in English, Polish, and French. Cross-border credential expertise.</p></div></div>
+    <div class="pb-distinctions">
+      <span class="pb-pill">Harvard University</span>
+      <span class="pb-pill">U.S. State Department</span>
+      <span class="pb-pill">Secret-Level Clearance</span>
+      <span class="pb-pill">Son of U.S. Ambassador</span>
+      <span class="pb-pill">Trilingual</span>
+      <span class="pb-pill">M.S. Computer Science</span>
     </div>
   </div>
 </section>
