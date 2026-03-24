@@ -94,13 +94,15 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 .career-label{flex:0 0 160px;font-weight:500;color:var(--g700);font-size:.8rem;letter-spacing:.02em}
 .career-value{flex:1;font-weight:300;color:var(--g400);line-height:1.6}
 .career-value strong{font-weight:500;color:var(--g700)}
-.distinctions-section{padding:72px var(--sp);background:var(--white)}
+.distinctions-section{padding:72px var(--sp);background:var(--white);position:relative}
 .distinctions-inner{max-width:1100px;margin:0 auto}
-.distinction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.distinction-card{padding:28px 24px;background:var(--off-white);border:1px solid var(--g100);border-radius:16px;transition:all .3s}
-.distinction-card:hover{border-color:rgba(13,148,136,.12);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.04)}
-.distinction-card h4{font-family:var(--sf);font-size:1rem;font-weight:500;color:var(--g700);margin-bottom:6px}
-.distinction-card p{font-size:.8rem;color:var(--g400);line-height:1.6;font-weight:300}
+.distinction-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.distinction-card{display:flex;gap:16px;align-items:flex-start;padding:24px;background:var(--off-white);border-radius:14px;border:1px solid var(--g100);transition:all .3s}
+.distinction-card:hover{border-color:rgba(13,148,136,.12);box-shadow:0 8px 24px rgba(0,0,0,.04)}
+.distinction-icon{width:44px;height:44px;border-radius:12px;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--teal)}
+.distinction-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.5;fill:none}
+.distinction-card h4{font-family:var(--sf);font-size:.95rem;font-weight:500;color:var(--g700);margin-bottom:4px}
+.distinction-card p{font-size:.78rem;color:var(--g400);line-height:1.55;font-weight:300}
 .profile-links-section{padding:48px var(--sp) 72px;background:var(--white)}
 .profile-links-inner{max-width:1100px;margin:0 auto;display:flex;gap:16px;flex-wrap:wrap}
 .plink{display:inline-flex;align-items:center;gap:8px;font-size:.84rem;font-weight:500;color:var(--teal);text-decoration:none;padding:12px 24px;border-radius:12px;border:1px solid rgba(13,148,136,.15);transition:all .3s}
@@ -144,7 +146,6 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
   .profile-hero-inner{grid-template-columns:220px 1fr;gap:40px}
   .profile-bio-inner{grid-template-columns:1fr;gap:48px}
   .distinction-grid{grid-template-columns:1fr 1fr}
-  .distinction-featured{grid-template-columns:1fr 1fr}
 }
 @media(max-width:700px){
   .profile-hero{padding:110px 24px 48px}
@@ -163,7 +164,6 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
   .career-row{flex-direction:column;gap:4px}
   .career-label{flex:none;font-size:.76rem}
   .distinction-grid{grid-template-columns:1fr}
-  .distinction-featured{grid-template-columns:1fr}
   .distinctions-section{padding:48px 24px}
   .profile-links-section{padding:36px 24px 48px}
   .profile-links-inner{flex-direction:column}
@@ -255,15 +255,13 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 <section class="distinctions-section">
   <div class="distinctions-inner">
     <h3>Distinctions</h3>
-    <div class="distinction-featured">
-      <div class="distinction-card featured"><h4>Einstein Visa (EB-1A)</h4><p>Self-petitioned. Approved on first submission. No RFE. No resubmission. The same classification as Nobel laureates and Olympic champions.</p></div>
-      <div class="distinction-card featured"><h4>$500,000+ in Scholarships</h4><p>Secured from Harvard Law, Michigan Ross, Georgetown, USC, and Columbia. Across five of the most competitive graduate programmes in the world.</p></div>
-    </div>
     <div class="distinction-grid">
-      <div class="distinction-card"><h4>Google Policy Fellow</h4><p>First recipient from Africa. Selected for technology policy leadership.</p></div>
-      <div class="distinction-card"><h4>Harvard Law School</h4><p>LL.M. in Technology Law and AI Policy, Class of 2026.</p></div>
-      <div class="distinction-card"><h4>100% Approval Rate</h4><p>Every petition filed by Burlington Consult has been approved.</p></div>
-      <div class="distinction-card"><h4>ICANN Fellow</h4><p>Selected for internet governance and digital policy leadership.</p></div>
+      <div class="distinction-card"><div class="distinction-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div><h4>Einstein Visa (EB-1A)</h4><p>Self-petitioned. First submission. No RFE. Nobel-tier classification.</p></div></div>
+      <div class="distinction-card"><div class="distinction-icon"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><h4>$500,000+ in Scholarships</h4><p>Harvard Law, Michigan Ross, Georgetown, USC, Columbia.</p></div></div>
+      <div class="distinction-card"><div class="distinction-icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M3.6 9h16.8M3.6 15h16.8"/><path d="M12 3a15.3 15.3 0 014 9 15.3 15.3 0 01-4 9 15.3 15.3 0 01-4-9 15.3 15.3 0 014-9z"/></svg></div><div><h4>Google Policy Fellow</h4><p>First recipient from Africa. Technology policy leadership.</p></div></div>
+      <div class="distinction-card"><div class="distinction-icon"><svg viewBox="0 0 24 24"><path d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/></svg></div><div><h4>Harvard Law School</h4><p>LL.M., Technology Law and AI Policy, Class of 2026.</p></div></div>
+      <div class="distinction-card"><div class="distinction-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a10 10 0 11-20 0 10 10 0 0120 0z"/></svg></div><div><h4>100% Approval Rate</h4><p>Every petition filed by Burlington Consult has been approved.</p></div></div>
+      <div class="distinction-card"><div class="distinction-icon"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div><h4>ICANN Fellow</h4><p>Internet governance and digital policy leadership.</p></div></div>
     </div>
   </div>
 </section>
