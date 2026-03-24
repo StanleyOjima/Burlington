@@ -103,10 +103,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 .distinction-icon svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.5;fill:none}
 .distinction-card h4{font-family:var(--sf);font-size:.95rem;font-weight:500;color:var(--g700);margin-bottom:4px}
 .distinction-card p{font-size:.78rem;color:var(--g400);line-height:1.55;font-weight:300}
-.profile-links-section{padding:48px var(--sp) 72px;background:var(--white)}
-.profile-links-inner{max-width:1100px;margin:0 auto;display:flex;gap:16px;flex-wrap:wrap}
-.plink{display:inline-flex;align-items:center;gap:8px;font-size:.84rem;font-weight:500;color:var(--teal);text-decoration:none;padding:12px 24px;border-radius:12px;border:1px solid rgba(13,148,136,.15);transition:all .3s}
-.plink:hover{background:rgba(13,148,136,.04);border-color:rgba(13,148,136,.3)}
+
 .profile-cta{padding:80px var(--sp);text-align:center;background:radial-gradient(ellipse 55% 45% at 50% 55%,rgba(13,148,136,.08),transparent 55%),var(--dark)}
 .profile-cta h2{font-family:var(--sf);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:500;color:var(--white);margin-bottom:16px;letter-spacing:-.02em}
 .profile-cta p{font-size:.92rem;color:rgba(255,255,255,.35);font-weight:300;max-width:400px;margin:0 auto 32px;line-height:1.7}
@@ -183,6 +180,14 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
   .distinction-card.featured{padding:28px 24px}
   .career-value{font-size:.82rem}
 }
+
+/* HERO LINKS */
+.profile-hero-links{display:flex;gap:12px;margin-top:24px}
+.ph-link{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:400;color:rgba(255,255,255,.3);text-decoration:none;padding:8px 18px;border:1px solid rgba(255,255,255,.06);border-radius:100px;transition:all .3s;letter-spacing:.02em}
+.ph-link:hover{color:var(--tb);border-color:rgba(45,212,191,.2)}
+.ph-link svg{opacity:.5;transition:opacity .3s}
+.ph-link:hover svg{opacity:1;stroke:var(--tb)}
+@media(max-width:700px){.profile-hero-links{justify-content:center}}
 </style>
 </head>
 <body>
@@ -213,6 +218,10 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
         <span class="profile-tag">Einstein Visa Holder</span>
         <span class="profile-tag">First-Submission Approved</span>
         <span class="profile-tag">Google Policy Fellow</span>
+      </div>
+      <div class="profile-hero-links">
+        <a href="https://www.linkedin.com/in/ccogbodo" class="ph-link" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</a>
+        <a href="mailto:founder@burlingtonconsult.com" class="ph-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg> Email</a>
       </div>
     </div>
   </div>
@@ -266,12 +275,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
   </div>
 </section>
 
-<section class="profile-links-section">
-  <div class="profile-links-inner">
-    <a href="https://www.linkedin.com/in/ccogbodo" class="plink" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</a>
-    <a href="mailto:founder@burlingtonconsult.com" class="plink"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg> founder@burlingtonconsult.com</a>
-  </div>
-</section>
+
 
 <section class="profile-cta">
   <h2>Your petition starts here.</h2>
