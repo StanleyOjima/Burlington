@@ -245,17 +245,18 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 <section class="ref">
   <div class="ref-bg"></div>
   <div class="ref-inner">
-    <div class="ref-bonus">$1,000</div>
+    <div class="ref-bonus">₦1.5M</div>
     <div class="ref-sub">Per Qualified Referral</div>
-    <p class="ref-desc">Know a professional who could qualify for a U.S. Green Card through EB-1A or EB-2 NIW? Send them to Burlington. When they engage and pay their initial deposit, you get paid.</p>
+    <div class="ref-discount" style="display:none;text-align:center;margin-bottom:24px;"><span style="display:inline-flex;padding:8px 20px;border-radius:100px;font-size:.78rem;font-weight:500;color:var(--tb);background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.12);"><span class="ref-discount-val"></span> off for the referred client</span></div>
+    <p class="ref-desc">Know a professional who could qualify for a U.S. Green Card through EB-1A or EB-2 NIW? Refer them to Burlington. When they engage and pay their initial deposit, you receive ₦1.5M directly.</p>
     <div class="rs-grid">
       <div class="rs"><div class="rs-num">1</div><h4>Refer someone qualified</h4><p>Lawyers, doctors, engineers, executives, researchers, creatives, or finance professionals.</p></div>
       <div class="rs"><div class="rs-num">2</div><h4>Burlington confirms eligibility</h4><p>We assess them within 48 hours and determine the right petition pathway.</p></div>
-      <div class="rs"><div class="rs-num">3</div><h4>They make their deposit</h4><p>Once they pay 50% of the engagement fee, the referral is confirmed.</p></div>
-      <div class="rs"><div class="rs-num">4</div><h4>You receive $1,000</h4><p>No cap. Refer as many qualified people as you know.</p></div>
+      <div class="rs"><div class="rs-num">3</div><h4>They make their deposit</h4><p data-trigger>Once they pay their 50% deposit, the referral is confirmed.</p></div>
+      <div class="rs"><div class="rs-num">4</div><h4>You receive ₦1.5M</h4><p>No cap. Refer as many qualified people as you know.</p></div>
     </div>
     <div class="ref-cta"><a href="/book" class="qr-cta">Refer someone &rarr;</a></div>
-    <p class="ref-fine">Referral bonus is paid upon receipt of the referred client's 50% initial deposit. Referred individuals must be new clients not previously engaged with Burlington Consult. Burlington reserves the right to confirm eligibility before referral is credited.</p>
+    <p class="ref-fine">Referral bonus of ₦1.5M is paid upon receipt of the referred client's initial deposit. Referred individuals must be new clients not previously engaged with Burlington Consult. Burlington reserves the right to confirm eligibility before referral is credited.</p>
   </div>
 </section>
 
@@ -295,6 +296,50 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 </a>
 
 <script>
+// ═══════════════════════════════════════════════════
+// REFERRAL CONFIG — edit these values to control the programme
+// ═══════════════════════════════════════════════════
+var REFERRAL = {
+  enabled: true,                    // Toggle entire referral section on/off
+  referrerReward: 1500000,          // Amount paid to referrer (₦)
+  referrerCurrency: '₦',           // Currency symbol
+  referrerRewardDisplay: '₦1.5M',  // Display text for the big number
+  referredDiscount: 0,              // Discount for referred person (0 = off)
+  referredDiscountType: 'flat',     // 'flat' (₦) or 'percent' (%)
+  referredDiscountDisplay: '',      // e.g. '₦500k off' or '40% off'
+  triggerEvent: '50% deposit',      // When reward activates
+  maxPerPerson: 0,                  // 0 = unlimited
+  expiryDays: 0,                    // 0 = no expiry
+  minEngagement: 0,                 // Minimum engagement value (0 = any)
+};
+// ═══════════════════════════════════════════════════
+
+// Apply config to page
+document.addEventListener('DOMContentLoaded', function() {
+  // Toggle referral section
+  var refSection = document.querySelector('.ref');
+  if (refSection && !REFERRAL.enabled) {
+    refSection.style.display = 'none';
+  }
+  
+  // Update amounts
+  var bonusEl = document.querySelector('.ref-bonus');
+  if (bonusEl) bonusEl.textContent = REFERRAL.referrerRewardDisplay;
+  
+  // Update trigger text
+  var triggerEls = document.querySelectorAll('[data-trigger]');
+  triggerEls.forEach(function(el) {
+    el.textContent = el.textContent.replace('50% deposit', REFERRAL.triggerEvent);
+  });
+  
+  // Show referred discount if enabled
+  var discountEl = document.querySelector('.ref-discount');
+  if (discountEl && REFERRAL.referredDiscount > 0) {
+    discountEl.style.display = 'block';
+    discountEl.querySelector('.ref-discount-val').textContent = REFERRAL.referredDiscountDisplay;
+  }
+});
+
 function showTab(n){var tabs=document.querySelectorAll('.atab');var panels=document.querySelectorAll('.pnl');for(var i=0;i<tabs.length;i++){tabs[i].classList.toggle('active',i===n);panels[i].classList.toggle('active',i===n)}}
 function ans(p,btn,yes){var item=btn.closest('.qi');item.querySelectorAll('.qb').forEach(function(b){b.classList.remove('sel')});btn.classList.add('sel');item.classList.toggle('yes',yes===1);var items=document.querySelectorAll('#q'+p+' .qi');var y=0;items.forEach(function(q){var s=q.querySelector('.qb.sel');if(s&&s.classList.contains('qb-y'))y++});document.getElementById('n'+p).textContent=y+' / 5';var counter=document.getElementById('c'+p);counter.classList.toggle('qualified',y>=3);var result=document.getElementById('r'+p);if(y>=3){result.classList.add('show');setTimeout(function(){result.scrollIntoView({behavior:'smooth',block:'nearest'})},100)}else{result.classList.remove('show')}}
 </script>
