@@ -47,7 +47,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--sp);height:
 /* HERO */
 .svc-hero{position:relative;padding:160px var(--sp) 80px;background:radial-gradient(ellipse 60% 50% at 70% 45%,rgba(13,148,136,.12),transparent 55%),linear-gradient(155deg,#020810,#051520 20%,#0A2535 45%,#0D3040 55%,#030A12 100%);overflow:hidden}
 .svc-hero-grid{position:absolute;inset:0;background-image:radial-gradient(rgba(45,212,191,.08) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 50% 40% at 60% 50%,black 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 50% 40% at 60% 50%,black 10%,transparent 70%);pointer-events:none;opacity:.5}
-.svc-hero-inner{position:relative;z-index:2;max-width:800px}
+.svc-hero-layout{position:relative;z-index:2;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:64px}
+.svc-hero-text{max-width:580px}
 .svc-hero .overline{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tb);margin-bottom:16px}
 .svc-hero h1{font-family:var(--sf);font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:500;color:var(--white);line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}
 .svc-hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--teal),var(--tb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -297,11 +298,11 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 .svc-hero-scanline{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .svc-hero-scanline::before{content:'';position:absolute;width:200%;height:1px;top:0;left:-50%;background:linear-gradient(90deg,transparent,rgba(45,212,191,.1) 40%,rgba(13,148,136,.2) 50%,rgba(45,212,191,.1) 60%,transparent);animation:svcScan 12s linear infinite}
 @keyframes svcScan{0%{top:-5%}100%{top:105%}}
-.svc-hero-stats{display:flex;align-items:center;gap:0;margin-top:40px}
-.svc-stat{text-align:center;flex:1}
-.svc-stat-val{font-family:var(--sf);font-size:1.6rem;font-weight:600;background:linear-gradient(135deg,var(--white) 30%,var(--tb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em;margin-bottom:4px}
-.svc-stat-label{font-size:.68rem;color:rgba(255,255,255,.25);letter-spacing:.04em;text-transform:uppercase}
-.svc-stat-divider{width:1px;height:40px;background:linear-gradient(180deg,transparent,rgba(45,212,191,.12),transparent);flex-shrink:0}
+
+
+
+
+
 @media(max-width:600px){.svc-hero-stats{flex-direction:column;gap:20px}.svc-stat-divider{width:40px;height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,.12),transparent)}}
 
 /* KEY LEADS — mini profile cards */
@@ -331,6 +332,40 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 .alc-row-per{font-size:.7rem;color:var(--g300,#A8A7A3)}
 .alc-note{font-size:.74rem;color:var(--teal);margin-top:20px;font-weight:400}
 @media(max-width:600px){.alc-wrap{padding:28px 20px}.alc-row{flex-direction:column;align-items:flex-start;gap:8px}}
+
+/* HERO STATS — right column cards */
+.svc-hero-stats-col{display:flex;flex-direction:column;gap:12px;flex-shrink:0}
+.svc-stat-card{padding:20px 28px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;backdrop-filter:blur(12px);min-width:180px}
+.svc-stat-val{font-family:var(--sf);font-size:1.8rem;font-weight:600;background:linear-gradient(135deg,var(--white) 30%,var(--tb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em;margin-bottom:4px}
+.svc-stat-label{font-size:.68rem;color:rgba(255,255,255,.25);letter-spacing:.04em;text-transform:uppercase}
+
+/* TRUST SECTION */
+.svc-trust{padding:72px var(--sp);background:var(--off-white)}
+.svc-trust-inner{max-width:1000px;margin:0 auto}
+.svc-trust-header{margin-bottom:40px}
+.svc-trust-header h2{font-family:var(--sf);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:500;color:var(--g700);letter-spacing:-.02em;line-height:1.2}
+.svc-trust-grid{display:grid;grid-template-columns:280px 1fr;gap:40px;margin-bottom:48px}
+.svc-trust-bio{text-align:center}
+.svc-trust-avatar{width:72px;height:72px;border-radius:16px;background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(13,148,136,.04));border:1px solid rgba(13,148,136,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:var(--sf);font-size:1.2rem;color:var(--teal);font-weight:500}
+.svc-trust-name{font-family:var(--sf);font-size:.95rem;font-weight:500;color:var(--g700);margin-bottom:12px;line-height:1.3}
+.svc-trust-desc{font-size:.78rem;color:var(--g400);line-height:1.7;font-weight:300}
+.svc-trust-copy p{font-size:.92rem;color:var(--g400);line-height:1.8;font-weight:300;margin-bottom:16px}
+.svc-trust-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.svc-ts{display:flex;gap:14px;align-items:flex-start;padding:20px;background:var(--white);border:1px solid var(--g100);border-radius:14px;transition:all .3s}
+.svc-ts:hover{border-color:rgba(13,148,136,.1);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.03)}
+.svc-ts-icon{width:36px;height:36px;border-radius:10px;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--teal)}
+.svc-ts-title{font-size:.84rem;font-weight:500;color:var(--g700);margin-bottom:4px}
+.svc-ts-desc{font-size:.76rem;color:var(--g400);line-height:1.6;font-weight:300}
+
+@media(max-width:768px){
+  .svc-hero-layout{flex-direction:column;gap:36px}
+  .svc-hero-stats-col{flex-direction:row;gap:10px;width:100%}
+  .svc-stat-card{flex:1;padding:16px 18px;min-width:0}
+  .svc-stat-val{font-size:1.3rem}
+  .svc-trust-grid{grid-template-columns:1fr;gap:28px}
+  .svc-trust-stats{grid-template-columns:1fr}
+  .svc-trust{padding:48px 24px}
+}
 </style>
 </head>
 <body>
@@ -343,16 +378,42 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 <section class="svc-hero">
   <div class="svc-hero-grid"></div>
   <div class="svc-hero-scanline"></div>
-  <div class="svc-hero-inner">
-    <div class="overline">Services</div>
-    <h1>Three practices.<br>One <em>standard</em>.</h1>
-    <p>Immigration strategy, graduate admissions, and career advisory — each built around the same principle: no templates, no guesswork, and no case that isn't stress-tested before it ships.</p>
-    <div class="svc-hero-stats">
-      <div class="svc-stat"><div class="svc-stat-val">100%</div><div class="svc-stat-label">Approval rate</div></div>
-      <div class="svc-stat-divider"></div>
-      <div class="svc-stat"><div class="svc-stat-val">$500k+</div><div class="svc-stat-label">Scholarships secured</div></div>
-      <div class="svc-stat-divider"></div>
-      <div class="svc-stat"><div class="svc-stat-val">12 Mo.</div><div class="svc-stat-label">RFE retainer included</div></div>
+  <div class="svc-hero-layout">
+    <div class="svc-hero-text">
+      <div class="overline">Services</div>
+      <h1>Three practices.<br>One <em>standard</em>.</h1>
+      <p>Immigration strategy, graduate admissions, and career advisory — each built around the same principle: no templates, no guesswork, and no case that isn't stress-tested before it ships.</p>
+    </div>
+    <div class="svc-hero-stats-col">
+      <div class="svc-stat-card"><div class="svc-stat-val">100%</div><div class="svc-stat-label">Approval rate</div></div>
+      <div class="svc-stat-card"><div class="svc-stat-val">$500k+</div><div class="svc-stat-label">Scholarships secured</div></div>
+      <div class="svc-stat-card"><div class="svc-stat-val">12 Mo.</div><div class="svc-stat-label">RFE retainer included</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST SECTION -->
+<section class="svc-trust">
+  <div class="svc-trust-inner">
+    <div class="svc-trust-header">
+      <h2>Built around the people who've done it themselves.</h2>
+    </div>
+    <div class="svc-trust-grid">
+      <div class="svc-trust-bio">
+        <div class="svc-trust-avatar">EO</div>
+        <div class="svc-trust-name">Earl Chukwuebuka &ldquo;Chris&rdquo; Ogbodo</div>
+        <p class="svc-trust-desc">Harvard Law School LL.M., Technology Law and AI Policy. Self-petitioned Einstein Visa (EB-1A) holder, approved on first submission. Africa&rsquo;s first Google Policy Fellow. Over $500,000 in graduate scholarships secured.</p>
+      </div>
+      <div class="svc-trust-copy">
+        <p>Burlington Consult is led by practitioners, not consultants. Every engagement is informed by direct experience navigating the systems the firm advises on — from USCIS adjudication standards to final-round MBA interviews at Harvard, Stanford, and Wharton.</p>
+        <p>We specialise in high-achieving professionals from Africa and the Global South who are entering or advancing within the U.S. system. We understand the specific challenges of that journey because we&rsquo;ve lived it.</p>
+      </div>
+    </div>
+    <div class="svc-trust-stats">
+      <div class="svc-ts"><div class="svc-ts-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a10 10 0 11-20 0 10 10 0 0120 0z"/></svg></div><div><div class="svc-ts-title">First-Submission Approval</div><div class="svc-ts-desc">Our lead adviser&rsquo;s own Einstein Visa was approved on first submission. No RFE. No resubmission.</div></div></div>
+      <div class="svc-ts"><div class="svc-ts-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><div class="svc-ts-title">$500k+ Secured</div><div class="svc-ts-desc">In scholarships and fellowships from Harvard, Georgetown, Michigan Ross, USC, and Columbia.</div></div></div>
+      <div class="svc-ts"><div class="svc-ts-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M3.6 9h16.8M3.6 15h16.8"/><path d="M12 3a15.3 15.3 0 014 9 15.3 15.3 0 01-4 9 15.3 15.3 0 01-4-9 15.3 15.3 0 014-9z"/></svg></div><div><div class="svc-ts-title">Global Network</div><div class="svc-ts-desc">Professional network spanning Meta, Google, Harvard, and the global policy sector.</div></div></div>
+      <div class="svc-ts"><div class="svc-ts-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="svc-ts-title">12-Month RFE Cover</div><div class="svc-ts-desc">Every immigration engagement includes a full year of RFE and NOID response support at no additional cost.</div></div></div>
     </div>
   </div>
 </section>
