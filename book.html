@@ -284,5 +284,32 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 <script>
 window.addEventListener('scroll',function(){var b=document.querySelector('.back-to-top');if(b){b.classList.toggle('visible',window.scrollY>400)}});
 </script>
+
+<script>
+document.getElementById('bookingForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var form=this;
+  var btn=form.querySelector('.f-submit');
+  btn.textContent='Submitting...';
+  btn.style.opacity='.7';
+  var data=new FormData(form);
+  fetch('https://api.web3forms.com/submit',{method:'POST',body:data})
+    .then(function(r){return r.json();})
+    .then(function(result){
+      if(result.success){
+        window.location.href='https://buy.stripe.com/dRmcN424PeOi07P6oj2cg00';
+      }else{
+        alert('Something went wrong. Please try again.');
+        btn.textContent='Continue to Payment \u2192';
+        btn.style.opacity='1';
+      }
+    })
+    .catch(function(){
+      alert('Network error. Please try again.');
+      btn.textContent='Continue to Payment \u2192';
+      btn.style.opacity='1';
+    });
+});
+</script>
 </body>
 </html>
