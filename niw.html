@@ -116,6 +116,34 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 @media(max-width:900px){.ft-top{grid-template-columns:1fr 1fr!important;gap:40px!important}.ft-top>div:first-child{grid-column:1/-1}}
 @media(max-width:540px){.ft-top{grid-template-columns:1fr 1fr!important;gap:24px 20px!important}.ft-top>div:first-child{grid-column:1/-1;margin-bottom:8px}.ft-top>.ft-col:last-child{grid-column:1/-1}.ft-col a{font-size:.78rem;gap:8px}.ft-col a svg{width:12px;height:12px}.ft-col h4{font-size:.62rem}.ft-bottom{flex-direction:column;gap:16px}}
 
+
+/* KEY LEADS — shared */
+.leads-section{margin-top:28px;border-radius:16px;padding:24px;max-width:800px;width:100%}
+.leads-grid{display:grid;gap:12px}
+.leads-grid-2{grid-template-columns:1fr 1fr}
+.leads-grid-3{grid-template-columns:repeat(3,1fr)}
+
+/* DARK variant */
+.leads-dark{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}
+.leads-dark .leads-title{font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(45,212,191,.4);margin-bottom:18px}
+.lead-card{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);border-radius:12px;text-decoration:none;transition:all .3s}
+.lead-card:hover{border-color:rgba(45,212,191,.15);background:rgba(45,212,191,.03);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.lead-avatar{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(45,212,191,.08),rgba(13,148,136,.04));border:1px solid rgba(45,212,191,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--serif,'Playfair Display',serif);font-size:.7rem;color:#2DD4BF;font-weight:500}
+.lead-info{flex:1;min-width:0}
+.lead-name{font-size:.78rem;font-weight:500;color:#FFF;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lead-role{font-size:.66rem;color:rgba(255,255,255,.3);font-weight:300}
+
+/* LIGHT variant */
+.leads-light{background:var(--white,#FFF);border:1px solid var(--gray-100,#E8E7E3)}
+.leads-title-light{font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal,#0D9488);margin-bottom:18px}
+.lead-card-light{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--off-white,#F7F7F5);border:1px solid var(--gray-100,#E8E7E3);border-radius:12px;text-decoration:none;transition:all .3s}
+.lead-card-light:hover{border-color:rgba(13,148,136,.15);background:rgba(13,148,136,.03);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.04)}
+.lead-avatar-light{width:36px;height:36px;border-radius:10px;background:var(--dark-base,#040A0F);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--serif,'Playfair Display',serif);font-size:.7rem;color:#2DD4BF;font-weight:500}
+.lead-info-light{flex:1;min-width:0}
+.lead-name-light{font-size:.78rem;font-weight:500;color:var(--gray-700,#2D2C28);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lead-role-light{font-size:.66rem;color:var(--gray-400,#78776F);font-weight:300}
+
+@media(max-width:600px){.leads-grid-2,.leads-grid-3{grid-template-columns:1fr}}
 </style>
 <meta property="og:title" content="NIW Petition Development (EB-2) — Burlington Consult">
 <meta property="og:description" content="The self-petitioned pathway for professionals whose work serves a demonstrable U.S. national interest.">
@@ -175,6 +203,14 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
       <h2>Filed simultaneously with the Einstein Visa (EB-1A).</h2>
       <p>Burlington Consult files both Einstein Visa (EB-1A) and NIW (EB-2) petitions simultaneously as standard practice. This preserves the same priority date across both pathways, creates strategic redundancy if one petition requires additional development, and allows a single unified evidence record to be built once and deployed across both petitions.</p><div class="highlight-box"><p><strong>One evidence record. Two pathways. One priority date.</strong> If one petition encounters a Request for Evidence, the other continues processing independently.</p></div>
     </div>
+
+      <div class="leads-section leads-light">
+        <div class="leads-title-light">Key leads on your case</div>
+        <div class="leads-grid leads-grid-2">
+          <a href="/team/chris" class="lead-card-light"><div class="lead-avatar-light">CO</div><div class="lead-info-light"><div class="lead-name-light">Chris Ogbodo</div><div class="lead-role-light">Founder & Lead Adviser</div></div></a>
+          <a href="/team/efezino" class="lead-card-light"><div class="lead-avatar-light">EO</div><div class="lead-info-light"><div class="lead-name-light">Efezino Onyeke</div><div class="lead-role-light">Due Diligence & Research</div></div></a>
+        </div>
+      </div>
   </div>
 </section>
 <section class="section section-dark cta-section" style="padding-top:100px;padding-bottom:120px;text-align:center;position:relative;overflow:hidden">
