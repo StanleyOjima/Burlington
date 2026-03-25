@@ -266,6 +266,18 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 .svc-stat-label{font-size:.68rem;color:rgba(255,255,255,.25);letter-spacing:.04em;text-transform:uppercase}
 .svc-stat-divider{width:1px;height:40px;background:linear-gradient(180deg,transparent,rgba(45,212,191,.12),transparent);flex-shrink:0}
 @media(max-width:600px){.svc-hero-stats{flex-direction:column;gap:20px}.svc-stat-divider{width:40px;height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,.12),transparent)}}
+
+/* KEY LEADS — mini profile cards */
+.leads-section{margin-top:28px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:24px;max-width:800px;width:100%}
+.leads-title{font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(45,212,191,.4);margin-bottom:18px}
+.leads-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.lead-card{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);border-radius:12px;text-decoration:none;transition:all .3s}
+.lead-card:hover{border-color:rgba(45,212,191,.15);background:rgba(45,212,191,.03)}
+.lead-avatar{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(45,212,191,.08),rgba(13,148,136,.04));border:1px solid rgba(45,212,191,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--sf);font-size:.7rem;color:var(--tb);font-weight:500}
+.lead-info{flex:1;min-width:0}
+.lead-name{font-size:.78rem;font-weight:500;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lead-role{font-size:.66rem;color:rgba(255,255,255,.3);font-weight:300}
+@media(max-width:600px){.leads-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -335,20 +347,19 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
           <div class="ms"><span class="ms-label">Expenses retainer (legal review + press)</span><span class="ms-val">$5,000</span></div>
         </div>
 
-        <div class="key-leads">
-          <div class="key-leads-title">Key leads on your case</div>
-          <div class="key-leads-pills">
-            <a href="/team/andrew" class="kl-pill">Andrew Libby · STEM</a>
-            <a href="/team/afiong" class="kl-pill">Afiong Ibio · Legal (Nigeria)</a>
-            <a href="/team/chibuike" class="kl-pill">Chibuike Onyia · Salary Criterion</a>
-            <a href="/team/efezino" class="kl-pill">Efezino Onyeke · Research</a>
-            <a href="/team/chisom" class="kl-pill">Chisom Chibuike · AI &amp; STEM</a>
-            <a href="/team/michael" class="kl-pill">Michael Aromolaran · Writing</a>
-          </div>
-        </div>
 
-        <a href="/book" class="eng-cta">Book a Consultation — $150 &rarr;</a>
-        <p class="eng-credit">The $150 consultation fee is credited in full toward the engagement fee if you proceed within 30 days.</p>
+
+        <a href="/book" class="eng-cta">Book a Consultation &rarr;</a>
+        <p class="eng-credit">Consultation fee credited in full if you proceed within 30 days.</p>
+      </div>
+
+      <div class="leads-section">
+        <div class="leads-title">Key leads on your case</div>
+        <div class="leads-grid">
+          <a href="/team/chibuike" class="lead-card"><div class="lead-avatar">CO</div><div class="lead-info"><div class="lead-name">Chibuike Onyia</div><div class="lead-role">Salary Criterion Lead</div></div></a>
+          <a href="/team/efezino" class="lead-card"><div class="lead-avatar">EO</div><div class="lead-info"><div class="lead-name">Efezino Onyeke</div><div class="lead-role">Due Diligence &amp; Research</div></div></a>
+          <a href="/team/michael" class="lead-card"><div class="lead-avatar">MA</div><div class="lead-info"><div class="lead-name">Michael Aromolaran</div><div class="lead-role">Chief Writing Officer</div></div></a>
+        </div>
       </div>
 
       <!-- À LA CARTE — IMMIGRATION -->
@@ -557,7 +568,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 <section class="svc-cta">
   <h2>Not sure which service<br>is right for you?</h2>
   <p>Start with a consultation. We'll assess your profile and recommend the strongest pathway.</p>
-  <a href="/book" class="svc-cta-btn">Book a Consultation — $150 &rarr;</a>
+  <a href="/book" class="svc-cta-btn">Book a Consultation &rarr;</a>
 </section>
 
 <a href="https://wa.me/18572429842?text=Hello%20Burlington%20Consult%2C%20I%27d%20like%20to%20inquire%20about%20your%20services." class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
