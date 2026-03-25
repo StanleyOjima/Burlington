@@ -406,6 +406,16 @@ html{scroll-snap-type:y proximity}
 .svc-trust.snap-s{min-height:auto;scroll-snap-align:start}
 .tab-section.snap-s{min-height:auto;scroll-snap-align:start;justify-content:flex-start}
 @media(max-width:768px){html{scroll-snap-type:none}.snap-s{min-height:auto;scroll-snap-align:none}}
+
+/* SUB-TABS */
+.sub-toggle{display:flex;gap:4px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:3px;margin-bottom:32px;max-width:420px}
+.sub-btn{flex:1;padding:10px 20px;font-size:.76rem;font-weight:500;color:rgba(255,255,255,.3);background:none;border:none;border-radius:8px;cursor:pointer;transition:all .3s;font-family:var(--sn);text-align:center}
+.sub-btn.active{background:rgba(45,212,191,.08);color:var(--tb)}
+.sub-btn:hover:not(.active){color:rgba(255,255,255,.5)}
+.sub-content{display:none;animation:subFade .4s ease}
+.sub-content.active{display:flex;flex-direction:column;align-items:center}
+@keyframes subFade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.sub-toggle{max-width:100%;flex-direction:column}.sub-btn{padding:12px 16px}}
 </style>
 </head>
 <body>
@@ -487,10 +497,18 @@ html{scroll-snap-type:y proximity}
     <div class="tab-content active" id="tab-imm">
       <div class="tab-header">
         <span class="sub">Immigration Strategy &amp; Advisory</span>
-        <h2>Einstein Visa (EB-1A) &amp; NIW Petition Development</h2>
-        <p>Dual petition advisory. Both pathways filed simultaneously, preserving a single priority date.</p>
-        <a href="/eb1a" class="tab-lead-link">Learn more about the Einstein Visa &rarr;</a>
+        <h2>U.S. Immigration Pathways</h2>
+        <p>Self-petitioned green card and extraordinary ability visa advisory. No employer sponsor required.</p>
       </div>
+
+      <!-- SUB-TABS -->
+      <div class="sub-toggle">
+        <button class="sub-btn active" onclick="switchSub('eb1a',this)">EB-1A &amp; NIW</button>
+        <button class="sub-btn" onclick="switchSub('o1a',this)">O-1A Visa</button>
+        <button class="sub-btn" onclick="switchSub('tn',this)">TN Visa</button>
+      </div>
+
+      <div class="sub-content active" id="sub-eb1a">
 
       <div class="eng-card">
         <div class="eng-head"><h3>Dual Petition Advisory Engagement</h3><p>Einstein Visa (EB-1A) + NIW (EB-2)</p></div>
@@ -524,6 +542,55 @@ html{scroll-snap-type:y proximity}
         <div class="alc-row"><div><div class="alc-row-name">Single Petition Drafting</div><div class="alc-row-subdesc">Full EB-1A or NIW petition drafting</div></div><div class="alc-row-right"><span class="alc-row-orig">$8,150</span><span class="alc-row-price">$8,000</span></div></div>
         <p class="alc-note">Consultation fee credited in full toward any service.</p>
       </div>
+      <a href="/eb1a" class="tab-lead-link" style="margin-top:20px;">Learn more about the Einstein Visa &rarr;</a>
+      </div><!-- end sub-eb1a -->
+
+      <div class="sub-content" id="sub-o1a">
+        <div class="eng-card">
+          <div class="eng-head"><h3>O-1A Extraordinary Ability Visa</h3><p>Non-immigrant visa for individuals with extraordinary ability</p></div>
+          <div class="eng-price"><span>$12,000</span><span>total engagement</span></div>
+          <div class="eng-compare">No annual cap. No employer sponsor. No labour market test.</div>
+          <div class="eng-inc"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Full O-1A petition drafting with criterion mapping</div>
+          <div class="eng-inc"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Up to 8 recommendation letters drafted from scratch</div>
+          <div class="eng-inc"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Evidence architecture &amp; advisory letter development</div>
+          <div class="eng-inc"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>12-month extension &amp; renewal support included</div>
+          <a href="/book" class="eng-cta">Book a Consultation &rarr;</a>
+          <p class="eng-credit">Consultation fee credited in full if you proceed within 30 days.</p>
+        </div>
+
+        <div class="leads-section" style="max-width:800px;width:100%;">
+          <div class="leads-title">Key leads on your case</div>
+          <div class="leads-grid" style="grid-template-columns:1fr 1fr;">
+            <a href="/team/pascal" class="lead-card"><div class="lead-avatar">PD</div><div class="lead-info"><div class="lead-name">Pascal Dabibi</div><div class="lead-role">Creative Partnerships</div></div></a>
+            <a href="/team/michael" class="lead-card"><div class="lead-avatar">MA</div><div class="lead-info"><div class="lead-name">Michael Aromolaran</div><div class="lead-role">Chief Writing Officer</div></div></a>
+          </div>
+        </div>
+
+        <a href="/o1-visa" class="tab-lead-link" style="margin-top:20px;">Learn more about the O-1A Visa &rarr;</a>
+      </div><!-- end sub-o1a -->
+      <div class="sub-content" id="sub-tn">
+        <div class="eng-card">
+          <div class="eng-head"><h3>TN Visa Advisory</h3><p>For Canadian and Mexican professionals under USMCA</p></div>
+          <div class="eng-price"><span>$5,000</span><span>total engagement</span></div>
+          <div class="eng-compare">No annual cap. No lottery. Renewable indefinitely.</div>
+          <div class="eng-inc"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Occupation classification &amp; credential assessment</div>
+          <div class="eng-inc"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Support letter drafting &amp; documentary evidence</div>
+          <div class="eng-inc"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Application preparation for CBP or consular filing</div>
+          <div class="eng-inc"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>TN-to-green-card transition strategy</div>
+          <a href="/book" class="eng-cta">Book a Consultation &rarr;</a>
+          <p class="eng-credit">Consultation fee credited in full if you proceed within 30 days.</p>
+        </div>
+
+        <div class="leads-section" style="max-width:800px;width:100%;">
+          <div class="leads-title">Key leads on your case</div>
+          <div class="leads-grid" style="grid-template-columns:1fr 1fr;">
+            <a href="/team/nkem" class="lead-card"><div class="lead-avatar">NN</div><div class="lead-info"><div class="lead-name">Nkem Nweke</div><div class="lead-role">Co-founder</div></div></a>
+            <a href="/team/andrew" class="lead-card"><div class="lead-avatar">AL</div><div class="lead-info"><div class="lead-name">Andrew Libby</div><div class="lead-role">STEM</div></div></a>
+          </div>
+        </div>
+
+        <a href="/tn-visa" class="tab-lead-link" style="margin-top:20px;">Learn more about the TN Visa &rarr;</a>
+      </div><!-- end sub-tn -->
     </div>
 
     <!-- ═══ TAB 2: ADMISSIONS ═══ -->
@@ -751,6 +818,14 @@ html{scroll-snap-type:y proximity}
 </footer>
 
 <script>
+
+function switchSub(tab, el) {
+  document.querySelectorAll('.sub-btn').forEach(function(b){ b.classList.remove('active'); });
+  el.classList.add('active');
+  document.querySelectorAll('.sub-content').forEach(function(t){ t.classList.remove('active'); });
+  document.getElementById('sub-'+tab).classList.add('active');
+}
+
 function switchTab(tab, el) {
   document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
   el.classList.add('active');
