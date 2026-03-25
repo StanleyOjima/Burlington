@@ -136,8 +136,20 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
   .ft-top>div:first-child{grid-column:1/-1}
   .ft-bottom{flex-direction:column;gap:16px}
 }
+
+/* FORM STATES */
+.f-spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:fSpin .6s linear infinite;vertical-align:middle}
+@keyframes fSpin{to{transform:rotate(360deg)}}
+.f-submit:disabled{cursor:not-allowed;pointer-events:none}
+.f-error{display:flex;gap:12px;align-items:flex-start;margin-top:16px;padding:16px 20px;background:rgba(229,85,85,.04);border:1px solid rgba(229,85,85,.12);border-radius:12px;animation:fErrorIn .3s ease}
+@keyframes fErrorIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.f-error-icon{color:#E55;flex-shrink:0;margin-top:2px}
+.f-error-title{font-size:.84rem;color:var(--g700);font-weight:400;margin-bottom:8px;line-height:1.5}
+.f-error-retry{font-size:.78rem;color:var(--teal);font-weight:500;background:none;border:1px solid rgba(13,148,136,.15);padding:6px 16px;border-radius:8px;cursor:pointer;transition:all .3s}
+.f-error-retry:hover{background:rgba(13,148,136,.04)}
 </style>
 <link rel="canonical" href="https://www.burlingtonconsult.com/book">
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","w17fdb9mpw");</script>
 </head>
 <body>
 
@@ -287,30 +299,80 @@ window.addEventListener('scroll',function(){var b=document.querySelector('.back-
 </script>
 
 <script>
-document.getElementById('bookingForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  var form=this;
-  var btn=form.querySelector('.f-submit');
-  btn.textContent='Submitting...';
-  btn.style.opacity='.7';
-  var data=new FormData(form);
-  fetch('https://api.web3forms.com/submit',{method:'POST',body:data})
-    .then(function(r){return r.json();})
-    .then(function(result){
-      if(result.success){
-        window.location.href='https://buy.stripe.com/dRmcN424PeOi07P6oj2cg00';
-      }else{
-        alert('Something went wrong. Please try again.');
-        btn.textContent='Continue to Payment \u2192';
-        btn.style.opacity='1';
-      }
-    })
-    .catch(function(){
-      alert('Network error. Please try again.');
-      btn.textContent='Continue to Payment \u2192';
-      btn.style.opacity='1';
-    });
-});
+(function(){
+  var form = document.getElementById('bookingForm');
+  var btn = form.querySelector('.f-submit');
+  var submitting = false;
+
+  // Auto-save form fields to localStorage
+  var fields = form.querySelectorAll('.f-input');
+  fields.forEach(function(f){
+    var key = 'bk_' + f.name;
+    var saved = localStorage.getItem(key);
+    if(saved && f.type !== 'hidden' && f.type !== 'checkbox') f.value = saved;
+    f.addEventListener('input', function(){ localStorage.setItem(key, f.value); });
+    f.addEventListener('change', function(){ localStorage.setItem(key, f.value); });
+  });
+
+  function clearSaved(){
+    fields.forEach(function(f){ localStorage.removeItem('bk_' + f.name); });
+  }
+
+  function showError(msg){
+    var existing = form.querySelector('.f-error');
+    if(existing) existing.remove();
+    var el = document.createElement('div');
+    el.className = 'f-error';
+    el.innerHTML = '<div class="f-error-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div><div class="f-error-title">' + msg + '</div><button class="f-error-retry" onclick="document.getElementById(\'bookingForm\').dispatchEvent(new Event(\'submit\'))">Try again</button></div>';
+    btn.parentNode.insertBefore(el, btn.nextSibling);
+  }
+
+  function resetBtn(){
+    submitting = false;
+    btn.disabled = false;
+    btn.innerHTML = 'Continue to Payment &rarr;';
+    btn.style.opacity = '1';
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(submitting) return;
+    submitting = true;
+
+    // Remove any previous error
+    var existing = form.querySelector('.f-error');
+    if(existing) existing.remove();
+
+    // Loading state
+    btn.disabled = true;
+    btn.innerHTML = '<span class="f-spinner"></span> Processing...';
+    btn.style.opacity = '.7';
+
+    var data = new FormData(form);
+    var timeout = setTimeout(function(){
+      resetBtn();
+      showError('This is taking longer than expected. Please check your connection and try again.');
+    }, 15000);
+
+    fetch('https://api.web3forms.com/submit', {method:'POST', body:data})
+      .then(function(r){ clearTimeout(timeout); return r.json(); })
+      .then(function(result){
+        if(result.success){
+          clearSaved();
+          btn.innerHTML = '<span class="f-spinner"></span> Redirecting to payment...';
+          window.location.href = 'https://buy.stripe.com/dRmcN424PeOi07P6oj2cg00';
+        } else {
+          resetBtn();
+          showError('Something went wrong with the submission. Your information has been saved.');
+        }
+      })
+      .catch(function(){
+        clearTimeout(timeout);
+        resetBtn();
+        showError('Network error. Your information has been saved — please check your connection and try again.');
+      });
+  });
+})();
 </script>
 </body>
 </html>
