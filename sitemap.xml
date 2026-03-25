@@ -25,4 +25,11 @@
   <url><loc>https://www.burlingtonconsult.com/team/ebuka-ezeh</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/team/ifeanyi</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/team/chukwu-dike</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/resources</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/news</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/assess</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/eb1a-creatives</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/privacy</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/terms</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/disclaimer</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
 </urlset>
