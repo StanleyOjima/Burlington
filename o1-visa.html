@@ -144,6 +144,29 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 .lead-role-light{font-size:.66rem;color:var(--gray-400,#78776F);font-weight:300}
 
 @media(max-width:600px){.leads-grid-2,.leads-grid-3{grid-template-columns:1fr}}
+
+/* HERO UPGRADES */
+.hero-scanline{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero-scanline::before{content:'';position:absolute;width:200%;height:1px;top:0;left:-50%;background:linear-gradient(90deg,transparent,rgba(45,212,191,.1) 40%,rgba(13,148,136,.2) 50%,rgba(45,212,191,.1) 60%,transparent);animation:heroScan 12s linear infinite}
+@keyframes heroScan{0%{top:-5%}100%{top:105%}}
+
+/* CRITERIA GRID */
+.criteria-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:32px}
+.crit{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--gray-100,#E8E7E3)}
+.crit:nth-child(-n+2){border-top:1px solid var(--gray-100,#E8E7E3)}
+.crit:nth-child(odd){padding-right:32px;border-right:1px solid var(--gray-100,#E8E7E3)}
+.crit:nth-child(even){padding-left:32px}
+.crit-num{font-family:var(--serif,'Playfair Display',serif);font-size:.85rem;font-weight:500;color:rgba(13,148,136,.3);flex-shrink:0;width:24px;padding-top:2px}
+.crit strong{font-size:.88rem;font-weight:600;color:var(--gray-700,#2D2C28);display:block;margin-bottom:4px}
+.crit p{font-size:.82rem;color:var(--gray-400,#78776F);line-height:1.55;font-weight:300;margin:0}
+@media(max-width:600px){.criteria-grid{grid-template-columns:1fr}.crit:nth-child(odd){padding-right:0;border-right:none}.crit:nth-child(even){padding-left:0}.crit:nth-child(-n+2){border-top:none}.crit:first-child{border-top:1px solid var(--gray-100,#E8E7E3)}}
+
+/* SECTION DOTS */
+.sn-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;z-index:800}
+.sn-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12);border:none;cursor:pointer;transition:all .3s;padding:0}
+.sn-dot.active{background:var(--teal-bright,#2DD4BF);box-shadow:0 0 8px rgba(45,212,191,.4)}
+.sn-dot:hover:not(.active){background:rgba(255,255,255,.25)}
+@media(max-width:768px){.sn-dots{display:none}}
 </style>
 <meta property="og:title" content="O-1A Extraordinary Ability Visa (EB-1A) — Burlington Consult">
 <meta property="og:description" content="The most distinguished employment-based visa the U.S. issues. Same classification as Nobel laureates and Olympic champions.">
@@ -165,9 +188,9 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 
 <script>document.addEventListener('DOMContentLoaded',function(){var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');var path=window.location.pathname;if(path.length>1&&path.charAt(path.length-1)==='/')path=path.slice(0,-1);for(var i=0;i<links.length;i++){var href=links[i].getAttribute('href');if(href==='/'&&(path===''||path==='/'))links[i].classList.add('active');else if(href!=='/'&&path.indexOf(href)===0)links[i].classList.add('active');}});</script>
 
-<section class="pathway-hero"><div class="hero-grid"></div><div class="container"><div class="pathway-hero-content"><div class="section-label" style="color:var(--teal-bright)">Immigration Pathway</div><h1>The <span class="hl">O-1A</span> Extraordinary Ability Visa.</h1><p>A non-immigrant visa for individuals with extraordinary ability in sciences, business, education, or athletics. No annual cap. No employer sponsor required. No lottery.</p></div></div></section>
+<section class="pathway-hero snap-s"><div class="hero-grid"></div><div class="hero-scanline"></div><div class="container"><div class="pathway-hero-content"><div class="section-label" style="color:var(--teal-bright)">Immigration Pathway</div><h1>The <span class="hl">O-1A</span> Extraordinary Ability Visa.</h1><p>A non-immigrant visa for individuals with extraordinary ability in sciences, business, education, or athletics. No annual cap. No employer sponsor required. No lottery.</p></div></div></section>
 
-<section class="section section-white">
+<section class="section section-white snap-s">
   <div class="container">
     <div class="content-block">
       <div class="section-label">Overview</div>
@@ -177,17 +200,26 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-light">
+<section class="section section-light snap-s">
   <div class="container">
     <div class="content-block">
       <div class="section-label">Requirements</div>
       <h2>The O-1A criteria.</h2>
-      <p>USCIS evaluates O-1A petitions against eight criteria. The petitioner must demonstrate sustained national or international acclaim through evidence satisfying at least three:</p><ul><li><strong>Awards</strong> — nationally or internationally recognised prizes for excellence in the field</li><li><strong>Membership</strong> — in associations requiring outstanding achievement, judged by recognised experts</li><li><strong>Published material</strong> — about the applicant in professional or major trade publications</li><li><strong>Judging</strong> — participation as a judge of the work of others in the field</li><li><strong>Original contributions</strong> — of major significance to the field</li><li><strong>Scholarly articles</strong> — authorship of articles in professional journals or major media</li><li><strong>Critical employment</strong> — in a critical or essential capacity for organisations with a distinguished reputation</li><li><strong>High remuneration</strong> — commanding a high salary or significantly high remuneration relative to others in the field</li></ul>
+      <p>USCIS evaluates O-1A petitions against eight criteria. The petitioner must demonstrate sustained national or international acclaim through evidence satisfying at least three:</p><div class="criteria-grid">
+        <div class="crit"><span class="crit-num">i</span><div><strong>Awards</strong><p>nationally or internationally recognised prizes for excellence in the field</p></div></div>
+        <div class="crit"><span class="crit-num">ii</span><div><strong>Membership</strong><p>in associations requiring outstanding achievement, judged by recognised experts</p></div></div>
+        <div class="crit"><span class="crit-num">iii</span><div><strong>Published material</strong><p>about the applicant in professional or major trade publications</p></div></div>
+        <div class="crit"><span class="crit-num">iv</span><div><strong>Judging</strong><p>participation as a judge of the work of others in the field</p></div></div>
+        <div class="crit"><span class="crit-num">v</span><div><strong>Original contributions</strong><p>of major significance to the field</p></div></div>
+        <div class="crit"><span class="crit-num">vi</span><div><strong>Scholarly articles</strong><p>authorship of articles in professional journals or major media</p></div></div>
+        <div class="crit"><span class="crit-num">vii</span><div><strong>Critical employment</strong><p>in a critical or essential capacity for organisations with a distinguished reputation</p></div></div>
+        <div class="crit"><span class="crit-num">viii</span><div><strong>High remuneration</strong><p>commanding a high salary or significantly high remuneration relative to others in the field</p></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section section-white">
+<section class="section section-white snap-s">
   <div class="container">
     <div class="content-block">
       <div class="section-label">For Artists &amp; Creatives</div>
@@ -198,7 +230,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-light">
+<section class="section section-light snap-s">
   <div class="container">
     <div class="content-block">
       <div class="section-label">Burlington's Approach</div>
@@ -208,7 +240,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-white">
+<section class="section section-white snap-s">
   <div class="container">
     <div class="content-block">
       <div class="section-label">Timing</div>
@@ -230,7 +262,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   </div>
 </section>
 
-<section class="section section-dark cta-section" style="padding-top:100px;padding-bottom:120px;text-align:center;position:relative;overflow:hidden">
+<section class="section section-dark cta-section snap-s" style="padding-top:100px;padding-bottom:120px;text-align:center;position:relative;overflow:hidden">
   <div class="cta-bg-grid" style="position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(45,212,191,.06) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 35% 30% at 50% 50%,black 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 35% 30% at 50% 50%,black 0%,transparent 70%)"></div>
   <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;">
     <div class="section-label" style="justify-content:center;color:var(--teal-bright)">Get Started</div>
@@ -279,5 +311,16 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 24 24"
+
+<script>
+(function(){
+  var secs=document.querySelectorAll('.snap-s');
+  var dots=document.querySelectorAll('.sn-dot');
+  if(!secs.length||!dots.length)return;
+  dots.forEach(function(d,i){d.addEventListener('click',function(){if(secs[i])secs[i].scrollIntoView({behavior:'smooth'});});});
+  function updateDots(){var y=window.scrollY+window.innerHeight/3;var a=0;secs.forEach(function(s,i){if(y>=s.offsetTop)a=i;});dots.forEach(function(d,i){d.classList.toggle('active',i===a);});}
+  window.addEventListener('scroll',updateDots);updateDots();
+})();
+</script>
 </body>
 </html>
