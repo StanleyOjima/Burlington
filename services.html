@@ -377,6 +377,14 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 .sn-dot.active{background:var(--tb);box-shadow:0 0 8px rgba(45,212,191,.4)}
 .sn-dot:hover:not(.active){background:rgba(255,255,255,.25)}
 @media(max-width:768px){.sn-dots{display:none}}
+
+/* SCROLL SNAP */
+html{scroll-snap-type:y mandatory;overflow-y:scroll}
+.snap-s{scroll-snap-align:start;min-height:100vh}
+.svc-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.svc-trust{min-height:100vh;display:flex;align-items:center;justify-content:center}
+.tab-section{scroll-snap-align:start;min-height:auto}
+@media(max-width:768px){html{scroll-snap-type:none}.snap-s{min-height:auto}}
 </style>
 </head>
 <body>
@@ -434,7 +442,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 </section>
 
 <!-- 3-TAB SECTION -->
-<section class="tab-section snap-s">
+<section class="tab-section">
   <div class="tab-section-inner">
 
     <div class="tab-toggle">
@@ -673,6 +681,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
   <i class="sn-dot active"></i>
   <i class="sn-dot"></i>
   <i class="sn-dot"></i>
+  <i class="sn-dot"></i>
 </div>
 
 <footer>
@@ -721,18 +730,21 @@ window.addEventListener('scroll',function(){var b=document.querySelector('.back-
 
 <script>
 (function(){
-  var secs = document.querySelectorAll('.snap-s');
+  var secs = [
+    document.querySelector('.svc-hero'),
+    document.querySelector('.svc-trust'),
+    document.querySelector('.tab-section'),
+    document.querySelector('footer')
+  ].filter(Boolean);
   var dots = document.querySelectorAll('.sn-dot');
   if(!secs.length || !dots.length) return;
   
-  // Click to scroll
   dots.forEach(function(d, i){
     d.addEventListener('click', function(){
       if(secs[i]) secs[i].scrollIntoView({behavior:'smooth'});
     });
   });
   
-  // Update active dot on scroll
   function updateDots(){
     var scrollY = window.scrollY + window.innerHeight / 3;
     var active = 0;
@@ -745,6 +757,7 @@ window.addEventListener('scroll',function(){var b=document.querySelector('.back-
   }
   
   window.addEventListener('scroll', updateDots);
+  setInterval(updateDots, 150);
   updateDots();
 })();
 </script>
