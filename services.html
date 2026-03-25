@@ -391,6 +391,10 @@ html{scroll-snap-type:y mandatory;overflow-y:scroll}
 .svc-hero-btn:hover{border-color:rgba(45,212,191,.25);color:var(--tb);transform:translateY(-2px)}
 .svc-hero-btn svg{transition:transform .3s}
 .svc-hero-btn:hover svg{transform:translateY(3px)}
+
+.trust-divider{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.trust-divider::before,.trust-divider::after{content:'';flex:1;height:1px;background:var(--g100)}
+.trust-divider span{font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g300);flex-shrink:0}
 </style>
 </head>
 <body>
@@ -448,6 +452,7 @@ html{scroll-snap-type:y mandatory;overflow-y:scroll}
         </a>
       </div>
     </div>
+    <div class="trust-divider"><span>Why clients trust us</span></div>
     <div class="trust-creds">
       <div class="trust-cred"><div class="trust-cred-val">First-Submission Approval</div><div class="trust-cred-desc">Our lead adviser&rsquo;s EB-1A was approved on first submission. No RFE. No resubmission.</div></div>
       <div class="trust-cred"><div class="trust-cred-val">$500k+ Secured</div><div class="trust-cred-desc">In scholarships from Harvard, Georgetown, Michigan Ross, USC, and Columbia.</div></div>
