@@ -54,9 +54,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--sp);height:
 .svc-hero p{font-size:1.02rem;color:rgba(255,255,255,.4);line-height:1.8;font-weight:300;max-width:620px}
 
 /* TAB TOGGLE */
-.tab-section{padding:80px var(--sp);background:var(--dark)}
+.tab-section{padding:80px var(--sp);background:linear-gradient(180deg,#040A0F 0%,#081418 40%,#0A1A22 100%)}
 .tab-section-inner{max-width:1100px;margin:0 auto}
-.tab-toggle{display:flex;gap:4px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:4px;margin-bottom:56px;max-width:fit-content}
+.tab-toggle{display:flex;gap:4px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:4px;margin-bottom:56px;max-width:fit-content;margin-left:auto;margin-right:auto}
 .tab-btn{padding:12px 28px;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.35);background:none;border:none;border-radius:10px;cursor:pointer;transition:all .3s;font-family:var(--sn);letter-spacing:.01em}
 .tab-btn.active{background:rgba(45,212,191,.1);color:var(--tb);box-shadow:0 0 12px rgba(45,212,191,.1)}
 .tab-btn:hover:not(.active){color:rgba(255,255,255,.6)}
@@ -73,13 +73,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--sp);height:
 .tab-lead-link:hover{opacity:.7}
 
 /* ENGAGEMENT CARD */
-.eng-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:40px 36px;position:relative;overflow:hidden}
+.eng-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:32px 28px;position:relative;overflow:hidden;max-width:800px}
 .eng-card::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,.12),transparent)}
 .eng-head{margin-bottom:28px}
 .eng-head h3{font-family:var(--sf);font-size:1.3rem;font-weight:500;color:var(--white);margin-bottom:4px}
 .eng-head p{font-size:.84rem;color:rgba(255,255,255,.35);font-weight:300}
 .eng-price{display:flex;align-items:baseline;gap:8px;margin-bottom:12px}
-.eng-price span:first-child{font-family:var(--sf);font-size:2.4rem;font-weight:600;background:linear-gradient(135deg,var(--white) 30%,var(--tb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.eng-price span:first-child{font-family:var(--sf);font-size:1.8rem;font-weight:600;background:linear-gradient(135deg,var(--white) 30%,var(--tb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .eng-price span:last-child{font-size:.78rem;color:rgba(255,255,255,.25);font-weight:300}
 .eng-compare{font-size:.76rem;color:rgba(255,255,255,.2);margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.06)}
 .eng-inc{display:flex;align-items:center;gap:10px;font-size:.84rem;color:rgba(255,255,255,.4);font-weight:300;padding:8px 0}
@@ -210,12 +210,12 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
   .eng-card{padding:28px 24px}
 }
 
-.alc-wrap{margin-top:56px;padding-top:48px;border-top:1px solid rgba(255,255,255,.06)}
+.alc-wrap{margin-top:56px;padding-top:48px;border-top:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.01);margin-left:-28px;margin-right:-28px;padding-left:28px;padding-right:28px;border-radius:16px}
 .alc-wrap .alc-label{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tb);margin-bottom:8px}
 .alc-wrap .alc-desc{font-size:.84rem;color:rgba(255,255,255,.3);font-weight:300;margin-bottom:28px}
 
 /* ═══ ENTRY BAR ═══ */
-.entry-bar{display:flex;align-items:center;gap:20px;padding:20px 28px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:14px;margin-bottom:40px;transition:all .3s}
+.entry-bar{display:flex;align-items:center;gap:20px;padding:20px 28px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:14px;margin-bottom:16px;transition:all .3s;max-width:800px}
 .entry-bar:hover{border-color:rgba(45,212,191,.1)}
 .entry-badge{font-size:.56rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tb);background:rgba(45,212,191,.06);border:1px solid rgba(45,212,191,.08);padding:3px 10px;border-radius:100px;flex-shrink:0}
 .entry-info{flex:1}
@@ -256,6 +256,17 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 .pkg-cta-solid{color:var(--white);background:linear-gradient(135deg,var(--teal),var(--tb));box-shadow:0 4px 16px rgba(13,148,136,.2)}
 .pkg-cta-solid:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(13,148,136,.3)}
 @media(max-width:700px){.pkg-2x2{grid-template-columns:1fr}.entry-bar{flex-wrap:wrap;gap:12px}.entry-info{min-width:100%}.pkg-top{flex-direction:column;gap:8px}.pkg-price-block{text-align:left}}
+
+/* HERO UPGRADES */
+.svc-hero-scanline{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.svc-hero-scanline::before{content:'';position:absolute;width:200%;height:1px;top:0;left:-50%;background:linear-gradient(90deg,transparent,rgba(45,212,191,.1) 40%,rgba(13,148,136,.2) 50%,rgba(45,212,191,.1) 60%,transparent);animation:svcScan 12s linear infinite}
+@keyframes svcScan{0%{top:-5%}100%{top:105%}}
+.svc-hero-stats{display:flex;align-items:center;gap:0;margin-top:40px}
+.svc-stat{text-align:center;flex:1}
+.svc-stat-val{font-family:var(--sf);font-size:1.6rem;font-weight:600;background:linear-gradient(135deg,var(--white) 30%,var(--tb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em;margin-bottom:4px}
+.svc-stat-label{font-size:.68rem;color:rgba(255,255,255,.25);letter-spacing:.04em;text-transform:uppercase}
+.svc-stat-divider{width:1px;height:40px;background:linear-gradient(180deg,transparent,rgba(45,212,191,.12),transparent);flex-shrink:0}
+@media(max-width:600px){.svc-hero-stats{flex-direction:column;gap:20px}.svc-stat-divider{width:40px;height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,.12),transparent)}}
 </style>
 </head>
 <body>
@@ -267,10 +278,18 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 <!-- HERO -->
 <section class="svc-hero">
   <div class="svc-hero-grid"></div>
+  <div class="svc-hero-scanline"></div>
   <div class="svc-hero-inner">
     <div class="overline">Services</div>
     <h1>Three practices.<br>One <em>standard</em>.</h1>
     <p>Immigration strategy, graduate admissions, and career advisory — each built around the same principle: no templates, no guesswork, and no case that isn't stress-tested before it ships.</p>
+    <div class="svc-hero-stats">
+      <div class="svc-stat"><div class="svc-stat-val">100%</div><div class="svc-stat-label">Approval rate</div></div>
+      <div class="svc-stat-divider"></div>
+      <div class="svc-stat"><div class="svc-stat-val">$500k+</div><div class="svc-stat-label">Scholarships secured</div></div>
+      <div class="svc-stat-divider"></div>
+      <div class="svc-stat"><div class="svc-stat-val">12 Mo.</div><div class="svc-stat-label">RFE retainer included</div></div>
+    </div>
   </div>
 </section>
 
@@ -337,7 +356,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
       <!-- À LA CARTE — IMMIGRATION -->
       <div class="alc-wrap">
         <div class="alc-label">À La Carte</div>
-        <p class="alc-desc">Each service available standalone. $150 consultation credited toward any booking.</p>
+        <p class="alc-desc">Don't need a full package? Pick exactly what you need. Each service below is available as a standalone engagement — no bundle required. Your $150 consultation fee is credited toward any service you book.</p>
         <div class="alc-grid-top">
           <div class="alc-card alc-featured">
             <div class="alc-card-tag">Most requested</div>
@@ -379,7 +398,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
         <a href="/book" class="entry-cta">Book a Consultation &rarr;</a>
       </div>
 
-      <div class="row-label" style="margin-top:40px;">Packages</div>
+      <div class="row-label" style="margin-top:24px;">Packages</div>
       <div class="pkg-2x2">
       <div class="pkg-card">
         <span class="pkg-badge pkg-badge-def">1 School</span>
@@ -436,7 +455,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
       <!-- À LA CARTE — ADMISSIONS -->
       <div class="alc-wrap">
         <div class="alc-label">À La Carte</div>
-        <p class="alc-desc">Each service available standalone. $150 consultation credited toward any booking.</p>
+        <p class="alc-desc">Don't need a full package? Pick exactly what you need. Each service below is available as a standalone engagement — no bundle required. Your $150 consultation fee is credited toward any service you book.</p>
         <div class="alc-grid-bottom">
           <div class="alc-card"><div class="alc-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Personal Statement</h3><p>Full drafting and revisions for one programme.</p><div class="alc-price-row"><span class="alc-price">$800</span><span class="alc-original">$950</span></div><div class="alc-credit-note">$150 consultation credited</div></div>
           <div class="alc-card"><div class="alc-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><h3>Essay Editing</h3><p>School-specific essay review and rewrite. Per essay.</p><div class="alc-price-row"><span class="alc-price">$400</span><span class="alc-per">per essay</span></div><div class="alc-credit-note">$150 consultation credited</div></div>
@@ -463,7 +482,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
         <a href="/book" class="entry-cta">Book a Consultation &rarr;</a>
       </div>
 
-      <div class="row-label" style="margin-top:40px;">Packages</div>
+      <div class="row-label" style="margin-top:24px;">Packages</div>
       <div class="pkg-2x2">
       <div class="pkg-card">
         <span class="pkg-badge pkg-badge-def">Focused</span>
@@ -520,7 +539,7 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
       <!-- À LA CARTE — CAREER -->
       <div class="alc-wrap">
         <div class="alc-label">À La Carte</div>
-        <p class="alc-desc">Each service available standalone. $150 consultation credited toward any booking.</p>
+        <p class="alc-desc">Don't need a full package? Pick exactly what you need. Each service below is available as a standalone engagement — no bundle required. Your $150 consultation fee is credited toward any service you book.</p>
         <div class="alc-grid-bottom">
           <div class="alc-card"><div class="alc-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Resume Rewrite</h3><p>U.S. market optimised.</p><div class="alc-price-row"><span class="alc-price">$500</span><span class="alc-original">$650</span></div><div class="alc-credit-note">$150 consultation credited</div></div>
           <div class="alc-card"><div class="alc-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><h3>LinkedIn Optimisation</h3><p>Profile audit and rewrite.</p><div class="alc-price-row"><span class="alc-price">$350</span><span class="alc-original">$500</span></div><div class="alc-credit-note">$150 consultation credited</div></div>
