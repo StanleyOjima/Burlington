@@ -2,15 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.burlingtonconsult.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/team</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.burlingtonconsult.com/services</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/about</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.burlingtonconsult.com/contact</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/services</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/book</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/eb1a</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/niw</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/dual-petition</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/o1-visa</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/eb1a-creatives</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/faq</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/resources</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/news</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/assess</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.burlingtonconsult.com/contact</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/team/chris</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/team/nkem</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/team/andrew</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
@@ -24,10 +28,6 @@
   <url><loc>https://www.burlingtonconsult.com/team/ebuka-ezeh</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/team/ifeanyi</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/team/chukwu-dike</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.burlingtonconsult.com/resources</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.burlingtonconsult.com/news</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.burlingtonconsult.com/assess</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://www.burlingtonconsult.com/eb1a-creatives</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/privacy</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/terms</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://www.burlingtonconsult.com/disclaimer</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
