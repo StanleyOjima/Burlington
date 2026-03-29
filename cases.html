@@ -92,6 +92,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--sp);height:
 .case-card{background:var(--white);border:1px solid var(--g100);border-radius:16px;padding:32px 28px;transition:all .4s;position:relative;overflow:hidden}
 .case-card:hover{border-color:rgba(13,148,136,.15);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
 .case-card[style*="display: none"]{display:none!important}
+.case-ref{font-size:.66rem;color:var(--g300);letter-spacing:.12em;text-transform:uppercase;font-weight:400;margin-bottom:10px}
 .case-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
 .case-tag{font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:100px}
 .tag-eb1a{color:var(--teal);background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.1)}
@@ -226,6 +227,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 
       <!-- 1 -->
       <div class="case-card" data-categories="eb1a,dual,stem">
+        <div class="case-ref">Profile 01</div>
         <div class="case-tags">
           <span class="case-tag tag-dual">Dual Petition</span>
           <span class="case-tag tag-field">Technology</span>
@@ -245,6 +247,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 
       <!-- 2 -->
       <div class="case-card" data-categories="eb1a,niw,dual,medicine">
+        <div class="case-ref">Profile 02</div>
         <div class="case-tags">
           <span class="case-tag tag-dual">Dual Petition</span>
           <span class="case-tag tag-field">Medicine</span>
@@ -264,6 +267,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 
       <!-- 3 -->
       <div class="case-card" data-categories="eb1a,law">
+        <div class="case-ref">Profile 03</div>
         <div class="case-tags">
           <span class="case-tag tag-eb1a">EB-1A</span>
           <span class="case-tag tag-field">Law &amp; Policy</span>
@@ -283,6 +287,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 
       <!-- 4 -->
       <div class="case-card" data-categories="niw,dual,finance">
+        <div class="case-ref">Profile 04</div>
         <div class="case-tags">
           <span class="case-tag tag-dual">Dual Petition</span>
           <span class="case-tag tag-field">Finance</span>
@@ -301,6 +306,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 
       <!-- 5 -->
       <div class="case-card" data-categories="eb1a,creative">
+        <div class="case-ref">Profile 05</div>
         <div class="case-tags">
           <span class="case-tag tag-eb1a">EB-1A</span>
           <span class="case-tag tag-field">Creative</span>
@@ -320,6 +326,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 
       <!-- 6 -->
       <div class="case-card" data-categories="niw,dual,academia">
+        <div class="case-ref">Profile 06</div>
         <div class="case-tags">
           <span class="case-tag tag-niw">NIW</span>
           <span class="case-tag tag-field">Academia</span>
@@ -338,6 +345,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 
       <!-- 7 -->
       <div class="case-card" data-categories="eb1a,dual,stem">
+        <div class="case-ref">Profile 07</div>
         <div class="case-tags">
           <span class="case-tag tag-eb1a">EB-1A</span>
           <span class="case-tag tag-field">Technology</span>
@@ -357,6 +365,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 
       <!-- 8 -->
       <div class="case-card" data-categories="niw,medicine">
+        <div class="case-ref">Profile 08</div>
         <div class="case-tags">
           <span class="case-tag tag-niw">NIW</span>
           <span class="case-tag tag-field">Medicine</span>
@@ -383,7 +392,8 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 <section class="cs-cta">
   <h2>See yourself in these profiles?</h2>
   <p>Start with a $75 profile assessment. Burlington Consult reviews your record and advises on the strongest available pathway within 48 hours.</p>
-  <a href="/assess" class="cs-cta-btn">Start Profile Assessment <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  <a href="/assess" class="cs-cta-btn">Start Profile Assessment &middot; $75 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  <div style="margin-top:16px;"><a href="/book" style="font-size:.82rem;color:rgba(255,255,255,.35);text-decoration:none;font-weight:300;transition:color .3s" onmouseover="this.style.color='#2DD4BF'" onmouseout="this.style.color='rgba(255,255,255,.35)'">Or book a consultation &middot; $150</a></div>
 </section>
 
 <!-- FOOTER -->
