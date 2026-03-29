@@ -111,6 +111,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--sp);height:
 
 /* CTA BUTTON */
 .eng-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px 32px;margin-top:32px;background:linear-gradient(135deg,var(--teal),var(--tb));color:var(--white);font-size:.86rem;font-weight:500;border-radius:12px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(13,148,136,.3)}
+.eng-cta-secondary{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px 32px;margin-top:10px;background:transparent;color:rgba(255,255,255,.4);font-size:.82rem;font-weight:400;border:1px solid rgba(255,255,255,.08);border-radius:12px;text-decoration:none;transition:all .3s}
+.eng-cta-secondary:hover{color:var(--tb);border-color:rgba(45,212,191,.2);background:rgba(45,212,191,.03)}
+.entry-cta-secondary{display:inline-flex;align-items:center;gap:6px;margin-left:16px;font-size:.78rem;color:rgba(255,255,255,.35);text-decoration:none;font-weight:300;transition:color .3s}
+.entry-cta-secondary:hover{color:var(--tb)}
 .eng-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(13,148,136,.4)}
 .eng-credit{font-size:.74rem;color:rgba(255,255,255,.2);text-align:center;margin-top:14px;font-weight:300}
 
@@ -589,8 +593,9 @@ html{scroll-snap-type:y proximity;overflow-y:scroll}
         <div class="eng-inc"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Up to 12 recommendation letters drafted from scratch</div>
         <div class="eng-inc"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Evidence architecture, curation &amp; independent corroboration</div>
         <div class="eng-inc"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>12-month RFE &amp; NOID retainer included</div>
-        <a href="/book" class="eng-cta">Book a Consultation &rarr;</a>
-        <p class="eng-credit">Consultation fee credited in full if you proceed within 30 days.</p>
+        <a href="/assess" class="eng-cta">Start Profile Assessment &middot; $75 &rarr;</a>
+        <a href="/book" class="eng-cta-secondary">Book a Consultation &middot; $150 &rarr;</a>
+        <p class="eng-credit">$75 assessment credited toward consultation. Consultation credited toward engagement.</p>
       </div>
 
       <div class="leads-section">
@@ -668,10 +673,12 @@ html{scroll-snap-type:y proximity;overflow-y:scroll}
         <span class="entry-badge">Strategy Session</span>
         <div class="entry-info"><div class="entry-name">Strategy Session</div><div class="entry-desc">Full consultation with school list, essay strategy, scholarship landscape, and written recommendations.</div><div class="entry-price-m">$150 / 60 min</div></div>
         <span class="entry-price">$150<span class="entry-per">/ 60 min</span></span>
-        <a href="/book" class="entry-cta">Book a Consultation &rarr;</a>
+        <a href="/assess" class="entry-cta">Start Profile Assessment &middot; $75 &rarr;</a>
+        <a href="/book" class="entry-cta-secondary">Or book a consultation &middot; $150</a>
       </div>
 
-      
+      <div class="ms-credit" style="margin-bottom:28px;"><strong>Credit ladder:</strong> $75 profile assessment &rarr; credited toward $150 consultation &rarr; credited toward any package. Every fee rolls forward.</div>
+
       <div class="pkg-2x2">
       <div class="pkg-card">
         <span class="pkg-badge pkg-badge-def">1 School</span>
@@ -763,8 +770,11 @@ html{scroll-snap-type:y proximity;overflow-y:scroll}
         <span class="entry-badge">Strategy Session</span>
         <div class="entry-info"><div class="entry-name">Strategy Session</div><div class="entry-desc">Execution plan, resume and LinkedIn review, and written recommendations.</div><div class="entry-price-m">$150 / 60 min</div></div>
         <span class="entry-price">$150<span class="entry-per">/ 60 min</span></span>
-        <a href="/book" class="entry-cta">Book a Consultation &rarr;</a>
+        <a href="/assess" class="entry-cta">Start Profile Assessment &middot; $75 &rarr;</a>
+        <a href="/book" class="entry-cta-secondary">Or book a consultation &middot; $150</a>
       </div>
+
+      <div class="ms-credit" style="margin-bottom:28px;"><strong>Credit ladder:</strong> $75 profile assessment &rarr; credited toward $150 consultation &rarr; credited toward any package. Every fee rolls forward.</div>
 
       
       <div class="pkg-2x2">
