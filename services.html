@@ -380,14 +380,23 @@ footer{background:linear-gradient(180deg,var(--dark),#0A141A);border-top:1px sol
 /* MILESTONE PRICING */
 .ms-section{max-width:800px;width:100%;margin:48px auto 0}
 .ms-title{font-family:var(--sf);font-size:clamp(1.2rem,2vw,1.5rem);font-weight:500;color:var(--white);letter-spacing:-.02em;margin-bottom:20px}
-.ms-grid{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden}
-.ms-row{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,.04)}
-.ms-row:last-child{border-bottom:none}
+.pricing-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.pricing-left{padding:36px 32px;border-right:1px solid rgba(255,255,255,.06)}
+.price-label{font-size:.66rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(45,212,191,.5);margin-bottom:12px}
+.price-amount{font-family:var(--sf);font-size:2.4rem;font-weight:600;background:linear-gradient(135deg,var(--white) 30%,var(--tb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.price-context{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.7;font-weight:300;margin-bottom:20px}
+.price-compare{font-size:.76rem;color:rgba(255,255,255,.25);padding-top:16px;border-top:1px solid rgba(255,255,255,.06);line-height:1.6}
+.price-compare strong{color:rgba(255,255,255,.4);font-weight:500}
+.pricing-right{padding:36px 32px}
+.milestone-title{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(45,212,191,.4);margin-bottom:16px}
+.ms-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.ms-row:last-of-type{border-bottom:none}
 .ms-name{font-size:.84rem;color:var(--white);font-weight:400}
 .ms-trigger{font-size:.7rem;color:rgba(255,255,255,.3);margin-top:2px;font-weight:300}
 .ms-amount{font-size:.92rem;font-weight:500;color:var(--white);font-family:var(--sf)}
 .ms-credit{margin-top:16px;padding:16px 20px;background:rgba(45,212,191,.06);border:1px solid rgba(45,212,191,.12);border-radius:12px;font-size:.78rem;color:var(--tb);line-height:1.6}
 .ms-credit strong{font-weight:600}
+@media(max-width:768px){.pricing-card{grid-template-columns:1fr}.pricing-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}}
 
 /* TRUST SECTION */
 .svc-trust{padding:80px var(--sp);background:var(--off-white)}
@@ -634,14 +643,24 @@ html{scroll-snap-type:y proximity;overflow-y:scroll}
 
       <!-- MILESTONE PRICING -->
       <div class="ms-section">
-        <h3 class="ms-title">Payment milestones</h3>
-        <div class="ms-grid">
-          <div class="ms-row"><div class="ms-info"><div class="ms-name">Engagement confirmation</div><div class="ms-trigger">Work commences on receipt</div></div><div class="ms-amount">$5,000</div></div>
-          <div class="ms-row"><div class="ms-info"><div class="ms-name">Letters + first drafts at 90%</div><div class="ms-trigger">All letters and petition drafts delivered</div></div><div class="ms-amount">$5,000</div></div>
-          <div class="ms-row"><div class="ms-info"><div class="ms-name">USCIS submission confirmed</div><div class="ms-trigger">Both petitions filed</div></div><div class="ms-amount">$5,000</div></div>
-          <div class="ms-row"><div class="ms-info"><div class="ms-name">Expenses retainer</div><div class="ms-trigger">Press placement + legal review</div></div><div class="ms-amount">$5,000</div></div>
+        <h3 class="ms-title">Fee structure</h3>
+        <p style="font-size:.88rem;color:rgba(255,255,255,.35);font-weight:300;line-height:1.7;margin-bottom:24px;max-width:560px">Transparent, milestone-based. Burlington accommodates deferred payment and phased arrangements where the standard schedule does not fit.</p>
+        <div class="pricing-card">
+          <div class="pricing-left">
+            <div class="price-label">Dual Petition Advisory</div>
+            <div class="price-amount">$20,000</div>
+            <div class="price-context">Covers both EB-1A and EB-2 NIW petitions, up to 12 letters of support, evidence architecture, legal review, strategic press placement, and a 12-month RFE retainer.</div>
+            <div class="price-compare">Comparable dual-petition advisory at leading U.S. immigration law practices: <strong>$35,000&ndash;$55,000</strong></div>
+          </div>
+          <div class="pricing-right">
+            <div class="milestone-title">Payment milestones</div>
+            <div class="ms-row"><div><div class="ms-name">Engagement confirmation</div><div class="ms-trigger">Work commences on receipt</div></div><div class="ms-amount">$5,000</div></div>
+            <div class="ms-row"><div><div class="ms-name">Letters + first drafts at 90%</div><div class="ms-trigger">All letters and petition drafts delivered</div></div><div class="ms-amount">$5,000</div></div>
+            <div class="ms-row"><div><div class="ms-name">USCIS submission confirmed</div><div class="ms-trigger">Both petitions filed</div></div><div class="ms-amount">$5,000</div></div>
+            <div class="ms-row"><div><div class="ms-name">Expenses retainer</div><div class="ms-trigger">Press placement + legal review</div></div><div class="ms-amount">$5,000</div></div>
+            <div class="ms-credit"><strong>Credit ladder:</strong> $75 profile assessment &rarr; credited toward $150 consultation &rarr; credited toward engagement. Every fee rolls forward.</div>
+          </div>
         </div>
-        <div class="ms-credit"><strong>Credit ladder:</strong> $75 profile assessment &rarr; credited toward $150 consultation &rarr; credited toward engagement. Every fee rolls forward.</div>
       </div>
 
       <!-- À LA CARTE — IMMIGRATION -->
