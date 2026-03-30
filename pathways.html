@@ -123,70 +123,48 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 .pw-hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--teal),var(--tb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .pw-hero p{font-size:1rem;color:rgba(255,255,255,.4);line-height:1.8;font-weight:300;max-width:560px;margin:0 auto}
 
-/* ═══ INTRO BAR ═══ */
-.pw-intro{padding:40px var(--sp);background:var(--dark);border-top:1px solid rgba(45,212,191,.06);border-bottom:1px solid rgba(255,255,255,.04)}
-.pw-intro-inner{max-width:800px;margin:0 auto;font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.8;font-weight:300;text-align:center}
-
 /* ═══ PATHWAYS GRID ═══ */
 .pw-section{padding:80px var(--sp)}
-.pw-section-inner{max-width:1100px;margin:0 auto}
-.pw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.pw-section-inner{max-width:1200px;margin:0 auto}
+.pw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 
 /* ═══ PATHWAY CARD ═══ */
-.pw-card{background:var(--white);border:1px solid var(--g100);border-radius:16px;padding:40px 36px;transition:all .4s;position:relative;overflow:hidden}
-.pw-card:hover{border-color:rgba(13,148,136,.2);box-shadow:0 8px 40px rgba(13,148,136,.06)}
-.pw-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--tb));opacity:0;transition:opacity .4s}
-.pw-card:hover::before{opacity:1}
+.pw-card{background:var(--white);border:1px solid var(--g100);border-radius:16px;overflow:hidden;transition:all .4s;display:flex;flex-direction:column;cursor:pointer;text-decoration:none;color:inherit}
+.pw-card:hover{border-color:rgba(13,148,136,.2);box-shadow:0 8px 40px rgba(13,148,136,.08);transform:translateY(-3px)}
 
-.pw-card-icon{width:44px;height:44px;border-radius:12px;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.1);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
-.pw-card-icon svg{width:20px;height:20px;stroke:var(--teal);stroke-width:1.5;fill:none}
+/* Card visual header */
+.pw-card-visual{height:130px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pw-card-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(255,255,255,.6))}
+.v-stem{background:linear-gradient(135deg,#0d6b6e,#0a4a5c)}
+.v-creative{background:linear-gradient(135deg,#5b2d8e,#3a1a5c)}
+.v-business{background:linear-gradient(135deg,#1a3a6e,#0d2650)}
+.v-medicine{background:linear-gradient(135deg,#1b5e4a,#0d3e2e)}
+.v-law{background:linear-gradient(135deg,#6e4a1a,#4a300d)}
+.v-academia{background:linear-gradient(135deg,#1a4a6e,#0d3050)}
+.pw-card-icon{position:relative;z-index:1;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+.pw-card-icon svg{width:22px;height:22px;stroke:var(--white);stroke-width:1.5;fill:none}
 
-.pw-card h3{font-family:var(--sf);font-size:1.35rem;font-weight:500;color:var(--g700);margin-bottom:8px;letter-spacing:-.01em}
-.pw-card-subtitle{font-size:.78rem;color:var(--g300);font-weight:400;letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px}
+/* Card body */
+.pw-card-body{padding:24px 24px 0;flex:1;display:flex;flex-direction:column}
+.pw-card-category{font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.pw-card-body h3{font-family:var(--sf);font-size:1.2rem;font-weight:500;color:var(--g700);line-height:1.3;margin-bottom:12px;letter-spacing:-.01em}
+.pw-card-desc{font-size:.84rem;color:var(--g400);line-height:1.7;font-weight:300;margin-bottom:18px;flex:1}
 
-.pw-card-desc{font-size:.88rem;color:var(--g400);line-height:1.8;font-weight:300;margin-bottom:24px}
+/* Pathway tags */
+.pw-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.pw-tag{padding:4px 12px;border-radius:100px;font-size:.68rem;font-weight:500;letter-spacing:.04em;background:rgba(13,148,136,.06);color:var(--teal);border:1px solid rgba(13,148,136,.1)}
 
-.pw-card-divider{height:1px;background:var(--g100);margin-bottom:20px}
-
-.pw-criteria-label{font-size:.68rem;font-weight:500;color:var(--g300);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
-.pw-criterion{display:flex;align-items:flex-start;gap:10px;font-size:.82rem;color:var(--g500);line-height:1.6;font-weight:300;margin-bottom:10px}
-.pw-criterion:last-child{margin-bottom:0}
-.pw-criterion svg{width:14px;height:14px;stroke:var(--teal);stroke-width:2;fill:none;flex-shrink:0;margin-top:3px}
-
-.pw-card-footer{margin-top:24px;padding-top:20px;border-top:1px solid var(--g100)}
-.pw-card-link{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:500;color:var(--teal);text-decoration:none;transition:all .3s}
-.pw-card-link:hover{color:var(--tl);gap:12px}
-.pw-card-link svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none;transition:transform .3s}
-.pw-card-link:hover svg{transform:translateX(3px)}
-
-/* ═══ HOW IT WORKS ═══ */
-.pw-how{padding:80px var(--sp);background:var(--dark)}
-.pw-how-inner{max-width:900px;margin:0 auto;text-align:center}
-.pw-how h2{font-family:var(--sf);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;color:var(--white);margin-bottom:16px;letter-spacing:-.02em}
-.pw-how>p{font-size:.92rem;color:rgba(255,255,255,.35);line-height:1.8;font-weight:300;margin-bottom:56px;max-width:600px;margin-left:auto;margin-right:auto}
-.pw-how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:left}
-.pw-how-step{position:relative}
-.pw-how-num{font-size:.72rem;font-weight:500;color:var(--teal);letter-spacing:.1em;margin-bottom:12px}
-.pw-how-step h3{font-family:var(--sf);font-size:1.1rem;font-weight:500;color:var(--white);margin-bottom:10px}
-.pw-how-step p{font-size:.84rem;color:rgba(255,255,255,.35);line-height:1.75;font-weight:300}
-
-/* ═══ CTA ═══ */
-.pw-cta{padding:80px var(--sp) 100px;text-align:center}
-.pw-cta h2{font-family:var(--sf);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;color:var(--g700);margin-bottom:16px;letter-spacing:-.02em}
-.pw-cta p{font-size:.92rem;color:var(--g400);line-height:1.8;font-weight:300;max-width:520px;margin:0 auto 32px}
-.pw-cta-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;font-size:.88rem;font-weight:500;font-family:var(--sn);color:var(--white);background:linear-gradient(135deg,var(--teal),var(--tb));border-radius:12px;text-decoration:none;box-shadow:0 4px 24px rgba(13,148,136,.3),inset 0 1px 0 rgba(255,255,255,.1);transition:all .3s}
-.pw-cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(13,148,136,.4)}
-.pw-cta-btn svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none}
-
-/* ═══ PATHWAY TAGS ═══ */
-.pw-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
-.pw-tag{padding:4px 12px;border-radius:100px;font-size:.68rem;font-weight:500;letter-spacing:.04em;background:rgba(13,148,136,.08);color:var(--teal);border:1px solid rgba(13,148,136,.12)}
-
-/* ═══ MINI LEADS ═══ */
-.pw-leads{display:flex;align-items:center;gap:8px;margin-top:16px}
+/* Mini leads */
+.pw-leads{display:flex;align-items:center;gap:8px;padding-top:16px;border-top:1px solid var(--g100)}
 .pw-mini-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--tb));display:flex;align-items:center;justify-content:center;font-size:.52rem;font-weight:600;color:var(--white);border:2px solid var(--white);flex-shrink:0}
 .pw-mini-avatar:not(:first-child){margin-left:-10px}
 .pw-leads-label{font-size:.72rem;color:var(--g300);font-weight:300;margin-left:4px}
+
+/* Card CTA bar */
+.pw-card-cta{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-top:1px solid var(--g100);margin-top:auto}
+.pw-card-cta span{font-size:.82rem;font-weight:500;color:var(--teal)}
+.pw-card-cta .pw-arrow{color:var(--teal);transition:transform .25s;display:flex}
+.pw-card:hover .pw-arrow{transform:translateX(4px)}
 
 /* ═══ COMPARISON TABLE ═══ */
 .pw-compare{padding:80px var(--sp);background:var(--dark)}
@@ -200,9 +178,30 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 .pw-table tr:hover td{background:rgba(255,255,255,.015)}
 .pw-check{color:var(--tb);font-weight:600}
 
+/* ═══ HOW IT WORKS ═══ */
+.pw-how{padding:80px var(--sp)}
+.pw-how-inner{max-width:900px;margin:0 auto;text-align:center}
+.pw-how h2{font-family:var(--sf);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;color:var(--g700);margin-bottom:16px;letter-spacing:-.02em}
+.pw-how-inner>p{font-size:.92rem;color:var(--g400);line-height:1.8;font-weight:300;margin-bottom:56px;max-width:600px;margin-left:auto;margin-right:auto}
+.pw-how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:left}
+.pw-how-step{position:relative}
+.pw-how-num{font-size:.72rem;font-weight:500;color:var(--teal);letter-spacing:.1em;margin-bottom:12px}
+.pw-how-step h3{font-family:var(--sf);font-size:1.1rem;font-weight:500;color:var(--g700);margin-bottom:10px}
+.pw-how-step p{font-size:.84rem;color:var(--g400);line-height:1.75;font-weight:300}
+
+/* ═══ CTA ═══ */
+.pw-cta{padding:80px var(--sp) 100px;text-align:center;background:var(--light);border-top:1px solid var(--g100)}
+.pw-cta h2{font-family:var(--sf);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;color:var(--g700);margin-bottom:16px;letter-spacing:-.02em}
+.pw-cta p{font-size:.92rem;color:var(--g400);line-height:1.8;font-weight:300;max-width:520px;margin:0 auto 32px}
+.pw-cta-btn{display:inline-flex;align-items:center;gap:10px;padding:15px 36px;font-size:.86rem;font-weight:500;font-family:var(--sn);color:var(--white);background:linear-gradient(135deg,var(--teal),var(--tb));border-radius:12px;text-decoration:none;box-shadow:0 4px 24px rgba(13,148,136,.3),inset 0 1px 0 rgba(255,255,255,.1);transition:all .3s}
+.pw-cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(13,148,136,.4)}
+.pw-cta-btn svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none}
+
 /* ═══ RESPONSIVE ═══ */
+@media(max-width:1024px){
+  .pw-grid{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:900px){
-  .pw-grid{grid-template-columns:1fr}
   .pw-how-grid{grid-template-columns:1fr;gap:32px}
   .pw-table{display:block;overflow-x:auto}
 }
@@ -210,15 +209,13 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   .pw-hero{padding:130px 24px 60px}
   .pw-hero h1{font-size:2rem}
   .pw-section{padding:56px 24px}
-  .pw-card{padding:32px 28px}
   .pw-how{padding:56px 24px}
   .pw-cta{padding:56px 24px 80px}
+  .pw-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .pw-hero{padding:110px 20px 48px}
   .pw-hero h1{font-size:1.7rem}
-  .pw-card{padding:28px 24px}
-  .pw-card h3{font-size:1.2rem}
 }
 </style>
 </head>
@@ -255,15 +252,10 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 <section class="pw-hero">
   <div class="pw-hero-grid"></div>
   <div class="pw-hero-inner">
-    <h1>Your field. <em>Your pathway.</em></h1>
-    <p>Every profession builds its EB-1A and NIW case differently. Burlington Consult develops petition strategies specific to how your field documents excellence.</p>
+    <h1>Your field determines <em>your strategy</em></h1>
+    <p>Burlington Consult works with senior professionals across disciplines. Select the profile closest to yours to see the pathway, criteria strategy, and advisory team most relevant to your case.</p>
   </div>
 </section>
-
-<!-- ═══ INTRO ═══ -->
-<div class="pw-intro">
-  <div class="pw-intro-inner">The EB-1A criteria and NIW Dhanasar framework apply across all fields, but the evidence that satisfies them differs by profession. A surgeon&rsquo;s case looks nothing like an engineer&rsquo;s. Burlington Consult begins every engagement by identifying the strongest field of endeavour and criterion mapping for your specific record.</div>
-</div>
 
 <!-- ═══ PATHWAY CARDS ═══ -->
 <section class="pw-section">
@@ -271,118 +263,82 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
     <div class="pw-grid">
 
       <!-- STEM -->
-      <div class="pw-card">
-        <div class="pw-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
-        <h3>STEM Professionals</h3>
-        <div class="pw-card-subtitle">Engineering &middot; Computer Science &middot; Data Science &middot; Research</div>
-        <div class="pw-tags"><span class="pw-tag">EB-1A</span><span class="pw-tag">EB-2 NIW</span><span class="pw-tag">Dual Petition</span></div>
-        <p class="pw-card-desc">Engineers and technologists at major firms and research institutions typically build cases around original contributions, scholarly output, and critical roles. Patent portfolios, open-source impact, and product-level contributions carry significant evidentiary weight.</p>
-        <div class="pw-card-divider"></div>
-        <div class="pw-criteria-label">Commonly mapped criteria</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Original contributions of major significance in the field</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Critical role at a distinguished organisation</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>High salary relative to peers in the field in relevant country</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Scholarly articles in professional or major trade publications</div>
-        <div class="pw-card-footer">
-          <a href="/assess" class="pw-card-link">Start your assessment <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="/eb1a" class="pw-card">
+        <div class="pw-card-visual v-stem"><div class="pw-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div></div>
+        <div class="pw-card-body">
+          <div class="pw-card-category">STEM &amp; Technology</div>
+          <h3>Engineers, researchers, and scientists</h3>
+          <p class="pw-card-desc">Software engineers, data scientists, ML researchers, and biotech specialists. Publication record and original contributions are the primary evidence vectors.</p>
+          <div class="pw-tags"><span class="pw-tag">EB-1A</span><span class="pw-tag">EB-2 NIW</span><span class="pw-tag">Dual Petition</span></div>
           <div class="pw-leads"><div class="pw-mini-avatar">CO</div><div class="pw-mini-avatar">EO</div><div class="pw-mini-avatar">AL</div><span class="pw-leads-label">Chris, Efezino, Andrew</span></div>
         </div>
-      </div>
+        <div class="pw-card-cta"><span>View STEM strategy</span><span class="pw-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </a>
 
       <!-- CREATIVE -->
-      <div class="pw-card">
-        <div class="pw-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <h3>Creative Professionals</h3>
-        <div class="pw-card-subtitle">Music &middot; Film &middot; Design &middot; Visual Arts &middot; Media</div>
-        <div class="pw-tags"><span class="pw-tag">EB-1A</span><span class="pw-tag">EB-2 NIW</span></div>
-        <p class="pw-card-desc">Creatives build cases through awards, published coverage in major media, commercial success, and display of work at recognised showcases. Burlington Consult works with the EB-1A for Creatives framework to map industry-specific achievements to USCIS criteria.</p>
-        <div class="pw-card-divider"></div>
-        <div class="pw-criteria-label">Commonly mapped criteria</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Awards for excellence in the creative field</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Published material about the petitioner in major media</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Commercial success evidenced by sales, streaming, or distribution</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Display of work at artistic exhibitions or showcases</div>
-        <div class="pw-card-footer">
-          <a href="/assess" class="pw-card-link">Start your assessment <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="/eb1a-creatives" class="pw-card">
+        <div class="pw-card-visual v-creative"><div class="pw-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div></div>
+        <div class="pw-card-body">
+          <div class="pw-card-category">Creative &amp; Arts</div>
+          <h3>Filmmakers, musicians, writers, and designers</h3>
+          <p class="pw-card-desc">No publications. No citations. No h-index. Creative professionals require an entirely different evidence strategy — awards, published media coverage, critical roles, and commercial success.</p>
+          <div class="pw-tags"><span class="pw-tag">EB-1A</span><span class="pw-tag">EB-2 NIW</span></div>
           <div class="pw-leads"><div class="pw-mini-avatar">PD</div><div class="pw-mini-avatar">MA</div><span class="pw-leads-label">Pascal, Michael</span></div>
         </div>
-      </div>
+        <div class="pw-card-cta"><span>View creative strategy</span><span class="pw-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </a>
 
       <!-- BUSINESS -->
-      <div class="pw-card">
-        <div class="pw-card-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
-        <h3>Business &amp; Finance</h3>
-        <div class="pw-card-subtitle">Investment &middot; Consulting &middot; Fintech &middot; Private Equity &middot; Strategy</div>
-        <div class="pw-tags"><span class="pw-tag">EB-1A</span><span class="pw-tag">EB-2 NIW</span><span class="pw-tag">Dual Petition</span></div>
-        <p class="pw-card-desc">Finance professionals and business leaders demonstrate extraordinary ability through high remuneration, critical leadership roles, original contributions to financial systems or market infrastructure, and membership in selective professional bodies.</p>
-        <div class="pw-card-divider"></div>
-        <div class="pw-criteria-label">Commonly mapped criteria</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>High salary relative to peers in the field in relevant country</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Critical role at a distinguished organisation</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Original contributions to financial systems or market infrastructure</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Membership in associations requiring outstanding achievement</div>
-        <div class="pw-card-footer">
-          <a href="/assess" class="pw-card-link">Start your assessment <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="/eb1a" class="pw-card">
+        <div class="pw-card-visual v-business"><div class="pw-card-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div></div>
+        <div class="pw-card-body">
+          <div class="pw-card-category">Business &amp; Finance</div>
+          <h3>Executives, founders, and financial professionals</h3>
+          <p class="pw-card-desc">High salary relative to peers in the field in relevant country, critical roles in distinguished organisations, and business-related contributions of major significance.</p>
+          <div class="pw-tags"><span class="pw-tag">EB-1A</span><span class="pw-tag">EB-2 NIW</span><span class="pw-tag">Dual Petition</span></div>
           <div class="pw-leads"><div class="pw-mini-avatar">CO</div><div class="pw-mini-avatar">CK</div><span class="pw-leads-label">Chris, Chibuike</span></div>
         </div>
-      </div>
+        <div class="pw-card-cta"><span>View business strategy</span><span class="pw-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </a>
 
       <!-- MEDICINE -->
-      <div class="pw-card">
-        <div class="pw-card-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <h3>Medicine &amp; Healthcare</h3>
-        <div class="pw-card-subtitle">Clinical &middot; Research &middot; Public Health &middot; Biomedical Science</div>
-        <div class="pw-tags"><span class="pw-tag">EB-1A</span><span class="pw-tag">EB-2 NIW</span></div>
-        <p class="pw-card-desc">Physicians and medical researchers build cases through peer-reviewed publications, journal reviewing activity, clinical innovations with documented patient impact, and recognition from national or international medical bodies. The NIW proposed endeavour is often tied to U.S. healthcare delivery or public health infrastructure.</p>
-        <div class="pw-card-divider"></div>
-        <div class="pw-criteria-label">Commonly mapped criteria</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Scholarly articles in peer-reviewed medical journals</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Judging: peer review for journals in the field</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Original contributions advancing clinical practice or research</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Awards for excellence in medicine or research</div>
-        <div class="pw-card-footer">
-          <a href="/assess" class="pw-card-link">Start your assessment <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="/eb1a" class="pw-card">
+        <div class="pw-card-visual v-medicine"><div class="pw-card-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div></div>
+        <div class="pw-card-body">
+          <div class="pw-card-category">Medicine &amp; Healthcare</div>
+          <h3>Physicians, surgeons, and public health specialists</h3>
+          <p class="pw-card-desc">Clinical practice, research publications, and public health policy contributions. The NIW proposed endeavour typically ties to healthcare delivery or clinical innovation.</p>
+          <div class="pw-tags"><span class="pw-tag">EB-1A</span><span class="pw-tag">EB-2 NIW</span></div>
           <div class="pw-leads"><div class="pw-mini-avatar">CO</div><div class="pw-mini-avatar">CD</div><span class="pw-leads-label">Chris, Chukwu-Dike</span></div>
         </div>
-      </div>
+        <div class="pw-card-cta"><span>View medical strategy</span><span class="pw-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </a>
 
       <!-- LAW -->
-      <div class="pw-card">
-        <div class="pw-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-        <h3>Law &amp; Policy</h3>
-        <div class="pw-card-subtitle">Legal Practice &middot; Government &middot; International Policy &middot; Regulatory</div>
-        <div class="pw-tags"><span class="pw-tag">EB-1A</span><span class="pw-tag">EB-2 NIW</span></div>
-        <p class="pw-card-desc">Legal professionals and policy advisors demonstrate extraordinary ability through published scholarship, advisory roles in distinguished organisations, original contributions to regulatory frameworks, and membership in selective professional or government advisory bodies.</p>
-        <div class="pw-card-divider"></div>
-        <div class="pw-criteria-label">Commonly mapped criteria</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Original contributions to legal or policy frameworks</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Critical role in distinguished policy organisations</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Published material about the petitioner in major publications</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Membership in expert advisory councils or working groups</div>
-        <div class="pw-card-footer">
-          <a href="/assess" class="pw-card-link">Start your assessment <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="/eb1a" class="pw-card">
+        <div class="pw-card-visual v-law"><div class="pw-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div></div>
+        <div class="pw-card-body">
+          <div class="pw-card-category">Law &amp; Policy</div>
+          <h3>Lawyers, policy advisers, and government professionals</h3>
+          <p class="pw-card-desc">Legal practice, regulatory advisory, and policy research. The field of endeavour for policy professionals requires careful framing to establish national importance and unique positioning.</p>
+          <div class="pw-tags"><span class="pw-tag">EB-1A</span><span class="pw-tag">EB-2 NIW</span></div>
           <div class="pw-leads"><div class="pw-mini-avatar">AI</div><div class="pw-mini-avatar">EO</div><span class="pw-leads-label">Afiong, Efezino</span></div>
         </div>
-      </div>
+        <div class="pw-card-cta"><span>View legal strategy</span><span class="pw-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </a>
 
       <!-- ACADEMIA -->
-      <div class="pw-card">
-        <div class="pw-card-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
-        <h3>Academia &amp; Research</h3>
-        <div class="pw-card-subtitle">Faculty &middot; Postdoctoral &middot; Think Tanks &middot; Research Institutions</div>
-        <div class="pw-tags"><span class="pw-tag">EB-1A</span><span class="pw-tag">EB-2 NIW</span></div>
-        <p class="pw-card-desc">Academics and researchers often hold the strongest publication and citation records, making scholarly output and peer review activity primary criteria. The NIW proposed endeavour typically frames the petitioner&rsquo;s research programme as advancing a U.S. national interest in science, technology, or public health.</p>
-        <div class="pw-card-divider"></div>
-        <div class="pw-criteria-label">Commonly mapped criteria</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Scholarly articles in peer-reviewed journals</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Judging: peer review for journals or grant panels</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Original contributions of major significance in the field</div>
-        <div class="pw-criterion"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Membership in distinguished academic or research bodies</div>
-        <div class="pw-card-footer">
-          <a href="/assess" class="pw-card-link">Start your assessment <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="/eb1a" class="pw-card">
+        <div class="pw-card-visual v-academia"><div class="pw-card-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div></div>
+        <div class="pw-card-body">
+          <div class="pw-card-category">Academia &amp; Research</div>
+          <h3>Professors, researchers, and academic leaders</h3>
+          <p class="pw-card-desc">Scholarly publications, citations, peer review, and institutional leadership. Academic professionals often have the strongest evidence base but may underestimate how it should be framed for USCIS.</p>
+          <div class="pw-tags"><span class="pw-tag">EB-1A</span><span class="pw-tag">EB-2 NIW</span></div>
           <div class="pw-leads"><div class="pw-mini-avatar">CC</div><div class="pw-mini-avatar">AL</div><span class="pw-leads-label">Chisom, Andrew</span></div>
         </div>
-      </div>
+        <div class="pw-card-cta"><span>View academic strategy</span><span class="pw-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </a>
 
     </div>
   </div>
@@ -434,8 +390,8 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 
 <!-- ═══ CTA ═══ -->
 <section class="pw-cta">
-  <h2>Find out where you stand</h2>
-  <p>Start with a $75 profile assessment. Burlington Consult reviews your record and advises on the strongest available pathway within 48 hours.</p>
+  <h2>Not sure which pathway fits?</h2>
+  <p>Burlington assesses your full profile across all available pathways and recommends the strongest strategy before any work begins.</p>
   <a href="/assess" class="pw-cta-btn">Start Profile Assessment &middot; $75 <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></a>
   <div style="margin-top:16px;"><a href="/book" style="font-size:.82rem;color:var(--g400);text-decoration:none;font-weight:300;transition:color .3s" onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--g400)'">Or book a consultation &middot; $150</a></div>
 </section>
