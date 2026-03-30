@@ -340,6 +340,19 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 .lead-role-about{font-size:.66rem;color:rgba(255,255,255,.65);font-weight:400}
 
 /* SCROLL HINT */
+/* FOUNDER PHOTOS IN HERO */
+.about-hero-photos{display:flex;gap:20px;align-items:flex-end;justify-content:center}
+.about-hero .about-hero-layout{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end}
+.fdr-photo{width:200px;border-radius:16px;overflow:hidden;border:1px solid rgba(45,212,191,.1);box-shadow:0 20px 60px rgba(0,0,0,.4);position:relative}
+.fdr-photo:first-child{transform:translateY(-20px)}
+.fdr-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(100%) contrast(1.05);display:block}
+.fdr-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(4,10,15,.6));pointer-events:none}
+.fdr-label{position:absolute;bottom:14px;left:14px;z-index:2}
+.fdr-name{font-family:var(--serif);font-size:.85rem;font-weight:500;color:var(--white)}
+.fdr-role{font-size:.68rem;color:rgba(255,255,255,.5);font-weight:400}
+@media(max-width:900px){.about-hero .about-hero-layout{grid-template-columns:1fr;text-align:center}.about-hero-photos{justify-content:center;margin-top:32px}.fdr-photo{width:160px}}
+@media(max-width:480px){.fdr-photo{width:130px}}
+
 .about-scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.15);font-family:var(--serif);font-size:.74rem;letter-spacing:.08em}
 .about-scroll-hint svg{animation:aboutBounce 2s ease-in-out infinite;color:rgba(45,212,191,.3)}
 @keyframes aboutBounce{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(6px);opacity:.7}}
@@ -401,6 +414,7 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
   <div class="hero-rings"><div class="ring"></div><div class="ring"></div></div>
   <div class="hero-scanline"></div>
   <div class="container">
+    <div class="about-hero-layout">
     <div class="about-hero-content">
       <div class="section-label" style="color: var(--teal-bright);">About Burlington Consult</div>
       <h1>Built for the <span class="hero-highlight">African professional</span>.</h1>
@@ -410,6 +424,11 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
         <a href="/assess" class="hero-cta-btn">Start Profile Assessment &rarr;</a>
         <a href="/eb1a-creatives" style="display:inline-flex;align-items:center;gap:8px;padding:15px 36px;font-size:.86rem;font-weight:500;color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.1);border-radius:12px;text-decoration:none;transition:all .3s;" onmouseover="this.style.borderColor='rgba(45,212,191,.25)';this.style.color='#2DD4BF'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)';this.style.color='rgba(255,255,255,.5)'">For artists &amp; creatives &rarr;</a>
       </div>
+    </div>
+    <div class="about-hero-photos">
+      <div class="fdr-photo"><img src="/ebuka.png" alt="Chris Ogbodo" style="object-position:center top;"><div class="fdr-label"><div class="fdr-name">Chris Ogbodo</div><div class="fdr-role">Founder &amp; CEO</div></div></div>
+      <div class="fdr-photo"><img src="/team-nkem.jpg" alt="Nkem Nweke"><div class="fdr-label"><div class="fdr-name">Nkem Nweke</div><div class="fdr-role">Co-founder</div></div></div>
+    </div>
     </div>
   <div class="about-scroll-hint"><span>01</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
     </div>

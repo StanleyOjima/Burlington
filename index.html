@@ -65,6 +65,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
 /* MOBILE NAV */
 /* HERO */
 .hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px var(--side-pad) 0;overflow:hidden;background:radial-gradient(ellipse 80% 70% at 75% 60%,rgba(13,148,136,.18) 0%,transparent 50%),radial-gradient(ellipse 60% 50% at 85% 80%,rgba(45,212,191,.12) 0%,transparent 40%),radial-gradient(ellipse 70% 60% at 30% 40%,rgba(6,78,100,.15) 0%,transparent 50%),radial-gradient(ellipse 50% 40% at 50% 50%,rgba(13,148,136,.06) 0%,transparent 60%),linear-gradient(135deg,#030810 0%,#061520 25%,#0A2030 45%,#0D3040 60%,#0A2535 75%,#050D15 100%)}
+.hero-bg{position:absolute;inset:0;background:url('/hero-bg.jpg') center/cover no-repeat;filter:brightness(.18) contrast(1.1) saturate(.3);z-index:0}
 .hero-content{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;z-index:2;max-width:900px;width:100%;padding-bottom:8px}
 .hero-stats{display:flex;justify-content:center;gap:0;width:100vw;margin-left:calc(-50vw + 50%);padding:14px 0;border-top:1px solid rgba(45,212,191,.04);position:relative;z-index:2}
 .hero-ticker-wrap{width:100vw;margin-left:calc(-50vw + 50%);margin-top:auto;border-top:1px solid rgba(45,212,191,.06);overflow:hidden;background:rgba(4,10,15,.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
@@ -607,6 +608,7 @@ html{scroll-behavior:smooth}
 <script>document.addEventListener('DOMContentLoaded',function(){var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');var path=window.location.pathname;if(path.length>1&&path.charAt(path.length-1)==='/')path=path.slice(0,-1);for(var i=0;i<links.length;i++){var href=links[i].getAttribute('href');if(href==='/'&&(path===''||path==='/'))links[i].classList.add('active');else if(href!=='/'&&path.indexOf(href)===0)links[i].classList.add('active');}});</script>
 
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-rings"><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
   <div class="hero-scanline"></div>
