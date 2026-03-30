@@ -65,7 +65,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 var(--side-pad);h
 /* MOBILE NAV */
 /* HERO */
 .hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px var(--side-pad) 0;overflow:hidden;background:radial-gradient(ellipse 80% 70% at 75% 60%,rgba(13,148,136,.18) 0%,transparent 50%),radial-gradient(ellipse 60% 50% at 85% 80%,rgba(45,212,191,.12) 0%,transparent 40%),radial-gradient(ellipse 70% 60% at 30% 40%,rgba(6,78,100,.15) 0%,transparent 50%),radial-gradient(ellipse 50% 40% at 50% 50%,rgba(13,148,136,.06) 0%,transparent 60%),linear-gradient(135deg,#030810 0%,#061520 25%,#0A2030 45%,#0D3040 60%,#0A2535 75%,#050D15 100%)}
-.hero-bg{position:absolute;inset:0;background:url('/hero-bg.jpg') center/cover no-repeat;filter:brightness(.18) contrast(1.1) saturate(.3);z-index:0}
 .hero-content{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;z-index:2;max-width:900px;width:100%;padding-bottom:8px}
 .hero-stats{display:flex;justify-content:center;gap:0;width:100vw;margin-left:calc(-50vw + 50%);padding:14px 0;border-top:1px solid rgba(45,212,191,.04);position:relative;z-index:2}
 .hero-ticker-wrap{width:100vw;margin-left:calc(-50vw + 50%);margin-top:auto;border-top:1px solid rgba(45,212,191,.06);overflow:hidden;background:rgba(4,10,15,.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
@@ -270,9 +269,9 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
 .ft-links a{font-size:.73rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .3s}
 .ft-links a:hover{color:rgba(255,255,255,.6)}
 @media(max-width:768px){.ft-top{grid-template-columns:1fr 1fr!important;gap:24px 20px!important}.ft-top>div:first-child{grid-column:1/-1;margin-bottom:8px}.ft-top>.ft-col:last-child{grid-column:1/-1}.ft-cols-mobile{display:grid;grid-template-columns:1fr 1fr;gap:24px}.ft-top>div:first-child{margin-bottom:16px}.ft-bottom{flex-direction:column;gap:16px}.ft-col a{font-size:.82rem;gap:8px}.ft-col a svg{width:12px;height:12px}}
-.mobile-nav-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9998;opacity:0;pointer-events:none;transition:opacity .35s ease}.mobile-nav-backdrop.open{opacity:1;pointer-events:auto}.mobile-nav{position:fixed;top:0;right:0;bottom:0;width:280px;background:#060E14;border-left:1px solid rgba(45,212,191,.06);z-index:9999;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:0}
-.mobile-nav.open{transform:translateX(0)}
-.mobile-nav-close{background:none;border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.65);cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .3s;margin:16px 20px 0 auto;flex-shrink:0}
+.mobile-nav{display:none;position:fixed;inset:0;background:rgba(4,10,15,.98);backdrop-filter:blur(24px);z-index:9999;flex-direction:column;justify-content:center;padding:48px 32px}
+.mobile-nav.open{display:flex}
+.mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.65);cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .3s}
 
 .mobile-nav-link{display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none;transition:color .3s}
 .mobile-nav-link:last-of-type{border-bottom:none}
@@ -481,7 +480,7 @@ html{scroll-behavior:smooth}
 
 
 /* MOBILE NAV CTA — updated */
-.mobile-nav-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px 28px;font-size:.88rem!important;font-weight:500;font-family:var(--sn,var(--sans,'Inter',sans-serif));background:#0D9488!important;background:linear-gradient(135deg,#0D9488,#2DD4BF)!important;color:#fff!important;border-radius:14px;text-decoration:none;margin-top:40px;transition:all .3s;box-shadow:0 4px 24px rgba(13,148,136,.4),inset 0 1px 0 rgba(255,255,255,.15);letter-spacing:.01em}
+.mobile-nav-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:320px;padding:16px 32px;font-size:.88rem!important;font-weight:500;font-family:var(--sn,var(--sans,'Inter',sans-serif));background:#0D9488!important;background:linear-gradient(135deg,#0D9488,#2DD4BF)!important;color:#fff!important;border-radius:14px;text-decoration:none;margin-top:40px;transition:all .3s;box-shadow:0 4px 24px rgba(13,148,136,.4),inset 0 1px 0 rgba(255,255,255,.15);letter-spacing:.01em}
 .mobile-nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(13,148,136,.4)}
 
 /* FOOTER RESPONSIVE — updated */
@@ -602,13 +601,12 @@ html{scroll-behavior:smooth}
 </head>
 <body>
 
-<nav><a href="/" class="nav-logo">Burlington<span class="nav-logo-dot"></span><span class="nav-tagline">Immigration Advisory</span></a><ul class="nav-links"><li><a href="/about">About</a></li><li class="nav-divider"></li><li><a href="/services">Services</a></li><li class="nav-divider"></li><li><a href="/team">Team</a></li><li class="nav-divider"></li><li><a href="/cases">Cases</a></li><li><a href="/book" class="nav-cta">Book a Consultation</a></li></ul><button class="nav-hamburger" onclick="openMobileNav()" aria-label="Open menu"><span></span><span></span><span></span></button></nav>
-<div class="mobile-nav-backdrop" id="mobileBackdrop" onclick="closeMobileNav()"></div><div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><div style="flex:1;padding:16px 28px;display:flex;flex-direction:column;overflow-y:auto;"><a href="/" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">01</span><span class="mn-text">Home</span></a><a href="/about" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">02</span><span class="mn-text">About</span></a><a href="/services" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">03</span><span class="mn-text">Services</span></a><a href="/team" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">04</span><span class="mn-text">Team</span></a><a href="/cases" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">05</span><span class="mn-text">Cases</span></a></div><div style="padding:24px 28px 40px;"><a href="/book" class="mobile-nav-cta">Book a Consultation</a></div></div>
+<nav><a href="/" class="nav-logo">Burlington<span class="nav-logo-dot"></span><span class="nav-tagline">Immigration Advisory</span></a><ul class="nav-links"><li><a href="/about">About</a></li><li class="nav-divider"></li><li><a href="/services">Services</a></li><li class="nav-divider"></li><li><a href="/team">Team</a></li><li class="nav-divider"></li><li><a href="/cases">Cases</a></li><li><a href="/book" class="nav-cta">Book a Consultation</a></li></ul><button class="nav-hamburger" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Open menu"><span></span><span></span><span></span></button></nav>
+<div class="mobile-nav" id="mobileNav"><button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><a href="/" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">01</span><span class="mn-text">Home</span></a><a href="/about" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">02</span><span class="mn-text">About</span></a><a href="/services" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">03</span><span class="mn-text">Services</span></a><a href="/team" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">04</span><span class="mn-text">Team</span></a><a href="/cases" class="mobile-nav-link" onclick="document.getElementById('mobileNav').classList.remove('open')"><span class="mn-num">05</span><span class="mn-text">Cases</span></a><a href="/book" class="mobile-nav-cta">Book a Consultation</a></div>
 
 <script>document.addEventListener('DOMContentLoaded',function(){var links=document.querySelectorAll('.nav-links a:not(.nav-cta)');var path=window.location.pathname;if(path.length>1&&path.charAt(path.length-1)==='/')path=path.slice(0,-1);for(var i=0;i<links.length;i++){var href=links[i].getAttribute('href');if(href==='/'&&(path===''||path==='/'))links[i].classList.add('active');else if(href!=='/'&&path.indexOf(href)===0)links[i].classList.add('active');}});</script>
 
 <section class="hero">
-  <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-rings"><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
   <div class="hero-scanline"></div>
@@ -1095,7 +1093,7 @@ html{scroll-behavior:smooth}
 </div>
 <style>@media(max-width:768px){.lx-visa{grid-template-columns:1fr 1fr !important}.lx-visa>div{border-right:none !important;border-bottom:1px solid rgba(45,212,191,.06)}}@media(max-width:480px){.lx-visa{grid-template-columns:1fr !important}}
 /* MOBILE NAV CTA — updated */
-.mobile-nav-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px 28px;font-size:.88rem!important;font-weight:500;font-family:var(--sn,var(--sans,'Inter',sans-serif));background:#0D9488!important;background:linear-gradient(135deg,#0D9488,#2DD4BF)!important;color:#fff!important;border-radius:14px;text-decoration:none;margin-top:40px;transition:all .3s;box-shadow:0 4px 24px rgba(13,148,136,.4),inset 0 1px 0 rgba(255,255,255,.15);letter-spacing:.01em}
+.mobile-nav-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:320px;padding:16px 32px;font-size:.88rem!important;font-weight:500;font-family:var(--sn,var(--sans,'Inter',sans-serif));background:#0D9488!important;background:linear-gradient(135deg,#0D9488,#2DD4BF)!important;color:#fff!important;border-radius:14px;text-decoration:none;margin-top:40px;transition:all .3s;box-shadow:0 4px 24px rgba(13,148,136,.4),inset 0 1px 0 rgba(255,255,255,.15);letter-spacing:.01em}
 .mobile-nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(13,148,136,.4)}
 
 /* FOOTER RESPONSIVE — updated */
@@ -1257,7 +1255,7 @@ if (window.innerWidth >= 769) {
 }
 
 /* MOBILE NAV CTA — updated */
-.mobile-nav-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px 28px;font-size:.88rem!important;font-weight:500;font-family:var(--sn,var(--sans,'Inter',sans-serif));background:#0D9488!important;background:linear-gradient(135deg,#0D9488,#2DD4BF)!important;color:#fff!important;border-radius:14px;text-decoration:none;margin-top:40px;transition:all .3s;box-shadow:0 4px 24px rgba(13,148,136,.4),inset 0 1px 0 rgba(255,255,255,.15);letter-spacing:.01em}
+.mobile-nav-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:320px;padding:16px 32px;font-size:.88rem!important;font-weight:500;font-family:var(--sn,var(--sans,'Inter',sans-serif));background:#0D9488!important;background:linear-gradient(135deg,#0D9488,#2DD4BF)!important;color:#fff!important;border-radius:14px;text-decoration:none;margin-top:40px;transition:all .3s;box-shadow:0 4px 24px rgba(13,148,136,.4),inset 0 1px 0 rgba(255,255,255,.15);letter-spacing:.01em}
 .mobile-nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(13,148,136,.4)}
 
 /* FOOTER RESPONSIVE — updated */
