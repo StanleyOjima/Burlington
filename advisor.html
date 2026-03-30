@@ -113,7 +113,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(24px,5vw,80
 .adv-wcard h4{font-size:.82rem;font-weight:500;color:var(--g700);margin-bottom:4px}
 .adv-wcard p{font-size:.72rem;color:var(--g400);line-height:1.5;margin-bottom:0}
 
-.adv-input-bar{padding:16px 40px 24px;background:var(--off-white);border-top:1px solid var(--g100)}
+.adv-input-bar{padding:14px 40px;background:var(--off-white);border-top:1px solid var(--g100);flex-shrink:0}
 .adv-input-wrap{display:flex;gap:10px;align-items:center;max-width:680px}
 .adv-input{flex:1;padding:14px 18px;background:var(--white);border:1px solid var(--g100);border-radius:12px;font-size:.86rem;font-family:var(--sn);color:var(--g700);outline:none;transition:border-color .2s;resize:none;height:48px;line-height:1.4}
 .adv-input:focus{border-color:rgba(13,148,136,.3)}
@@ -122,11 +122,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(24px,5vw,80
 .adv-send:hover{background:var(--tl)}
 .adv-send:disabled{background:var(--g200);cursor:not-allowed}
 .adv-send svg{width:18px;height:18px;stroke:var(--white);stroke-width:2;fill:none}
-.adv-input-hint{font-size:.68rem;color:var(--g300);margin-top:8px;max-width:680px}
-.adv-input-hint a{color:var(--teal);text-decoration:none;font-weight:500}
+.adv-chat-hcta{display:none;padding:6px 14px;background:var(--teal);color:var(--white);font-size:.7rem;font-weight:500;border-radius:100px;text-decoration:none;white-space:nowrap;flex-shrink:0}
 
 @media(max-width:1024px){.adv-sidebar{width:260px}.adv-msgs{padding:24px}.adv-input-bar{padding:16px 24px 20px}}
-@media(max-width:768px){.adv-sidebar{display:none}.adv-chat-header{display:flex;flex-shrink:0}.adv-chat{height:calc(100vh - 72px);height:calc(100dvh - 72px)}.adv-msgs{padding:16px;flex:1;min-height:0}.adv-input-bar{padding:12px 16px;padding-bottom:max(12px,env(safe-area-inset-bottom));flex-shrink:0}.adv-input-hint{display:none}.adv-msg{max-width:100%}.adv-welcome{min-height:0;flex:1;padding:24px 16px;justify-content:center}.adv-welcome h2{font-size:1.3rem}.adv-welcome-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.adv-sidebar{display:none}.adv-chat-header{display:flex;flex-shrink:0}.adv-chat-hcta{display:block}.adv-chat{height:calc(100vh - 72px);height:calc(100dvh - 72px)}.adv-msgs{padding:16px;flex:1;min-height:0}.adv-input-bar{padding:12px 16px;padding-bottom:max(12px,env(safe-area-inset-bottom))}.adv-msg{max-width:100%}.adv-welcome{min-height:0;flex:1;padding:24px 16px;justify-content:center}.adv-welcome h2{font-size:1.3rem}.adv-welcome-grid{grid-template-columns:1fr}}
 @media(max-width:480px){.adv-msgs{padding:12px}.adv-msg-av{width:28px;height:28px}.adv-msg-av svg{width:12px;height:12px}.adv-msg-bubble{font-size:.82rem;padding:10px 14px}.adv-input{padding:12px 14px;font-size:.84rem}.adv-send{width:40px;height:40px}.adv-input-bar{padding:10px 12px;padding-bottom:max(10px,env(safe-area-inset-bottom))}.adv-welcome{padding:16px 12px}.adv-welcome-icon{width:48px;height:48px;border-radius:14px}.adv-welcome h2{font-size:1.1rem}.adv-welcome p{font-size:.8rem;margin-bottom:20px}}
 </style>
 </head>
@@ -187,6 +186,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(24px,5vw,80
     <div class="adv-chat-header">
       <div class="adv-chat-avatar"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
       <div class="adv-chat-hinfo"><div class="adv-chat-hname">Burlington Advisor</div><div class="adv-chat-hstatus">Online</div></div>
+      <a href="/assess" class="adv-chat-hcta">Assessment &middot; $75</a>
     </div>
 
     <div class="adv-msgs" id="msgs">
@@ -208,7 +208,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(24px,5vw,80
         <input class="adv-input" id="input" placeholder="Ask about EB-1A, NIW, eligibility, pricing..." onkeydown="if(event.key==='Enter'&&!event.shiftKey&&this.value.trim()){event.preventDefault();sendMsg(this.value)}">
         <button class="adv-send" id="sendBtn" onclick="var i=document.getElementById('input');if(i.value.trim())sendMsg(i.value)"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
       </div>
-      <div class="adv-input-hint">Not legal advice. For a formal assessment, start with a <a href="/assess">Profile Assessment</a>.</div>
     </div>
   </main>
 </div>
