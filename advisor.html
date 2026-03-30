@@ -20,16 +20,35 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;font-family:var(--sn);background:var(--off-white);-webkit-font-smoothing:antialiased;overflow:hidden}
 
-.adv-nav{height:64px;background:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 32px;border-bottom:1px solid rgba(13,148,136,.06);flex-shrink:0}
-.adv-nav-brand{font-family:var(--sf);font-size:1.2rem;font-weight:600;color:var(--white);display:flex;align-items:center;gap:3px;text-decoration:none}
-.adv-nav-dot{width:6px;height:6px;border-radius:50%;background:var(--tb)}
-.adv-nav-links{display:flex;gap:24px;align-items:center}
-.adv-nav-links a{font-size:.82rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
-.adv-nav-links a:hover{color:var(--white)}
-.adv-nav-links a.active{color:var(--tb);font-weight:500}
-.adv-nav-cta{padding:8px 20px;background:var(--teal);color:var(--white)!important;font-size:.78rem;font-weight:500;border-radius:8px;margin-left:12px}
-.adv-nav-back{display:none;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:none;color:rgba(255,255,255,.5);cursor:pointer;align-items:center;justify-content:center;font-size:16px;text-decoration:none}
-.adv-layout{display:flex;height:calc(100vh - 64px);height:calc(100dvh - 64px);overflow:hidden}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(24px,5vw,80px);height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,10,15,.88);backdrop-filter:blur(28px) saturate(200%);-webkit-backdrop-filter:blur(28px) saturate(200%);border-bottom:1px solid rgba(13,148,136,.06)}
+.nav-logo{font-family:var(--sf);font-size:1.3rem;font-weight:600;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:3px}
+.nav-logo-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--tb);box-shadow:0 0 12px rgba(45,212,191,.5)}
+.nav-tagline{font-family:var(--sn);font-size:.6rem;font-weight:400;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase;margin-left:10px;padding-left:10px;border-left:1px solid rgba(255,255,255,.1)}
+.nav-links{display:flex;align-items:center;gap:0;list-style:none}
+.nav-links li{display:flex;align-items:center}
+.nav-links a{font-size:.84rem;font-weight:400;color:rgba(255,255,255,.65);text-decoration:none;transition:color .3s;padding:0 16px;position:relative}
+.nav-links a:hover{color:var(--white)}
+.nav-links a.active,.nav-links a.active:hover{color:var(--tb);font-weight:500}
+.nav-divider{width:1px;height:14px;background:rgba(255,255,255,.1);flex-shrink:0}
+.nav-cta{font-size:.82rem!important;font-weight:500!important;color:var(--white)!important;background:linear-gradient(135deg,var(--teal),var(--tb));padding:9px 22px!important;border-radius:20px!important;text-decoration:none;box-shadow:0 4px 16px rgba(13,148,136,.25),inset 0 1px 0 rgba(255,255,255,.1);transition:all .3s!important;margin-left:8px}
+.nav-cta:hover{box-shadow:0 0 28px rgba(13,148,136,.4);transform:translateY(-1px)}
+.nav-hamburger{display:none;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:40px;height:40px;cursor:pointer;background:rgba(13,148,136,.06);border:1px solid rgba(45,212,191,.15);border-radius:50%;padding:0;transition:all .3s}
+.nav-hamburger span{display:block;width:18px;height:1.5px;background:var(--tb);transition:all .3s}
+.nav-hamburger span:nth-child(2){width:14px}
+.mobile-nav-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9998;opacity:0;pointer-events:none;transition:opacity .35s ease}.mobile-nav-backdrop.open{opacity:1;pointer-events:auto}
+.mobile-nav{position:fixed;top:0;right:0;bottom:0;width:280px;background:#060E14;border-left:1px solid rgba(45,212,191,.06);z-index:9999;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:0}
+.mobile-nav.open{transform:translateX(0)}
+.mobile-nav-close{background:none;border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.65);cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .3s;margin:16px 20px 0 auto;flex-shrink:0}
+.mobile-nav-link{display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none}
+.mobile-nav-link:hover .mn-text{color:var(--tb)}
+.mn-num{font-size:.74rem;color:rgba(45,212,191,.35);font-weight:400;min-width:20px;font-family:var(--sn)}
+.mn-text{font-family:var(--sf);font-size:1.25rem;color:rgba(255,255,255,.6);transition:color .3s}
+.mobile-nav-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px 28px;font-size:.88rem!important;font-weight:500;font-family:var(--sn);background:linear-gradient(135deg,#0D9488,#2DD4BF)!important;color:#fff!important;border-radius:14px;text-decoration:none;margin-top:40px;box-shadow:0 4px 24px rgba(13,148,136,.4),inset 0 1px 0 rgba(255,255,255,.15)}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex;width:36px;height:36px}.nav-tagline{display:none}}
+
+/* LAYOUT */
+.adv-layout{display:flex;height:calc(100vh - 72px);height:calc(100dvh - 72px);overflow:hidden}
 
 .adv-sidebar{width:300px;background:var(--white);border-right:1px solid var(--g100);display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto}
 .adv-sb-header{padding:28px 24px 0}
@@ -107,25 +126,39 @@ html,body{height:100%;font-family:var(--sn);background:var(--off-white);-webkit-
 .adv-input-hint a{color:var(--teal);text-decoration:none;font-weight:500}
 
 @media(max-width:1024px){.adv-sidebar{width:260px}.adv-msgs{padding:24px}.adv-input-bar{padding:16px 24px 20px}}
-@media(max-width:768px){.adv-nav{padding:0 20px}.adv-nav-links a:not(.adv-nav-cta):not(.active){display:none}.adv-nav-back{display:flex}.adv-sidebar{display:none}.adv-chat-header{display:flex}.adv-msgs{padding:16px}.adv-input-bar{padding:12px 16px 16px}.adv-msg{max-width:100%}.adv-welcome h2{font-size:1.3rem}.adv-welcome-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.adv-sidebar{display:none}.adv-chat-header{display:flex}.adv-msgs{padding:16px}.adv-input-bar{padding:12px 16px 16px}.adv-msg{max-width:100%}.adv-welcome h2{font-size:1.3rem}.adv-welcome-grid{grid-template-columns:1fr}}
 @media(max-width:480px){.adv-nav{height:56px;padding:0 16px}.adv-nav-brand{font-size:1.05rem}.adv-nav-cta{padding:7px 16px;font-size:.74rem}.adv-msgs{padding:12px}.adv-msg-av{width:28px;height:28px}.adv-msg-av svg{width:12px;height:12px}.adv-msg-bubble{font-size:.82rem;padding:10px 14px}.adv-input{padding:12px 14px;font-size:.84rem}.adv-send{width:40px;height:40px}.adv-input-bar{padding:10px 12px 14px}.adv-welcome{padding:24px 16px}.adv-welcome-icon{width:52px;height:52px;border-radius:16px}.adv-welcome h2{font-size:1.15rem}.adv-welcome p{font-size:.82rem}}
 </style>
 </head>
 <body>
 
-<nav class="adv-nav">
-  <div style="display:flex;align-items:center;gap:12px;">
-    <a href="/" class="adv-nav-back">&larr;</a>
-    <a href="/" class="adv-nav-brand">Burlington<span class="adv-nav-dot"></span></a>
-  </div>
-  <div class="adv-nav-links">
-    <a href="/about">About</a>
-    <a href="/services">Services</a>
-    <a href="/team">Team</a>
-    <a href="/advisor" class="active">Advisor</a>
-    <a href="/assess" class="adv-nav-cta">Profile Assessment &middot; $75</a>
-  </div>
+<nav>
+  <a href="/" class="nav-logo">Burlington<span class="nav-logo-dot"></span><span class="nav-tagline">Immigration Advisory</span></a>
+  <ul class="nav-links">
+    <li><a href="/about">About</a></li>
+    <li class="nav-divider"></li>
+    <li><a href="/services">Services</a></li>
+    <li class="nav-divider"></li>
+    <li><a href="/team">Team</a></li>
+    <li class="nav-divider"></li>
+    <li><a href="/cases">Cases</a></li>
+    <li><a href="/book" class="nav-cta">Book a Consultation</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="openMobileNav()" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
+
+<div class="mobile-nav-backdrop" id="mobileBackdrop" onclick="closeMobileNav()"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <div style="flex:1;padding:16px 28px;display:flex;flex-direction:column;overflow-y:auto;">
+  <a href="/" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">01</span><span class="mn-text">Home</span></a>
+  <a href="/about" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">02</span><span class="mn-text">About</span></a>
+  <a href="/services" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">03</span><span class="mn-text">Services</span></a>
+  <a href="/team" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">04</span><span class="mn-text">Team</span></a>
+  <a href="/cases" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">05</span><span class="mn-text">Cases</span></a>
+  </div>
+  <div style="padding:24px 28px 40px;"><a href="/book" class="mobile-nav-cta">Book a Consultation</a></div>
+</div>
 
 <div class="adv-layout">
   <aside class="adv-sidebar">
@@ -305,5 +338,6 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 </script>
+<script>function openMobileNav(){document.getElementById("mobileNav").classList.add("open");document.getElementById("mobileBackdrop").classList.add("open");document.body.style.overflow="hidden";}function closeMobileNav(){document.getElementById("mobileNav").classList.remove("open");document.getElementById("mobileBackdrop").classList.remove("open");document.body.style.overflow="";}</script>
 </body>
 </html>
