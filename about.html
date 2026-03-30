@@ -677,4 +677,11 @@ footer{background:linear-gradient(180deg,var(--dark,#040A0F),#060E14);border-top
       if(r.top < window.innerHeight * 0.5 && r.bottom > 0) active = i;
     }
     for(var j = 0; j < dots.length; j++){
-      dots[j].className = j === active ? 'asn-dot active' : 'asn-
+      dots[j].className = j === active ? 'asn-dot active' : 'asn-dot';
+    }
+  },200);
+})();
+</script>
+<script>function openMobileNav(){document.getElementById("mobileNav").classList.add("open");document.getElementById("mobileBackdrop").classList.add("open");document.body.style.overflow="hidden";}function closeMobileNav(){document.getElementById("mobileNav").classList.remove("open");document.getElementById("mobileBackdrop").classList.remove("open");document.body.style.overflow="";}</script>
+</body>
+</html>
