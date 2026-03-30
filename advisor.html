@@ -126,8 +126,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(24px,5vw,80
 .adv-input-hint a{color:var(--teal);text-decoration:none;font-weight:500}
 
 @media(max-width:1024px){.adv-sidebar{width:260px}.adv-msgs{padding:24px}.adv-input-bar{padding:16px 24px 20px}}
-@media(max-width:768px){.adv-sidebar{display:none}.adv-chat-header{display:flex}.adv-msgs{padding:16px}.adv-input-bar{padding:12px 16px 16px}.adv-msg{max-width:100%}.adv-welcome h2{font-size:1.3rem}.adv-welcome-grid{grid-template-columns:1fr}}
-@media(max-width:480px){.adv-nav{height:56px;padding:0 16px}.adv-nav-brand{font-size:1.05rem}.adv-nav-cta{padding:7px 16px;font-size:.74rem}.adv-msgs{padding:12px}.adv-msg-av{width:28px;height:28px}.adv-msg-av svg{width:12px;height:12px}.adv-msg-bubble{font-size:.82rem;padding:10px 14px}.adv-input{padding:12px 14px;font-size:.84rem}.adv-send{width:40px;height:40px}.adv-input-bar{padding:10px 12px 14px}.adv-welcome{padding:24px 16px}.adv-welcome-icon{width:52px;height:52px;border-radius:16px}.adv-welcome h2{font-size:1.15rem}.adv-welcome p{font-size:.82rem}}
+@media(max-width:768px){.adv-sidebar{display:none}.adv-chat-header{display:flex;flex-shrink:0}.adv-chat{height:calc(100vh - 72px);height:calc(100dvh - 72px)}.adv-msgs{padding:16px;flex:1;min-height:0}.adv-input-bar{padding:12px 16px;padding-bottom:max(12px,env(safe-area-inset-bottom));flex-shrink:0}.adv-input-hint{display:none}.adv-msg{max-width:100%}.adv-welcome{min-height:0;flex:1;padding:24px 16px;justify-content:center}.adv-welcome h2{font-size:1.3rem}.adv-welcome-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.adv-msgs{padding:12px}.adv-msg-av{width:28px;height:28px}.adv-msg-av svg{width:12px;height:12px}.adv-msg-bubble{font-size:.82rem;padding:10px 14px}.adv-input{padding:12px 14px;font-size:.84rem}.adv-send{width:40px;height:40px}.adv-input-bar{padding:10px 12px;padding-bottom:max(10px,env(safe-area-inset-bottom))}.adv-welcome{padding:16px 12px}.adv-welcome-icon{width:48px;height:48px;border-radius:14px}.adv-welcome h2{font-size:1.1rem}.adv-welcome p{font-size:.8rem;margin-bottom:20px}}
 </style>
 </head>
 <body>
