@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.burlingtonconsult.com/sitemap.xml
 
 Disallow: /preview
 Disallow: /booking-confirmed
-Disallow: /booking-confirmeds
+Disallow: /advisor
+Disallow: /resources/article-template
+
+Sitemap: https://www.burlingtonconsult.com/sitemap.xml
