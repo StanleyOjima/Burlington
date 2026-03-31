@@ -348,10 +348,6 @@ select.cr-form-input{appearance:none;background-image:url("data:image/svg+xml,%3
   </div>
 </footer>
 
-<style>
-@keyframes sectionFade{0%{opacity:0}100%{opacity:1}}
-.cr-revealed{animation:sectionFade .4s ease-out forwards}
-</style>
 <script>
 function smoothScrollTo(id){
   var el=document.getElementById(id);
@@ -366,8 +362,7 @@ function smoothScrollTo(id){
     if(!startTime)startTime=time;
     var progress=Math.min((time-startTime)/duration,1);
     window.scrollTo(0,start+distance*ease(progress));
-    if(progress<1){requestAnimationFrame(step)}
-    else{el.classList.add('cr-revealed');setTimeout(function(){el.classList.remove('cr-revealed')},600)}
+    if(progress<1)requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
 }
