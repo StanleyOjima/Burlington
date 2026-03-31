@@ -179,7 +179,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(24px,5vw,80
       <div class="adv-sb-chip" onclick="sendMsg('What evidence do I need to prepare?')">Evidence requirements</div>
     </div>
     <div class="adv-sb-footer">
-      <a href="/assess" class="adv-sb-cta">Start Profile Assessment &middot; $75 &rarr;</a>
+      <a href="/assess" class="adv-sb-cta">Start Profile Assessment &middot; <span style="text-decoration:line-through;color:#E24B4A;font-weight:400;opacity:.7;">$113</span> $85 &rarr;</a>
       <p>Burlington Consult provides immigration strategy and advisory services. This does not constitute the practice of law.</p>
     </div>
   </aside>
@@ -188,7 +188,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(24px,5vw,80
     <div class="adv-chat-header">
       <div class="adv-chat-avatar"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
       <div class="adv-chat-hinfo"><div class="adv-chat-hname">Burlington Advisor</div><div class="adv-chat-hstatus">Online</div></div>
-      <a href="/assess" class="adv-chat-hcta">Assessment &middot; $75</a>
+      <a href="/assess" class="adv-chat-hcta">Assessment &middot; <span style="text-decoration:line-through;color:#E24B4A;font-weight:400;opacity:.7;">$113</span> $85</a>
     </div>
 
     <div class="adv-msgs" id="msgs">
@@ -329,7 +329,7 @@ function formatResponse(text) {
   text = text.replace(/\n/g, '<br>');
   text = '<p>' + text + '</p>';
   // Add CTA
-  text += '<a href="/assess" class="adv-msg-cta">Start Profile Assessment &middot; $75 &rarr;</a>';
+  text += '<a href="/assess" class="adv-msg-cta">Start Profile Assessment &middot; <span style="text-decoration:line-through;color:#E24B4A;font-weight:400;opacity:.7;">$113</span> $85 &rarr;</a>';
   return text;
 }
 

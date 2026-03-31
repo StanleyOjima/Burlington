@@ -55,17 +55,17 @@
         { "trigger": "USCIS submission confirmed", "amount": "$5,000" },
         { "trigger": "Expenses retainer (press + legal)", "amount": "$5,000" }
       ],
-      "credit_ladder": "$75 Profile Assessment → credited toward $150 consultation → credited toward engagement. Every fee rolls forward."
+      "credit_ladder": "$85 Profile Assessment (normally $113) → credited toward $169 consultation (normally $225) → credited toward engagement. Every fee rolls forward."
     },
     "profile_assessment": {
       "name": "Profile Assessment",
-      "price": "$75",
+      "price": "$85 (normally $113 — limited 25% discount)",
       "description": "Written assessment of your professional record against EB-1A criteria and the NIW Dhanasar framework. Delivered within 48 hours. Fee credited toward consultation.",
       "url": "/assess"
     },
     "consultation": {
       "name": "Consultation",
-      "price": "$150",
+      "price": "$169 (normally $225 — limited 25% discount)",
       "description": "30-minute focused session covering your profile, the strongest available pathway, the most viable field of endeavour, and a direct assessment of eligibility. Fee credited toward engagement.",
       "url": "/book"
     },
