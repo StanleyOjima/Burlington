@@ -160,7 +160,7 @@ select.cr-form-input{appearance:none;background-image:url("data:image/svg+xml,%3
     <div class="cr-hero-badge"><span class="cr-hero-badge-dot"></span> Now hiring</div>
     <h1>We're looking for people who <span>get things done</span>.</h1>
     <p>Burlington Consult is growing. We need lawyers, engineers, marketers, and operators who are ready to fold up their sleeves and build something that matters. No spectators. No passengers.</p>
-    <a href="#apply" class="cr-hero-cta">View open roles &darr;</a>
+    <a href="#apply" class="cr-hero-cta" onclick="event.preventDefault();smoothScrollTo('apply')">View open roles &darr;</a>
   </div>
 </section>
 
@@ -199,7 +199,7 @@ select.cr-form-input{appearance:none;background-image:url("data:image/svg+xml,%3
   </div>
   <div class="cr-roles-grid">
 
-    <a href="#form" class="cr-role">
+    <a href="#form" class="cr-role" onclick="event.preventDefault();smoothScrollTo('form')">
       <div class="cr-role-top">
         <h3>Immigration Case Architect</h3>
         <span class="cr-role-type">Legal / Strategy</span>
@@ -209,7 +209,7 @@ select.cr-form-input{appearance:none;background-image:url("data:image/svg+xml,%3
       <div class="cr-role-arrow">Apply <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
-    <a href="#form" class="cr-role">
+    <a href="#form" class="cr-role" onclick="event.preventDefault();smoothScrollTo('form')">
       <div class="cr-role-top">
         <h3>Full-Stack Engineer</h3>
         <span class="cr-role-type">Engineering</span>
@@ -219,7 +219,7 @@ select.cr-form-input{appearance:none;background-image:url("data:image/svg+xml,%3
       <div class="cr-role-arrow">Apply <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
-    <a href="#form" class="cr-role">
+    <a href="#form" class="cr-role" onclick="event.preventDefault();smoothScrollTo('form')">
       <div class="cr-role-top">
         <h3>Growth & Marketing Lead</h3>
         <span class="cr-role-type">Marketing</span>
@@ -229,7 +229,7 @@ select.cr-form-input{appearance:none;background-image:url("data:image/svg+xml,%3
       <div class="cr-role-arrow">Apply <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
-    <a href="#form" class="cr-role">
+    <a href="#form" class="cr-role" onclick="event.preventDefault();smoothScrollTo('form')">
       <div class="cr-role-top">
         <h3>Operations & Client Success</h3>
         <span class="cr-role-type">Operations</span>
@@ -239,7 +239,7 @@ select.cr-form-input{appearance:none;background-image:url("data:image/svg+xml,%3
       <div class="cr-role-arrow">Apply <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
-    <a href="#form" class="cr-role">
+    <a href="#form" class="cr-role" onclick="event.preventDefault();smoothScrollTo('form')">
       <div class="cr-role-top">
         <h3>Research & Due Diligence Analyst</h3>
         <span class="cr-role-type">Research</span>
@@ -249,7 +249,7 @@ select.cr-form-input{appearance:none;background-image:url("data:image/svg+xml,%3
       <div class="cr-role-arrow">Apply <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
-    <a href="#form" class="cr-role">
+    <a href="#form" class="cr-role" onclick="event.preventDefault();smoothScrollTo('form')">
       <div class="cr-role-top">
         <h3>Something else entirely</h3>
         <span class="cr-role-type">Open application</span>
@@ -270,7 +270,7 @@ select.cr-form-input{appearance:none;background-image:url("data:image/svg+xml,%3
         <h2>We don't hire for titles. We hire for output.</h2>
         <p>Burlington Consult is a small, fast team across three continents. Everyone punches above their weight. If that sounds like your kind of place — apply below. One paragraph about what makes you exceptional. One CV. That's it.</p>
       </div>
-      <a href="#form" class="cr-hero-cta">Apply now &darr;</a>
+      <a href="#form" class="cr-hero-cta" onclick="event.preventDefault();smoothScrollTo('form')">Apply now &darr;</a>
     </div>
   </div>
 </section>
@@ -348,6 +348,36 @@ select.cr-form-input{appearance:none;background-image:url("data:image/svg+xml,%3
   </div>
 </footer>
 
+<style>
+@keyframes sectionReveal{0%{opacity:.6;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+.cr-revealed{animation:sectionReveal .6s cubic-bezier(.16,1,.3,1) forwards}
+.cr-revealed .cr-role,.cr-revealed .cr-form{animation:sectionReveal .6s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i,0) * .08s);opacity:0}
+</style>
+<script>
+function smoothScrollTo(id){
+  var el=document.getElementById(id);
+  if(!el)return;
+  var start=window.scrollY;
+  var target=el.getBoundingClientRect().top+window.scrollY-80;
+  var distance=target-start;
+  var duration=800;
+  var startTime=null;
+  function ease(t){return t<.5?4*t*t*t:(t-1)*(2*t-1)*(2*t-1)+1}
+  function step(time){
+    if(!startTime)startTime=time;
+    var progress=Math.min((time-startTime)/duration,1);
+    window.scrollTo(0,start+distance*ease(progress));
+    if(progress<1){requestAnimationFrame(step)}
+    else{
+      el.classList.add('cr-revealed');
+      var children=el.querySelectorAll('.cr-role,.cr-form');
+      for(var i=0;i<children.length;i++){children[i].style.setProperty('--i',i)}
+      setTimeout(function(){el.classList.remove('cr-revealed')},1200);
+    }
+  }
+  requestAnimationFrame(step);
+}
+</script>
 <script>function openMobileNav(){document.getElementById("mobileNav").classList.add("open");document.getElementById("mobileBackdrop").classList.add("open");document.body.style.overflow="hidden";}function closeMobileNav(){document.getElementById("mobileNav").classList.remove("open");document.getElementById("mobileBackdrop").classList.remove("open");document.body.style.overflow="";}</script>
 </body>
 </html>
