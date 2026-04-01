@@ -1358,8 +1358,8 @@ select.as-f-input option{background:#0D1E2B;color:var(--white)}
 .cr-hero-inner{position:relative;z-index:1;max-width:640px;padding-top:100px}
 .cr-hero h1{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:500;color:var(--white);line-height:1.08;margin-bottom:16px}
 .cr-hero p{font-size:.95rem;color:rgba(255,255,255,.4);line-height:1.8;max-width:520px;margin-bottom:32px}
-.cr-hero-stats{display:flex;gap:40px;align-items:baseline}
-.cr-hs{text-align:left}
+.cr-hero-stats{display:flex;gap:40px;align-items:center}
+.cr-hs{text-align:center}
 .cr-hs-val{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--white);line-height:1}
 .cr-hs-label{font-size:.66rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.06em;margin-top:8px}
 
