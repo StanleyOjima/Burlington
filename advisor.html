@@ -3,133 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#040A0F">
-<link rel="manifest" href="/manifest.json">
 <title>Burlington Advisor — Burlington Consult</title>
-<meta name="description" content="Ask Burlington Advisor about EB-1A eligibility, NIW pathways, timelines, pricing, and the current U.S. immigration environment.">
+<meta name="description" content="AI-powered immigration strategy assistant.">
+<meta property="og:title" content="Burlington Advisor — Burlington Consult">
+<meta property="og:description" content="AI-powered immigration strategy assistant.">
+<meta property="og:image" content="https://www.burlingtonconsult.com/og-image.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGX2C54Y62"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WGX2C54Y62');</script>
+
+<!-- Meta Pixel -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','288348047220909');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=288348047220909&ev=PageView&noscript=1"/></noscript>
+
+<!-- Microsoft Clarity -->
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","w17fdb9mpw");</script>
-
-<style>
-:root{--dark:#040A0F;--white:#FFF;--off-white:#F7F7F5;--light:#F5F5F3;--g100:#E8E7E3;--g200:#D4D3CF;--g300:#A8A7A3;--g400:#5C5B53;--g500:#545349;--g700:#2D2C28;--teal:#0D9488;--tl:#14B8A6;--tb:#2DD4BF;--sf:'Playfair Display',Georgia,serif;--sn:'Inter',-apple-system,sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;font-family:var(--sn);background:var(--off-white);-webkit-font-smoothing:antialiased;overflow:hidden}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(24px,5vw,80px);height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,10,15,.88);backdrop-filter:blur(28px) saturate(200%);-webkit-backdrop-filter:blur(28px) saturate(200%);border-bottom:1px solid rgba(13,148,136,.06)}
-.nav-logo{font-family:var(--sf);font-size:1.3rem;font-weight:600;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:3px}
-.nav-logo-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--tb);box-shadow:0 0 12px rgba(45,212,191,.5)}
-.nav-tagline{font-family:var(--sn);font-size:.6rem;font-weight:400;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase;margin-left:10px;padding-left:10px;border-left:1px solid rgba(255,255,255,.1)}
-.nav-links{display:flex;align-items:center;gap:0;list-style:none}
-.nav-links li{display:flex;align-items:center}
-.nav-links a{font-size:.84rem;font-weight:400;color:rgba(255,255,255,.65);text-decoration:none;transition:color .3s;padding:0 16px;position:relative}
-.nav-links a:hover{color:var(--white)}
-.nav-links a.active,.nav-links a.active:hover{color:var(--tb);font-weight:500}
-.nav-divider{width:1px;height:14px;background:rgba(255,255,255,.1);flex-shrink:0}
-.nav-cta{font-size:.82rem!important;font-weight:500!important;color:var(--white)!important;background:linear-gradient(135deg,var(--teal),var(--tb));padding:9px 22px!important;border-radius:20px!important;text-decoration:none;box-shadow:0 4px 16px rgba(13,148,136,.25),inset 0 1px 0 rgba(255,255,255,.1);transition:all .3s!important;margin-left:8px}
-.nav-cta:hover{box-shadow:0 0 28px rgba(13,148,136,.4);transform:translateY(-1px)}
-.nav-hamburger{display:none;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:40px;height:40px;cursor:pointer;background:rgba(13,148,136,.06);border:1px solid rgba(45,212,191,.15);border-radius:50%;padding:0;transition:all .3s}
-.nav-hamburger span{display:block;width:18px;height:1.5px;background:var(--tb);transition:all .3s}
-.nav-hamburger span:nth-child(2){width:14px}
-.mobile-nav-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9998;opacity:0;pointer-events:none;transition:opacity .35s ease}.mobile-nav-backdrop.open{opacity:1;pointer-events:auto}
-.mobile-nav{position:fixed;top:0;right:0;bottom:0;width:280px;background:#060E14;border-left:1px solid rgba(45,212,191,.06);z-index:9999;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:0}
-.mobile-nav.open{transform:translateX(0)}
-.mobile-nav-close{background:none;border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.65);cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .3s;margin:16px 20px 0 auto;flex-shrink:0}
-.mobile-nav-link{display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none}
-.mobile-nav-link:hover .mn-text{color:var(--tb)}
-.mn-num{font-size:.74rem;color:rgba(45,212,191,.35);font-weight:400;min-width:20px;font-family:var(--sn)}
-.mn-text{font-family:var(--sf);font-size:1.25rem;color:rgba(255,255,255,.6);transition:color .3s}
-.mobile-nav-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px 28px;font-size:.88rem!important;font-weight:500;font-family:var(--sn);background:linear-gradient(135deg,#0D9488,#2DD4BF)!important;color:#fff!important;border-radius:14px;text-decoration:none;margin-top:40px;box-shadow:0 4px 24px rgba(13,148,136,.4),inset 0 1px 0 rgba(255,255,255,.15)}
-@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex;width:36px;height:36px}.nav-tagline{display:none}}
-
-/* LAYOUT */
-.adv-layout{display:flex;height:calc(100vh - 72px);height:calc(100dvh - 72px);overflow:hidden;margin-top:72px}
-
-.adv-sidebar{width:300px;background:var(--white);border-right:1px solid var(--g100);display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto}
-.adv-sb-header{padding:28px 24px 0}
-.adv-sb-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.1);border-radius:100px;margin-bottom:16px}
-.adv-sb-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.adv-sb-badge span{font-size:.7rem;font-weight:500;color:var(--teal)}
-.adv-sb-title{font-family:var(--sf);font-size:1.3rem;font-weight:500;color:var(--g700);margin-bottom:6px}
-.adv-sb-desc{font-size:.82rem;color:var(--g400);line-height:1.65;margin-bottom:24px}
-.adv-sb-divider{height:1px;background:var(--g100);margin:0 24px}
-.adv-sb-section{padding:20px 24px}
-.adv-sb-label{font-size:.65rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--g300);margin-bottom:12px}
-.adv-sb-chip{padding:12px 16px;background:var(--off-white);border:1px solid var(--g100);border-radius:10px;font-size:.82rem;color:var(--g700);margin-bottom:8px;cursor:pointer;transition:all .2s;line-height:1.4}
-.adv-sb-chip:hover{border-color:rgba(13,148,136,.25);background:rgba(13,148,136,.03);color:var(--teal)}
-.adv-sb-footer{margin-top:auto;padding:20px 24px;border-top:1px solid var(--g100)}
-.adv-sb-footer p{font-size:.72rem;color:var(--g300);line-height:1.6}
-.adv-sb-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px 20px;background:linear-gradient(135deg,var(--teal),var(--tb));color:var(--white);font-size:.82rem;font-weight:500;border-radius:10px;text-decoration:none;margin-bottom:16px}
-
-.adv-chat{flex:1;display:flex;flex-direction:column;background:var(--off-white);min-width:0}
-.adv-chat-header{display:none;padding:14px 20px;background:var(--white);border-bottom:1px solid var(--g100);align-items:center;gap:12px}
-.adv-chat-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--tb));display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.adv-chat-avatar svg{width:16px;height:16px;stroke:var(--white);stroke-width:2;fill:none}
-.adv-chat-hinfo{flex:1}
-.adv-chat-hname{font-size:.88rem;font-weight:500;color:var(--g700)}
-.adv-chat-hstatus{font-size:.7rem;color:var(--teal)}
-
-.adv-msgs{flex:1;overflow-y:auto;padding:32px 40px;display:flex;flex-direction:column;gap:16px}
-.adv-msg{max-width:680px;display:flex;gap:12px;animation:msgIn .3s ease}
-@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.adv-msg-bot{align-self:flex-start}
-.adv-msg-user{align-self:flex-end;flex-direction:row-reverse}
-.adv-msg-av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.adv-msg-bot .adv-msg-av{background:linear-gradient(135deg,var(--teal),var(--tb))}
-.adv-msg-user .adv-msg-av{background:var(--g700)}
-.adv-msg-av svg{width:14px;height:14px;stroke:var(--white);stroke-width:2;fill:none}
-.adv-msg-body{display:flex;flex-direction:column;gap:4px}
-.adv-msg-name{font-size:.7rem;font-weight:500;color:var(--teal)}
-.adv-msg-user .adv-msg-name{color:var(--g400);text-align:right}
-.adv-msg-bubble{padding:14px 18px;border-radius:14px;font-size:.86rem;line-height:1.7;color:var(--g700)}
-.adv-msg-bot .adv-msg-bubble{background:var(--white);border:1px solid var(--g100);border-top-left-radius:4px}
-.adv-msg-user .adv-msg-bubble{background:var(--dark);color:var(--white);border-top-right-radius:4px}
-.adv-msg-bubble p{margin-bottom:10px}
-.adv-msg-bubble p:last-child{margin-bottom:0}
-.adv-msg-bubble strong{font-weight:500;color:var(--g700)}
-.adv-msg-user .adv-msg-bubble strong{color:var(--white)}
-.adv-msg-bubble a{color:var(--teal);text-decoration:none;font-weight:500}
-.adv-msg-cta{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.12);border-radius:8px;font-size:.78rem;font-weight:500;color:var(--teal);margin-top:10px;cursor:pointer;text-decoration:none}
-.adv-typing{display:flex;gap:4px;padding:14px 18px;background:var(--white);border:1px solid var(--g100);border-radius:14px;border-top-left-radius:4px;width:fit-content}
-.adv-typing-dot{width:6px;height:6px;border-radius:50%;background:var(--g300);animation:tBounce 1.4s ease-in-out infinite}
-.adv-typing-dot:nth-child(2){animation-delay:.2s}
-.adv-typing-dot:nth-child(3){animation-delay:.4s}
-@keyframes tBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
-
-.adv-welcome{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;text-align:center;flex:1;min-height:0}
-.adv-welcome-icon{width:64px;height:64px;border-radius:20px;background:rgba(13,148,136,.06);border:1px solid rgba(13,148,136,.1);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
-.adv-welcome-icon svg{width:28px;height:28px;stroke:var(--teal);stroke-width:1.5;fill:none}
-.adv-welcome h2{font-family:var(--sf);font-size:1.6rem;font-weight:500;color:var(--g700);margin-bottom:8px}
-.adv-welcome p{font-size:.88rem;color:var(--g400);max-width:420px;line-height:1.7;margin-bottom:32px}
-.adv-welcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:460px;width:100%}
-.adv-wcard{padding:16px;background:var(--white);border:1px solid var(--g100);border-radius:12px;cursor:pointer;transition:all .2s;text-align:left}
-.adv-wcard:hover{border-color:rgba(13,148,136,.2);transform:translateY(-2px)}
-.adv-wcard h4{font-size:.82rem;font-weight:500;color:var(--g700);margin-bottom:4px}
-.adv-wcard p{font-size:.72rem;color:var(--g400);line-height:1.5;margin-bottom:0}
-
-.adv-input-bar{padding:14px 40px;background:var(--off-white);border-top:1px solid var(--g100);flex-shrink:0}
-.adv-input-wrap{display:flex;gap:10px;align-items:center}
-.adv-input{flex:1;padding:14px 18px;background:var(--white);border:1px solid var(--g100);border-radius:12px;font-size:.86rem;font-family:var(--sn);color:var(--g700);outline:none;transition:border-color .2s;resize:none;height:48px;line-height:1.4}
-.adv-input:focus{border-color:rgba(13,148,136,.3)}
-.adv-input::placeholder{color:var(--g300)}
-.adv-send{width:44px;height:44px;border-radius:50%;background:var(--teal);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
-.adv-send:hover{background:var(--tl)}
-.adv-send:disabled{background:var(--g200);cursor:not-allowed}
-.adv-send svg{width:18px;height:18px;stroke:var(--white);stroke-width:2;fill:none}
-.adv-chat-hcta{display:none;padding:6px 14px;background:var(--teal);color:var(--white);font-size:.7rem;font-weight:500;border-radius:100px;text-decoration:none;white-space:nowrap;flex-shrink:0}
-
-@media(max-width:1024px){.adv-sidebar{width:260px}.adv-msgs{padding:24px}.adv-input-bar{padding:16px 24px 20px}}
-@media(max-width:768px){.adv-sidebar{display:none}.adv-chat-header{display:flex;flex-shrink:0}.adv-chat-hcta{display:block}.adv-chat{height:calc(100vh - 72px);height:calc(100dvh - 72px)}.adv-msgs{padding:16px;flex:1;min-height:0}.adv-input-bar{padding:12px 16px;padding-bottom:max(12px,env(safe-area-inset-bottom))}.adv-msg{max-width:100%}.adv-welcome{min-height:0;flex:1;padding:24px 16px;justify-content:center}.adv-welcome h2{font-size:1.3rem}.adv-welcome-grid{grid-template-columns:1fr}}
-@media(max-width:480px){.adv-msgs{padding:12px}.adv-msg-av{width:28px;height:28px}.adv-msg-av svg{width:12px;height:12px}.adv-msg-bubble{font-size:.82rem;padding:10px 14px}.adv-input{padding:12px 14px;font-size:.84rem}.adv-send{width:40px;height:40px}.adv-input-bar{padding:10px 12px;padding-bottom:max(10px,env(safe-area-inset-bottom))}.adv-welcome{padding:16px 12px}.adv-welcome-icon{width:48px;height:48px;border-radius:14px}.adv-welcome h2{font-size:1.1rem}.adv-welcome p{font-size:.8rem;margin-bottom:20px}}
-</style>
 </head>
 <body>
 
@@ -141,8 +36,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(24px,5vw,80
     <li><a href="/services">Services</a></li>
     <li class="nav-divider"></li>
     <li><a href="/team">Team</a></li>
-    <li class="nav-divider"></li>
-    <li><a href="/cases">Cases</a></li>
     <li><a href="/book" class="nav-cta">Book a Consultation</a></li>
   </ul>
   <button class="nav-hamburger" onclick="openMobileNav()" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -151,195 +44,61 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 clamp(24px,5vw,80
 <div class="mobile-nav-backdrop" id="mobileBackdrop" onclick="closeMobileNav()"></div>
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-  <div style="flex:1;padding:16px 28px;display:flex;flex-direction:column;overflow-y:auto;">
-  <a href="/" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">01</span><span class="mn-text">Home</span></a>
-  <a href="/about" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">02</span><span class="mn-text">About</span></a>
-  <a href="/services" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">03</span><span class="mn-text">Services</span></a>
-  <a href="/team" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">04</span><span class="mn-text">Team</span></a>
-  <a href="/cases" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">05</span><span class="mn-text">Cases</span></a>
+  <div class="mobile-nav-links">
+    <a href="/" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">01</span><span class="mn-text">Home</span></a>
+    <a href="/about" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">02</span><span class="mn-text">About</span></a>
+    <a href="/services" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">03</span><span class="mn-text">Services</span></a>
+    <a href="/team" class="mobile-nav-link" onclick="closeMobileNav()"><span class="mn-num">04</span><span class="mn-text">Team</span></a>
   </div>
-  <div style="padding:24px 28px 40px;"><a href="/book" class="mobile-nav-cta">Book a Consultation</a></div>
+  <div class="mobile-nav-cta-wrap"><a href="/book" class="mobile-nav-cta">Book a Consultation</a></div>
 </div>
 
-<div class="adv-layout">
-  <aside class="adv-sidebar">
-    <div class="adv-sb-header">
-      <div class="adv-sb-badge"><span class="adv-sb-badge-dot"></span><span>Online</span></div>
-      <h1 class="adv-sb-title">Burlington Advisor</h1>
-      <p class="adv-sb-desc">Immigration strategy assistant informed by Burlington Consult's advisory practice.</p>
-    </div>
-    <div class="adv-sb-divider"></div>
-    <div class="adv-sb-section">
-      <div class="adv-sb-label">Common questions</div>
-      <div class="adv-sb-chip" onclick="sendMsg('Do I qualify for an Einstein Visa (EB-1A)?')">Do I qualify for an Einstein Visa?</div>
-      <div class="adv-sb-chip" onclick="sendMsg('What is the difference between EB-1A and EB-2 NIW?')">EB-1A vs EB-2 NIW</div>
-      <div class="adv-sb-chip" onclick="sendMsg('How much does a full engagement cost?')">Engagement pricing</div>
-      <div class="adv-sb-chip" onclick="sendMsg('Does the Nigeria travel ban affect my ability to file?')">Travel ban &amp; filing</div>
-      <div class="adv-sb-chip" onclick="sendMsg('How long does the full process take?')">Timeline &amp; processing</div>
-      <div class="adv-sb-chip" onclick="sendMsg('What evidence do I need to prepare?')">Evidence requirements</div>
-    </div>
-    <div class="adv-sb-footer">
-      <a href="/assess" class="adv-sb-cta">Start Profile Assessment &middot; <span style="text-decoration:line-through;color:#E24B4A;font-weight:400;opacity:.7;">$113</span> $85 &rarr;</a>
-      <p>Burlington Consult provides immigration strategy and advisory services. This does not constitute the practice of law.</p>
-    </div>
-  </aside>
+<main style="margin-top:72px;">
+  <div class="container section">
+    <h1>Burlington Advisor</h1>
+  </div>
+</main>
 
-  <main class="adv-chat">
-    <div class="adv-chat-header">
-      <div class="adv-chat-avatar"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-      <div class="adv-chat-hinfo"><div class="adv-chat-hname">Burlington Advisor</div><div class="adv-chat-hstatus">Online</div></div>
-      <a href="/assess" class="adv-chat-hcta">Assessment &middot; <span style="text-decoration:line-through;color:#E24B4A;font-weight:400;opacity:.7;">$113</span> $85</a>
-    </div>
-
-    <div class="adv-msgs" id="msgs">
-      <div class="adv-welcome" id="welcome">
-        <div class="adv-welcome-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-        <h2>Burlington Advisor</h2>
-        <p>Ask anything about EB-1A, EB-2 NIW, eligibility, pricing, timelines, or the current U.S. immigration environment.</p>
-        <div class="adv-welcome-grid">
-          <div class="adv-wcard" onclick="sendMsg('Do I qualify for an Einstein Visa (EB-1A)?')"><h4>Eligibility check</h4><p>Find out if your profile fits EB-1A or NIW criteria</p></div>
-          <div class="adv-wcard" onclick="sendMsg('What is the difference between EB-1A and EB-2 NIW?')"><h4>Compare pathways</h4><p>EB-1A vs NIW — which fits your record?</p></div>
-          <div class="adv-wcard" onclick="sendMsg('How much does a full engagement cost and what does it include?')"><h4>Pricing &amp; process</h4><p>Engagement details, milestones, timeline</p></div>
-          <div class="adv-wcard" onclick="sendMsg('I am a Nigerian national. Can I still file?')"><h4>Travel ban guidance</h4><p>Filing environment for Nigerian nationals</p></div>
-        </div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="footer-brand">Burlington<span class="footer-brand-dot"></span></a>
+        <p class="footer-desc">Immigration strategy, elite graduate admissions, and career advisory for high-achieving professionals across three continents.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pathways</h4>
+        <a href="/eb1a">Einstein Visa (EB-1A)</a>
+        <a href="/niw">NIW Petition (EB-2)</a>
+        <a href="/dual-petition">Dual Petition Strategy</a>
+        <a href="/eb1a-creatives">EB-1A for Creatives</a>
+        <a href="/pathways">All Pathways</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/resources">Knowledge Center</a>
+        <a href="/assess">Profile Assessment</a>
+        <a href="/cases">Case Profiles</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about">About</a>
+        <a href="/team">Team</a>
+        <a href="/careers">Careers</a>
+        <a href="/contact">Contact</a>
       </div>
     </div>
-
-    <div class="adv-input-bar">
-      <div class="adv-input-wrap">
-        <input class="adv-input" id="input" placeholder="Ask about EB-1A, NIW, eligibility, pricing..." onkeydown="if(event.key==='Enter'&&!event.shiftKey&&this.value.trim()){event.preventDefault();sendMsg(this.value)}">
-        <button class="adv-send" id="sendBtn" onclick="var i=document.getElementById('input');if(i.value.trim())sendMsg(i.value)"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
-      </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Burlington Consult, LLC &middot; Incorporated in Delaware &middot; The Octagon, Victoria Island, Lagos</div>
+      <div class="footer-links"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/disclaimer">Disclaimer</a></div>
     </div>
-  </main>
-</div>
+  </div>
+</footer>
 
 <script>
-var conversationHistory = [];
-var knowledgeBase = null;
-var isStreaming = false;
-
-// Load knowledge base
-fetch('/advisor-kb.json')
-  .then(function(r) { return r.json(); })
-  .then(function(data) { knowledgeBase = data; })
-  .catch(function() { console.warn('Knowledge base not loaded — using API without KB'); });
-
-function sendMsg(text) {
-  if (isStreaming) return;
-  var msgs = document.getElementById('msgs');
-  var welcome = document.getElementById('welcome');
-  var input = document.getElementById('input');
-  var sendBtn = document.getElementById('sendBtn');
-
-  if (welcome) welcome.style.display = 'none';
-  input.value = '';
-  isStreaming = true;
-  sendBtn.disabled = true;
-
-  // Add user message
-  conversationHistory.push({ role: 'user', content: text });
-  var userEl = document.createElement('div');
-  userEl.className = 'adv-msg adv-msg-user';
-  userEl.innerHTML = '<div class="adv-msg-av"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="adv-msg-body"><div class="adv-msg-name">You</div><div class="adv-msg-bubble">' + escapeHtml(text) + '</div></div>';
-  msgs.appendChild(userEl);
-
-  // Typing indicator
-  var typingEl = document.createElement('div');
-  typingEl.className = 'adv-msg adv-msg-bot';
-  typingEl.id = 'typing';
-  typingEl.innerHTML = '<div class="adv-msg-av"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="adv-msg-body"><div class="adv-msg-name">Burlington Advisor</div><div class="adv-typing"><div class="adv-typing-dot"></div><div class="adv-typing-dot"></div><div class="adv-typing-dot"></div></div></div>';
-  msgs.appendChild(typingEl);
-  msgs.scrollTop = msgs.scrollHeight;
-
-  // Call API
-  callAPI(conversationHistory, function(response) {
-    var t = document.getElementById('typing');
-    if (t) t.remove();
-
-    conversationHistory.push({ role: 'assistant', content: response });
-
-    var botEl = document.createElement('div');
-    botEl.className = 'adv-msg adv-msg-bot';
-    botEl.innerHTML = '<div class="adv-msg-av"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="adv-msg-body"><div class="adv-msg-name">Burlington Advisor</div><div class="adv-msg-bubble">' + formatResponse(response) + '</div></div>';
-    msgs.appendChild(botEl);
-    msgs.scrollTop = msgs.scrollHeight;
-
-    isStreaming = false;
-    sendBtn.disabled = false;
-    input.focus();
-  });
-}
-
-function callAPI(messages, callback) {
-  fetch('/api/chat', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      messages: messages,
-      knowledge_base: knowledgeBase
-    })
-  })
-  .then(function(response) {
-    if (!response.ok) throw new Error('API error');
-    var reader = response.body.getReader();
-    var decoder = new TextDecoder();
-    var fullText = '';
-    var buffer = '';
-
-    function read() {
-      reader.read().then(function(result) {
-        if (result.done) {
-          callback(fullText);
-          return;
-        }
-        buffer += decoder.decode(result.value, { stream: true });
-        var lines = buffer.split('\n');
-        buffer = lines.pop();
-
-        for (var i = 0; i < lines.length; i++) {
-          var line = lines[i].trim();
-          if (!line.startsWith('data: ')) continue;
-          var data = line.slice(6);
-          if (data === '[DONE]') continue;
-          try {
-            var parsed = JSON.parse(data);
-            if (parsed.type === 'content_block_delta' && parsed.delta && parsed.delta.text) {
-              fullText += parsed.delta.text;
-            }
-          } catch (e) {}
-        }
-        read();
-      });
-    }
-    read();
-  })
-  .catch(function(err) {
-    console.error('Chat error:', err);
-    callback('I apologize — I am unable to connect right now. Please try again, or reach Burlington Consult directly at founder@burlingtonconsult.com or +1 (857) 242-9842.');
-  });
-}
-
-function formatResponse(text) {
-  // Convert markdown-like formatting to HTML
-  text = escapeHtml(text);
-  text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-  text = text.replace(/\n\n/g, '</p><p>');
-  text = text.replace(/\n/g, '<br>');
-  text = '<p>' + text + '</p>';
-  // Add CTA
-  text += '<a href="/assess" class="adv-msg-cta">Start Profile Assessment &middot; <span style="text-decoration:line-through;color:#E24B4A;font-weight:400;opacity:.7;">$113</span> $85 &rarr;</a>';
-  return text;
-}
-
-function escapeHtml(text) {
-  var div = document.createElement('div');
-  div.appendChild(document.createTextNode(text));
-  return div.innerHTML;
-}
+function openMobileNav(){document.getElementById('mobileNav').classList.add('open');document.getElementById('mobileBackdrop').classList.add('open');document.body.style.overflow='hidden';}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('mobileBackdrop').classList.remove('open');document.body.style.overflow='';}
 </script>
-<script>function openMobileNav(){document.getElementById("mobileNav").classList.add("open");document.getElementById("mobileBackdrop").classList.add("open");document.body.style.overflow="hidden";}function closeMobileNav(){document.getElementById("mobileNav").classList.remove("open");document.getElementById("mobileBackdrop").classList.remove("open");document.body.style.overflow="";}</script>
 </body>
 </html>
-<!-- v2 -->
