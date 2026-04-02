@@ -1323,6 +1323,22 @@ select.as-f-input option{background:#0D1E2B;color:var(--white)}
 .tp-detail-label{font-size:.68rem;color:var(--gray-300);text-transform:uppercase;letter-spacing:.06em}
 
 .tp-back{max-width:800px;margin:0 auto;padding:0 var(--side-pad) 40px}
+/* Contact bar — team member */
+.tp-contact{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.tp-contact-link{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;font-size:.82rem;font-weight:500;text-decoration:none;transition:all .3s}
+.tp-contact-email{color:var(--teal);background:rgba(13,148,136,.04);border:1px solid rgba(13,148,136,.12)}
+.tp-contact-email:hover{background:rgba(13,148,136,.08);border-color:rgba(13,148,136,.2)}
+.tp-contact-linkedin{color:#0A66C2;background:rgba(10,102,194,.04);border:1px solid rgba(10,102,194,.12)}
+.tp-contact-linkedin:hover{background:rgba(10,102,194,.08);border-color:rgba(10,102,194,.2)}
+
+/* Contact bar — founder */
+.fp-contact{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.fp-contact-link{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;font-size:.82rem;font-weight:500;text-decoration:none;transition:all .3s}
+.fp-contact-email{color:var(--teal-bright);background:rgba(45,212,191,.04);border:1px solid rgba(45,212,191,.1)}
+.fp-contact-email:hover{background:rgba(45,212,191,.08);border-color:rgba(45,212,191,.2)}
+.fp-contact-linkedin{color:#5BA3E6;background:rgba(10,102,194,.06);border:1px solid rgba(10,102,194,.12)}
+.fp-contact-linkedin:hover{background:rgba(10,102,194,.1);border-color:rgba(10,102,194,.2)}
+
 .tp-back a{font-size:.82rem;color:var(--gray-300);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:color .2s}
 .tp-back a:hover{color:var(--teal)}
 
