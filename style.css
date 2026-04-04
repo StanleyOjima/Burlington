@@ -421,10 +421,10 @@ body.home .hero{opacity:1;transform:none}
 .sv-pkg-cta-solid{color:var(--white);background:linear-gradient(135deg,var(--teal),var(--teal-bright));box-shadow:0 4px 16px rgba(13,148,136,.2);transition:all .3s}
 .sv-pkg-cta-solid:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(13,148,136,.35)}
 
-.ladder{padding:80px 0;background:var(--off-white);text-align:center}
-.ladder-inner h2{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--gray-700);margin-bottom:8px}
-.ladder-sub{font-size:.88rem;color:var(--gray-400);margin-bottom:32px}
-.ladder-steps{display:flex;gap:0;max-width:800px;margin:0 auto 32px;position:relative}
+.sv-ladder{padding:80px 0;background:var(--off-white);text-align:center}
+.sv-ladder .ladder-inner h2{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--gray-700);margin-bottom:8px}
+.sv-ladder .ladder-sub{font-size:.88rem;color:var(--gray-400);margin-bottom:32px}
+.sv-ladder .ladder-steps{display:flex;gap:0;max-width:800px;margin:0 auto 32px;position:relative}
 .ladder-steps::before{content:'';position:absolute;top:24px;left:10%;right:10%;height:2px;background:var(--gray-100)}
 .ladder-step{flex:1;text-align:center;position:relative;padding-top:48px}
 .ladder-dot{position:absolute;top:16px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:var(--white);border:2px solid var(--teal);z-index:1}
