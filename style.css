@@ -226,7 +226,8 @@ body.home footer{scroll-snap-align:end}
   .team-strip-photo{width:140px}
 
   .proof{padding:64px 0}
-  .proof-stats{gap:20px;flex-wrap:wrap}
+  .proof-stats{gap:24px;flex-wrap:wrap;justify-content:space-around}
+  .proof-stats>div{min-width:100px}
 
   .final-cta{padding:64px 0}
   .final-cta-btns{flex-direction:column;align-items:center;gap:12px}
