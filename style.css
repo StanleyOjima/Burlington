@@ -397,7 +397,19 @@ body.home .hero{opacity:1;transform:none}
 .sv-imm-note{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.6}
 .sv-imm-note strong{color:var(--white)}
 
+.sv-imm-options{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 32px 32px;margin:0 16px}
+.sv-imm-opt{padding:28px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:16px;display:flex;flex-direction:column}
+.sv-imm-opt-rec{border-color:rgba(45,212,191,.18);background:rgba(13,148,136,.04)}
+.sv-imm-opt-name{font-family:var(--serif);font-size:1rem;font-weight:500;color:var(--white);margin-bottom:4px}
+.sv-imm-opt-price{font-family:var(--serif);font-size:1.8rem;font-weight:600;color:var(--teal-bright);margin-bottom:2px}
+.sv-imm-opt-sub{font-size:.72rem;color:rgba(255,255,255,.25);margin-bottom:4px}
+.sv-imm-opt-note{font-size:.74rem;color:rgba(255,255,255,.25);line-height:1.5;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.04)}
+
 .sv-card2-pkgs{padding:0 32px 32px;margin:0 16px}
+
+@media(max-width:900px){
+  .sv-imm-options{grid-template-columns:1fr;padding:0 20px 28px;margin:0 8px}
+}
 .sv-card2-pkgs-label{font-size:.58rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:14px;padding-top:20px;border-top:1px solid rgba(255,255,255,.04)}
 
 .sv-pkg-grid{display:grid;gap:14px;align-items:stretch}
