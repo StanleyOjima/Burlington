@@ -25,6 +25,23 @@
   .instructions h3 { font-size: 14px; color: #fff; margin-bottom: 10px; }
   .instructions p { font-size: 12px; color: #807F7A; line-height: 1.7; margin-bottom: 6px; }
   .instructions strong { color: #F7F7F5; }
+
+  .guide { display: flex; flex-direction: column; gap: 20px; }
+  .guide-block {
+    background: #0C1620;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 28px 28px 24px;
+  }
+  .guide-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .guide-header h3 { font-size: 15px; font-weight: 700; color: #F7F7F5; }
+  .guide-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(13,148,136,0.08); border-radius: 8px; flex-shrink: 0; }
+  .guide-steps { display: flex; flex-direction: column; gap: 0; }
+  .guide-step { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .guide-step:last-child { border-bottom: none; padding-bottom: 0; }
+  .step-num { width: 22px; height: 22px; border-radius: 50%; background: rgba(13,148,136,0.12); color: #0D9488; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-text { font-size: 13px; color: #B0AFA8; line-height: 1.6; }
+  .step-text strong { color: #F7F7F5; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -365,13 +382,204 @@
   </div>
 
 
-  <!-- INSTRUCTIONS -->
-  <div class="instructions">
-    <h3>How to Install</h3>
-    <p><strong>Gmail:</strong> Settings → See all settings → General → Signature → click the code editor icon (&lt;/&gt;) → paste the copied HTML.</p>
-    <p><strong>Outlook:</strong> Settings → Mail → Compose and reply → Email signature → use source editor to paste HTML.</p>
-    <p><strong>Apple Mail:</strong> Mail → Settings → Signatures → create new → paste from a browser preview (not raw HTML).</p>
-    <p style="margin-top:10px;"><strong>Note:</strong> All headshots are hosted at <span style="color:#0D9488;">burlingtonconsult.com/headshots/</span>. "Book Consultation" links to the /book page. Everyone currently shares founder@burlingtonconsult.com — swap in individual emails as needed. Michael's headshot is a placeholder until his photo is provided.</p>
+  <!-- INSTALLATION GUIDE -->
+  <hr class="section-divider">
+  <div class="section-label">Installation Guide</div>
+
+  <div class="guide">
+
+    <!-- GMAIL -->
+    <div class="guide-block">
+      <div class="guide-header">
+        <div class="guide-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 6l10 7 10-7" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="4" width="20" height="16" rx="2" stroke="#0D9488" stroke-width="1.5"/></svg>
+        </div>
+        <h3>Gmail</h3>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num">1</div>
+          <div class="step-text">Find your signature on this page and click <strong>"Copy Signature"</strong></div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">2</div>
+          <div class="step-text">Open Gmail → click the <strong>gear icon</strong> (top right) → <strong>"See all settings"</strong></div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">3</div>
+          <div class="step-text">Scroll down to the <strong>"Signature"</strong> section under the General tab</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">4</div>
+          <div class="step-text">Click <strong>"+ Create new"</strong> and give it a name (e.g. "Burlington")</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">5</div>
+          <div class="step-text">Click inside the signature text box and paste (<strong>Ctrl+V</strong> / <strong>Cmd+V</strong>). The formatted signature should appear with your photo, teal divider, and button.</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">6</div>
+          <div class="step-text">Under <strong>"Signature defaults"</strong>, set your new signature for both "For new emails" and "On reply/forward"</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">7</div>
+          <div class="step-text">Scroll to the bottom and click <strong>"Save Changes"</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTLOOK -->
+    <div class="guide-block">
+      <div class="guide-header">
+        <div class="guide-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#0D9488" stroke-width="1.5"/><path d="M8 12h8M8 8h8M8 16h5" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Outlook (Web)</h3>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num">1</div>
+          <div class="step-text">Copy your signature from this page</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">2</div>
+          <div class="step-text">Open Outlook → click the <strong>gear icon</strong> → <strong>"View all Outlook settings"</strong></div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">3</div>
+          <div class="step-text">Go to <strong>Mail → Compose and reply</strong></div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">4</div>
+          <div class="step-text">Under "Email signature", click <strong>"+ New signature"</strong> and name it</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">5</div>
+          <div class="step-text">Paste into the editor (<strong>Ctrl+V</strong> / <strong>Cmd+V</strong>)</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">6</div>
+          <div class="step-text">Set as default for new messages and replies, then <strong>Save</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTLOOK DESKTOP -->
+    <div class="guide-block">
+      <div class="guide-header">
+        <div class="guide-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="14" rx="2" stroke="#0D9488" stroke-width="1.5"/><path d="M8 21h8M12 18v3" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Outlook (Desktop — Mac/Windows)</h3>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num">1</div>
+          <div class="step-text">Copy your signature from this page</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">2</div>
+          <div class="step-text"><strong>Mac:</strong> Outlook → Settings → Signatures → click <strong>"+"</strong> to add new<br><strong>Windows:</strong> File → Options → Mail → Signatures → New</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">3</div>
+          <div class="step-text">Paste into the signature editor and save. Set as default for new messages and replies.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- APPLE MAIL -->
+    <div class="guide-block">
+      <div class="guide-header">
+        <div class="guide-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="#0D9488" stroke-width="1.5"/><path d="M15 8.5c0 1.5-1.5 3-3 3s-3-1.5-3-3 1.5-3 3-3 3 1.5 3 3zM6 18c0-2 2-4 6-4s6 2 6 4" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Apple Mail (Mac)</h3>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num">1</div>
+          <div class="step-text">Copy your signature from this page</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">2</div>
+          <div class="step-text">Open Mail → <strong>Settings</strong> (Cmd+,) → <strong>Signatures</strong> tab</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">3</div>
+          <div class="step-text">Select your email account on the left, then click <strong>"+"</strong> to add a new signature</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">4</div>
+          <div class="step-text">Paste into the right-hand preview panel (<strong>Cmd+V</strong>)</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">5</div>
+          <div class="step-text">Set the <strong>"Choose Signature"</strong> dropdown to your new signature for that account</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IPHONE -->
+    <div class="guide-block">
+      <div class="guide-header">
+        <div class="guide-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" stroke="#0D9488" stroke-width="1.5"/><path d="M11 18h2" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>iPhone / iPad (iOS Mail)</h3>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num">1</div>
+          <div class="step-text">Open this page on your phone: <strong style="color:#0D9488;">burlingtonconsult.com/signatures</strong></div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">2</div>
+          <div class="step-text">Tap "Copy Signature" on your signature</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">3</div>
+          <div class="step-text">Go to <strong>Settings → Mail → Signature</strong></div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">4</div>
+          <div class="step-text">Tap the signature field, select all existing text, and paste</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">*</div>
+          <div class="step-text" style="color:#807F7A; font-size:11px;">Note: iOS Mail has limited HTML support. The signature will work but may render with simplified formatting. For the best result, set up via Gmail or Outlook on desktop.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <div class="guide-block" style="border-color: rgba(13,148,136,0.2);">
+      <div class="guide-header">
+        <div class="guide-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#0D9488" stroke-width="1.5"/><path d="M12 8v4M12 16h.01" stroke="#0D9488" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Troubleshooting</h3>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num">?</div>
+          <div class="step-text"><strong>Signature shows as raw code:</strong> Make sure you're pasting with Ctrl+V / Cmd+V into the visual editor, not a source/code view. The copy button copies rich formatted content.</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">?</div>
+          <div class="step-text"><strong>Photo not showing:</strong> The headshot is hosted on burlingtonconsult.com — it loads from the web each time the email is opened. Some email clients block images by default; recipients can click "show images" to see it.</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">?</div>
+          <div class="step-text"><strong>"Book Consultation" button not clickable:</strong> Some email clients render the button as plain text. This is normal — the link still works when clicked in the sent email.</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">?</div>
+          <div class="step-text"><strong>Need to update your details?</strong> Contact the engineering team or edit the signature directly in your email client's settings.</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </div>
